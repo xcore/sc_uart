@@ -1,0 +1,49 @@
+UART Software Component Requirements 
+====================================
+
+:Author: Dan Wilkinson
+:Version: 1.0
+
+Introduction
+============
+
+The UART component implementation is already complete but the verification and documentation is not.
+
+Implementation
+==============
+
+No feature additions are required. 
+
+Verification
+============
+
+The existing testplan is a starting point. 
+
+All features in the spec should be validated on both the hardware and the simulator. For example, a test for buffer overrun and underrun for the simulator are missing from the testplan. 
+
+The tx buffer overflow case  appears to be missing from both the specified hardware and simulator tests.
+
+Where the API specification defines error handling, these features must be tested.
+
+MindTree should ensure the test coverage is complete and add items to the testplan as required to ensure this.
+
+XTA
+===
+
+The uart currently has no XTA checks. MindTree should determine which XTA checks are required to ensure the component meets timing at a given baud rate, add them into the testplan under a section entitled 'timing checks', and implement them. 
+
+Optimisations
+=============
+
+Demonstrations
+==============
+
+The demos already exist and must remani functional. The demos a customer begins with should be kept separate from the hardware tests that are focussed on verification
+
+Documentation
+=============
+
+Documentation deliverables are as specified in the XMOS/MindTree Statement of Work
+
+ 
+
