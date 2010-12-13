@@ -58,13 +58,12 @@ Tests
 
 .. test:: sim_loopback_test
    :setup: SIMULATOR
-   :configurations:
-      BAUD_RATE_115200 + BAUD_RATE_9600 + BAUD_RATE_115200, BITS_PER_BYTE_7, PARITY_BITS_even, STOP_BITS_2
-
+   :configurations: BAUD_RATE_.*, BITS_PER_BYTE.* , PARITY_BITS.*, STOP_BITS_.*
    :features: UART_RX, UART_TX
    :test_time: 5
 
    This test runs 3 uart tx/rx loopbacks at varying rates.
+
 
 .. test:: hw_loopback_test
    :setup: XC1A_LOOPBACK

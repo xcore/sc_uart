@@ -30,7 +30,7 @@ Functional Specification
       components and communicate with the client via a channel API. 
 
 .. feature:: UART_TX_BUFFERING
-   :parents: UART_TX
+    :parents: UART_TX
 
      The UART TX component will buffer data sent from the client and
      queue the data to be sent over the serial link. In the case where
@@ -48,7 +48,7 @@ Functional Specification
       serial link.
      
 .. feature:: UART_RX_BUFFERING
-   :parents: UART_RX
+     :parents: UART_RX
 
      The UART RX component will buffer data received over the serial
      link and queue the data to be sent to the client. In the case where
@@ -60,39 +60,44 @@ Functional Specification
      A ``#define`` will set the size of the UART Rx component buffer.
 
 .. feature:: BUILD_OPTION_UART_RX_EXCEPT_ON_OVERFLOW
-     :config_options: OFF (default) | ON
+     :config_options: OFF | ON
      :parents: UART_RX
      
      There will be a build option to raise an exception on RX buffer
      overflow for debugging purposes.
 
 .. feature:: BAUD_RATE
-   :config_options: 1..115200, default = 115200
+   :summarize_options:
+   :config_options: 24K | 96K | 115.2K
    :parents: UART_TX, UART_RX
 
    The components will have baud rate as a parameter instantiated when
    the component is run. Rates will be supported up to a maximum of 115200.
+   THis testplan only specifies 24K, 96K and 115.2K for testing though.
 
 .. feature:: PARITY_BITS
-   :config_options: none (default) | even | odd
+   :summarize_options:
+   :config_options: none | even | odd
    :runtime:
    :parents: UART_TX, UART_RX
 
-   The component will only support UART with 0 parity bits.
+   The component will support UART with none, even and odd parity.
 
 .. feature:: BITS_PER_BYTE
-   :config_options: 5..8, default = 8
+   :summarize_options:
+   :config_options: 5 | 6 | 7 |8
    :runtime:
    :parents: UART_TX, UART_RX
 
-   The component will only support UART with 8 bits per byte.
+   The component will support UART with configurable bits per byte (bits per character).
 
 .. feature:: STOP_BITS
-   :config_options: 1 (default) | 2
+   :summarize_options:
+   :config_options: 1 | 2
    :runtime:
    :parents: UART_TX, UART_RX
 
-   The component will only support UART with a single stop bit.
+   The component will support UARTS with a one or two stop bits.
 
 
 Limitations
@@ -100,9 +105,7 @@ Limitations
 
 The component has the following limitations:
 
-   * No flow control is implemented
-   * Parity bits, stop bits and bits per byte are restricted as
-     described in the previous section
+   * No uart side flow control is implemented. The client APi does have flow control.
    * No multi-sampling is done.
 
 API
