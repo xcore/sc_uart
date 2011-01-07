@@ -116,18 +116,14 @@ This section describes the API of the two UART components.
 UART Tx Component
 -----------------
 
-.. feature:: UART_TX_COMPONENT_API
-   :parents: UART_TX
-
-   The component will run in a virtual par with the following
-   function which does not terminate.
+The component will run in a virtual par with the following function which does not terminate.
 
      * void UartTx(int baud_rate, out buffered port:1 p, chanend c)
 
 .. feature:: UART_TX_CLIENT_API
    :parents: UART_TX
 
-  
+ 
    The component has one client function call:
 
      * void UartTxSendByte(chanend c, unsigned x)
@@ -141,24 +137,18 @@ UART Tx Component
 UART Rx Component
 -----------------
 
-.. feature:: UART_RX_COMPONENT_API
-   :parents: UART_RX
-
-   The component will run in a virtual par with the following
-   function which does not terminate.
+The component will run in a virtual par with the following function which does not terminate.
 
      * UartRx(int baud_rate, out buffered port:1 p, chanend c)
 
-.. feature:: UART_RX_CLIENT_API
-   :parents: UART_RX
 
-   The component has one client function call:
+The component has one client function call:
 
      * void UartRxGetByte(chanend c, unsigned &x)
 
-   This function receives a byte from the UART Rx component buffer. If
-   called standalone it will block until a byte is ready to
-   receive. The function can also be called in a select::
+This function receives a byte from the UART Rx component buffer. If
+called standalone it will block until a byte is ready to
+receive. The function can also be called in a select::
  
            select 
             {
@@ -168,12 +158,12 @@ UART Rx Component
             ...
             }
   
-   In this usage model, the select case becomes active when the
-   component has data ready.
+In this usage model, the select case becomes active when the
+component has data ready.
       
-   Due to the buffering in the component the client does not need to 
-   call this function at the rate the component is receiving data
-   i.e. the client cannot block out the component.
+Due to the buffering in the component the client does not need to 
+call this function at the rate the component is receiving data
+i.e. the client cannot block out the component.
 
 Expected Resource Usage
 =======================
@@ -229,24 +219,6 @@ the following demo programs developed.
    data back out of the Tx component.
 
  
-Documentation
-=============
-
-Standard Arkanoid component documentation will be delivered:
-
-.. feature:: SUMMARY_PARAGRAPH
-   :parents: UART_RX, UART_TX
-
-   A summary paragraph of the main features of the component 
-   for inclusion in the datasheet.
-
-.. feature:: MANUAL
-   :parents: UART_RX, UART_TX
-
-   The pdf manual is a stand-alone document describing how to use the
-   component to a programmer. It includes the API description.
-
-
 Related Documents
 =================
 
