@@ -2,8 +2,11 @@
  UART  Software Component Testplan 
 ========================================================
 
-:Authors: David Lacey
-:Version: 1.0
+:Authors: Vishal Shah
+
+:Company: Mindtree
+
+:Version: 0.1
 
 .. sectnum::
 
@@ -91,6 +94,7 @@ Tests
    This test changes the BAUD_RATE, BITS_PER_BYTE, PARITY_BITS parameters at
    runtime using the configuration API.
 
+
 .. test:: rx_buffer_overflow_exception_test
    :setup: XC1A_LOOPBACK
    :features: UART_RX, UART_TX
@@ -116,3 +120,17 @@ Tests
    This test runs the back to back demo application provided with the UART
    components and checks tht data sent to the UART RX component is echoed
    by the UART RX component.
+
+.. test:: tx_buffer_overrun_exception_test
+   :setup: XC1A_LOOPBACK
+   :features: UART_RX, UART_TX
+ 
+    This test allows the UART TX buffer to transmit number of bytes more than the actuals and checks that an exception is raised.
+
+.. test:: tx_buffer_bits_per_byte_exception_test
+   :setup: XC1A_LOOPBACK
+   :features: UART_RX, UART_TX
+   
+ 
+   This test allows the UART TX buffer to transmit byte with different number of bits per byte than that of configuration and checks that an exception  is raised.
+
