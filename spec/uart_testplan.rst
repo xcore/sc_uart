@@ -97,11 +97,19 @@ Tests
 
 .. test:: rx_buffer_overflow_exception_test
    :setup: XC1A_LOOPBACK
-   :features: UART_RX, UART_TX
+   :features: UART_RX, UART_TX, UART_RX_BUFFERING, BUILD_OPTION_UART_RX_EXCEPT_ON_OVERFLOW_ON
    :test_time: 2
 
    This test allows the UART RX buffer to overflow and checks that an exception
-   is raised.
+   is raised. Only valid when firmware built with the BUILD_OPTION_UART_RX_EXCEPT_ON_OVERFLOW_ON option.
+
+.. test:: rx_buffer_overflow_drop_test
+   :setup: XC1A_LOOPBACK
+   :features: UART_RX, UART_TX, UART_RX_BUFFERING, BUILD_OPTION_UART_RX_EXCEPT_ON_OVERFLOW_OFF
+   :test_time: 2
+
+   This test allows the UART RX buffer to overflow and checks that the extra bits are dropped.
+   Only valid when firmware built with the BUILD_OPTION_UART_RX_EXCEPT_ON_OVERFLOW_OFF option.
 
 .. test:: loopback_demo_test
    :setup: XC1A_LOOPBACK
@@ -120,6 +128,13 @@ Tests
    This test runs the back to back demo application provided with the UART
    components and checks tht data sent to the UART RX component is echoed
    by the UART RX component.
+
+.. test:: tx_buffer_block_test
+   :setup: XC1A_LOOPBACK
+   :features: UART_TX, UART_TX_BUFFERING,  UART_TX_CLIENT_API
+ 
+    This test checks that the TX function blocks when tx buffer full. 
+
 
 .. test:: tx_buffer_overrun_exception_test
    :setup: XC1A_LOOPBACK
