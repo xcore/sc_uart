@@ -39,8 +39,9 @@ Functional Specification
 
 .. feature:: BUILD_OPTION_UART_TX_BUFFER_SIZE
    :parents: UART_TX
+   :config_options: BUFFER_SIZE_64_ON | BUFFER_SIZE_64_OFF
        
-     A ``#define`` will set the size of the UART Tx component buffer.
+     A ``#define`` will set the size of the UART Tx component buffer.Build option -D BUFFER_SIZE_64 will set UART Tx Buffer size 64 else buffer size is 1
 
 .. feature:: UART_RX
 
@@ -55,9 +56,10 @@ Functional Specification
      the buffer is full incoming bytes of data will be dropped.
 
 .. feature:: BUILD_OPTION_UART_RX_BUFFER_SIZE
+   :config_options: BUFFER_SIZE_64_ON | BUFFER_SIZE_64_OFF
    :parents: UART_RX
 
-     A ``#define`` will set the size of the UART Rx component buffer.
+     A ``#define`` will set the size of the UART Rx component buffer.Build option -D BUFFER_SIZE_64 will set UART Rx Buffer size 64 else buffer size is 1
 
 .. feature:: BUILD_OPTION_UART_RX_EXCEPT_ON_OVERFLOW
      :config_options: OFF | ON
