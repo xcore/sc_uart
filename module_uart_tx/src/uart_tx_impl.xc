@@ -15,6 +15,7 @@ static inline parity_32(unsigned x, enum uart_tx_parity parity)
 
 void uart_tx_impl_send_byte(chanend c, unsigned char byte)
 {
+
   chkct(c, XS1_CT_END);
   outuchar(c, byte);
   outct(c, XS1_CT_END);

@@ -15,6 +15,7 @@ enum uart_tx_parity {
   UART_TX_PARITY_NONE
 };
 
+
 /**
  * UART TX server function. This function never returns. The arguments specify
  * the initial configuration. The configuration may be changed with the 
@@ -85,5 +86,6 @@ void uart_tx_set_stop_bits(chanend c, unsigned stop_bits);
  * \param bits The number of bits per byte.
  */
 void uart_tx_set_bits_per_byte(chanend c, unsigned bits);
+
 
 #endif
