@@ -29,7 +29,7 @@ USED_MODULES = module_uart_rx.1v0 module_uart_tx.1v0
 #=============================================================================
 
 EXECUTABLE=bin/XC-1/app_uart_test.xe
-
+ 
 
 test:
 	xsim $(EXECUTABLE) --plugin LoopbackPort.dll '-xe $(EXECUTABLE) -port stdcore[0] XS1_PORT_1A 1 0 -port stdcore[0] XS1_PORT_1B 1 0'
