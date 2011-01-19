@@ -1,7 +1,7 @@
 #include "uart_tx_impl.h"
 #include "uart_tx.h"
 #include <xs1.h>
-
+#include <stdio.h>
 struct uart_tx_options {
   unsigned baud_rate;
   unsigned bits_per_byte;
@@ -58,8 +58,12 @@ void uart_tx(out port txd, unsigned char buffer[], unsigned buffer_size,
   options.parity = parity;
   options.stop_bits = stop_bits;
 
+
+
   while (1) {
     uart_tx_impl(txd, buffer, buffer_size, options.baud_rate, options.bits_per_byte, options.parity, options.stop_bits, c);
+    //printf("buffer = %x\n",buffer[0]);
+    //printf("buffer_size = %d\n",buffer_size);
     slave handle_config_packet(c, options);
   }
 }
