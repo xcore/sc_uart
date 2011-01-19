@@ -149,17 +149,3 @@ Tests
  
    This test allows the UART TX buffer to transmit byte with different number of bits per byte than that of configuration and checks that an exception  is raised.
 
-.. test:: buffer_size_minimum_test
-   :setup: XC1A_LOOPBACK
-   :features: BUILD_OPTION_UART_TX_BUFFER_SIZE_BUFFER_SIZE_64_OFF,BUILD_OPTION_UART_RX_BUFFER_SIZE_BUFFER_SIZE_64_OFF
-   
- 
-   This test checks for the minimum size ie. 1 byte for UART TX & UART_RX buffer and checks that an exception is raised,if data isnot communicated successfully from TX to RX buffer
-
-.. test:: buffer_size_maximum_test
-   :setup: XC1A_LOOPBACK
-   :features: BUILD_OPTION_UART_TX_BUFFER_SIZE_BUFFER_SIZE_64_ON,BUILD_OPTION_UART_RX_BUFFER_SIZE_BUFFER_SIZE_64_ON
-   
- 
-   This test checks for the maximum size ie. 64 bytes for UART TX & UART_RX buffer and checks that an exception is raised,if data isnot communicated successfully from TX to RX buffer.
-
