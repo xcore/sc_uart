@@ -1,6 +1,7 @@
 #include "uart_rx.h"
 #include "uart_rx_impl.h"
 #include <xs1.h>
+#include <stdio.h>
 
 static inline void trap()
 {
@@ -61,6 +62,8 @@ uart_rx(in buffered port:1 rxd, unsigned char buffer[],
   options.bits_per_byte = bits;
   options.parity = parity;
   options.stop_bits = stop_bits;
+
+  //printf("parity = %d\n",options.parity);
 
   while (1) {
     uart_rx_impl(rxd, buffer, buffer_size, options.baud_rate,
