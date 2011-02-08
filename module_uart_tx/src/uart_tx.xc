@@ -2,13 +2,15 @@
 #include "uart_tx.h"
 #include <xs1.h>
 #include <stdio.h>
+#include <stdlib.h>
+
 struct uart_tx_options {
   unsigned baud_rate;
   unsigned bits_per_byte;
   enum uart_tx_parity parity;
   unsigned stop_bits;
 };
-
+extern void Dump_error();
 enum {
   UART_TX_SET_BAUD_RATE_PKT,
   UART_TX_SET_PARITY_PKT,
@@ -61,6 +63,27 @@ void uart_tx(out port txd, unsigned char buffer[], unsigned buffer_size,
 
 
   while (1) {
+	  if(stop_bits > 2)
+	  {
+		   printf("Incorrect stop bits.Fail\n");
+		  _Exit(1);
+	  }
+	  if(parity>3)
+	  {
+		   printf("Incorrect parity.Fail\n");
+		  _Exit(1);
+	  }
+	  if((bits<5) || (bits>8))
+	  {
+		   printf("Incorrect bitsperbyte .Fail\n");
+		  _Exit(1);
+	  }
+      if((baud_rate!=115200) && (baud_rate!= 96000) && (baud_rate!=24000) && (baud_rate!= 57600))
+      {
+		   printf("Incorrect baud_rate .Fail\n");
+		  _Exit(1);
+      }
+
     uart_tx_impl(txd, buffer, buffer_size, options.baud_rate, options.bits_per_byte, options.parity, options.stop_bits, c);
     //printf("buffer = %x\n",buffer[0]);
     //printf("buffer_size = %d\n",buffer_size);
