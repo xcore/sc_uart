@@ -9,7 +9,6 @@
 #include "uart_tx.h"
 //#include "header.h"
 #include <stdio.h>
-#include "BuildOptions.h"
 #include "UART_test.h"
 #if 0
 #define BIT_RATE_0 57600
