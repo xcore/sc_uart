@@ -140,12 +140,14 @@ get_byte_from_buffer(chanend c, unsigned char buffer[],
     if (stopping)
       return 0;
     select {
+    #pragma xta call "call_1"
     case handle_chanend_packet(c, buffer, buffer_state, stopping):
       break;
     }
   }
   if (buffer_full(buffer_state)) {
     // Buffer is no longer full.
+    #pragma xta endpoint "endpoint_4"
     outct(c, XS1_CT_END);
   }
   byte = buffer[post_inc_read_index(buffer_state)];
@@ -184,11 +186,13 @@ uart_tx_impl2(out port txd, unsigned char buffer[], unsigned buffer_size,
   while (1) {
     unsigned byte, original_byte, port_time;
     // Get next byte to transmit.
+    //#pragma xta label "label_1"
     if (!get_byte_from_buffer(c, buffer, buffer_state, stopping, byte))
       return;
     original_byte = byte;
 
     // Output start bit.
+   // #pragma xta endpoint "endpoint_2"
     txd <: 0 @ port_time;
     t :> tmr_time;
 
@@ -196,6 +200,7 @@ uart_tx_impl2(out port txd, unsigned char buffer[], unsigned buffer_size,
     for (int i = 0; i < bits_per_byte; i++) {
       tmr_time += bit_time;
       port_time += bit_time;
+     // #pragma xta endpoint "endpoint_3"
       txd @ port_time <: >> byte;
 
       pause_until_time(t, tmr_time, c, buffer, buffer_state, stopping);
@@ -205,8 +210,10 @@ uart_tx_impl2(out port txd, unsigned char buffer[], unsigned buffer_size,
     if (parity != UART_TX_PARITY_NONE) {
       tmr_time += bit_time;
       port_time += bit_time;
+      #pragma xta label "label_0"
       txd @ port_time <: parity_32(original_byte, parity);
 
+      #pragma xta call "call_0"
       pause_until_time(t, tmr_time, c, buffer, buffer_state, stopping);
     }
 
