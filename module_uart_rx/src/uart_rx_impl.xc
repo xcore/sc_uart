@@ -111,6 +111,7 @@ handle_chanend(chanend c, unsigned char buffer[],
                struct buffer_state &buffer_state,
                int &unacknowledged_byte_sent, int &stopping)
 {
+  #pragma xta endpoint "endpoint_0"
   if (testct(c)) {
     chkct(c, XS1_CT_END);
     if (buffer_empty(buffer_state)) {
@@ -146,6 +147,7 @@ handle_chanend(chanend c, unsigned char buffer[],
       outuchar(c, 0);
       outct(c, XS1_CT_END);
     }
+    #pragma xta endpoint "endpoint_1"
     chkct(c, XS1_CT_END);
   }
 }
@@ -164,6 +166,7 @@ add_to_buffer(unsigned byte, chanend c, unsigned char buffer[],
     buffer[post_inc_write_index(buffer_state)] = byte;
   } else {
     // Overrun.
+	  trap();
   }
 }
 
