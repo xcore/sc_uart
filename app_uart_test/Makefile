@@ -18,7 +18,7 @@ APP_NAME =
 # If the variable XCC_MAP_FLAGS is set it overrides the flags passed to 
 # xcc for the final link (mapping) stage.
 
-XCC_FLAGS = -O2 -g
+XCC_FLAGS = -O2 -g $(EXTRA_FLAGS)
 
 # The USED_MODULES variable lists other module used by the application. 
 
@@ -27,13 +27,6 @@ USED_MODULES = module_uart_rx.1v0 module_uart_tx.1v0
 
 
 #=============================================================================
-
-EXECUTABLE=bin/XC-1/app_uart_test.xe
- 
-
-test:
-	xsim $(EXECUTABLE) --plugin LoopbackPort.dll '-xe $(EXECUTABLE) -port stdcore[0] XS1_PORT_1A 1 0 -port stdcore[0] XS1_PORT_1B 1 0'
-
 
 
 #=============================================================================
@@ -53,3 +46,9 @@ all: $(BIN_DIR)/$(APP_NAME).xe
 	@echo Build Complete
 
 clean: clean_common
+
+EXECUTABLE=bin/XC-1/app_uart_test.xe
+ 
+
+test:
+	xsim $(ARGUMENT) $(EXECUTABLE) --plugin LoopbackPort.dll '-xe $(EXECUTABLE) -port stdcore[0] XS1_PORT_1A 1 0 -port stdcore[0] XS1_PORT_1B 1 0'
