@@ -1,46 +1,41 @@
 Overview 
 ========
-    The UART (Universal Asynchronous Receiver and Transmitter ) has following two components .Each Component has one thread which is connected via channel to the Client API . 
+    The UART (Universal Asynchronous Receiver and Transmitter ) has following two components which can be used independantly. Each Component has one thread which is connected via channel to the Client API . 
 
-Components 
-----------
+UART TX (module_uart_tx)
+-------
 
-UART TX   
-+++++++
+UART TX component for transmitting data serially to 1 single bit port with specified configurations. This can be used as stand alone package as module_uart_tx.1v0
 
-This is a component responsible for transmitting the data . It is a stand alone component.
-It communicates from Xcore to external device. 
  
-UART RX  
-+++++++
-This component is responsible for receiving the data. It is a stand alone component. It communicates from external device to Xcore.
+UART RX (module_uart_rx) 
+-------
 
+UART RX component for receiving from 1 single bit port data serially as per the specified configurations. This can be used as stand alone package as module_uart_rx.1v0 
 
-   module_uart_tx:
-      UART TX component for transmitting data serially to 1 single bit port with specified configurations. This can be used as stand alone package as module_uart_tx.1v0
+Dependencies
+------------
 
-   module_uart_rx:
-      UART RX component for receiving from 1 single bit port data serially as per the specified configurations. This can be used as stand alone package as module_uart_rx.1v0 
-
-   module_xmos_common:
-      Common build framework for applications using xmos modules.
+module_xmos_common, the common build framework for applications using xmos modules is required to build this module.
 
 
 Hardware Platform:
-=============
- The UART components are supported by all the hardware platforms from XMOS such as XC-1,XC-1A,XC-2,XK-1,etc.It can run on any of the XMOS devices such as XS1-L1,XS1-G4,etc.
- 
+==================
+
+The PWM components are supported by all the hardware platforms from XMOS having suitable IO such as XC-1,XC-1A,XC-2,XK-1,etc and can be run on any XS1-L or XS1-G series devices.
+  
 The following modules are provided in this package, these can be
 used in your applications:
 
 Demo applications :
 ------------------
 
-    The UART functionality is demonstrated using following demo applications. The applications run on XC-1 board and  XDE 10.4.2 or later versions .
+The UART functionality is demonstrated using following demo applications. The applications run on XC-1 board and using 10.4.2 or later versions of the tools.
 
 app_uart_test : 
-+++++++++++++    
-   It will send data out via the UART TX component using single bit port  and receive via UART RX component from another single bit port. It will check that the data matches . It requires hardware loopback.
++++++++++++++++
+ 
+   It will send data out via the UART TX component using single bit port  and receive via UART RX component from another single bit port. It will check that the data matches. It requires hardware loopback between the ports.
   
 app_uart_back2back : 
 ++++++++++++++++++
@@ -50,21 +45,21 @@ app_uart_back2back :
 System Description :
 ===================
 
-   The UART uses one buffer each for UART TX & UART RX component which are configurable from 1 to 64 bytes. Each of the component runs within single thread and are linked to Client API using channel. The channel for each thread shares one end to thread & another end to client. 
+   The UART uses one buffer each for UART TX & UART RX component which are configurable from 1 to 64 bytes. Each of the component runs within single thread and are linked to Client API using channel. 
 
-Thread for UART TX component receives data from Client & transmits that through 1 single bit port to external device. The bytes will get buffered and queued to get transmitted and in the case of TX buffer being full , client gets blocked for sending further data.  
-The thread for RX component receives data from external device via 1 single bit port into the RX buffer which is read by the client using channel. In case data is not ready , client will get blocked for reception until data is available at RX buffer.
+The thread for the UART TX component receives data from the Client & transmits that through 1 single bit port to external device. The bytes will get buffered and queued to get transmitted and in the case of TX buffer being full , the client gets blocked for sending further data.
+  
+The thread for the UART RX component receives data from external device via 1 single bit port into the RX buffer which is read by the client using channel. In case data is not ready , client will get blocked for reception until data is available at RX buffer.
 
 
 Programming Guide :
 =================
- The UART (Universal Asynchronous Receiver and Transmitter) module includes following software design.
+ The UART (Universal Asynchronous Receiver and Transmitter) module is structured as follows:
 
-API (Application Programming Interface)
 
 UART TX component : 
 -----------------    
-   For UART TX component following API runs in virtual Par which does not terminate.
+   For the UART TX component the following API runs in virtual Par which does not terminate.
 
 void uart_tx(out port txd, unsigned char buffer[], unsigned buffer_size,
          unsigned baud_rate, unsigned bits, enum uart_tx_parity parity,
@@ -72,12 +67,9 @@ void uart_tx(out port txd, unsigned char buffer[], unsigned buffer_size,
 
 The UART TX component has following client function calls :
   
-
 void uart_tx_send_byte(chanend c, unsigned char byte)
 
-	This function sends single byte data to be transmitted over serial link from Client to UART TX component. This byte will be buffered & queued to send. In case of buffer full , it will not return until there is space in the buffer. This function is not selectable.
-
-void uart_tx_set_baud_rate(chanend c, unsigned baud_rate)
+	This function sends single byte data to be transmitted over serial link from Client to UART TX component. This byte will be buffered & queued to send. In case of buffer full , it will not return until there is space in the buffer. This function is not selectable.void uart_tx_set_baud_rate(chanend c, unsigned baud_rate)
 
 void uart_tx_set_parity(chanend c, enum uart_tx_parity parity)
 
