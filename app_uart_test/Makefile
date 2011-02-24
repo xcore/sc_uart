@@ -35,7 +35,7 @@ USED_MODULES = module_uart_rx.1v0 module_uart_tx.1v0
 
 # Use the latest 1v* version of module_xmos_common
 -include ../module_xmos_common/build/Makefile.common
--include ../../xmos_common/module_xmos_common/build/Makefile.common
+-include ../../xcommon/module_xcommon/build/Makefile.common
 
 # The final target of the build. This is usually dependent on a binary file
 # in the $(BIN_DIR) directory e.g.

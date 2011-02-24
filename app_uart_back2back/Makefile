@@ -34,7 +34,7 @@ EXECUTABLE=bin/XC-1/app_uart_back2back.xe
 
 # Use the latest 1v* version of module_xmos_common
 -include ../module_xmos_common/build/Makefile.common
--include ../../xmos_common/module_xmos_common/build/Makefile.common
+-include ../../xcommon/module_xcommon/build/Makefile.common
 
 # The final target of the build. This is usually dependent on a binary file
 # in the $(BIN_DIR) directory e.g.
