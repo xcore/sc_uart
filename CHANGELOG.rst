@@ -1,11 +1,18 @@
-XCORE.com UART Component Changelog
-==================================
+XCORE.com UART Changelog
+======================
 
-:Version: 
-  unreleased
+:Version:   unreleased
 
 Firmware
-========
+=======
 
-:0v0:
-  Initial feature complete implementation and verification
+module_uart_tx
+----------------------
+
+   * Initial feature complete implementation and verification
+
+module_uart_rx
+----------------------
+
+   * Initial feature complete implementation and verification
+
