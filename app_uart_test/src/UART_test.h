@@ -1,5 +1,5 @@
-#define BIT_RATE 24000
-#define BITS_PER_BYTE 7
-#define SET_PARITY 0
+#define BIT_RATE 96000
+#define BITS_PER_BYTE 8
+#define SET_PARITY 2
 #define STOP_BIT 1
-
+# define CHECK_BUFFERING 
