@@ -27,7 +27,7 @@ RX and TX are defined as functions which each run in their own virtual par which
 
 A simulator plugin testbench and demo applictions are included.
 
-KNOWN ISSUES
+Known Issues
 ============
 
 none
