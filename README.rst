@@ -1,14 +1,12 @@
 XCORE.com UART SOFTWARE COMPONENT
 .................................
 
-:Version: 
-  unreleased
+:Last_stable_release:   unreleased
 
-:Status:
-  Feature complete with complete simulator plugin testbench
+:Status:  Feature complete
 
-:Maintainer:
-  Vishal Shah, Vishal_Shah@mindtree.com
+:Maintainer:  Vishal Shah (github: VishalShah9)
+
 
 Key Features
 ============
@@ -35,7 +33,8 @@ none
 Included Modules and Applications
 =================================
 
-xcommon
+   * xcommon git\@github.com:xmos/xcommon.git
+
 
 Support
 =======
