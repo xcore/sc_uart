@@ -25,13 +25,13 @@ RX and TX are defined as functions which each run in their own virtual par which
 
 A simulator plugin testbench and demo applictions are included.
 
-KNOWN ISSUES
+Known Issues
 ============
 
 none
 
-Included Modules and Applications
-=================================
+Required Modules
+=================
 
    * xcommon git\@github.com:xmos/xcommon.git
 
