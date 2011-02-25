@@ -32,8 +32,8 @@ KNOWN ISSUES
 
 none
 
-Included Modules and Applications
-=================================
+Required Modules
+=================
 
 xcommon
 
