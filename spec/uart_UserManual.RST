@@ -1,6 +1,7 @@
 Overview 
 ========
-    The UART (Universal Asynchronous Receiver and Transmitter ) has following two components which can be used independantly. Each Component has one thread which is connected via channel to the Client API . 
+
+The UART (Universal Asynchronous Receiver and Transmitter ) has following two components which can be used independantly. Each Component has one thread which is connected via channel to the Client API . 
 
 UART TX (module_uart_tx)
 ------------------------
@@ -19,34 +20,34 @@ Dependencies
 module_xmos_common, the common build framework for applications using xmos modules is required to build this module.
 
 
-Hardware Platform:
-==================
+Hardware Platform
+=================
 
 The PWM components are supported by all the hardware platforms from XMOS having suitable IO such as XC-1,XC-1A,XC-2,XK-1,etc and can be run on any XS1-L or XS1-G series devices.
   
 The following modules are provided in this package, these can be
 used in your applications:
 
-Demo applications :
--------------------
+Demo applications 
+-----------------
 
 The UART functionality is demonstrated using following demo applications. The applications run on XC-1 board and using 10.4.2 or later versions of the tools.
 
 app_uart_test 
 +++++++++++++
  
-   It will send data out via the UART TX component using single bit port  and receive via UART RX component from another single bit port. It will check that the data matches. It requires hardware loopback between the ports.
+It will send data out via the UART TX component using single bit port  and receive via UART RX component from another single bit port. It will check that the data matches. It requires hardware loopback between the ports.
   
 app_uart_back2back  
 ++++++++++++++++++
 
-   It will receive via the RX component and echo via TX component.
+It will receive via the RX component and echo via TX component.
 
 
 System Description 
 ===================
 
-   The UART uses one buffer each for UART TX & UART RX component which are configurable from 1 to 64 bytes. Each of the component runs within single thread and are linked to Client API using channel. 
+The UART uses one buffer each for UART TX & UART RX component which are configurable from 1 to 64 bytes. Each of the component runs within single thread and are linked to Client API using channel. 
 
 The thread for the UART TX component receives data from the Client & transmits that through 1 single bit port to external device. The bytes will get buffered and queued to get transmitted and in the case of TX buffer being full , the client gets blocked for sending further data.
   
@@ -55,11 +56,13 @@ The thread for the UART RX component receives data from external device via 1 si
 
 Programming Guide 
 =================
+
  The UART (Universal Asynchronous Receiver and Transmitter) module is structured as follows:
 
 
 UART TX component 
 -----------------    
+
    For the UART TX component the following API runs in virtual Par which does not terminate.
 
 void uart_tx(out port txd, unsigned char buffer[], unsigned buffer_size,
@@ -82,6 +85,7 @@ void uart_tx_set_bits_per_byte(chanend c, unsigned bits)
 
 UART RX component 
 -----------------
+
 void uart_rx(in buffered port:1 rxd, unsigned char buffer[],
                 unsigned buffer_size, unsigned baud_rate, unsigned bits,
                 enum uart_rx_parity parity, unsigned stop_bits,
@@ -116,10 +120,6 @@ Resource Usage
 The following table details the resource usage of each
 component of the reference design software.
 
-.. table:: Resource Usage
-
-  .. Memory :
-
  +---------------+------------- -+----------------+
  |   Memory      |  Size(KB)     | percentage(%)  |
  +===============+===============+================+
@@ -133,13 +133,8 @@ component of the reference design software.
  |Free(available)|   230.1       |   87.78        |                      
  +---------------+---------------+----------------+
  
-  ..Port :
   
-    For each configuration , it requires 1 x1-bit port.
-
-
-
-
+ For each configuration , it requires 1 x1-bit port.
 
 Validation 
 ==========
