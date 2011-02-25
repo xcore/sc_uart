@@ -16,16 +16,19 @@ Key Features
 Firmware Overview
 =================
 
-RX and TX are defined as functions which each run in their own virtual par which does not terminate, have a simple client API. 
+RX and TX are defined as functions which each run in their own virtual par which does not terminate, and have a simple client API. 
 
 A simulator plugin testbench and demo applictions are included.
 
 KNOWN ISSUES
 ============
 
+none
+
 Included Modules and Applications
 =================================
 
+xmos_common
 
 Intructions for Building Project 
 ================================
