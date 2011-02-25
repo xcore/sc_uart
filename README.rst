@@ -1,7 +1,14 @@
 XCORE.com UART SOFTWARE COMPONENT
 .................................
 
-Firmware Release Version:
+:Version: 
+  unreleased
+
+:Status:
+  Feature complete with complete simulator plugin testbench
+
+:Maintainer:
+  Vishal Shah, Vishal_Shah@mindtree.com
 
 Key Features
 ============
@@ -28,12 +35,7 @@ none
 Included Modules and Applications
 =================================
 
-xmos_common
-
-Intructions for Building Project 
-================================
-
-TBD
+xcommon
 
 Support
 =======
