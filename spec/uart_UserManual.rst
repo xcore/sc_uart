@@ -120,11 +120,10 @@ Resource Usage
 The following table details the resource usage of each
 component of the reference design software.
 
- +-----------------+------------- -+----------------+
+ +-----------------+---------------+----------------+
  |   Memory        |  Size(KB)     | percentage(%)  |
  +=================+===============+================+
  | Stack Memory    |     0.5       |    0.18        |
- |                 |               |                |
  +-----------------+---------------+----------------+			
  | Data Memory     |     1.7       |    0.64        |
  +-----------------+---------------+----------------+
@@ -139,7 +138,7 @@ component of the reference design software.
 Validation
 ==========
    
-      There are some test benches provided for validation of  demo application. The test benches can be run for various combinations of macros for setting different configuration for TX , RX components of UART. 
+There are some test benches provided for validation of  demo application. The test benches can be run for various combinations of macros for setting different configuration for TX , RX components of UART. 
 For running testbench , python script <regression_script_UART.py>. There are following ways to execute different testbench.
 
  +--------------------------+---------------------------------------------------+----------------------------------------------------------------+
