@@ -1,7 +1,7 @@
 XCORE.com UART SOFTWARE COMPONENT
 .................................
 
-:Last_stable_release:   unreleased
+:Stable release:   unreleased
 
 :Status:  Feature complete
 
