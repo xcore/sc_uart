@@ -32,7 +32,7 @@ static transaction
 handle_config_packet(chanend c, struct uart_tx_options &options)
 {
   unsigned char cmd;
-  unsigned tmp;
+  //  unsigned tmp;
   c :> cmd;
   switch (cmd) {
   #pragma fallthrough
