@@ -22,7 +22,7 @@ XCC_FLAGS = -O2 -g $(EXTRA_FLAGS)
 
 # The USED_MODULES variable lists other module used by the application.
 
-USED_MODULES = module_uart_rx.1v0 module_uart_tx.1v0
+USED_MODULES = module_uart_rx module_uart_tx
 
 
 
