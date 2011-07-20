@@ -7,7 +7,7 @@
 #include <assert.h>
 #include "uart_tx.h"
 
-static inline parity_32(unsigned x, enum uart_tx_parity parity)
+static inline int parity_32(unsigned x, enum uart_tx_parity parity)
 {
   // To compute even / odd parity the checksum should be initialised to 0 / 1
   // respectively. The values of the uart_rx_parity have been chosen so the
@@ -87,9 +87,9 @@ handle_chanend_packet(chanend c, unsigned char buffer[],
                       struct buffer_state &buffer_state,
                       int &stopping)
 {
-  unsigned char cmd;
-  unsigned tmp;
-  unsigned char byte;
+  //  unsigned char cmd;
+  //  unsigned tmp;
+  //  unsigned char byte;
   if (testct(c)) {
     // Shutdown
     chkct(c, XS1_CT_END);
