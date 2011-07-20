@@ -8,7 +8,8 @@
     <location>ssh://git@github.com/xcore/sc_uart</location>
     <name>sc_uart</name>
     <maintainer>VishalShah9</maintainer>
-    <release parenthash = "c52e65e310f931988b291b4a5f43689d291bcc06" version = "2.0.0rc0"></release>
+    <release parenthash = "c52e65e310f931988b291b4a5f43689d291bcc06" version = "2.0.0rc0" githash = "90ac1a62efb8f29d2347ad5c6a4dede282cad329"></release>
+    <release parenthash = "90ac1a62efb8f29d2347ad5c6a4dede282cad329" version = "2.0.0beta0"></release>
     <scope>example</scope>
     <vendor>XMOS</vendor>
     <xpd_version>1.0</xpd_version>
