@@ -46,6 +46,7 @@ do {\
 
 unsigned int bitsperbyte ;
 unsigned int set_parity = 0;
+#ifdef TEST_PARITY
 static int checkNoRxData(chanend uartRX, uart_rx_client_state &state, unsigned timeout)
 {
   timer t;
@@ -58,21 +59,24 @@ static int checkNoRxData(chanend uartRX, uart_rx_client_state &state, unsigned t
   case uart_rx_get_byte_byref(uartRX, state, byte):
     return 0;
   }
+  // unreachable
+  return 0;
 }
+#endif
 
 void testUART(chanend uartTX, chanend uartRX)
 {
 
-	int reminder;
-	int result =0;
-	int quatient = 99;
-	unsigned ui32stopbit = 1;
-	unsigned ui32bitsperbyte = 8;
+  //	int reminder;
+  //	int result =0;
+  //    int quatient = 99;
+  //	unsigned ui32stopbit = 1;
+  // unsigned ui32bitsperbyte = 8;
 //	struct STCTX stcontext;
 
 
  uart_rx_client_state rxState;
-  unsigned x;
+ //  unsigned x;
   uart_rx_init(uartRX, rxState);
   // Configure RX, TX
   uart_rx_set_baud_rate(uartRX, rxState, baud_rate);
