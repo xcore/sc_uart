@@ -33,7 +33,7 @@ handle_config_chanend(chanend c,
                       struct uart_rx_options &options)
 {
   unsigned char cmd;
-  unsigned tmp;
+  //  unsigned tmp;
   c :> cmd;
   switch (cmd) {
 #pragma fallthrough

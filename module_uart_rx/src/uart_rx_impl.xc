@@ -36,7 +36,7 @@ unsigned char uart_rx_impl_get_byte(chanend c, uart_rx_client_state &state)
   return byte;
 }
 
-static inline parity32(unsigned x, enum uart_rx_parity parity)
+static inline int parity32(unsigned x, enum uart_rx_parity parity)
 {
   // To compute even / odd parity the checksum should be initialised to 0 / 1
   // respectively. The values of the uart_rx_parity have been chosen so the
@@ -122,7 +122,7 @@ handle_chanend(chanend c, unsigned char buffer[],
     if (buffer_empty(buffer_state)) {
       unacknowledged_byte_sent = 0;
     } else {
-      unsigned byte = buffer[post_inc_read_index(buffer_state)];      
+      unsigned byte = buffer[post_inc_read_index(buffer_state)];
       outuchar(c, byte);
       outct(c, XS1_CT_END);
       buffer_state.sent_bytes++;
@@ -247,7 +247,7 @@ uart_rx_impl(in buffered port:1 rxd, unsigned char buffer[],
     time += bit_time / 2;
 
     pause_until_time(time, t, c, buffer,
-                     buffer_state, unacknowledged_byte_sent, stopping);    
+                     buffer_state, unacknowledged_byte_sent, stopping);
     if (stopping)
       return;
 
@@ -258,9 +258,9 @@ uart_rx_impl(in buffered port:1 rxd, unsigned char buffer[],
 
     // input data bits.
     for (int i = 0; i < bits_per_byte; i++) {
-      time += bit_time;      
+      time += bit_time;
       pause_until_time(time, t, c, buffer,
-                       buffer_state, unacknowledged_byte_sent, stopping);      
+                       buffer_state, unacknowledged_byte_sent, stopping);
       if (stopping)
         return;
       rxd :> >> byte;
@@ -272,7 +272,7 @@ uart_rx_impl(in buffered port:1 rxd, unsigned char buffer[],
       unsigned parity_bit;
       time += bit_time;
       pause_until_time(time, t, c, buffer,
-                       buffer_state, unacknowledged_byte_sent, stopping);      
+                       buffer_state, unacknowledged_byte_sent, stopping);
       if (stopping)
         return;
       rxd :> parity_bit;
@@ -285,7 +285,7 @@ uart_rx_impl(in buffered port:1 rxd, unsigned char buffer[],
     for (int i = 0; i < stop_bits; i++) {
       time += bit_time;
       pause_until_time(time, t, c, buffer,
-                       buffer_state, unacknowledged_byte_sent, stopping);      
+                       buffer_state, unacknowledged_byte_sent, stopping);
       if (stopping)
         return;
       rxd :> level_test;
@@ -293,7 +293,7 @@ uart_rx_impl(in buffered port:1 rxd, unsigned char buffer[],
       if (level_test != 1) {
         // Wait for pins to go high before we look for the start bit again.
         pause_until_pinseq(1, rxd, c, buffer,
-                           buffer_state, unacknowledged_byte_sent, stopping);        
+                           buffer_state, unacknowledged_byte_sent, stopping);
         if (stopping)
           return;
         data_valid = 0;
