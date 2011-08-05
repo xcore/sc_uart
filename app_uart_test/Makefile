@@ -40,4 +40,4 @@ EXECUTABLE=bin/XC-1/app_uart_test.xe
 
 
 test:
-	xsim $(ARGUMENT) $(EXECUTABLE) --plugin LoopbackPort.dll '-xe $(EXECUTABLE) -port stdcore[0] XS1_PORT_1A 1 0 -port stdcore[0] XS1_PORT_1B 1 0'
+	xsim $(ARGUMENT) $(EXECUTABLE) --plugin LoopbackPort.dll '-port stdcore[0] XS1_PORT_1A 1 0 -port stdcore[0] XS1_PORT_1B 1 0'
