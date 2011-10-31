@@ -25,10 +25,6 @@ XCC_FLAGS = -O2 -g $(EXTRA_FLAGS)
 USED_MODULES = module_uart_rx module_uart_tx
 
 
-
-#=============================================================================
-
-
 #=============================================================================
 # The following part of the Makefile includes the common build infrastructure
 # for compiling XMOS applications. You should not need to edit below here.
@@ -40,4 +36,4 @@ EXECUTABLE=bin/XC-1/app_uart_test.xe
 
 
 test:
-	xsim $(ARGUMENT) $(EXECUTABLE) --plugin LoopbackPort.dll '-port stdcore[0] XS1_PORT_1A 1 0 -port stdcore[0] XS1_PORT_1B 1 0'
+       xsim $(ARGUMENT) $(EXECUTABLE) --plugin LoopbackPort.dll '-port stdcore[0] XS1_PORT_1A 1 0 -port stdcore[0] XS1_PORT_1B 1 0'
