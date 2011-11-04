@@ -3,7 +3,7 @@ XCORE.com UART SOFTWARE COMPONENT
 
 :Stable release:   unreleased
 
-:Status (module_uart):  Design Ready
+:Status: (module_uart):  Design Ready
 :Status: (module_uart_fast): Example
 
 :Maintainer:  Dan Wilkinson (github: djpwilk)
@@ -45,6 +45,10 @@ Required Modules
 
    * xcommon git\@github.com:xmos/xcommon.git
 
+Further Information
+===================
+
+see doc/summary.rst
 
 Support
 =======
