@@ -22,13 +22,14 @@ The most important characteristics are the following:
 module_uart_rx, module_fast_tx
 ------------------------------
 
-This module is completely parameterisable. Performance figures are to be
-confirmed.
+This module is completely parameterisable and has been designed using a pattern that aims to make it possible to integrate a uart into a thread which is doing something else but has some free MIPS. 
+
+Performance figures are to be confirmed.
 
 module_uart_fast_rx, module_fast_uart_tx
 ----------------------------------------
 
-This module is a simple implementation of a UART that requires a thread for
+This module is a simpler implementation of a UART that requires a thread for
 transmission, a thread for reception, and requires very little memory. It
 can transmit data at a high baud rate (up to 10 Mbaud).
 
