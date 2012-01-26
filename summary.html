@@ -1,0 +1,201 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>UART Overview &mdash; UART v0v1 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0v1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="_static/xcomment.js"></script>
+    <link rel="top" title="UART v0v1 documentation" href="index.html" />
+    <link rel="next" title="Generic UART" href="generic.html" />
+    <link rel="prev" title="XCORE STAND ALONE UART COMPONENTS" href="index.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="index.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="generic.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="uart-overview">
+<h1>UART Overview<a class="headerlink" href="#uart-overview" title="Permalink to this headline">¶</a></h1>
+<p>UART is one of the most basic asynchronous communication protocols. Also
+known as RS-232, it transmits bits serially at a mutually agreed speed
+without providing a clock. The speed is known as the <em>baud</em> rate, and is
+typically something like 9600 baud, 115200 baud, or 10 Mbaud.</p>
+<p>The most important characteristics are the following:</p>
+<ul class="simple">
+<li>The baud rate.</li>
+<li>The number of start bits, typically 1, sometimes 1.5</li>
+<li>The number of data bits, typically 7 or 8</li>
+<li>Whether a parity bit is present, and if so whether it is even parity or
+odd parity</li>
+<li>The number of stop bits, typically 1, sometimes 2.</li>
+</ul>
+<div class="section" id="uart-implementation-alternatives">
+<h2>UART Implementation Alternatives<a class="headerlink" href="#uart-implementation-alternatives" title="Permalink to this headline">¶</a></h2>
+<p>Two UART components are included in this repository, each consisting of two modules (one for each of RX and TX), summarised below:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="21%" />
+<col width="12%" />
+<col width="8%" />
+<col width="15%" />
+<col width="15%" />
+<col width="13%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>Component</td>
+<td>modules</td>
+<td>Data rate</td>
+<td>Memory</td>
+<td>Parity</td>
+<td>Bits Per Byte</td>
+<td>Stop Bits</td>
+</tr>
+<tr><td rowspan="2">Generic UART</td>
+<td rowspan="2"><blockquote class="first">
+<div>module_uart_tx</div></blockquote>
+<blockquote class="last">
+<div>module_uart_rx</div></blockquote>
+</td>
+<td>to 115.2K</td>
+<td>~1K</td>
+<td>Even/Odd/None</td>
+<td>5/6/7/8</td>
+<td>1 or 2</td>
+</tr>
+<tr><td>to 115.2K</td>
+<td>~1K</td>
+<td>Even/Odd/None</td>
+<td>5/6/7/8</td>
+<td>1 or 2</td>
+</tr>
+<tr><td rowspan="2">Simple UART</td>
+<td rowspan="2"><blockquote class="first">
+<div>module_uart_fast_tx</div></blockquote>
+<blockquote class="last">
+<div>module_uart_fast_tx</div></blockquote>
+</td>
+<td>10 Mbaud</td>
+<td>0.25K</td>
+<td>None</td>
+<td>8</td>
+<td>1</td>
+</tr>
+<tr><td>10 Mbaud</td>
+<td>0.25K</td>
+<td>None</td>
+<td>8</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="generic-uart">
+<h3>Generic UART<a class="headerlink" href="#generic-uart" title="Permalink to this headline">¶</a></h3>
+<p>This module is completely parameterisable at run time and will require a thread for each of RX and TX. Unlike the simple uart below, it can operate at the standard UART baud rates.</p>
+</div>
+<div class="section" id="simple-uart">
+<h3>Simple UART<a class="headerlink" href="#simple-uart" title="Permalink to this headline">¶</a></h3>
+<p>This module is a much simpler implementation of a UART that will require a whole thread for RX and deliver up to 10 Mbaud. TX could be called as a function, and hence share a thread with other functionality although this will affect the TX baud rate achieved,and this usage is not shown.</p>
+<p>It is fixed to 8 bits, a single start bit, no parity, and a single stop bit. All of those parameters could be changed by altering the source code.</p>
+<p><em>The baud rate is parameterisable, but has to be a whole division of 100 MHz.</em> This may make it unsuitable for some applications requiring a very particular baud rate.</p>
+<p>Note that the code is easy to understand; it comprises the example from the
+XC programming manual.</p>
+</div>
+<div class="section" id="other-uarts">
+<h3>Other Uarts<a class="headerlink" href="#other-uarts" title="Permalink to this headline">¶</a></h3>
+<p>For an implementation of multi-uart suitable for applications where more than one uart is required, the sc_multi_uart component may be a better choice.</p>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">UART (0v1)</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">UART Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#uart-implementation-alternatives">UART Implementation Alternatives</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#generic-uart">Generic UART</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simple-uart">Simple UART</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-uarts">Other Uarts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="generic.html">Generic UART</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fast.html">Simple UART</a></li>
+</ul>
+
+<div id="searchbox" style="display: none;margin-bottom: 10px;">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

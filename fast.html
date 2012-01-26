@@ -1,0 +1,212 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Simple UART &mdash; UART v0v1 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0v1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="_static/xcomment.js"></script>
+    <link rel="top" title="UART v0v1 documentation" href="index.html" />
+    <link rel="prev" title="Generic UART" href="generic.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="generic.html"
+                        title="previous chapter"> &lt&lt </a>
+</div>
+
+            
+  <div class="section" id="simple-uart">
+<h1>Simple UART<a class="headerlink" href="#simple-uart" title="Permalink to this headline">¶</a></h1>
+<p>The intention of this module is to implement high speed uart, at the expense of threads and 1-bit ports. Other modules provide lower-speed uarts
+that are thread-efficient, or that may use fewer 1-bit ports. This module will support a 10 Mbaud rate with 100 MIPS threads, and correspondingly less
+with lower MIPS per thread.</p>
+<p>Note: the compiler inserts a spurious ZEXT and SETC in two places which makes 10 Mbit fail with 83 MIPS threads.</p>
+<div class="section" id="hardware-platforms">
+<h2>Hardware Platforms<a class="headerlink" href="#hardware-platforms" title="Permalink to this headline">¶</a></h2>
+<p>This UART is supported by all the hardware platforms from XMOS having suitable IO such as XC-1,XC-1A,XC-2,XK-1,etc and can be run on any XS1-L or XS1-G series devices.</p>
+<p>The example is prepared to run on teh XK-1 but can be easily modified for other boards. However note that a 500 MHz core clock is expected so when running on G4 devices
+the baud rate should be reduced until it works, which can be done by altering the last &#8220;clocks&#8221; argument to the call to uart_tx_fast and uart_rx_fast in app_uart_fast/src/main.xc.</p>
+</div>
+<div class="section" id="programming-guide">
+<h2>Programming Guide<a class="headerlink" href="#programming-guide" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="api">
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<dt><dl class="function">
+<dt id="uart_rx_fast">
+void <tt class="descname">uart_rx_fast</tt><big>(</big>in port<em>&nbsp;p</em>, streaming chanend<em>&nbsp;c</em>, int<em>&nbsp;clocks</em><big>)</big><a class="headerlink" href="#uart_rx_fast" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function implements a fast UART.</p>
+<p>It needs an unbuffered 1-bit port, a streaming channel end, and a number of port-clocks to wait between bits. It receives a start bit, 8 bits, and a stop bit, and transmits the 8 bits over the streaming channel end as a single token. On a 62.5 MIPS thread this function should be able to keep up with a 10 MBit UART sustained (provided that the streaming channel can keep up with it too).</p>
+<p>This function does not return.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>p</strong> &#8211; input port, 1 bit port on which data comes in</li>
+<li><strong>c</strong> &#8211; output streaming channel - read bytes of this channel (or words if you want to read 4 bytes at a time)</li>
+<li><strong>clocks</strong> &#8211; number of clock ticks between bits. This number depends on the clock that you have attached to port p; assuming it is the standard 100 Mhz reference clock then clocks should be at least 10.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dt><dl class="function">
+<dt id="uart_tx_fast">
+void <tt class="descname">uart_tx_fast</tt><big>(</big>out port<em>&nbsp;p</em>, streaming chanend<em>&nbsp;c</em>, int<em>&nbsp;clocks</em><big>)</big><a class="headerlink" href="#uart_tx_fast" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function implements a fast UART.</p>
+<p>It needs an unbuffered 1-bit port, a streaming channel end, and a number of port-clocks to wait between bits. It waits for a token on the streaming channel, and then sends a start bit, 8 bits, and a stop bit. On a 62.5 MIPS thread this function should be able to keep up with a 10 MBit UART sustained (provided that the streaming channel can keep up with it too).</p>
+<p>This function does not return.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>p</strong> &#8211; output port, 1 bit port on which data should be transmitted</li>
+<li><strong>c</strong> &#8211; input streaming channel - output bytes of this channel (or words if you want to output 4 bytes at a time)</li>
+<li><strong>clocks</strong> &#8211; number of clock ticks between bits. This number depends on the clock that you have attached to port p; assuming it is the standard 100 Mhz reference clock then clocks should be at least 10.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="example-programs">
+<h2>Example programs<a class="headerlink" href="#example-programs" title="Permalink to this headline">¶</a></h2>
+<p>Declare ports (and clock blocks if you do not want to run the ports of the
+reference clock):</p>
+<div class="highlight-none"><div class="highlight"><pre>clock refClk = XS1_CLKBLK_REF;
+
+in port rx = XS1_PORT_1A;
+out port tx = XS1_PORT_1B;
+</pre></div>
+</div>
+<p>A function that produces data (just bytes 0..255 in this example)</p>
+<div class="highlight-none"><div class="highlight"><pre>void produce(streaming chanend c) {
+    for(int i = 0; i &lt; 256; i++) {
+        c &lt;: (unsigned char) i;
+    }
+}
+</pre></div>
+</div>
+<p>A function that consumes data (and in this example throws it away)</p>
+<div class="highlight-none"><div class="highlight"><pre>void consume(streaming chanend c) {
+    unsigned char buf[256];
+    unsigned char foo;
+    for(int i = 0; i &lt; 200; i++) {
+      c :&gt; buf[i];
+    }
+    for(int i = 0; i &lt; 200; i++) {
+      printhexln(buf[i]);
+    
+    }
+}
+</pre></div>
+</div>
+<p>And a main par that starts the threads:</p>
+<div class="highlight-none"><div class="highlight"><pre>int main(void) {
+    streaming chan c, d;
+    configure_out_port_no_ready(tx, refClk, 1);
+    configure_in_port_no_ready(rx, refClk);
+    clearbuf(rx);
+    par {
+        produce(d);
+        consume(c);
+        uart_tx_fast(tx, d, 100);
+        uart_rx_fast(rx, c, 100);
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">UART (0v1)</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="summary.html">UART Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generic.html">Generic UART</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Simple UART</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-platforms">Hardware Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#programming-guide">Programming Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-programs">Example programs</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none;margin-bottom: 10px;">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

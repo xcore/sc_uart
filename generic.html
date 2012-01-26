@@ -1,0 +1,405 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Generic UART &mdash; UART v0v1 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0v1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="_static/xcomment.js"></script>
+    <link rel="top" title="UART v0v1 documentation" href="index.html" />
+    <link rel="next" title="Simple UART" href="fast.html" />
+    <link rel="prev" title="UART Overview" href="summary.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="summary.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="fast.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="generic-uart">
+<h1>Generic UART<a class="headerlink" href="#generic-uart" title="Permalink to this headline">¶</a></h1>
+<p>This UART has two modules, one for RX and one for TX each of which uses one thread and is connected via channel to another thread using the UART Client API .</p>
+<p>The thread for the UART TX component receives data from the client via a buffer (configurable between 1 and 64 bytes). A full buffer will block the client.</p>
+<p>The thread for the UART RX component receives data from external into the RX buffer (configurable between 1 and 64 bytes) which is read by the client using channel. An empty RX buffer will block the client.</p>
+<div class="section" id="hardware-platforms">
+<h2>Hardware Platforms<a class="headerlink" href="#hardware-platforms" title="Permalink to this headline">¶</a></h2>
+<p>This UART is supported by all the hardware platforms from XMOS having suitable IO such as XC-1,XC-1A,XC-2,XK-1,etc and can be run on any XS1-L or XS1-G series devices.</p>
+</div>
+<div class="section" id="programming-guide">
+<h2>Programming Guide<a class="headerlink" href="#programming-guide" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="key-files">
+<h3>Key Files<a class="headerlink" href="#key-files" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>File</td>
+<td>Description</td>
+</tr>
+<tr><td>module_uart_tx/src/uart_tx.h</td>
+<td>Client API header file for Generic UART TX</td>
+</tr>
+<tr><td>module_uart_tx/src/uart_tx.xc</td>
+<td>Client API implementation for Generic UART TX</td>
+</tr>
+<tr><td>module_uart_tx/src/uart_tx_impl.h</td>
+<td>UART TX Server Header File</td>
+</tr>
+<tr><td>module_uart_tx/src/uart_tx_impl.xc</td>
+<td>UART TX Server implementation</td>
+</tr>
+<tr><td>module_uart_rx/src/uart_rx.h</td>
+<td>Client API header file for Generic UART RX</td>
+</tr>
+<tr><td>module_uart_rx/src/uart_rx.xc</td>
+<td>Client API implementation for Generic UART RX</td>
+</tr>
+<tr><td>module_uart_rx/src/uart_rx_impl.h</td>
+<td>UART RX Server Header File</td>
+</tr>
+<tr><td>module_uart_rx/src/uart_rx_impl.xc</td>
+<td>UART RX Server implementation</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="required-repositories">
+<h3>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>xcommon git&#64;github.com:xcore/xcommon.git</li>
+</ul>
+</div>
+</div>
+<div class="section" id="resource-usage">
+<h2>Resource Usage<a class="headerlink" href="#resource-usage" title="Permalink to this headline">¶</a></h2>
+<p>The following table details the resource usage of the component.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="65%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Resource</th>
+<th class="head">Usage</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Code  Memory</td>
+<td>2110</td>
+</tr>
+<tr><td>Ports</td>
+<td>2 x 1b</td>
+</tr>
+<tr><td>ChannelEnds</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="demo-application">
+<h2>Demo Application<a class="headerlink" href="#demo-application" title="Permalink to this headline">¶</a></h2>
+<p>The UART functionality is demonstrated using the app_uart_back2back. This has been rpepared to run on an XK-1 board, but can easily be ported to other development boards with small modificatiosn to the code. To prepare the XK-1 board to run this app, simply connect a jumper such that ports 1A and 1B are connected (e.g. connect X0D1 and X0D0 pins on the GPIO header). Refer to the XK-1 Hardware Manual for pni positions.</p>
+<p>The app can then be built and run.</p>
+<p>It will send the full set of characters from the UART TX, receive them on UART RX and then print them out in batches of 10 characters.</p>
+<div class="section" id="app-uart-back2back">
+<h3>app_uart_back2back<a class="headerlink" href="#app-uart-back2back" title="Permalink to this headline">¶</a></h3>
+<p>It will receive via the RX component and echo via TX component.</p>
+</div>
+<div class="section" id="uart-tx-component-overview">
+<h3>UART TX component Overview<a class="headerlink" href="#uart-tx-component-overview" title="Permalink to this headline">¶</a></h3>
+<p>The UART TX component is started using the uart_tx() function, which causes the TX server (called &#8220;_impl&#8221; in the code) to run in a while(1) loop until it receives and instruction to shut down via the channel from the client. Additionally a set of client functions are provided to transmit a byte and to alter the baud rate, parity, bits per byte and stop bit settings. Any such action except transmitting a byte causes the TX server to terminate and then be restarted with the new settings. Any data in the TX buffer is preserved and then sent with the new settings.</p>
+</div>
+<div class="section" id="uart-tx-api">
+<h3>UART TX API<a class="headerlink" href="#uart-tx-api" title="Permalink to this headline">¶</a></h3>
+<dt><dl class="function">
+<dt id="uart_tx">
+void <tt class="descname">uart_tx</tt><big>(</big>out port<em>&nbsp;txd</em>, unsigned char<em>&nbsp;buffer[]</em>, unsigned<em>&nbsp;buffer_size</em>, unsigned<em>&nbsp;baud_rate</em>, unsigned<em>&nbsp;bits</em>, enum uart_tx_parity<em>&nbsp;parity</em>, unsigned<em>&nbsp;stop_bits</em>, chanend<em>&nbsp;c</em><big>)</big><a class="headerlink" href="#uart_tx" title="Permalink to this definition">¶</a></dt>
+<dd><p>UART TX server function.</p>
+<p>This function never returns and the arguments specify the initial configuration of parity, bits per byte etc. These are checked and then the inner UART TX loop (<tt class="xref c c-func docutils literal"><span class="pre">uart_tx_impl()</span></tt> is started and runs in a while(1) loop until it receives and instruction to shut down via the channel from the client. Additionally a set of client functions are provided to transmit a byte and to alter the baud rate, parity, bits per byte and stop bit settings. Note that the buffer size can only be changed when this function is first called, it cannot be changed thereafter.</p>
+<p>The client provides data to the server using the send byte function below.</p>
+<p>Arguments are as follows:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>txd</strong> &#8211; Transmitted data signal. Must be a 1-bit port.</li>
+<li><strong>buffer</strong> &#8211; Array for buffering bytes before they are transmitted.</li>
+<li><strong>buffer_size</strong> &#8211; Size of the  array.</li>
+<li><strong>baud_rate</strong> &#8211; Initial baud rate.</li>
+<li><strong>bits</strong> &#8211; Initial bits per character. Must be less than 8.</li>
+<li><strong>parity</strong> &#8211; Type of parity to initially use. No parity bit is transmitted if  is passed.</li>
+<li><strong>stop_bits</strong> &#8211; Initial number of stop bits to transmit.</li>
+<li><strong>c</strong> &#8211; Chanend to receive requests on, where a request is either a byte to transmit or a configuration change.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dt><dl class="function">
+<dt id="uart_tx_send_byte">
+void <tt class="descname">uart_tx_send_byte</tt><big>(</big>chanend<em>&nbsp;c</em>, unsigned char<em>&nbsp;byte</em><big>)</big><a class="headerlink" href="#uart_tx_send_byte" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a byte into the UART transmit buffer.</p>
+<p>If the the buffer is full then this function blocks until there is room in the buffer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>chanend</strong> &#8211; Other end of the channel passed to the <a class="reference internal" href="#uart_tx" title="uart_tx"><tt class="xref c c-func docutils literal"><span class="pre">uart_tx()</span></tt></a> function.</li>
+<li><strong>byte</strong> &#8211; Byte to transmit.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dt><dl class="function">
+<dt id="uart_tx_set_baud_rate">
+void <tt class="descname">uart_tx_set_baud_rate</tt><big>(</big>chanend<em>&nbsp;c</em>, unsigned<em>&nbsp;baud_rate</em><big>)</big><a class="headerlink" href="#uart_tx_set_baud_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>These functions Set the baud rate, parity, stop bits and bits-per-byte settings of the of the UART TX server.</p>
+<p>The change of configuration takes effect after all remaining data in transmit buffer is sent, and the functions block until the change of configuration takes effect.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>chanend</strong> &#8211; Other end of the channel passed to the <a class="reference internal" href="#uart_tx" title="uart_tx"><tt class="xref c c-func docutils literal"><span class="pre">uart_tx()</span></tt></a> function.</li>
+<li><strong>[setting]</strong> &#8211; The baud rate, parity or stop bits or bits-per-byte setting. Note parity is an enum.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dt><dl class="function">
+<dt id="uart_tx_set_parity">
+void <tt class="descname">uart_tx_set_parity</tt><big>(</big>chanend<em>&nbsp;c</em>, enum uart_tx_parity<em>&nbsp;parity</em><big>)</big><a class="headerlink" href="#uart_tx_set_parity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dt><dl class="function">
+<dt id="uart_tx_set_stop_bits">
+void <tt class="descname">uart_tx_set_stop_bits</tt><big>(</big>chanend<em>&nbsp;c</em>, unsigned<em>&nbsp;stop_bits</em><big>)</big><a class="headerlink" href="#uart_tx_set_stop_bits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dt><dl class="function">
+<dt id="uart_tx_set_bits_per_byte">
+void <tt class="descname">uart_tx_set_bits_per_byte</tt><big>(</big>chanend<em>&nbsp;c</em>, unsigned<em>&nbsp;bits</em><big>)</big><a class="headerlink" href="#uart_tx_set_bits_per_byte" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="uart-rx-component-overview">
+<h3>UART RX component Overview<a class="headerlink" href="#uart-rx-component-overview" title="Permalink to this headline">¶</a></h3>
+<p>The UART RX component is started using the uart_tx() function, which causes the TX server (called &#8220;_impl&#8221; in the code) to run in a while(1) loop until it receives and instruction to shut down via the channel from the client. Additionally a set of client functions are provided to fetch a byte from teh recieve buffer and to alter the baud rate, parity, bits per byte and stop bit settings. Any such action except transmitting a byte causes the RX server to terminate, the receive buffer emptied, and then restarted immediately with the new settings.</p>
+</div>
+<div class="section" id="uart-rx-api">
+<h3>UART RX API<a class="headerlink" href="#uart-rx-api" title="Permalink to this headline">¶</a></h3>
+<dt><dl class="function">
+<dt id="uart_rx">
+void <tt class="descname">uart_rx</tt><big>(</big>in buffered port:1<em>&nbsp;rxd</em>, unsigned char<em>&nbsp;buffer[]</em>, unsigned<em>&nbsp;buffer_size</em>, unsigned<em>&nbsp;baud_rate</em>, unsigned<em>&nbsp;bits</em>, enum uart_rx_parity<em>&nbsp;parity</em>, unsigned<em>&nbsp;stop_bits</em>, chanend<em>&nbsp;c</em><big>)</big><a class="headerlink" href="#uart_rx" title="Permalink to this definition">¶</a></dt>
+<dd><p>UART RX server function.</p>
+<p>The client must call the <tt class="xref c c-func docutils literal"><span class="pre">uart_rx_init()</span></tt> function to initialize the server before calling any other client functions. Bytes received by the server are buffered in the  array. When the buffer is full further incoming bytes of data will be dropped.</p>
+<p>This function never returns, and will start the server RX inner loop which runs in a while(1) loop until it is stopped via a command over channelend, following whcih the inner loop is automatyically restarted.</p>
+<p>The functions below are provided to change the UART RX parameters, parity, bits-per-byte, stop bits and baud rate, and all of these cause the RX inner loop to terminate while the new settings are applied. Bytes received during this time would be dropped, and any receive buffer contents are discarded when the settings are changed. Note that the buffer size can only be changed when this function is first called, it cannot be changed thereafter.</p>
+<p>The client uses <a class="reference internal" href="#uart_rx_get_byte" title="uart_rx_get_byte"><tt class="xref c c-func docutils literal"><span class="pre">uart_rx_get_byte()</span></tt></a> to get bytes from the receive buffer.</p>
+</dd></dl>
+
+<dt><dl class="function">
+<dt id="uart_rx_get_byte">
+unsigned char <tt class="descname">uart_rx_get_byte</tt><big>(</big>chanend<em>&nbsp;c</em>, uart_rx_client_state<em>&nbsp;&amp;state</em><big>)</big><a class="headerlink" href="#uart_rx_get_byte" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a byte from the receive buffer.</p>
+<p>This function blocks until there is a byte available.</p>
+</dd></dl>
+
+<dt><dl class="function">
+<dt id="uart_rx_get_byte_byref">
+void <tt class="descname">uart_rx_get_byte_byref</tt><big>(</big>chanend<em>&nbsp;c</em>, uart_rx_client_state<em>&nbsp;&amp;state</em>, unsigned char<em>&nbsp;&amp;byte</em><big>)</big><a class="headerlink" href="#uart_rx_get_byte_byref" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dt><dl class="function">
+<dt id="uart_rx_set_baud_rate">
+void <tt class="descname">uart_rx_set_baud_rate</tt><big>(</big>chanend<em>&nbsp;c</em>, uart_rx_client_state<em>&nbsp;&amp;state</em>, unsigned<em>&nbsp;baud_rate</em><big>)</big><a class="headerlink" href="#uart_rx_set_baud_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the baud rate of the UART RX server.</p>
+<p>The change of configuration takes place immediately.</p>
+</dd></dl>
+
+<dt><dl class="function">
+<dt id="uart_rx_set_parity">
+void <tt class="descname">uart_rx_set_parity</tt><big>(</big>chanend<em>&nbsp;c</em>, uart_rx_client_state<em>&nbsp;&amp;state</em>, enum uart_rx_parity<em>&nbsp;parity</em><big>)</big><a class="headerlink" href="#uart_rx_set_parity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the parity of the UART RX server.</p>
+<p>The change of configuration takes place immediately.</p>
+</dd></dl>
+
+<dt><dl class="function">
+<dt id="uart_rx_set_stop_bits">
+void <tt class="descname">uart_rx_set_stop_bits</tt><big>(</big>chanend<em>&nbsp;c</em>, uart_rx_client_state<em>&nbsp;&amp;state</em>, unsigned<em>&nbsp;stop_bits</em><big>)</big><a class="headerlink" href="#uart_rx_set_stop_bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set number of stop bits used by the UART RX server.</p>
+<p>The change of configuration takes place immediately.</p>
+</dd></dl>
+
+<dt><dl class="function">
+<dt id="uart_rx_set_bits_per_byte">
+void <tt class="descname">uart_rx_set_bits_per_byte</tt><big>(</big>chanend<em>&nbsp;c</em>, uart_rx_client_state<em>&nbsp;&amp;state</em>, unsigned<em>&nbsp;bits</em><big>)</big><a class="headerlink" href="#uart_rx_set_bits_per_byte" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set number of bits per byte used by the UART RX server.</p>
+<p>The change of configuration takes place immediately.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="verification">
+<h2>Verification<a class="headerlink" href="#verification" title="Permalink to this headline">¶</a></h2>
+<p>An application app_uart_test is provided to run in XSIM using the Loopback Plugin DLL (see Tools User Guide for details) that validates the various combinations of parity, stop bit, bits-per-byte and baud rate settings. It will send data out via the UART TX component using single bit port and receive via UART RX component from another single bit port. It will check that the data matches.</p>
+<p>The testbench is run using a python script: regression_script_UART.py. The test suites are executed as follows (after having built the application with the makefile provided:</p>
+<blockquote>
+<div><blockquote>
+<div>+==========================+===================================================+===============================================================+</div></blockquote>
+<div class="line-block">
+<div class="line-block">
+<div class="line">|                                                   <a href="#id1"><span class="problematic" id="id2">|</span></a>This test will confirm that buffer size is enough and data from |</div>
+</div>
+<div class="line">check buffering          | &lt;script.py&gt; -check_buffering                      <a href="#id3"><span class="problematic" id="id4">|</span></a>TX buffer to RX buffer passes correctly                         |</div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="36%" />
+<col width="45%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>runtime parameter change</td>
+<td>&lt;script.py&gt; -runtime_parameter_change</td>
+<td>This test will confirm UART module supports change in parameter
+during runtime such as baud-rate,bits per byte, parity, stopbit</td>
+</tr>
+<tr><td>Parity test</td>
+<td>&lt;script.py&gt; -test_parity</td>
+<td>This test will confirm UART module discards data in case of
+mismatch in  change in parity</td>
+</tr>
+<tr><td>single test</td>
+<td>script.py -buad_rate &lt;baud_rate&gt; -bitsperbyte
+&lt;bitsperbyte&gt; -parity &lt;parity&gt; -stopbit &lt;stopbit&gt;</td>
+<td>This test will confirm UART module discards data in case of
+mismatch in  change in parity</td>
+</tr>
+<tr><td>regression test</td>
+<td>&lt;script.py&gt;</td>
+<td><blockquote class="first">
+<div>This will take all possible combinations of baud-rate,bits</div></blockquote>
+<p class="last">per byte,parity and no. of stop bits.it will use testlist.txt</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The output is dumped to log.txt. This file should be manually removed, if it exists, before re-running.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">UART (0v1)</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="summary.html">UART Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Generic UART</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-platforms">Hardware Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#programming-guide">Programming Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#key-files">Key Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required-repositories">Required Repositories</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#resource-usage">Resource Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#demo-application">Demo Application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app-uart-back2back">app_uart_back2back</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uart-tx-component-overview">UART TX component Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uart-tx-api">UART TX API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uart-rx-component-overview">UART RX component Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uart-rx-api">UART RX API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#verification">Verification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fast.html">Simple UART</a></li>
+</ul>
+
+<div id="searchbox" style="display: none;margin-bottom: 10px;">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+
