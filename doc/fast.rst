@@ -1,5 +1,5 @@
-module_fast_uart
-================
+Simple UART
+===========
 
 The intention of this module is to implement high speed uart, at the
 expense of threads and 1-bit ports. Other modules provide lower-speed uarts
@@ -8,17 +8,25 @@ is designed to be used with 62.5 MIPS threads and supports 10 MBit UART TX
 and RX.
 
 Note: the compiler inserts a spurious ZEXT and SETC in two places which makes
-10 Mbit just a tiny bit tight at 62.5 MIPS.
+10 Mbit marginal at 62.5 MIPS.
+
+Hardware Platforms
+++++++++++++++++++
+
+This UART is supported by all the hardware platforms from XMOS having suitable IO such as XC-1,XC-1A,XC-2,XK-1,etc and can be run on any XS1-L or XS1-G series devices.
+
+Programming Guide
++++++++++++++++++
 
 API
----
++++
 
 .. doxygenfunction:: uart_rx
 
 .. doxygenfunction:: uart_tx
 
-Example program
----------------
+Example programs
+++++++++++++++++
 
 Declare ports (and clock blocks if you do not want to run the ports of the
 reference clock):

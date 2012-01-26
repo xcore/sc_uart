@@ -55,8 +55,7 @@ handle_config_chanend(chanend c,
   }
 }
 
-void
-uart_rx(in buffered port:1 rxd, unsigned char buffer[],
+void uart_rx(in buffered port:1 rxd, unsigned char buffer[],
                 unsigned buffer_size, unsigned baud_rate, unsigned bits,
                 enum uart_rx_parity parity, unsigned stop_bits,
                 chanend c)

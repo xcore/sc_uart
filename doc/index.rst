@@ -1,29 +1,10 @@
-Documentation
--------------
-
-Performance Summary
-'''''''''''''''''''
+XCORE STAND ALONE UART COMPONENTS
+=================================
 
 .. toctree::
 
    summary.rst
-
-Generic UART user guide
-'''''''''''''''''''''''
-
-This UART is completely parameterisable.
-
-.. toctree::
-
-   uart_UserManual.rst
-
-Fast and simple UART
-''''''''''''''''''''
-
-This UART is small, fast, but not parameterisable.
-
-.. toctree::
-
+   generic.rst
    fast.rst
 
 
