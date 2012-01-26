@@ -71,12 +71,12 @@ int main(void) {
         {x(); consume(c);}
         {x(); uart_tx_fast(tx, d, 10);}
         {x(); uart_rx_fast(rx, c, 10);}
-        //burn();
-        //burn();
-        //burn();
         burn();
+        //burn();
+        //burn();
+        //burn();
     }
     return 0;
 }
-
+//::
 #endif
