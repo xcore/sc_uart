@@ -45,6 +45,37 @@ Required Repositories
 
 * xcommon git\@github.com:xcore/xcommon.git
 
+Resource Usage
+--------------
+
+The following table details the resource usage of the component.
+
+ +-----------------+---------+
+ | Resource        | Usage   |
+ +=================+=========+
+ | Code  Memory    | 2110    |
+ +-----------------+---------+
+ | Ports           | 2 x 1b  |
+ +-----------------+---------+
+ | ChannelEnds     | 2       |
+ +-----------------+---------+
+
+  
+Demo Application
+-----------------
+
+The UART functionality is demonstrated using the app_uart_back2back. This has been rpepared to run on an XK-1 board, but can easily be ported to other development boards with small modificatiosn to the code. To prepare the XK-1 board to run this app, simply connect a jumper such that ports 1A and 1B are connected (e.g. connect X0D1 and X0D0 pins on the GPIO header). Refer to the XK-1 Hardware Manual for pni positions.
+
+The app can then be built and run. 
+
+It will send the full set of characters from the UART TX, receive them on UART RX and then print them out in batches of 10 characters.
+
+  
+app_uart_back2back
+++++++++++++++++++
+
+It will receive via the RX component and echo via TX component.
+
 UART TX component Overview
 ++++++++++++++++++++++++++
 
@@ -77,12 +108,13 @@ UART RX API
 .. doxygenfunction:: uart_rx_set_stop_bits
 .. doxygenfunction:: uart_rx_set_bits_per_byte
 
-Validation
-++++++++++
-   
-There are some test benches provided for validation of the demo application. The test benches can be run for various combinations of macros for setting different configuration for TX , RX components of UART. 
 
-The testbench is run using a python script: regression_script_UART.py. The test suites are executed as follows:
+Verification
+------------
+   
+An application app_uart_test is provided to run in XSIM using the Loopback Plugin DLL (see Tools User Guide for details) that validates the various combinations of parity, stop bit, bits-per-byte and baud rate settings. It will send data out via the UART TX component using single bit port and receive via UART RX component from another single bit port. It will check that the data matches.
+
+The testbench is run using a python script: regression_script_UART.py. The test suites are executed as follows (after having built the application with the makefile provided:
 
  +--------------------------+---------------------------------------------------+----------------------------------------------------------------+
  |   Testbench   	    |  Command   					| Description 	                                                 |
@@ -103,35 +135,6 @@ The testbench is run using a python script: regression_script_UART.py. The test 
  | regression test          |							|per byte,parity and no. of stop bits.it will use testlist.txt   | 
  +--------------------------+---------------------------------------------------+----------------------------------------------------------------+
 
+The output is dumped to log.txt. This file should be manually removed, if it exists, before re-running.
 
-Resource Usage
---------------
-
-The following table details the resource usage of the component.
-
- +-----------------+---------+
- | Resource        | Usage   |
- +=================+=========+
- | Code  Memory    | 2110    |
- +-----------------+---------+
- | Ports           | 2 x 1b  |
- +-----------------+---------+
- | ChannelEnds     | 2       |
- +-----------------+---------+
-
-  
-Demo applications
------------------
-
-The UART functionality is demonstrated using following demo applications. The applications run on XC-1 board and using 10.4.2 or later versions of the tools.
-
-app_uart_test
-+++++++++++++
- 
-It will send data out via the UART TX component using single bit port  and receive via UART RX component from another single bit port. It will check that the data matches. It requires hardware loopback between the ports.
-  
-app_uart_back2back
-++++++++++++++++++
-
-It will receive via the RX component and echo via TX component.
 
