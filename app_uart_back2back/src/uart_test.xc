@@ -7,19 +7,42 @@
 #include <platform.h>
 #include "uart_rx.h"
 #include "uart_tx.h"
+#include <print.h>
 
 void forward(chanend uartTX, chanend uartRX)
 {
   uart_rx_client_state rxState;
+  unsigned char rcvbuffer[10];
+  unsigned char byte;
+  int i;
+  unsigned int gotest;
+  gotest=1;
+  byte=0;
+  printstr("uartRX Init...\n");  
   uart_rx_init(uartRX, rxState);
-  while(1) {
-    unsigned byte = uart_rx_get_byte(uartRX, rxState);
-    uart_tx_send_byte(uartTX, byte);
+  while(gotest) {
+    printstr("Echo 10 bytes...");
+    for(i=0;i<10;i++) {
+      uart_tx_send_byte(uartTX, byte);
+      byte =  byte + 1;
+      if(byte==0xFF) {
+        gotest=0;
+      }
+    }
+    for(i=0;i<10;i++) {
+      rcvbuffer[i] = uart_rx_get_byte(uartRX, rxState);
+    }
+    for(i=0;i<10;i++) {
+      printhex(rcvbuffer[i]);
+      printstr(" ");
+    } 
+    printstr("done\n");
   }
+  printstr("Test Completed\n");
 }
 
-buffered in port:1 rx = PORT_UART_RX;
-out port tx = PORT_UART_TX;
+buffered in port:1 rx = on stdcore[0] : XS1_PORT_1A;
+out port tx = on stdcore[0] : XS1_PORT_1B;
 
 #define BAUD_RATE 115200
 
@@ -33,6 +56,7 @@ int main() {
       unsigned char tx_buffer[64];
       unsigned char rx_buffer[64];
       tx <: 1;
+      printstr("Test Start...\n");
       par {
         uart_rx(rx, rx_buffer, ARRAY_SIZE(rx_buffer), BAUD_RATE, 8, UART_TX_PARITY_NONE, 1, chanRX);
         uart_tx(tx, tx_buffer, ARRAY_SIZE(tx_buffer), BAUD_RATE, 8, UART_TX_PARITY_NONE, 1, chanTX);

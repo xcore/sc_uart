@@ -1,6 +1,8 @@
 #include <xs1.h>
 #include "uart_rx.h"
 #include "uart_tx.h"
+#include <print.h>
+#include <platform.h>
 
 //:: Port declarations
 clock refClk = XS1_CLKBLK_REF;
@@ -19,8 +21,14 @@ void produce(streaming chanend c) {
 
 //:: Consumer function
 void consume(streaming chanend c) {
-    for(int i = 0; i < 256; i++) {
-        c :> unsigned char _;
+    unsigned char buf[256];
+    unsigned char foo;
+    for(int i = 0; i < 200; i++) {
+      c :> buf[i];
+    }
+    for(int i = 0; i < 200; i++) {
+      printhexln(buf[i]);
+    
     }
 }
 //::
@@ -44,10 +52,9 @@ int main(void) {
     par {
         produce(d);
         consume(c);
-        uart_tx(tx, d, 10);
-        uart_rx(rx, c, 10);
+        uart_tx_fast(tx, d, 100);
+        uart_rx_fast(rx, c, 100);
     }
-    return 0;
 }
 //::
 
@@ -62,11 +69,11 @@ int main(void) {
     par {
         {x(); produce(d);}
         {x(); consume(c);}
-        {x(); uart_tx(tx, d, 10);}
-        {x(); uart_rx(rx, c, 10);}
-        burn();
-        burn();
-        burn();
+        {x(); uart_tx_fast(tx, d, 10);}
+        {x(); uart_rx_fast(rx, c, 10);}
+        //burn();
+        //burn();
+        //burn();
         burn();
     }
     return 0;

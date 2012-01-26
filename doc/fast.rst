@@ -21,9 +21,8 @@ Programming Guide
 API
 +++
 
-.. doxygenfunction:: uart_rx
-
-.. doxygenfunction:: uart_tx
+.. doxygenfunction:: uart_rx_fast
+.. doxygenfunction:: uart_tx_fast
 
 Example programs
 ++++++++++++++++

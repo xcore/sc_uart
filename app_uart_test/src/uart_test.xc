@@ -70,8 +70,8 @@ void testUART(chanend uartTX, chanend uartRX)
   //	int reminder;
   //	int result =0;
   //    int quatient = 99;
-  //	unsigned ui32stopbit = 1;
-  // unsigned ui32bitsperbyte = 8;
+  unsigned ui32stopbit = 1;
+  unsigned ui32bitsperbyte = 8;
 //	struct STCTX stcontext;
 
 

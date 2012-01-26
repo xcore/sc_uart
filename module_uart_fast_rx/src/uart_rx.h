@@ -22,4 +22,4 @@
  *               that you have attached to port p; assuming it is the standard 100 Mhz
  *               reference clock then clocks should be at least 10.
  */
-extern void uart_rx(in port p, streaming chanend c, int clocks);
+extern void uart_rx_fast(in port p, streaming chanend c, int clocks);

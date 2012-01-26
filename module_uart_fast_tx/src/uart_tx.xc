@@ -5,7 +5,7 @@
 
 #include <xs1.h>
 
-void uart_tx(out port p, streaming chanend c, int clocks) {
+void uart_tx_fast(out port p, streaming chanend c, int clocks) {
     int t;
     unsigned char b;
     while (1) {

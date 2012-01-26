@@ -6,7 +6,7 @@
 #include <xs1.h>
 #include <xclib.h>
 
-void uart_rx(in port pIn, streaming chanend cOut, int clocks) {
+void uart_rx_fast(in port pIn, streaming chanend cOut, int clocks) {
     int dt2 = (clocks * 3)>>1;
     int dt = clocks;
     int t;

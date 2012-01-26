@@ -2,7 +2,7 @@
 # compiled for. It either refers to an XN file in the source directories
 # or a valid argument for the --target option when compiling.
 
-TARGET = XC-1
+TARGET = XK-1
 
 # The APP_NAME variable determines the name of the final .xe file. It should
 # not include the .xe postfix. If left blank the name will default to
@@ -32,7 +32,7 @@ USED_MODULES = module_uart_rx module_uart_tx
 XMOS_MAKE_PATH ?= ../..
 include $(XMOS_MAKE_PATH)/xcommon/module_xcommon/build/Makefile.common
 
-EXECUTABLE=bin/XC-1/app_uart_test.xe
+EXECUTABLE=bin/app_uart_test.xe
 
 
 test:

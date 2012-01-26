@@ -3,8 +3,8 @@ SPHINX_PROJECT_NAME=UART
 VERSION=0v1
 DOXYGEN_DIRS=$(REPO)/module_uart_rx \
              $(REPO)/module_uart_tx \
-             $(REPO)/module_fast_uart_rx \
-             $(REPO)/module_fast_uart_tx
+             $(REPO)/module_uart_fast_rx \
+             $(REPO)/module_uart_fast_tx
 SOURCE_INCLUDE_DIRS=$(REPO)
 XDOC_DIR ?= ../../xdoc
 include $(XDOC_DIR)/Makefile.inc

@@ -16,11 +16,10 @@ def run_command(log):
 	
 	#log.write("TESTING..\n")
 	log.write("\t\t\t\t\t\t")
-	executable="bin/XC-1/app_uart_test.xe"
-	command="xsim " + executable + " --plugin LoopbackPort.dll \"-xe " + executable + \
-	    " -port stdcore[0] XS1_PORT_1A 1 0 " + \
-	    " -port stdcore[0] XS1_PORT_1B 1 0\""
-
+	executable="bin/app_uart_test.xe"
+         
+	command="xsim " + executable + " --plugin LoopbackPort.dll \'-port stdcore[0] XS1_PORT_1A 1 0 -port stdcore[0] XS1_PORT_1B 1 0\'"
+        print command
 	log.write(os.popen(command).read())
 
 
