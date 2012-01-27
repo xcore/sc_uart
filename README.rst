@@ -12,28 +12,34 @@ XCORE.com UART SOFTWARE COMPONENT
 Key Features
 ============
 
-module_uart_rx/tx
------------------
+Generic UART
+------------
 
-   * Designed to be composed with other application functions in the same thread. Note that this is a manual process.
-   * RX and TX in separate threads
-   * Baud Rates up to 115.2K
-   * Even, Odd or No Parity
-   * 5,6,7 or 8 bits per byte
-   * 1 or 2 stop bits
+module_uart_rx
+module_uart_tx
+
+   * Inline library that assumes RX and TX in separate threads
+   * Baud Rates up to 115.2K, any combination of bits per byte, parity, stop bits
    * configurable buffer sizes  
-   * RX and TX are defined as functions which each run in their own virtual par which does not terminate, and have a  
-     simple client API. 
-   * A simulator plugin testbench and demo applictions are included.
+   * An XSIM testbench and demo appliction for the XK-1A is included.
 
-module_uart_fast_rx/tx
-----------------------
+Simple/Fast UART
+----------------
+
+module_uart_fast_rx
+module_uart_fast_tx
 
    * Needs thread for transmission and another for reception
-   * Fixed to 8 bits, single start bit, no parity, single stop bit. 
+   * Fixed to 8 bits per byte, single start bit, no parity, single stop bit. 
    * All of these parameters can be changed by editing the module. 
    * The baud rate is parameterisable, but has to be a whole division of 100 MHz.
-   * Basic testing to 10 MBaud has been done
+   * 10 MBaud is achievable in a 100 MIPS thread
+   * Includes an XK-1A demo application
+
+Documentation
+=============
+
+See http://github.xcore.com/sc_uart.
 
 Known Issues
 ============
@@ -44,11 +50,6 @@ Required Modules
 =================
 
    * xcommon git\@github.com:xmos/xcommon.git
-
-Further Information
-===================
-
-see doc/summary.rst
 
 Support
 =======
