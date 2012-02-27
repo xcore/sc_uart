@@ -23,10 +23,10 @@ void produce(streaming chanend c) {
 void consume(streaming chanend c) {
     unsigned char buf[256];
     unsigned char foo;
-    for(int i = 0; i < 200; i++) {
+    for(int i = 0; i < 256; i++) {
       c :> buf[i];
     }
-    for(int i = 0; i < 200; i++) {
+    for(int i = 0; i < 256; i++) {
       printhexln(buf[i]);
     
     }
@@ -52,8 +52,8 @@ int main(void) {
     par {
         produce(d);
         consume(c);
-        uart_tx_fast(tx, d, 100);
-        uart_rx_fast(rx, c, 100);
+        uart_tx_fast(tx, d, 10);
+        uart_rx_fast(rx, c, 10);
     }
 }
 //::
