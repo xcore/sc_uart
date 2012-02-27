@@ -31,9 +31,3 @@ USED_MODULES = module_uart_rx module_uart_tx
 
 XMOS_MAKE_PATH ?= ../..
 include $(XMOS_MAKE_PATH)/xcommon/module_xcommon/build/Makefile.common
-
-EXECUTABLE=bin/app_uart_test.xe
-
-
-test:
-	xsim $(ARGUMENT) $(EXECUTABLE) --plugin LoopbackPort.dll '-port stdcore[0] XS1_PORT_1A 1 0 -port stdcore[0] XS1_PORT_1B 1 0'
