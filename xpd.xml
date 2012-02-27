@@ -12,8 +12,9 @@
     <release parenthash = "9fa457c77bab8d1f080078a3280a53027345d75c" version = "2.1.0rc1" githash = "9cc96c9ef88cb2453515d55c699f668fa4d7952a"></release>
     <release parenthash = "9cc96c9ef88cb2453515d55c699f668fa4d7952a" version = "2.1.0rc2" githash = "8f7347efdb44f41b9c410218bb3f01f59791b2d7"></release>
     <release parenthash = "8f7347efdb44f41b9c410218bb3f01f59791b2d7" version = "2.1.0rc3" githash = "857bca3647f514698438f6ef408b94e9820f6699"></release>
-    <release parenthash = "857bca3647f514698438f6ef408b94e9820f6699" version = "2.1.0rc4"></release>
+    <release parenthash = "857bca3647f514698438f6ef408b94e9820f6699" version = "2.1.0rc4" githash = "bd6c7209a0029c2a89b910a241fe8c9cce622baf"></release>
     <scope>product</scope>
+    <docdir>doc</docdir>
     <vendor>XMOS</vendor>
     <xpd_version>1.0</xpd_version>
 </xpd>
