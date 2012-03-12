@@ -10,13 +10,16 @@
     <location>git@github.com:xcore/sc_uart.git</location>
     <name>sc_uart</name>
     <maintainer>djpwilk</maintainer>
+    <partnumber>XM-001651-DH</partnumber>
     <release parenthash = "891637d4246a8058f3e413ab7e1ade4329acaf78" version = "2.1.0rc0" githash = "9fa457c77bab8d1f080078a3280a53027345d75c"></release>
     <release parenthash = "9fa457c77bab8d1f080078a3280a53027345d75c" version = "2.1.0rc1" githash = "9cc96c9ef88cb2453515d55c699f668fa4d7952a"></release>
     <release parenthash = "9cc96c9ef88cb2453515d55c699f668fa4d7952a" version = "2.1.0rc2" githash = "8f7347efdb44f41b9c410218bb3f01f59791b2d7"></release>
     <release parenthash = "8f7347efdb44f41b9c410218bb3f01f59791b2d7" version = "2.1.0rc3" githash = "857bca3647f514698438f6ef408b94e9820f6699"></release>
     <release parenthash = "857bca3647f514698438f6ef408b94e9820f6699" version = "2.1.0rc4" githash = "bd6c7209a0029c2a89b910a241fe8c9cce622baf"></release>
     <release parenthash = "90ff8f754d29352f5c5294652ceadcc277c980b2" version = "2.1.0rc5" githash = "1e2b853fb389c7a7de22cc740041df2f1f4a5772"></release>
+    <release parenthash = "00891e914407c425505a63667bbb3b9d6870547b" version = "2.1.0rc6"></release>
     <scope>product</scope>
+    <subpartnumber>XM-000070-SW</subpartnumber>
     <vendor>XMOS</vendor>
     <xpd_version>1.0</xpd_version>
 </xpd>

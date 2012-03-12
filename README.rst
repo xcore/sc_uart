@@ -1,13 +1,15 @@
 XCORE.com UART SOFTWARE COMPONENT
 .................................
 
-:Stable release:   unreleased
+:Latest release: 2.1.0rc6
+:Maintainer: djpwilk
+:Description: Inline libraries for various simple uart implementations
+
 
 :Status: (module_uart):  Design Ready
 :Status: (module_uart_fast): Example
 
 :Maintainer:  Dan Wilkinson (github: djpwilk)
-
 
 Key Features
 ============
@@ -46,12 +48,13 @@ Known Issues
 
 none
 
-Required Modules
-=================
-
-   * xcommon git\@github.com:xmos/xcommon.git
-
 Support
 =======
 
 Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the manitainer for this line.
+
+Required software (dependencies)
+================================
+
+  * xcommon (if using development tools earlier than 11.11.0)
+
