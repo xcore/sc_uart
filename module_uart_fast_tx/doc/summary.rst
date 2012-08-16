@@ -22,30 +22,19 @@ The most important characteristics are the following:
 UART Implementation Alternatives
 --------------------------------
 
-Two UART components are included in this repository, each consisting of two modules (one for each of RX and TX), summarised below:
+UART components are included in this repository TX, summarised below:
 
 +--------------+---------------------+------------+--------+---------------+---------------+-------------+
 | Component    | modules             | Data rate  | Memory | Parity        | Bits Per Byte | Stop Bits   | 
 +--------------+---------------------+------------+--------+---------------+---------------+-------------+
-| Generic UART | module_uart_tx      | to 115.2K  | ~1K    | Even/Odd/None | 5/6/7/8       | 1 or 2      | 
-|              |---------------------+------------+--------+---------------+---------------+-------------+
-|              | module_uart_rx      | to 115.2K  | ~1K    | Even/Odd/None | 5/6/7/8       | 1 or 2      | 
-+--------------+---------------------+------------+--------+---------------+---------------+-------------+
 | Simple UART  | module_uart_fast_tx | 10 Mbaud   | 0.25K  | None          | 8             | 1           |
-|              |---------------------+------------+--------+---------------+---------------+-------------+
-|              | module_uart_fast_tx | 10 Mbaud   | 0.25K  | None          | 8             | 1           |
 +--------------+---------------------+------------+--------+---------------+---------------+-------------+
 
-
-Generic UART
-++++++++++++
-
-This module is completely parameterisable at run time and will require a thread for each of RX and TX. Unlike the simple uart below, it can operate at the standard UART baud rates.
 
 Simple UART
 +++++++++++
 
-This module is a much simpler implementation of a UART that will require a whole thread for RX and deliver up to 10 Mbaud. TX could be called as a function, and hence share a thread with other functionality although this will affect the TX baud rate achieved,and this usage is not shown. 
+This module is a much simpler implementation of a UART that will require a whole thread for TX and deliver up to 10 Mbaud. RX could be called as a function, and hence share a thread with other functionality although this will affect the TX baud rate achieved,and this usage is not shown. 
 
 It is fixed to 8 bits, a single start bit, no parity, and a single stop bit. All of those parameters could be changed by altering the source code. 
 

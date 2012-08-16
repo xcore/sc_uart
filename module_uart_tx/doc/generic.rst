@@ -1,12 +1,10 @@
 Generic UART
 ============
 
-This UART has two modules, one for RX and one for TX each of which uses one thread and is connected via channel to another thread using the UART Client API . 
+This UART has module for TX which uses one thread and is connected via channel to another thread using the UART Client API . 
 
 The thread for the UART TX component receives data from the client via a buffer (configurable between 1 and 64 bytes). A full buffer will block the client.
   
-The thread for the UART RX component receives data from external into the RX buffer (configurable between 1 and 64 bytes) which is read by the client using channel. An empty RX buffer will block the client.
-
 
 Hardware Platforms
 ------------------
@@ -31,14 +29,7 @@ Key Files
 +-------------------------------------+-----------------------------------------------+
 | module_uart_tx/src/uart_tx_impl.xc  | UART TX Server implementation                 |
 +-------------------------------------+-----------------------------------------------+
-| module_uart_rx/src/uart_rx.h        | Client API header file for Generic UART RX    |
-+-------------------------------------+-----------------------------------------------+
-| module_uart_rx/src/uart_rx.xc       | Client API implementation for Generic UART RX |
-+-------------------------------------+-----------------------------------------------+
-| module_uart_rx/src/uart_rx_impl.h   | UART RX Server Header File                    |
-+-------------------------------------+-----------------------------------------------+
-| module_uart_rx/src/uart_rx_impl.xc  | UART RX Server implementation                 |
-+-------------------------------------+-----------------------------------------------+
+
 
 Required Repositories
 +++++++++++++++++++++
@@ -90,23 +81,6 @@ UART TX API
 .. doxygenfunction:: uart_tx_set_parity
 .. doxygenfunction:: uart_tx_set_stop_bits
 .. doxygenfunction:: uart_tx_set_bits_per_byte
-
-
-UART RX component Overview
-++++++++++++++++++++++++++
-
-The UART RX component is started using the uart_tx() function, which causes the TX server (called "_impl" in the code) to run in a while(1) loop until it receives and instruction to shut down via the channel from the client. Additionally a set of client functions are provided to fetch a byte from teh recieve buffer and to alter the baud rate, parity, bits per byte and stop bit settings. Any such action except transmitting a byte causes the RX server to terminate, the receive buffer emptied, and then restarted immediately with the new settings. 
-
-UART RX API
-+++++++++++
-
-.. doxygenfunction:: uart_rx
-.. doxygenfunction:: uart_rx_get_byte
-.. doxygenfunction:: uart_rx_get_byte_byref
-.. doxygenfunction:: uart_rx_set_baud_rate
-.. doxygenfunction:: uart_rx_set_parity
-.. doxygenfunction:: uart_rx_set_stop_bits
-.. doxygenfunction:: uart_rx_set_bits_per_byte
 
 
 Verification
