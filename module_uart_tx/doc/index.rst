@@ -1,10 +1,11 @@
-XCORE STAND ALONE UART COMPONENTS
-=================================
+I2C Software Component
+----------------------
 
 .. toctree::
 
-   summary.rst
+   Overview.rst
+   Resource Requirements.rst
+   Hardware Requirements.rst
    generic.rst
-
-
-
+   Programming Guide.rst
+   

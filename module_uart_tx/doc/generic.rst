@@ -1,10 +1,12 @@
 Generic UART
 ============
 
-This UART has module for TX which uses one thread and is connected via channel to another thread using the UART Client API . 
+This UART has two modules, one for RX and one for TX each of which uses one thread and is connected via channel to another thread using the UART Client API . 
 
 The thread for the UART TX component receives data from the client via a buffer (configurable between 1 and 64 bytes). A full buffer will block the client.
   
+The thread for the UART RX component receives data from external into the RX buffer (configurable between 1 and 64 bytes) which is read by the client using channel. An empty RX buffer will block the client.
+
 
 Hardware Platforms
 ------------------
@@ -29,7 +31,6 @@ Key Files
 +-------------------------------------+-----------------------------------------------+
 | module_uart_tx/src/uart_tx_impl.xc  | UART TX Server implementation                 |
 +-------------------------------------+-----------------------------------------------+
-
 
 Required Repositories
 +++++++++++++++++++++

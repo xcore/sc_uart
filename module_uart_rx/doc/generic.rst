@@ -1,8 +1,10 @@
 Generic UART
 ============
 
-This UART has module for RX which uses one thread and is connected via channel to another thread using the UART Client API . 
+This UART has two modules, one for RX and one for TX each of which uses one thread and is connected via channel to another thread using the UART Client API . 
 
+The thread for the UART TX component receives data from the client via a buffer (configurable between 1 and 64 bytes). A full buffer will block the client.
+  
 The thread for the UART RX component receives data from external into the RX buffer (configurable between 1 and 64 bytes) which is read by the client using channel. An empty RX buffer will block the client.
 
 
@@ -66,6 +68,7 @@ app_uart_back2back
 
 It will receive via the RX component and echo via TX component.
 
+
 UART RX component Overview
 ++++++++++++++++++++++++++
 
@@ -81,6 +84,7 @@ UART RX API
 .. doxygenfunction:: uart_rx_set_parity
 .. doxygenfunction:: uart_rx_set_stop_bits
 .. doxygenfunction:: uart_rx_set_bits_per_byte
+
 
 
 Verification
