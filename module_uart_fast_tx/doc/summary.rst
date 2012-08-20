@@ -22,7 +22,7 @@ The most important characteristics are the following:
 UART Implementation Alternatives
 --------------------------------
 
-UART components are included in this repository TX, summarised below:
+Two UART components are included in this repository, each consisting of two modules (one for each of RX and TX), summarised below:
 
 +--------------+---------------------+------------+--------+---------------+---------------+-------------+
 | Component    | modules             | Data rate  | Memory | Parity        | Bits Per Byte | Stop Bits   | 
@@ -31,10 +31,11 @@ UART components are included in this repository TX, summarised below:
 +--------------+---------------------+------------+--------+---------------+---------------+-------------+
 
 
+
 Simple UART
 +++++++++++
 
-This module is a much simpler implementation of a UART that will require a whole thread for TX and deliver up to 10 Mbaud. RX could be called as a function, and hence share a thread with other functionality although this will affect the TX baud rate achieved,and this usage is not shown. 
+This module is a much simpler implementation of a UART that will require a whole thread for RX and deliver up to 10 Mbaud. TX could be called as a function, and hence share a thread with other functionality although this will affect the TX baud rate achieved,and this usage is not shown. 
 
 It is fixed to 8 bits, a single start bit, no parity, and a single stop bit. All of those parameters could be changed by altering the source code. 
 

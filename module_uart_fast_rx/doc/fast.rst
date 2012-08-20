@@ -23,6 +23,7 @@ API
 
 .. doxygenfunction:: uart_rx_fast
 
+
 Example programs
 ++++++++++++++++
 

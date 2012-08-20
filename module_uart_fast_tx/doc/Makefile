@@ -1,4 +1,4 @@
-REPO=../../sc_uart/module_uart_fast_tx
+REPO=../../sc_uart
 SPHINX_PROJECT_NAME=UART
 VERSION=0v1
 DOXYGEN_DIRS=$(REPO)/module_uart_fast_tx

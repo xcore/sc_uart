@@ -22,7 +22,7 @@ The most important characteristics are the following:
 UART Implementation Alternatives
 --------------------------------
 
-UART components are included in this repository RX, summarised below:
+ UART component included in this repository consisting of module RX, summarised below:
 
 +--------------+---------------------+------------+--------+---------------+---------------+-------------+
 | Component    | modules             | Data rate  | Memory | Parity        | Bits Per Byte | Stop Bits   | 
@@ -30,11 +30,6 @@ UART components are included in this repository RX, summarised below:
 | Simple UART  | module_uart_fast_rx | 10 Mbaud   | 0.25K  | None          | 8             | 1           |
 +--------------+---------------------+------------+--------+---------------+---------------+-------------+
 
-
-Generic UART
-++++++++++++
-
-This module is completely parameterisable at run time and will require a thread for each of RX and TX. Unlike the simple uart below, it can operate at the standard UART baud rates.
 
 Simple UART
 +++++++++++
@@ -47,6 +42,7 @@ It is fixed to 8 bits, a single start bit, no parity, and a single stop bit. All
 
 Note that the code is easy to understand; it comprises the example from the
 XC programming manual.
+
 
 Other Uarts
 +++++++++++
