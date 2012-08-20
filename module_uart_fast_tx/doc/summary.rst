@@ -27,20 +27,10 @@ Two UART components are included in this repository, each consisting of two modu
 +--------------+---------------------+------------+--------+---------------+---------------+-------------+
 | Component    | modules             | Data rate  | Memory | Parity        | Bits Per Byte | Stop Bits   | 
 +--------------+---------------------+------------+--------+---------------+---------------+-------------+
-| Generic UART | module_uart_tx      | to 115.2K  | ~1K    | Even/Odd/None | 5/6/7/8       | 1 or 2      | 
-|              |---------------------+------------+--------+---------------+---------------+-------------+
-|              | module_uart_rx      | to 115.2K  | ~1K    | Even/Odd/None | 5/6/7/8       | 1 or 2      | 
-+--------------+---------------------+------------+--------+---------------+---------------+-------------+
 | Simple UART  | module_uart_fast_tx | 10 Mbaud   | 0.25K  | None          | 8             | 1           |
-|              |---------------------+------------+--------+---------------+---------------+-------------+
-|              | module_uart_fast_tx | 10 Mbaud   | 0.25K  | None          | 8             | 1           |
 +--------------+---------------------+------------+--------+---------------+---------------+-------------+
 
 
-Generic UART
-++++++++++++
-
-This module is completely parameterisable at run time and will require a thread for each of RX and TX. Unlike the simple uart below, it can operate at the standard UART baud rates.
 
 Simple UART
 +++++++++++

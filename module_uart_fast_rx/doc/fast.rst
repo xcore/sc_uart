@@ -22,7 +22,7 @@ API
 +++
 
 .. doxygenfunction:: uart_rx_fast
-.. doxygenfunction:: uart_tx_fast
+
 
 Example programs
 ++++++++++++++++
