@@ -46,29 +46,54 @@ void uart_tx(out port txd, unsigned char buffer[], unsigned buffer_size,
              unsigned baud_rate, unsigned bits, enum uart_tx_parity parity,
              unsigned stop_bits, chanend c);
 
+#pragma select handler
+
 /**
  * Adds a byte into the UART transmit buffer. If the the buffer is full then this function blocks until there is room in the buffer.
- * \param chanend      Other end of the channel passed to the uart_tx() function.
+ * \param c            Other end of the channel passed to the uart_tx() function.
  * \param byte         Byte to transmit.
  */
 
-#pragma select handler
 void uart_tx_send_byte(chanend c, unsigned char byte);
 
 /**
- * These functions Set the baud rate, parity, stop bits and bits-per-byte settings of the of the UART TX server. 
- * The change of configuration takes effect after all remaining data in transmit buffer is sent, and the functions
- * block until the change of configuration takes effect.
+ * Set the baud rate of the of the UART TX server. 
+ * The change of configuration takes effect after all remaining data in transmit buffer is sent, and the function
+ * blocks until the change of configuration takes effect.
  *
- * \param chanend       Other end of the channel passed to the uart_tx() function.
- * \param [setting]     The baud rate, parity or stop bits or bits-per-byte setting. Note parity is an enum.
+ * \param c             Other end of the channel passed to the uart_tx() function.
+ * \param baud_rate     The baud rate setting. 
  */
 void uart_tx_set_baud_rate(chanend c, unsigned baud_rate);
 
+/**
+ * Set the parity of the of the UART TX stop bit. 
+ * The change of configuration takes effect after all remaining data in transmit buffer is sent, and the function
+ * blocks until the change of configuration takes effect.
+ *
+ * \param c             Other end of the channel passed to the uart_tx() function.
+ * \param parity     The parity setting. Note parity is an enum.
+ */
 void uart_tx_set_parity(chanend c, enum uart_tx_parity parity);
 
+/**
+ * Set the number of stop bits used by the UART TX server. 
+ * The change of configuration takes effect after all remaining data in transmit buffer is sent, and the function
+ * blocks until the change of configuration takes effect.
+ *
+ * \param c             Other end of the channel passed to the uart_tx() function.
+ * \param stop_bits     The stop bits or bits-per-byte setting. Note parity is an enum.
+ */
 void uart_tx_set_stop_bits(chanend c, unsigned stop_bits);
 
+/**
+ * Set the bits per byte rate of the of the UART TX server. 
+ * The change of configuration takes effect after all remaining data in transmit buffer is sent, and the function
+ * blocks until the change of configuration takes effect.
+ *
+ * \param c             Other end of the channel passed to the uart_tx() function.
+ * \param bits          The bits or bits-per-byte setting.
+ */
 void uart_tx_set_bits_per_byte(chanend c, unsigned bits);
 
 
