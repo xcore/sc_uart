@@ -18,10 +18,10 @@ configPoints =
   {
     short   = "TX Buffer Size",
     long    = "Array for buffering bytes before they are transmitted",
-    help    = ""
+    help    = "",
     units   = "",
     type    = "int",
-    resourceUsageFlags = {"linear, othogonal"},
+    resourceUsageFlags = {"linear","orthogonal"},
     default = true
   },
   txInitialBaudRate =
@@ -44,26 +44,26 @@ configPoints =
     type    = "int",
     units   = "bits",
     resourceUsageFlags = {"noeffect"},
-    max     = 5,
-    min     = 8,
+    max     = 8,
+    min     = 5,
     default = 16
   },
   txInitialStopBits =
   {
-    short   = "Inital Stop Bits"
-    long    = "Initial stop bits Setting on start-up. Can be changed dynamically later.",
+    short   = "Inital Stop Bits",
+    long    = "Initial stop bits Setting on start-up. Can be changed dynamically later",
     help    = "",
     type    = "int",
     units   = "bits",
     resourceUsageFlags = {"noeffect"},
-    max     = 0,
-    min     = 2,
+    max     = 2,
+    min     = 0,
     default = 1
   },
   txInitialParity =
   {
     short   = "Inital Parity Setting",
-    long    = "Initial Parity Setting on start-up. Can be changed dynamically later.",
+    long    = "Initial Parity Setting on start-up. Can be changed dynamically later",
     help    = "",
     type    = "string",
     units   = "",
@@ -77,7 +77,7 @@ derivedValues = {}
 
 ports = {
   p_uart_tx = {
-    short   = "UAT TX",
+    short   = "UART TX",
     long    = "UART TX Pin",
     help    = "",
     width   = 1
@@ -111,7 +111,7 @@ generatedCode = {
   ]],
   body = [[
     unsigned char tx_buffer[64];
-    uart_tx(${swblock.ports.p_uart_tx}, tx_buffer, ${swblock.params.txBufferSize}, ${swblock.params.txInitialBaudRate},  ${swblock.params.txInitialBPC},  ${swblock.params.txInitialParity},  ${swblock.params.txInitialStopBits, ${swblock.chanends.c_tx_uart}},
+    uart_tx(${swblock.ports.p_uart_tx}, tx_buffer, ${swblock.params.txBufferSize}, ${swblock.params.txInitialBaudRate},  ${swblock.params.txInitialBPC},  ${swblock.params.txInitialParity},  ${swblock.params.txInitialStopBits}, ${swblock.chanends.c_tx_uart})
   ]]
 }
 
