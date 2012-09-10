@@ -1,0 +1,60 @@
+-------------------------------------------------------------------------------
+-- Descriptive metadata
+-------------------------------------------------------------------------------
+
+componentName = "xSOFTip Basic UART RX"
+componentFullName = ""
+alternativeNames = { }
+componentDescription = "Stripped down very simple, fast Uart RX with limited features."
+componentVersion = "1v0"
+
+-------------------------------------------------------------------------------
+-- Parameter descriptions.
+-------------------------------------------------------------------------------
+
+configPoints =
+{
+}
+
+derivedValues = {}
+
+ports = {
+  p_uart_tx = {
+    short   = "UART RX",
+    long    = "UART RX Pin",
+    help    = "",
+    width   = 1
+  }
+}
+
+channels = {
+  c_tx_uart = {
+    short = "RX channel",
+    type = "streaming",
+    long  = "Channel for the client to send RX data to the Uart transitter",
+    help  = "",
+  },
+}        
+
+function getConfigStatus()
+  local status = "Valid Configuration"
+  local issues = {}
+  return status, issues
+end
+            
+-------------------------------------------------------------------------------
+-- Source generation functions
+-------------------------------------------------------------------------------
+
+generatedCode = {
+  includes = { 
+    "uart_rx.h"
+  },
+  globals = [[
+    out port p_uart${swblock.id}_rx = ${swblock.ports.p_uart_rx};
+  ]],
+  body = [[
+    uart_rx_fast(${swblock.ports.p_uart_rx}, rx_buffer, ${swblock.chanends.c_rx_uart}, 100)
+  ]]
+}
+
