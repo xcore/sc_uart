@@ -1,6 +1,14 @@
 <?xml version="1.0" ?>
 <xpd>
-    <components></components>
+    <components>
+        <component description = "Software Block: module_uart_fast_tx" scope = "Experimental" path = "module_uart_fast_tx" type = "demoCode" id = "module_uart_fast_tx" name = "module_uart_fast_tx"></component>
+        <component description = "Software Block: app_uart_test" scope = "Experimental" path = "app_uart_test" type = "demoCode" id = "app_uart_test" name = "app_uart_test"></component>
+        <component description = "Software Block: module_uart_rx" scope = "Experimental" path = "module_uart_rx" type = "demoCode" id = "module_uart_rx" name = "module_uart_rx"></component>
+        <component description = "Software Block: app_uart_back2back" scope = "Experimental" path = "app_uart_back2back" type = "demoCode" id = "app_uart_back2back" name = "app_uart_back2back"></component>
+        <component description = "Software Block: app_uart_fast" scope = "Experimental" path = "app_uart_fast" type = "demoCode" id = "app_uart_fast" name = "app_uart_fast"></component>
+        <component description = "Software Block: module_uart_fast_rx" scope = "Experimental" path = "module_uart_fast_rx" type = "demoCode" id = "module_uart_fast_rx" name = "module_uart_fast_rx"></component>
+        <component name = "module_uart_tx" buildresults_path = "module_uart_tx/.module_uart_tx.buildresults.xml" scope = "Experimental" path = "module_uart_tx" metainfo_path = "module_uart_tx/module_uart_tx.metainfo" type = "component" id = "module_uart_tx" description = "Software Block: module_uart_tx"></component>
+    </components>
     <dependency repo = "xcommon">
         <githash>cdcfc87c8c6047bf8d21f13222cbe9e84c6c5e01</githash>
         <uri>git@github.com:xcore/xcommon.git</uri>
