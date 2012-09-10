@@ -7,15 +7,47 @@ The thread for the UART TX component receives data from the client via a buffer 
   
 The thread for the UART RX component receives data from external into the RX buffer (configurable between 1 and 64 bytes) which is read by the client using channel. An empty RX buffer will block the client.
 
+Resource Requirements
+---------------------
 
-Hardware Platforms
-------------------
+A single generic uart consisting of module_uart_rx and module_uart_tx will consumer the following resources:
 
-This UART is supported by all the hardware platforms from XMOS having suitable IO such as XC-1,XC-1A,XC-2,XK-1,etc and can be run on any XS1-L or XS1-G series devices.
+ +-----------------+---------+
+ | Resource        | Usage   |
+ +=================+=========+
+ | Code  Memory    | 2110    |
+ +-----------------+---------+
+ | Ports           | 2 x 1b  |
+ +-----------------+---------+
+ | ChannelEnds     | 2       |
+ +-----------------+---------+
 
+Evaluation Platforms
+--------------------
 
-Programming Guide
------------------
+.. _sec_hardware_platforms:
+
+Recommended Hardware
+++++++++++++++++++++
+
+This module may be evaluated using the Slicekit Modular Development Platform, available from digikey. Required board SKUs are:
+
+   * XP-SKC-L2 (Slicekit L2 Core Board) plus XA-SK-GPIO plus XA-SK-ATAG2 (Slicekit XTAG adaptor) plus XTAG2 (debug adaptor), OR
+   * XK-SK-L2-ST (Slicekit Starter Kit, containing all of the above).
+
+Demonstration Application
++++++++++++++++++++++++++
+
+Example usage of this module can be found within the XSoftIP suite as follows:
+
+   * Package: sw_gpio_examples
+   * Application: app_slicekit_com_demo
+
+   * Package: sc_uart
+   * Application: app_uart_back2back
+
+API and Programming Guide
+-------------------------
 
 Key Files
 +++++++++
@@ -40,49 +72,11 @@ Key Files
 | module_uart_rx/src/uart_rx_impl.xc  | UART RX Server implementation                 |
 +-------------------------------------+-----------------------------------------------+
 
-Required Repositories
-+++++++++++++++++++++
 
-* xcommon git\@github.com:xcore/xcommon.git
-
-Resource Usage
---------------
-
-The following table details the resource usage of the component.
-
- +-----------------+---------+
- | Resource        | Usage   |
- +=================+=========+
- | Code  Memory    | 2110    |
- +-----------------+---------+
- | Ports           | 2 x 1b  |
- +-----------------+---------+
- | ChannelEnds     | 2       |
- +-----------------+---------+
-
-  
-Demo Application
------------------
-
-The UART functionality is demonstrated using the app_uart_back2back. This has been rpepared to run on an XK-1 board, but can easily be ported to other development boards with small modificatiosn to the code. To prepare the XK-1 board to run this app, simply connect a jumper such that ports 1A and 1B are connected (e.g. connect X0D1 and X0D0 pins on the GPIO header). Refer to the XK-1 Hardware Manual for pni positions.
-
-The app can then be built and run. 
-
-It will send the full set of characters from the UART TX, receive them on UART RX and then print them out in batches of 10 characters.
-
-  
-app_uart_back2back
-++++++++++++++++++
-
-It will receive via the RX component and echo via TX component.
-
-UART TX component Overview
-++++++++++++++++++++++++++
+TX API
+++++++
 
 The UART TX component is started using the uart_tx() function, which causes the TX server (called "_impl" in the code) to run in a while(1) loop until it receives and instruction to shut down via the channel from the client. Additionally a set of client functions are provided to transmit a byte and to alter the baud rate, parity, bits per byte and stop bit settings. Any such action except transmitting a byte causes the TX server to terminate and then be restarted with the new settings. Any data in the TX buffer is preserved and then sent with the new settings.
-
-UART TX API
-+++++++++++
 
 .. doxygenfunction:: uart_tx
 .. doxygenfunction:: uart_tx_send_byte
@@ -91,14 +85,10 @@ UART TX API
 .. doxygenfunction:: uart_tx_set_stop_bits
 .. doxygenfunction:: uart_tx_set_bits_per_byte
 
-
-UART RX component Overview
-++++++++++++++++++++++++++
+RX API
+++++++
 
 The UART RX component is started using the uart_tx() function, which causes the TX server (called "_impl" in the code) to run in a while(1) loop until it receives and instruction to shut down via the channel from the client. Additionally a set of client functions are provided to fetch a byte from teh recieve buffer and to alter the baud rate, parity, bits per byte and stop bit settings. Any such action except transmitting a byte causes the RX server to terminate, the receive buffer emptied, and then restarted immediately with the new settings. 
-
-UART RX API
-+++++++++++
 
 .. doxygenfunction:: uart_rx
 .. doxygenfunction:: uart_rx_get_byte
@@ -108,33 +98,20 @@ UART RX API
 .. doxygenfunction:: uart_rx_set_stop_bits
 .. doxygenfunction:: uart_rx_set_bits_per_byte
 
+Example Applications
+--------------------
 
-Verification
-------------
-   
-An application app_uart_test is provided to run in XSIM using the Loopback Plugin DLL (see Tools User Guide for details) that validates the various combinations of parity, stop bit, bits-per-byte and baud rate settings. It will send data out via the UART TX component using single bit port and receive via UART RX component from another single bit port. It will check that the data matches.
+GPIO Slice Examples
++++++++++++++++++++
 
-The testbench is run using a python script: regression_script_UART.py. The test suites are executed as follows (after having built the application with the makefile provided:
+This uart is used in the app_slicekit_com demo from the sw_gpio_exampels package. FIXME
 
- +--------------------------+---------------------------------------------------+----------------------------------------------------------------+
- |   Testbench   	    |  Command   					| Description 	                                                 |
-  +==========================+===================================================+===============================================================+
- | 		            |                                         	 	|This test will confirm that buffer size is enough and data from | 
- | check buffering   	    | <script.py> -check_buffering        	 	|TX buffer to RX buffer passes correctly                         |
- +--------------------------+---------------------------------------------------+----------------------------------------------------------------+
- | 		            | <script.py> -runtime_parameter_change   	 	|This test will confirm UART module supports change in parameter |
- | runtime parameter change |							|during runtime such as baud-rate,bits per byte, parity, stopbit |
- +--------------------------+---------------------------------------------------+----------------------------------------------------------------+
- | 		   	    | <script.py> -test_parity   		 	|This test will confirm UART module discards data in case of     |
- | Parity test              |					 		|mismatch in  change in parity                                   |
- +--------------------------+---------------------------------------------------+----------------------------------------------------------------+
- | single test   	    |script.py -buad_rate <baud_rate> -bitsperbyte      |This test will confirm UART module discards data in case of     |
- |                   	    |<bitsperbyte> -parity <parity> -stopbit <stopbit>	|mismatch in  change in parity                                   |
- +--------------------------+---------------------------------------------------+----------------------------------------------------------------+
- |			    |<script.py>				        | This will take all possible combinations of baud-rate,bits     |
- | regression test          |							|per byte,parity and no. of stop bits.it will use testlist.txt   | 
- +--------------------------+---------------------------------------------------+----------------------------------------------------------------+
+Basic Loopback Example
+++++++++++++++++++++++
 
-The output is dumped to log.txt. This file should be manually removed, if it exists, before re-running.
+These modules are also demonstrated wired back to back using app_uart_back2back. To prepare the Slicekit core board to run this app connect wires between the 0.1" testpoints on the Triangle slot (or solder suitable headers on as shown in the picture below), such that ports 1A and 1E are connected. The headers corresponding to these ports are marked D0 and D12 respectively. 
 
+The app can then be built and run. 
 
+It will send the full set of characters from the UART TX, receive them on UART RX and then print them out in batches of 10 characters.
+  

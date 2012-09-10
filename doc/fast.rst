@@ -1,22 +1,47 @@
 Simple UART
 ===========
 
-The intention of this module is to implement high speed uart, at the expense of threads and 1-bit ports. Other modules provide lower-speed uarts
+The intention of this module is to implement a high speed uart, at the expense of threads and 1-bit ports. Other modules provide lower-speed uarts
 that are thread-efficient, or that may use fewer 1-bit ports. This module will support a 10 Mbaud rate with 100 MIPS threads, and correspondingly less
 with lower MIPS per thread.
 
-Note: the compiler inserts a spurious ZEXT and SETC in two places which makes 10 Mbit fail with 83 MIPS threads.
 
-Hardware Platforms
-++++++++++++++++++
+Resource Requirements
+---------------------
 
-This UART is supported by all the hardware platforms from XMOS having suitable IO such as XC-1,XC-1A,XC-2,XK-1,etc and can be run on any XS1-L or XS1-G series devices.
+ +-----------------+---------+
+ | Resource        | Usage   |
+ +=================+=========+
+ | Code  Memory    | 2110    |
+ +-----------------+---------+
+ | Ports           | 2 x 1b  |
+ +-----------------+---------+
+ | ChannelEnds     | 2       |
+ +-----------------+---------+
+ | Logical Cores   | 2       |
+ +-----------------+---------+
 
-The example is prepared to run on teh XK-1 but can be easily modified for other boards. However note that a 500 MHz core clock is expected so when running on G4 devices
-the baud rate should be reduced until it works, which can be done by altering the last "clocks" argument to the call to uart_tx_fast and uart_rx_fast in app_uart_fast/src/main.xc.
+Evaluation Platforms
+--------------------
 
-Programming Guide
-+++++++++++++++++
+Recommended Hardware
+++++++++++++++++++++
+
+This module may be evaluated using the Slicekit Modular Development Platform, available from digikey. Required board SKUs are:
+
+   * XP-SKC-L2 (Slicekit L2 Core Board) plus XA-SK-XTAG2 (Slicekit XTAG adaptor) plus XTAG2 (debug adaptor), OR
+   * XK-SK-L2-ST (Slicekit Starter Kit, containing all of the above).
+
+Demonstration Application
++++++++++++++++++++++++++
+
+Example usage of this module can be found within the XSoftIP suite as follows:
+
+   * Package: sc_uart
+   * Application: app_uart_fast
+
+API and Programming Guide
+-------------------------
 
 API
 +++
@@ -24,8 +49,8 @@ API
 .. doxygenfunction:: uart_rx_fast
 .. doxygenfunction:: uart_tx_fast
 
-Example programs
-++++++++++++++++
+Example Usage
++++++++++++++
 
 Declare ports (and clock blocks if you do not want to run the ports of the
 reference clock):
@@ -50,5 +75,12 @@ And a main par that starts the threads:
 
 .. literalinclude:: app_uart_fast/src/main.xc
    :start-after: //:: Main program
-   :end-before: //::
+   :end-before: //
+
+Example Application
+-------------------
+
+These modules are demonstrated wired back to back using app_uart_fast. To prepare the Slicekit core board to run this app connect wires between the 0.1" testpoints on the Triangle slot (or solder suitable headers on as shown in the picture below), such that ports 1A and 1E are connected. The headers corresponding to these ports are marked D0 and D12 respectively. 
+
+The app can then be built and run. 
 

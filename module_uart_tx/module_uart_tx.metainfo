@@ -1,0 +1,117 @@
+-------------------------------------------------------------------------------
+-- Descriptive metadata
+-------------------------------------------------------------------------------
+
+componentName = "xSOFTip UART TX"
+componentFullName = ""
+alternativeNames = { }
+componentDescription = "Single Fully featured Uart Transmitter" 
+componentVersion = "1v0"
+
+-------------------------------------------------------------------------------
+-- Parameter descriptions.
+-------------------------------------------------------------------------------
+
+configPoints =
+{
+  txBufferSize =
+  {
+    short   = "TX Buffer Size",
+    long    = "Array for buffering bytes before they are transmitted",
+    help    = ""
+    units   = "",
+    type    = "int",
+    resourceUsageFlags = {"linear, othogonal"},
+    default = true
+  },
+  txInitialBaudRate =
+  {
+    short   = "Initial Baud Rate",
+    long    = "Initial baud Setting on start-up. Can be changed dynamically later.",
+    help    = "Bit time will be derived as XS1_TIMER_HZ / baud_rate;",
+    units   = "Bits Per Second",
+    type    = "int",
+    resourceUsageFlags = {"noeffect"},
+    min     = 1,
+    max     = 115200,
+    default = 115200
+  },
+  txInitialBPC =
+  {
+    short   = "Inital Bits Per Character",
+    long    = "Initial BPC Setting on start-up. Can be changed dynamically later.",
+    help    = "",
+    type    = "int",
+    units   = "bits",
+    resourceUsageFlags = {"noeffect"},
+    max     = 5,
+    min     = 8,
+    default = 16
+  },
+  txInitialStopBits =
+  {
+    short   = "Inital Stop Bits"
+    long    = "Initial stop bits Setting on start-up. Can be changed dynamically later.",
+    help    = "",
+    type    = "int",
+    units   = "bits",
+    resourceUsageFlags = {"noeffect"},
+    max     = 0,
+    min     = 2,
+    default = 1
+  },
+  txInitialParity =
+  {
+    short   = "Inital Parity Setting",
+    long    = "Initial Parity Setting on start-up. Can be changed dynamically later.",
+    help    = "",
+    type    = "string",
+    units   = "",
+    resourceUsageFlags = {"noeffect"},
+    options = {"NONE", "EVEN", "ODD"},
+    default = "EVEN"
+  },
+}
+
+derivedValues = {}
+
+ports = {
+  p_uart_tx = {
+    short   = "UAT TX",
+    long    = "UART TX Pin",
+    help    = "",
+    width   = 1
+  }
+}
+
+channels = {
+  c_tx_uart = {
+    short = "TX channel",
+    long  = "Channel for the client to send TX data to the Uart transitter",
+    help  = "",
+  },
+}        
+
+function getConfigStatus()
+  local status = "Valid Configuration"
+  local issues = {}
+  return status, issues
+end
+            
+-------------------------------------------------------------------------------
+-- Source generation functions
+-------------------------------------------------------------------------------
+
+generatedCode = {
+  includes = { 
+    "uart_tx.h"
+  },
+  globals = [[
+    out port p_uart${swblock.id}_tx = ${swblock.ports.p_uart_tx};
+  ]],
+  body = [[
+    unsigned char tx_buffer[64];
+    uart_tx(${swblock.ports.p_uart_tx}, tx_buffer, ${swblock.params.txBufferSize}, ${swblock.params.txInitialBaudRate},  ${swblock.params.txInitialBPC},  ${swblock.params.txInitialParity},  ${swblock.params.txInitialStopBits, ${swblock.chanends.c_tx_uart}},
+  ]]
+}
+
