@@ -1,9 +1,14 @@
-XSoftIP Multi-UART Module
-=========================
+XSoftIP Simple/Fast UART Transmitter
+====================================
 
-:scope: General Use
-:description: Octuple UAT in Two Logical Cores, based on Serial2Ethernet reference design
+:scope: Experimental
+:description: Basic Uart Transmitter where the functionality of the full generic uart receiver module is not required 
 :keywords: UART
-:boards: XA-SK-UART-8
+:boards: XK-SKC-L2
 
-Multi UART
+This basic uart transmitter is very simple, and implements baud rates which can be derived directly from the 100 MHz reference clock. Baud rates like 115.2KBaud are not supported. This simplicity enables this module to achieve very high baud rates well in excess of 1 MBaud.
+
+
+
+
+
