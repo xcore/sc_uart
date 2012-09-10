@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <xpd>
+    <components></components>
     <dependency repo = "xcommon">
-        <githash>b7b5be59795a0a4b3fee4aeaff3c8e398bf76d27</githash>
+        <githash>cdcfc87c8c6047bf8d21f13222cbe9e84c6c5e01</githash>
         <uri>git@github.com:xcore/xcommon.git</uri>
-        <version>1.0.0rc2</version>
     </dependency>
     <description>Inline libraries for various simple uart implementations</description>
     <docdir>doc</docdir>
@@ -17,9 +17,9 @@
     <release parenthash = "8f7347efdb44f41b9c410218bb3f01f59791b2d7" version = "2.1.0rc3" githash = "857bca3647f514698438f6ef408b94e9820f6699"></release>
     <release parenthash = "857bca3647f514698438f6ef408b94e9820f6699" version = "2.1.0rc4" githash = "bd6c7209a0029c2a89b910a241fe8c9cce622baf"></release>
     <release parenthash = "90ff8f754d29352f5c5294652ceadcc277c980b2" version = "2.1.0rc5" githash = "1e2b853fb389c7a7de22cc740041df2f1f4a5772"></release>
-    <release parenthash = "00891e914407c425505a63667bbb3b9d6870547b" version = "2.1.0rc6"></release>
-    <scope>product</scope>
+    <release parenthash = "00891e914407c425505a63667bbb3b9d6870547b" version = "2.1.0rc6" githash = "d9a9e94b925ef31f61be52ad2b43883a4d91b863"></release>
     <subpartnumber>XM-000070-SW</subpartnumber>
     <vendor>XMOS</vendor>
     <xpd_version>1.0</xpd_version>
+    <scope>product</scope>
 </xpd>
