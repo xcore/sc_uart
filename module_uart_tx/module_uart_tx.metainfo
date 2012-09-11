@@ -22,6 +22,8 @@ configPoints =
     units   = "",
     type    = "int",
     resourceUsageFlags = {"linear","orthogonal"},
+    min     = 8,
+    max     = 64,
     default = true
   },
   txInitialBaudRate =
@@ -68,8 +70,8 @@ configPoints =
     type    = "string",
     units   = "",
     resourceUsageFlags = {"noeffect"},
-    options = {"NONE", "EVEN", "ODD"},
-    default = "EVEN"
+    options = {"UART_TX_PARITY_NONE", "UART_TX_PARITY_EVEN", "UART_TX_PARITY_ODD"},
+    default = "UART_TX_PARITY_EVEN"
   },
 }
 
