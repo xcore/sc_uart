@@ -36,6 +36,7 @@
         <uri>git@github.com:xcore/xcommon.git</uri>
     </dependency>
     <description>Inline libraries for various simple uart implementations</description>
+    <exclude_dir>app_uart_test</exclude_dir>
     <docdir>doc</docdir>
     <docdir>sw_gpio_examples/app_slicekit_com_demo/doc</docdir>
     <docdir>sc_multi_uart/doc</docdir>
