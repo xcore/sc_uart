@@ -1,7 +1,7 @@
-XSoftIP Simple/Fast UART Receiver
-====================================
+Simple/Fast UART Receiver
+=========================
 
-:scope: Experimental
+:scope: Early Development
 :description: Basic Uart Receiver where the functionality of the full generic uart receiver module is not required 
 :keywords: UART
 :boards: XK-SKC-L2

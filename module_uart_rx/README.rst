@@ -1,5 +1,5 @@
-XSoftIP Generic UART Receiver
-=============================
+Generic UART Receiver
+=====================
 
 :scope: General Use
 :description: Uart Receiver with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support

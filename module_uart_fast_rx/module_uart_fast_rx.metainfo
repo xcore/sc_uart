@@ -12,9 +12,7 @@ componentVersion = "1v0"
 -- Parameter descriptions.
 -------------------------------------------------------------------------------
 
-configPoints =
-{
-}
+configPoints = {}
 
 derivedValues = {}
 
@@ -33,7 +31,7 @@ channels = {
     type = "streaming",
     long  = "Channel for the client to send RX data to the Uart transitter",
     help  = "",
-  },
+  }
 }        
 
 function getConfigStatus()
@@ -51,10 +49,10 @@ generatedCode = {
     "uart_rx.h"
   },
   globals = [[
-    out port p_uart${swblock.id}_rx = ${swblock.ports.p_uart_rx};
+    out port p_uart${swblock.id}_rx = XS1_PORT_1A;
   ]],
   body = [[
-    uart_rx_fast(${swblock.ports.p_uart_rx}, rx_buffer, ${swblock.chanends.c_rx_uart}, 100)
+    uart_rx_fast(p_uart_rx, c_rx_uart, 100);
   ]]
 }
 

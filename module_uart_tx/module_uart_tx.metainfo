@@ -24,7 +24,7 @@ configPoints =
     resourceUsageFlags = {"linear","orthogonal"},
     min     = 8,
     max     = 64,
-    default = true
+    default = 8
   },
   txInitialBaudRate =
   {
@@ -48,7 +48,7 @@ configPoints =
     resourceUsageFlags = {"noeffect"},
     max     = 8,
     min     = 5,
-    default = 16
+    default = 8
   },
   txInitialStopBits =
   {
@@ -109,11 +109,11 @@ generatedCode = {
     "uart_tx.h"
   },
   globals = [[
-    out port p_uart${swblock.id}_tx = ${swblock.ports.p_uart_tx};
+    out port p_uart${swblock.id}_tx = XS1_PORT_1A;
   ]],
   body = [[
     unsigned char tx_buffer[64];
-    uart_tx(${swblock.ports.p_uart_tx}, tx_buffer, ${swblock.params.txBufferSize}, ${swblock.params.txInitialBaudRate},  ${swblock.params.txInitialBPC},  ${swblock.params.txInitialParity},  ${swblock.params.txInitialStopBits}, ${swblock.chanends.c_tx_uart})
+    uart_tx(p_uart${swblock.id}_tx, tx_buffer, ${swblock.params.txBufferSize}, ${swblock.params.txInitialBaudRate},  ${swblock.params.txInitialBPC},  ${swblock.params.txInitialParity},  ${swblock.params.txInitialStopBits}, ${swblock.chanends.c_tx_uart});
   ]]
 }
 

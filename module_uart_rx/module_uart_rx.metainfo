@@ -24,7 +24,7 @@ configPoints =
     resourceUsageFlags = {"linear","orthogonal"},
     min     = 8,
     max     = 64,
-    default = true
+    default = 8
   },
   rxInitialBaudRate =
   {
@@ -109,11 +109,11 @@ generatedCode = {
     "uart_rx.h"
   },
   globals = [[
-    out port p_uart${swblock.id}_rx = ${swblock.ports.p_uart_rx};
+    in buffered port:1 p_uart${swblock.id}_rx = XS1_PORT_1A;
   ]],
   body = [[
     unsigned char rx_buffer[64];
-    uart_rx(${swblock.ports.p_uart_rx}, rx_buffer, ${swblock.params.rxBufferSize}, ${swblock.params.rxInitialBaudRate},  ${swblock.params.rxInitialBPC},  ${swblock.params.rxInitialParity},  ${swblock.params.rxInitialStopBits}, ${swblock.chanends.c_rx_uart})
+    uart_rx(p_uart_rx, rx_buffer, ${swblock.params.rxBufferSize}, ${swblock.params.rxInitialBaudRate},  ${swblock.params.rxInitialBPC},  ${swblock.params.rxInitialParity},  ${swblock.params.rxInitialStopBits}, ${swblock.chanends.c_rx_uart});
   ]]
 }
 

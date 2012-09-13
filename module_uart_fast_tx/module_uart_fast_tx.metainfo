@@ -12,9 +12,7 @@ componentVersion = "1v0"
 -- Parameter descriptions.
 -------------------------------------------------------------------------------
 
-configPoints =
-{
-}
+configPoints = {}
 
 derivedValues = {}
 
@@ -24,14 +22,14 @@ ports = {
     long    = "UART TX Pin",
     help    = "",
     width   = 1
-  }
+  },
 }
 
 channels = {
   c_tx_uart = {
     short = "TX channel",
     type = "streaming",
-    long  = "Channel for the client to send TX data to the Uart transitter",
+    long  = "Channel for the client to send TX data to the Uart transmitter",
     help  = "",
   },
 }        
@@ -51,10 +49,10 @@ generatedCode = {
     "uart_tx.h"
   },
   globals = [[
-    out port p_uart${swblock.id}_tx = ${swblock.ports.p_uart_tx};
+    out port p_uart${swblock.id}_tx = XS1_PORT_1A;
   ]],
   body = [[
-    uart_tx_fast(${swblock.ports.p_uart_tx}, tx_buffer, ${swblock.chanends.c_tx_uart}, 100)
+    uart_tx_fast(p_uart_tx, c_tx_uart, 100);
   ]]
 }
 

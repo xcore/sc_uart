@@ -1,5 +1,5 @@
-XSoftIP Generic UART Transmitter
-================================
+Generic UART Transmitter
+========================
 
 :scope: General Use
 :description: Uart with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support

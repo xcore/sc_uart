@@ -1,12 +1,11 @@
 <?xml version="1.0" ?>
 <xpd>
     <components>
-        <component description = "Basic Uart Transmitter where the functionality of the full generic uart receiver module is not required" scope = "Experimental" path = "module_uart_fast_tx" type = "demoCode" id = "module_uart_fast_tx" name = "XSoftIP Simple/Fast UART Transmitter">
+        <component name = "XSoftIP Simple/Fast UART Transmitter" buildresults_path = "module_uart_fast_tx/.module_uart_fast_tx.buildresults.xml" scope = "Experimental" path = "module_uart_fast_tx" metainfo_path = "module_uart_fast_tx/module_uart_fast_tx.metainfo" type = "component" id = "module_uart_fast_tx" description = "Basic Uart Transmitter where the functionality of the full generic uart receiver module is not required">
             <board>XK-SKC-L2</board>
             <keyword>UART</keyword>
         </component>
-        <component description = "&lt;Add one line here&gt;" scope = "&lt;Put one of Roadmap, Experimental, Early Development or General Use&gt;" path = "app_uart_test" type = "demoCode" id = "app_uart_test" name = "&lt;Add title here&gt;"></component>
-        <component description = "Uart Receiver with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support" scope = "General Use" path = "module_uart_rx" type = "demoCode" id = "module_uart_rx" name = "XSoftIP Generic UART Receiver">
+        <component name = "XSoftIP Generic UART Receiver" buildresults_path = "module_uart_rx/.module_uart_rx.buildresults.xml" scope = "General Use" path = "module_uart_rx" metainfo_path = "module_uart_rx/module_uart_rx.metainfo" type = "component" id = "module_uart_rx" description = "Uart Receiver with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support">
             <board>XK-SKC-L2</board>
             <board>XA-SK-GPIO</board>
             <keyword>UART</keyword>
@@ -21,7 +20,7 @@
             <keyword>UART</keyword>
             <keyword>demo</keyword>
         </component>
-        <component description = "Basic Uart Receiver where the functionality of the full generic uart receiver module is not required" scope = "Experimental" path = "module_uart_fast_rx" type = "demoCode" id = "module_uart_fast_rx" name = "XSoftIP Simple/Fast UART Receiver">
+        <component name = "XSoftIP Simple/Fast UART Receiver" buildresults_path = "module_uart_fast_rx/.module_uart_fast_rx.buildresults.xml" scope = "Experimental" path = "module_uart_fast_rx" metainfo_path = "module_uart_fast_rx/module_uart_fast_rx.metainfo" type = "component" id = "module_uart_fast_rx" description = "Basic Uart Receiver where the functionality of the full generic uart receiver module is not required">
             <board>XK-SKC-L2</board>
             <keyword>UART</keyword>
         </component>
@@ -36,10 +35,8 @@
         <uri>git@github.com:xcore/xcommon.git</uri>
     </dependency>
     <description>Inline libraries for various simple uart implementations</description>
-    <exclude_dir>app_uart_test</exclude_dir>
     <docdir>doc</docdir>
-    <docdir>sw_gpio_examples/app_slicekit_com_demo/doc</docdir>
-    <docdir>sc_multi_uart/doc</docdir>
+    <exclude_dir>app_uart_test</exclude_dir>
     <location>git@github.com:xcore/sc_uart.git</location>
     <name>sc_uart</name>
     <maintainer>djpwilk</maintainer>
