@@ -2,7 +2,7 @@
 -- Descriptive metadata
 -------------------------------------------------------------------------------
 
-componentName = "xSOFTip Basic UART TX"
+componentName = "Simple UART TX"
 componentFullName = ""
 alternativeNames = { }
 componentDescription = "Stripped down very simple, fast Uart TX with limited features."
