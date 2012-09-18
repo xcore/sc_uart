@@ -1,7 +1,7 @@
 Generic Uart Loopback Example
 =============================
 
-:scope: Experimental
+:scope: Example
 :description: Application to demonstrate module_uart_rx and module_uart_tx running looped back on a single Slicekti core board.
 :keywords: UART, demo
 :boards: XA-SKC-L2

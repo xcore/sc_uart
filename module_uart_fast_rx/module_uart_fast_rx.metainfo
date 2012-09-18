@@ -5,7 +5,7 @@
 componentName = "Simple UART RX"
 componentFullName = ""
 alternativeNames = { }
-componentDescription = "Stripped down very simple, fast Uart RX with limited features."
+componentDescription = "Stripped down very simple, fast Uart RX with limited features"
 componentVersion = "1v0"
 
 -------------------------------------------------------------------------------
@@ -26,10 +26,10 @@ ports = {
 }
 
 channels = {
-  c_tx_uart = {
+  c_rx_uart = {
     short = "RX channel",
     type = "streaming",
-    long  = "Channel for the client to send RX data to the Uart transitter",
+    long  = "Channel for the client to send RX data to the Uart transmitter",
     help  = "",
   }
 }        
@@ -49,7 +49,7 @@ generatedCode = {
     "uart_rx.h"
   },
   globals = [[
-    out port p_uart${swblock.id}_rx = XS1_PORT_1A;
+    in port p_uart${swblock.id}_rx = XS1_PORT_1A;
   ]],
   body = [[
     uart_rx_fast(p_uart_rx, c_rx_uart, 100);

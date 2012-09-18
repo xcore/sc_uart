@@ -1,7 +1,7 @@
 Simple Uart Loopback Example
 ============================
 
-:scope: Experimental
+:scope: Example
 :description: Application to demonstrate module_uart_fast_rx and module_uart_fast_tx running looped back on a single Slicekit core board
 :keywords: UART, demo
 :boards: XA-SKC-L2
