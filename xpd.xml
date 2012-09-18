@@ -50,6 +50,7 @@
     <release parenthash = "00891e914407c425505a63667bbb3b9d6870547b" version = "2.1.0rc6" githash = "d9a9e94b925ef31f61be52ad2b43883a4d91b863"></release>
     <subpartnumber>XM-000070-SW</subpartnumber>
     <vendor>XMOS</vendor>
+    <xcore_repo>sc_uart.git</xcore_repo>
     <xpd_version>1.0</xpd_version>
     <scope>product</scope>
 </xpd>
