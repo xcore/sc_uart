@@ -7,3 +7,6 @@ Uart Components Change Log
   * Added metainfo and XPD items
   * TO DO: Finish porting demoa pps to SliceKit
 
+2.1.0
+-----
+  * Documentation Updates 
