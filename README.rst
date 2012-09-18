@@ -1,7 +1,7 @@
 XCORE.com UART SOFTWARE COMPONENT
 .................................
 
-:Latest release: 2.1.0rc6
+:Latest release: 2.2.0alpha0
 :Maintainer: djpwilk
 :Description: Inline libraries for various simple uart implementations
 
