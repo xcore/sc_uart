@@ -1,18 +1,9 @@
-XCORE.com UART Changelog
-======================
+Uart Components Change Log
+==========================
 
-:Version:   unreleased
-
-Firmware
-=======
-
-module_uart_tx
-----------------------
-
-   * Initial feature complete implementation and verification
-
-module_uart_rx
-----------------------
-
-   * Initial feature complete implementation and verification
+2.2.0
+-----
+  * Updated documents for xSOFTip requirements
+  * Added metainfo and XPD items
+  * TO DO: Finish porting demoa pps to SliceKit
 
