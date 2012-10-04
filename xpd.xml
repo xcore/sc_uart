@@ -28,8 +28,8 @@
         </component>
         <component description = "Application to demonstrate module_uart_rx and module_uart_tx running looped back on a single Slicekti core board." type = "demoCode" scope = "Example" path = "app_uart_back2back" local = "false" id = "app_uart_back2back" name = "Generic Uart Loopback Example">
             <board>XA-SKC-L2</board>
-            <componentDependency>module_uart_rx</componentDependency>
             <componentDependency>module_uart_tx</componentDependency>
+            <componentDependency>module_uart_rx</componentDependency>
             <keyword>UART</keyword>
             <keyword>demo</keyword>
         </component>
@@ -54,7 +54,7 @@
     <release parenthash = "00891e914407c425505a63667bbb3b9d6870547b" version = "2.1.0rc6" githash = "d9a9e94b925ef31f61be52ad2b43883a4d91b863"></release>
     <release parenthash = "d204e365e88dc60c81e2b0b023a665cc48df6b09" version = "2.2.0alpha0" githash = "d9d3bb33df8cff90d1ab80711bad85fccdcd961a"></release>
     <release parenthash = "d9d3bb33df8cff90d1ab80711bad85fccdcd961a" version = "2.2.0alpha1" githash = "d6f233650ec2f6e4342bd683762c2fb3f324a3e9"></release>
-    <release parenthash = "a9fb821161589ab882e55840a7fc2bef895da203" version = "2.2.0alpha2"></release>
+    <release parenthash = "a9fb821161589ab882e55840a7fc2bef895da203" version = "2.2.0alpha2" githash = "4a1812b22cbda7dbdce897120aef746fd936a627"></release>
     <subpartnumber>XM-001906-SM</subpartnumber>
     <vendor>XMOS</vendor>
     <xcore_repo>sc_uart.git</xcore_repo>
