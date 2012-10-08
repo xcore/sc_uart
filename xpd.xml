@@ -1,30 +1,34 @@
 <?xml version="1.0" ?>
 <xpd>
     <components>
-        <component name = "Simple/Fast UART Transmitter" buildresults_path = "module_uart_fast_tx/.module_uart_fast_tx.buildinfo" scope = "Early Development" path = "module_uart_fast_tx" metainfo_path = "module_uart_fast_tx/module_uart_fast_tx.metainfo" type = "component" id = "module_uart_fast_tx" description = "Basic Uart Transmitter where the functionality of the full generic uart receiver module is not required">
+        <component name = "Simple/Fast UART Transmitter" type = "component" buildresults_path = "module_uart_fast_tx/.module_uart_fast_tx.buildinfo" scope = "Early Development" path = "module_uart_fast_tx" metainfo_path = "module_uart_fast_tx/module_uart_fast_tx.metainfo" local = "false" id = "module_uart_fast_tx" description = "Basic Uart Transmitter where the functionality of the full generic uart receiver module is not required">
             <board>XK-SKC-L2</board>
             <keyword>UART</keyword>
         </component>
-        <component name = "Generic UART Receiver" buildresults_path = "module_uart_rx/.module_uart_rx.buildinfo" scope = "General Use" path = "module_uart_rx" metainfo_path = "module_uart_rx/module_uart_rx.metainfo" type = "component" id = "module_uart_rx" description = "Uart Receiver with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support">
+        <component name = "Generic UART Receiver" type = "component" buildresults_path = "module_uart_rx/.module_uart_rx.buildinfo" scope = "General Use" path = "module_uart_rx" metainfo_path = "module_uart_rx/module_uart_rx.metainfo" local = "false" id = "module_uart_rx" description = "Uart Receiver with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support">
             <board>XK-SKC-L2</board>
             <board>XA-SK-GPIO</board>
             <keyword>UART</keyword>
         </component>
-        <component description = "Application to demonstrate module_uart_rx and module_uart_tx running looped back on a single Slicekti core board." scope = "Experimental" path = "app_uart_back2back" type = "demoCode" id = "app_uart_back2back" name = "Generic Uart Loopback Example">
+        <component description = "Application to demonstrate module_uart_rx and module_uart_tx running looped back on a single Slicekti core board." type = "demoCode" scope = "Example" path = "app_uart_back2back" local = "false" id = "app_uart_back2back" name = "Generic Uart Loopback Example">
             <board>XA-SKC-L2</board>
+            <componentDependency>module_uart_tx</componentDependency>
+            <componentDependency>module_uart_rx</componentDependency>
             <keyword>UART</keyword>
             <keyword>demo</keyword>
         </component>
-        <component description = "Application to demonstrate module_uart_fast_rx and module_uart_fast_tx running looped back on a single Slicekit core board" scope = "Experimental" path = "app_uart_fast" type = "demoCode" id = "app_uart_fast" name = "Simple Uart Loopback Example">
+        <component description = "Application to demonstrate module_uart_fast_rx and module_uart_fast_tx running looped back on a single Slicekit core board" type = "demoCode" scope = "Example" path = "app_uart_fast" local = "false" id = "app_uart_fast" name = "Simple Uart Loopback Example">
             <board>XA-SKC-L2</board>
+            <componentDependency>module_uart_fast_rx</componentDependency>
+            <componentDependency>module_uart_fast_tx</componentDependency>
             <keyword>UART</keyword>
             <keyword>demo</keyword>
         </component>
-        <component name = "Simple/Fast UART Receiver" buildresults_path = "module_uart_fast_rx/.module_uart_fast_rx.buildinfo" scope = "Early Development" path = "module_uart_fast_rx" metainfo_path = "module_uart_fast_rx/module_uart_fast_rx.metainfo" type = "component" id = "module_uart_fast_rx" description = "Basic Uart Receiver where the functionality of the full generic uart receiver module is not required">
+        <component name = "Simple/Fast UART Receiver" type = "component" buildresults_path = "module_uart_fast_rx/.module_uart_fast_rx.buildinfo" scope = "Early Development" path = "module_uart_fast_rx" metainfo_path = "module_uart_fast_rx/module_uart_fast_rx.metainfo" local = "false" id = "module_uart_fast_rx" description = "Basic Uart Receiver where the functionality of the full generic uart receiver module is not required">
             <board>XK-SKC-L2</board>
             <keyword>UART</keyword>
         </component>
-        <component name = "Generic UART Transmitter" buildresults_path = "module_uart_tx/.module_uart_tx.buildinfo" scope = "General Use" path = "module_uart_tx" metainfo_path = "module_uart_tx/module_uart_tx.metainfo" type = "component" id = "module_uart_tx" description = "Uart with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support">
+        <component name = "Generic UART Transmitter" type = "component" buildresults_path = "module_uart_tx/.module_uart_tx.buildinfo" scope = "General Use" path = "module_uart_tx" metainfo_path = "module_uart_tx/module_uart_tx.metainfo" local = "false" id = "module_uart_tx" description = "Uart with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support">
             <board>XK-SKC-L2</board>
             <board>XA-SK-GPIO</board>
             <keyword>UART</keyword>
@@ -48,7 +52,7 @@
     <release parenthash = "857bca3647f514698438f6ef408b94e9820f6699" version = "2.1.0rc4" githash = "bd6c7209a0029c2a89b910a241fe8c9cce622baf"></release>
     <release parenthash = "90ff8f754d29352f5c5294652ceadcc277c980b2" version = "2.1.0rc5" githash = "1e2b853fb389c7a7de22cc740041df2f1f4a5772"></release>
     <release parenthash = "00891e914407c425505a63667bbb3b9d6870547b" version = "2.1.0rc6" githash = "d9a9e94b925ef31f61be52ad2b43883a4d91b863"></release>
-    <release parenthash = "d204e365e88dc60c81e2b0b023a665cc48df6b09" version = "2.2.0alpha0"></release>
+    <release parenthash = "d204e365e88dc60c81e2b0b023a665cc48df6b09" version = "2.2.0alpha0" githash = "d9d3bb33df8cff90d1ab80711bad85fccdcd961a"></release>
     <subpartnumber>XM-000070-SW</subpartnumber>
     <vendor>XMOS</vendor>
     <xcore_repo>sc_uart.git</xcore_repo>
