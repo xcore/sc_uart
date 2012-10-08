@@ -1,9 +1,9 @@
 Simple UART
 ===========
 
-The intention of this module is to implement a high speed uart, at the expense of threads and 1-bit ports. Other modules provide lower-speed uarts
-that are thread-efficient, or that may use fewer 1-bit ports. This module will support a 10 Mbaud rate with 100 MIPS threads, and correspondingly less
-with lower MIPS per thread.
+The intention of this module is to implement a high speed uart, at the expense of logical cores and 1-bit ports. Other modules provide lower-speed uarts
+that are logical core-efficient, or that may use fewer 1-bit ports. This module will support a 10 Mbaud rate with 100 MIPS logical cores, and correspondingly less
+with lower MIPS per logical core.
 
 
 Resource Requirements
@@ -71,7 +71,7 @@ A function that consumes data (and in this example throws it away)
    :start-after: //:: Consumer function
    :end-before: //::
 
-And a main par that starts the threads:
+A main par that starts the logical cores:
 
 .. literalinclude:: app_uart_fast/src/main.xc
    :start-after: //:: Main program
@@ -80,7 +80,7 @@ And a main par that starts the threads:
 Example Application
 -------------------
 
-These modules are demonstrated wired back to back using app_uart_fast. To prepare the Slicekit core board to run this app connect wires between the 0.1" testpoints on the Triangle slot (or solder suitable headers on as shown in the picture below), such that ports 1A and 1E are connected. The headers corresponding to these ports are marked D0 and D12 respectively. 
+These modules can be evaluated wired back to back using app_uart_fast. To prepare the Slicekit core board to run this app connect wires between the 0.1" testpoints on the Triangle slot (or solder suitable headers on as shown in the picture below), such that ports 1A and 1E are connected. The headers corresponding to these ports are marked D0 and D12 respectively. 
 
 The app can then be built and run. 
 

@@ -39,12 +39,12 @@ Four uart modules are covered by this document, as shown below.
 Generic UART
 ------------
 
-This module is completely parameterisable at run time and will require a thread for each of RX and TX. Unlike the simple uart below, it can operate at the standard UART baud rates.
+This module is completely parameterisable at run time and will require a logical core for each of RX and TX. Unlike the simple uart below, it can operate at the standard UART baud rates.
 
 Simple Uart
 -----------
 
-This module is a much simpler implementation of a UART that will require a whole thread for RX and deliver up to 10 Mbaud. TX could be called as a function, and hence share a thread with other functionality although this will affect the TX baud rate achieved,and this usage is not shown. 
+This module is a much simpler implementation of a UART that will require a whole logical core for RX and deliver up to 10 Mbaud. TX could be called as a function, and hence share a logical core with other functionality although this will affect the TX baud rate achieved,and this usage is not shown. 
 
 It is fixed to 8 bits, a single start bit, no parity, and a single stop bit. All of those parameters could be changed by altering the source code. 
 
@@ -55,6 +55,6 @@ Note that the code is easy to understand; it comprises the example from the XC p
 Other Uarts
 -----------
 
-For an implementation of multi-uart suitable for applications where more than one uart is required, the module_multi_uart component may be a better choice, which offers up t 8 uarts in two threads. In general, designs requring a single basic uarts are often most optimally constructed by incorporating the TX functionality inline with other application functions, and having a separate thread for RX. A fully optimised design incorporating uarts may therefore merit some modifications of these components.
+For an implementation of multi-uart suitable for applications where more than one uart is required, the module_multi_uart component may be a better choice, which offers up t 8 uarts in two logical cores. In general, designs requring a single basic uarts are often most optimally constructed by incorporating the TX functionality inline with other application functions, and having a separate logical core for RX. A fully optimised design incorporating uarts may therefore merit some modifications of these components.
 
 

@@ -1,11 +1,11 @@
 Generic UART
 ============
 
-This UART has two modules, one for RX and one for TX each of which uses one thread and is connected via channel to another thread using the UART Client API . 
+This UART has two modules, one for RX and one for TX each of which uses one logical core and is connected via channel to another logical core using the UART Client API . 
 
-The thread for the UART TX component receives data from the client via a buffer (configurable between 1 and 64 bytes). A full buffer will block the client.
+The logical core for the UART TX component receives data from the client via a buffer (configurable between 1 and 64 bytes). A full buffer will block the client.
   
-The thread for the UART RX component receives data from external into the RX buffer (configurable between 1 and 64 bytes) which is read by the client using channel. An empty RX buffer will block the client.
+The logical core for the UART RX component receives data from external into the RX buffer (configurable between 1 and 64 bytes) which is read by the client using channel. An empty RX buffer will block the client.
 
 Resource Requirements
 ---------------------
@@ -109,7 +109,7 @@ This uart is used in the app_slicekit_com demo from the sw_gpio_exampels package
 Basic Loopback Example
 ++++++++++++++++++++++
 
-These modules are also demonstrated wired back to back using app_uart_back2back. To prepare the Slicekit core board to run this app connect wires between the 0.1" testpoints on the Triangle slot (or solder suitable headers on as shown in the picture below), such that ports 1A and 1E are connected. The headers corresponding to these ports are marked D0 and D12 respectively. 
+These modules can also be evaluated wired back to back using app_uart_back2back. To prepare the Slicekit core board to run this app connect wires between the 0.1" testpoints on the Triangle slot (or solder suitable headers on as shown in the picture below), such that ports 1A and 1E are connected. The headers corresponding to these ports are marked D0 and D12 respectively. 
 
 The app can then be built and run. 
 
