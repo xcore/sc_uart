@@ -3,6 +3,7 @@ Simple/Fast UART Transmitter
 
 :scope: Early Development
 :description: Basic Uart Transmitter where the functionality of the full generic uart receiver module is not required 
+:description: Basic Uart Transmitter where the functionality of the full generic uart transmitter module is not required 
 :keywords: UART
 :boards: XK-SKC-L2
 
