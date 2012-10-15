@@ -5,7 +5,6 @@ Uart Components Change Log
 -----
   * Updated documents for xSOFTip requirements
   * Added metainfo and XPD items
-  * TO DO: Finish porting demoa pps to SliceKit
 
 2.1.0
 -----
