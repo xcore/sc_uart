@@ -1,5 +1,5 @@
-XCORE STAND ALONE UART COMPONENTS
-=================================
+Stand Alone Uart Components
+===========================
 
 .. toctree::
 
