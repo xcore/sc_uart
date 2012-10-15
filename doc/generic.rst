@@ -104,7 +104,7 @@ Example Applications
 GPIO Slice Examples
 +++++++++++++++++++
 
-This uart is used in the app_slicekit_com demo from the sw_gpio_exampels package. FIXME
+This uart is used in the ``GPIO Com Port Demo`` demo application to transfer commands from a host computer via uart to light the LEDs and read the adc on the Slicekit GPIO Slice Card. Refer to this item in xTIMEcomposer for more details on running this example application.
 
 Basic Loopback Example
 ++++++++++++++++++++++
