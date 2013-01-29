@@ -18,16 +18,16 @@ This file can set the following define:
 
 
 RS485 API
---------------
+---------
 
 .. _sec_conf_functions:
 
 RS485 Function
-+++++++++++++++++++++++
+++++++++++++++
 .. doxygenfunction:: rs485_run
 
 Configuration Functions
-+++++++++++++++++
++++++++++++++++++++++++
 .. doxygenfunction:: rs485_set_baud
 .. doxygenfunction:: rs485_set_data_bits
 .. doxygenfunction:: rs485_set_stop_bits

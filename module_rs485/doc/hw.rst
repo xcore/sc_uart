@@ -18,7 +18,7 @@ Demonstration Applications
 --------------------------
 
 app_rs485
-+++++++++++++++++++
++++++++++
 
 The demostration application requires the three RS485 connections (A,B and GND_ISO) to be connected to 
 an appropriate USB to RS485 converter (eg. Amplicon USB-485Ui) configured in half-duplex mode with no 
