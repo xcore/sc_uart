@@ -1,0 +1,119 @@
+-------------------------------------------------------------------------------
+-- Descriptive metadata
+-------------------------------------------------------------------------------
+
+componentName = "xSOFTip UART RX"
+componentFullName = ""
+alternativeNames = { }
+componentDescription = "Single Fully featured Uart Receiver" 
+componentVersion = "1v0"
+
+-------------------------------------------------------------------------------
+-- Parameter descriptions.
+-------------------------------------------------------------------------------
+
+configPoints =
+{
+  rxBufferSize =
+  {
+    short   = "RX Buffer Size",
+    long    = "Array for buffering bytes before they are transmitted",
+    help    = "",
+    units   = "",
+    type    = "int",
+    resourceUsageFlags = {"linear","orthogonal"},
+    min     = 8,
+    max     = 64,
+    default = 8
+  },
+  rxInitialBaudRate =
+  {
+    short   = "Initial Baud Rate",
+    long    = "Initial baud Setting on start-up. Can be changed dynamically later.",
+    help    = "Bit time will be derived as XS1_TIMER_HZ / baud_rate;",
+    units   = "Bits Per Second",
+    type    = "int",
+    resourceUsageFlags = {"noeffect"},
+    min     = 1,
+    max     = 115200,
+    default = 115200
+  },
+  rxInitialBPC =
+  {
+    short   = "Inital Bits Per Character",
+    long    = "Initial BPC Setting on start-up. Can be changed dynamically later.",
+    help    = "",
+    type    = "int",
+    units   = "bits",
+    resourceUsageFlags = {"noeffect"},
+    max     = 8,
+    min     = 5,
+    default = 8
+  },
+  rxInitialStopBits =
+  {
+    short   = "Inital Stop Bits",
+    long    = "Initial stop bits Setting on start-up. Can be changed dynamically later",
+    help    = "",
+    type    = "int",
+    units   = "bits",
+    resourceUsageFlags = {"noeffect"},
+    max     = 2,
+    min     = 0,
+    default = 1
+  },
+  rxInitialParity =
+  {
+    short   = "Inital Parity Setting",
+    long    = "Initial Parity Setting on start-up. Can be changed dynamically later",
+    help    = "",
+    type    = "string",
+    units   = "",
+    resourceUsageFlags = {"noeffect"},
+    options = {"UART_RX_PARITY_NONE", "UART_RX_PARITY_EVEN", "UART_RX_PARITY_ODD"},
+    default = "UART_RX_PARITY_EVEN"
+  },
+}
+
+derivedValues = {}
+
+ports = {
+  p_uart_rx = {
+    short   = "UART RX",
+    long    = "UART RX Pin",
+    help    = "",
+    width   = 1
+  }
+}
+
+channels = {
+  c_rx_uart = {
+    short = "RX channel",
+    long  = "Channel for the client to send RX data to the Uart transitter",
+    help  = "",
+  },
+}        
+
+function getConfigStatus()
+  local status = "Valid Configuration"
+  local issues = {}
+  return status, issues
+end
+            
+-------------------------------------------------------------------------------
+-- Source generation functions
+-------------------------------------------------------------------------------
+
+generatedCode = {
+  includes = { 
+    "uart_rx.h"
+  },
+  globals = [[
+    in buffered port:1 p_uart${swblock.id}_rx = XS1_PORT_1A;
+  ]],
+  body = [[
+    unsigned char rx_buffer[64];
+    uart_rx(p_uart_rx, rx_buffer, ${swblock.params.rxBufferSize}, ${swblock.params.rxInitialBaudRate},  ${swblock.params.rxInitialBPC},  ${swblock.params.rxInitialParity},  ${swblock.params.rxInitialStopBits}, ${swblock.chanends.c_rx_uart});
+  ]]
+}
+
