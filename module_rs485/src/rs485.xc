@@ -216,7 +216,7 @@ void rs485_run(port pData, out port pDir, unsigned dir_bit, chanend cControl, ch
 					case RS485_CMD_SEND_PACKET:
 						if(state != RS485_STATE_RX && state != RS485_STATE_TX)
 						{
-							unsigned char len, b, original_byte;
+							unsigned len, b, original_byte;
 							cControl :> len;
 							state = RS485_STATE_TX;
 							// set the tranciever to TX direction
@@ -350,7 +350,7 @@ int rs485_send_byte(chanend c, unsigned char data)
 	return ret;
 }
 
-int rs485_send_packet(chanend c, unsigned char data[], unsigned len)
+int rs485_send_packet(chanend c, unsigned data[], unsigned len)
 {
 	int ret;
 	c <: RS485_CMD_SEND_PACKET;

@@ -11,12 +11,12 @@
 #include "rs485.h"
 
 #define DIR_BIT 0
-#define BAUD 1000000
+#define BAUD 9600
 #define DATA 8
 #define STOP 2
 #define PARITY RS485_PARITY_NONE
-#define TIMEOUT 200
-#define BUF_SIZE 128
+#define TIMEOUT 10
+
 //:: Port declarations
 on tile[0]: clock refClk = XS1_CLKBLK_REF;
 on tile[0]: port pData = XS1_PORT_1J;
@@ -31,7 +31,7 @@ void xscope_user_init(void)
 }
 
 void consume(chanend d, chanend c) {
-    unsigned char buf[BUF_SIZE];
+    unsigned buf[RS485_BUF_SIZE];
     unsigned len;
     unsigned result;
 

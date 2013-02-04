@@ -161,6 +161,6 @@ int rs485_send_byte(chanend c, unsigned char data);
  *             this must not be greater than the size of buffer
  *
  */
-int rs485_send_packet(chanend c, unsigned char data[], unsigned len);
+int rs485_send_packet(chanend c, unsigned data[], unsigned len);
 
 #endif /* RS485_H_ */
