@@ -1,7 +1,7 @@
 Evaluation Platforms
 ====================
 
-.. _sec_hardware_platforms:
+.. _sec_rs485_hardware_platforms:
 
 Recommended Hardware
 --------------------

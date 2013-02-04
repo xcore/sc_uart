@@ -17,7 +17,7 @@ Resources
       - TX/RX
     * - RS485 Output
       - 4 bit port
-      - 1 bit
+      - 1 
       - Direction Control
     * - RS485 IO timing
       - clock block

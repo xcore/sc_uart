@@ -42,7 +42,7 @@ The possible ``#define`` that can be set is described in :ref:`sec_conf_defines`
 
 If not set, default values in the rs485 header file will be used.
 
-Within this application we set the recieve data buffer to 128 characters.
+Within the demo application set the receive data buffer is set to 128 characters.
 
 .. literalinclude:: app_rs485/src/rs485_conf.h
 
