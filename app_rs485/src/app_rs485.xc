@@ -40,6 +40,7 @@ void consume(chanend d, chanend c) {
 		d :> len;
 		for(int i = 0; i < len; i++) {
 		  d :> buf[i];
+		  buf[i] += 1;
 		}
 		result = rs485_send_packet(c, buf, len);
 		if(!result)

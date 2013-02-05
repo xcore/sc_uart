@@ -23,3 +23,5 @@ Resources
       - clock block
       - 1
       - 
+
+   The RS485 component uses one 62.5MIPS thread
