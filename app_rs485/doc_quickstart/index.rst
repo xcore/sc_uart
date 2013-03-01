@@ -1,9 +1,9 @@
-RS485 Demo Quickstart Guide
+RS485 Quickstart Guide
 ===========================
 
-.. _Slicekit_RS485_Demo_Quickstart:
+.. _Slicekit_RS485_Quickstart:
 
-RS485 demo app : Quick Start Guide
+RS485 app : Quick Start Guide
 ----------------------------------
 
 This simple demonstration of xTimeComposer Studio functionality uses the XA-SK-ISBUS Slice Card together with the xSOFTip rs485 component to:
@@ -34,7 +34,7 @@ Import and Build the Application
 ++++++++++++++++++++++++++++++++
 
    #. Open xTimeComposer and open the edit perspective (Window->Open Perspective->XMOS Edit).
-   #. Locate the ``'Slicekit RS485 Demo'`` item in the xSOFTip pane on the bottom left of the window and drag it into the Project Explorer window in the xTimeComposer. This will also cause the modules on which this application depends (in this case, module_rs485) to be imported as well. 
+   #. Locate the ``'Slicekit RS485'`` item in the xSOFTip pane on the bottom left of the window and drag it into the Project Explorer window in the xTimeComposer. This will also cause the modules on which this application depends (in this case, module_rs485) to be imported as well. 
    #. Click on the app_rs485 item in the Explorer pane then click on the build icon (hammer) in xTimeComposer. Check the console window to verify that the application has built successfully.
 
 For help in using xTimeComposer, try the xTimeComposer tutorials, which you can find by selecting Help->Tutorials from the xTimeComposer menu.
@@ -116,5 +116,5 @@ Look at the Code
    #. At the top of the application code file try changing the baud rate definition to a different value, change the baud rate in your chosen terminal application and reconnect.
    #. Find the consume function. Note that the function waits for the rs485_run function to send it some data, buffer that data and then transmit the packet back. Try manipulating the data before returning it, eg. repeat it.
 
-:ref:`Slicekit_RS485_Demo_Quickstart`
+:ref:`Slicekit_RS485_Quickstart`
    

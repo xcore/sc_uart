@@ -268,7 +268,7 @@ void rs485_run(port pData, out port pDir, unsigned dir_bit, chanend cControl, ch
 				cData <: buffer_index;
 				for(int i=0; i<buffer_index; i++)
 				{
-					cData <: buffer[i];
+					cData <:(unsigned char) buffer[i];
 				}
 				buffer_index = 0;
 				state = RS485_STATE_RX_IDLE;
@@ -350,13 +350,13 @@ int rs485_send_byte(chanend c, unsigned char data)
 	return ret;
 }
 
-int rs485_send_packet(chanend c, unsigned data[], unsigned len)
+int rs485_send_packet(chanend c, unsigned char data[], unsigned len)
 {
 	int ret;
 	c <: RS485_CMD_SEND_PACKET;
 	c <: len;
 	for(int i = 0; i < len; i++) {
-		c <: data[i];
+		c <: (unsigned)data[i];
 	}
 	c :> ret;
 	if(ret == len)
