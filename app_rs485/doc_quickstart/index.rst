@@ -112,9 +112,9 @@ Look at the Code
 ................
 
    #. Examine the application code. In xTIMEcomposer navigate to the ``src`` directory under app_rs485 and double click on the app_rs485.xc file within it. The file will open in the central editor window.
-   #. Find the main function and note that it runs the run_rs485() function on a single logical core, and a second consume function on a second logical core.
+   #. Find the main function and note that it runs the run_rs485() function on a single logical core, and a second application function on a second logical core.
    #. At the top of the application code file try changing the baud rate definition to a different value, change the baud rate in your chosen terminal application and reconnect.
-   #. Find the consume function. Note that the function waits for the rs485_run function to send it some data, buffer that data and then transmit the packet back. Try manipulating the data before returning it, eg. repeat it.
+   #. Find the application function. Note that the function waits for the rs485_run function to send it some data, buffer that data and then transmit the packet back. Try manipulating the data before returning it, eg. repeat it.
 
 :ref:`Slicekit_RS485_Quickstart`
    

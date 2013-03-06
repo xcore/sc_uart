@@ -17,8 +17,6 @@
  include files
  ---------------------------------------------------------------------------*/
 #include <xs1.h>
-#include <print.h>
-#include <xscope.h>
 #include <platform.h>
 #include <string.h>
 #include "rs485.h"
@@ -28,22 +26,12 @@
  ports
  ---------------------------------------------------------------------------*/
 
-
 on tile[0]: rs485_interface_t rs485_if =
-{
-  XS1_PORT_1J,
-  XS1_PORT_4E
-};
+{ XS1_PORT_1J, XS1_PORT_4E };
 
 rs485_config_t rs485_config =
-{
- DIR_BIT,
- BAUD,
- DATA,
- STOP,
- PARITY,
- TIMEOUT,
-};
+{ DIR_BIT, BAUD, DATA, STOP, PARITY, TIMEOUT, };
+
 
 /** =========================================================================
  * application
@@ -56,14 +44,14 @@ rs485_config_t rs485_config =
  *
  **/
 
+
 void application(chanend c_receive, chanend c_send)
 {
-
     unsigned char buf_rx[RS485_BUF_SIZE]; //Buffer stores received data
-    unsigned len, result;
+  unsigned len;
     unsigned char exit_command_mode=0,select_valid_option=0, end_of_data=0,index_len=0,length=0,data;
 
-    result = rs485_send_packet(c_send, console_messages[0], strlen(console_messages[0])); //Displays welcome message on the terminal
+  rs485_send_packet(c_send, console_messages[0], strlen(console_messages[0])); //Displays welcome message on the terminal
     while(1)
     {
 		rs485_send_byte(c_send, '\n');
@@ -72,7 +60,6 @@ void application(chanend c_receive, chanend c_send)
 		switch(data)
 		{
 			case APP_RS485_SET_BAUD: //Baud Rate settings
-
 				select_valid_option=0;
 				while(select_valid_option == 0)
 				{
@@ -114,7 +101,7 @@ void application(chanend c_receive, chanend c_send)
 							break;
 
 						default:
-							result = rs485_send_packet(c_send, console_messages[6], strlen(console_messages[6])); //Displays messgae as Invalid user selection
+                rs485_send_packet(c_send, console_messages[6], strlen(console_messages[6])); //Displays messgae as Invalid user selection
 							select_valid_option=0;
 							break;
 					}
@@ -153,7 +140,6 @@ void application(chanend c_receive, chanend c_send)
 							break;
 					}
 				}
-
 			break;
 
 			case APP_RS485_SET_DATA: //Set the length of number of data bits for transmission
@@ -233,10 +219,9 @@ int main(void)
 
 	par
 	{
-		on tile[0]:{application(c_receive, c_send);}
-		   on tile[0]: rs485_run(c_send, c_receive, rs485_if, rs485_config);
+      on tile[0]: application(c_receive, c_send);
+      on tile[0]: rs485_run(c_send, c_receive, rs485_if, rs485_config);
 	}
 	return 0;
 }
-
 

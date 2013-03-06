@@ -47,10 +47,32 @@ on tile[0]: rs485_interface_t rs485_if =
 rs485_config_t rs485_config =
 { DIR_BIT, BAUD, DATA, STOP, PARITY, TIMEOUT, };
 
+
+/** =========================================================================
+ * rs485_rx_buffer
+ *
+ * rs485 receive buffer function which stores received data into an array
+ *
+ * \param channel to rs485_run thread, buffer to store received data
+ *
+ * \return None
+ *
+ **/
+void rs485_rx_buffer(chanend c_receive, unsigned char receive_buffer[])
+{
+    unsigned length_of_data;
+        c_receive :> length_of_data; //receives length of data from the rs485_run thread
+		for(int i = 0; i < length_of_data; i++)
+		{
+		  c_receive :> receive_buffer[i];
+		  receive_buffer[i] += 1; //manuplates the received data and stores in the buffer
+		}
+		}
+
 /** =========================================================================
  * Consume
  *
- * consume thread which communcicates with the RS485 component
+ * application thread which communcicates with the RS485 component
  *
  * \param channel to rs485_run thread, channel communication from rs485_run thread
  *
@@ -58,24 +80,14 @@ rs485_config_t rs485_config =
  *
  **/
 
-void consume(chanend c_receive, chanend c_send)
+void application(chanend c_receive, chanend c_send)
 {
-    unsigned char receive_buffer[RS485_BUF_SIZE];
-    unsigned length_of_data;
-    unsigned result;
-    while(1)
-    {
-        c_receive :> length_of_data; //receives length of data from the rs485_run thread
-		for(int i = 0; i < length_of_data; i++)
-		{
-		  c_receive :> receive_buffer[i];
-		  receive_buffer[i] += 1; //manuplates the received data and stores in the buffer
-		}
-		result = rs485_send_packet(c_send, receive_buffer, length_of_data);
-		if(!result)
-		{
-			printstr("TX error\n");
-		}
+  unsigned char receive_buffer[RS485_BUF_SIZE];
+  unsigned length_of_data;
+  while(1)
+  {
+    rs485_rx_buffer(c_receive,receive_buffer);
+	rs485_send_packet(c_send, receive_buffer, length_of_data);
     }
 }
 
@@ -88,9 +100,11 @@ int main(void)
 	chan c_send,c_receive;
 	par
 	{
-        on tile[0]: consume(c_receive, c_send);
+    on tile[0]: application(c_receive, c_send);
         on tile[0]: rs485_run(c_send, c_receive, rs485_if, rs485_config);
 	}
 	return 0;
 }
+
+
 

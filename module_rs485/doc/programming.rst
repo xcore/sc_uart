@@ -51,7 +51,7 @@ Top level program structure
 +++++++++++++++++++++++++++
 
 This application is contained in app_rs485.xc. Within this file is the ``main()`` function 
-which runs the example consumer function, that takes the received data and sends it back out, and the RS485
+which runs the example application function, that takes the received data and sends it back out, and the RS485
 server function.
 
 To make use of the RS485 function library the app_rs485.xc must contain the following line::
@@ -61,7 +61,7 @@ To make use of the RS485 function library the app_rs485.xc must contain the foll
 The RS485 interface is initialsied to operate at 9600 baud, 8 data bits, 2 stop bits and a 
 10 character timeout.
 
-When a packet of data is recieved it is passed to the consumer function via the data channel, and is
+When a packet of data is recieved it is passed to the application function via the data channel, and is
 then transmitted as a packet using the rs485_send_packet function.
 
 app_rs485_demo

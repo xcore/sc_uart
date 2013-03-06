@@ -13,8 +13,7 @@ static int parity32(unsigned x, rs485_parity_t parity)
   // To compute even / odd parity the checksum should be initialised to 0 / 1
   // respectively. The values of the uart_rx_parity have been chosen so the
   // parity can be used to initialise the checksum directly.
-    // assert(RS485_PARITY_EVEN == 0);
-    //assert(RS485_PARITY_ODD == 1);
+
   crc32(x, parity, 1);
   return (x & 1);
 }

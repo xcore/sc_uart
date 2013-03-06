@@ -7,7 +7,7 @@
 
 #ifndef RS485_H_
 #define RS485_H_
-
+#include <xccompat.h>
 #ifdef __xtcp_client_conf_h_exists__
 #include "rs485_conf.h"
 #endif
@@ -122,11 +122,8 @@ int rs485_set_baud(chanend c, int baud);
  * \param data_bits The number of data bits
  *
  */
-#ifdef __XC__
+
 int rs485_set_data_bits(chanend c, int data_bits);
-#else
-int rs485_set_data_bits(unsigned c, int data_bits);
-#endif
 
 /** Set the number of stop bits.
  *
@@ -137,11 +134,8 @@ int rs485_set_data_bits(unsigned c, int data_bits);
  * \param stop_bits The number of stop bits
  *
  */
-#ifdef __XC__
+
 int rs485_set_stop_bits(chanend c, int stop_bits);
-#else
-int rs485_set_stop_bits(unsigned c, int stop_bits);
-#endif
 
 /** Set the parity.
  *
@@ -151,11 +145,8 @@ int rs485_set_stop_bits(unsigned c, int stop_bits);
  * \param parity The parity option, type rs485_parity
  *
  */
-#ifdef __XC__
+
 int rs485_set_parity(chanend c, rs485_parity_t parity);
-#else
-int rs485_set_parity(unsigned c, rs485_parity_t parity);
-#endif
 
 /** Get the current status.
  *
@@ -165,11 +156,8 @@ int rs485_set_parity(unsigned c, rs485_parity_t parity);
  * \param c The command interface channel
  *
  */
-#ifdef __XC__
+
 rs485_state_t rs485_get_status(chanend c);
-#else
-rs485_state_t rs485_get_status(unsigned c);
-#endif
 /** Transmit one byte.
  *
  * Transmit a single byte MSB first
@@ -179,11 +167,8 @@ rs485_state_t rs485_get_status(unsigned c);
  * \param data The byte to transmit
  *
  */
-#ifdef __XC__
+
 int rs485_send_byte(chanend c, unsigned char data);
-#else
-int rs485_send_byte(unsigned c, unsigned char data);
-#endif
 
 /** Transmit specified number of bytes.
  *
@@ -197,10 +182,7 @@ int rs485_send_byte(unsigned c, unsigned char data);
  *             this must not be greater than the size of buffer
  *
  */
-#ifdef __XC__
+
 int rs485_send_packet(chanend c, unsigned char data[], unsigned len);
-#else
-int rs485_send_packet(unsigned c, unsigned char data[], unsigned len);
-#endif
 
 #endif
