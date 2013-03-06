@@ -2,172 +2,186 @@
 // This software is freely distributable under a derivative of the
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
-
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <xs1.h>
-#include <assert.h>
-#include <platform.h>
 #include "rs485.h"
+#include <xs1.h>
+#include <platform.h>
 
-int buffer_index;
-
-int parity32(unsigned x, enum rs485_parity parity)
+static int parity32(unsigned x, rs485_parity_t parity)
 {
   // To compute even / odd parity the checksum should be initialised to 0 / 1
   // respectively. The values of the uart_rx_parity have been chosen so the
   // parity can be used to initialise the checksum directly.
-  assert(RS485_PARITY_EVEN == 0);
-  assert(RS485_PARITY_ODD == 1);
+    // assert(RS485_PARITY_EVEN == 0);
+    //assert(RS485_PARITY_ODD == 1);
   crc32(x, parity, 1);
   return (x & 1);
 }
 
-int add_to_buffer(unsigned data, unsigned buffer[], int buffer_size)
+#pragma unsafe arrays
+static int add_to_buffer(unsigned data,
+                         unsigned buffer[],
+                         int buffer_size,
+                         int &buffer_index)
 {
 	if(buffer_index + 1>= buffer_size)
 	{
 		return RS485_BUFFER_STATE_OVERRUN;
-	}else{
+    }
+    else
+    {
 		buffer[buffer_index] = data;
 		buffer_index ++;
 		return RS485_BUFFER_STATE_OK;
 	}
 }
 
-void rs485_run(port pData, out port pDir, unsigned dir_bit, chanend cControl, chanend cData,
-				unsigned baud_rate, int data_bits, int stop_bits, enum rs485_parity parity, int data_timeout)
+void rs485_run(chanend c_control,
+               chanend c_data,
+               rs485_interface_t &rs485_if,
+               rs485_config_t &rs485_config)
 {
-
-	enum rs485_state state;
+    rs485_state_t state;
 	int t, data_valid;
 	unsigned c, level_test, u;
 
 	unsigned int data = 0;
 	timer tim;
 	int timeout, timer_enabled = 0;
+    int buffer_index;
 
-	unsigned clocks = XS1_TIMER_HZ / baud_rate;
+    unsigned clocks = XS1_TIMER_HZ / rs485_config.baud_rate;
 	int dt2 = (clocks * 3)>>1;
 	int dt = clocks;
-
 
 	unsigned buffer[RS485_BUF_SIZE];
 	buffer_index = 0;
 	state = RS485_STATE_SETUP;
 
 	buffer_index = 0;
-	pDir <: 0;
+    rs485_if.p_dir <: 0;
 	state = RS485_STATE_RX_IDLE;
 	while(1)
 	{
 		select
 		{
-			case pData when pinseq(0) :> int _ @ t:
+            case rs485_if.p_data when pinseq(0) :> int _ @ t:
 				// receive started
 				state = RS485_STATE_RX;
 				// set/reset packet timer
 				tim :> timeout;
-				timeout += (clocks * (data_bits + stop_bits + 1)) * data_timeout;
+            timeout += (clocks * (rs485_config.data_bits + rs485_config.stop_bits + 1)) * rs485_config.data_timeout;
 				timer_enabled = 1;
 
 				t += dt2;
 				// receive data bits
-				for(int i = 0; i < data_bits; i++) {
-
-					pData @ t :> >> data;
+            for(int i = 0; i < rs485_config.data_bits; i++)
+            {
+                rs485_if.p_data @ t :> >> data;
 					t += dt;
 				}
-				data >>= 32 - data_bits;
+            data >>= 32 - rs485_config.data_bits;
 				// receive parity
-				if(parity != RS485_PARITY_NONE)
+            if(rs485_config.parity != RS485_PARITY_NONE)
 				{
 					unsigned parity_bit;
 
-					pData @ t :> parity_bit;
+                rs485_if.p_data @ t :> parity_bit;
 					t += dt;
-					data_valid = parity_bit == parity32(data, parity);
-				}else{
+                data_valid = parity_bit == parity32(data, rs485_config.parity);
+            }
+            else
+            {
 					data_valid = 1;
 				}
 				// receive stop bits
-				for(int i = 0; i < stop_bits; i++){
-
-					pData @ t :> level_test;
+            for(int i = 0; i < rs485_config.stop_bits; i++)
+            {
+                rs485_if.p_data @ t :> level_test;
 					t += dt;
 					if(level_test != 1)
 					{
 						data_valid = 0;
-
 					}
 				}
 
 				if(data_valid)
 				{
 					// add data to buffer
-					if(add_to_buffer(data, buffer, RS485_BUF_SIZE) == RS485_BUFFER_STATE_OK)
+                if(add_to_buffer(data, buffer, RS485_BUF_SIZE,buffer_index) == RS485_BUFFER_STATE_OK)
 					{
 						state = RS485_STATE_RX;
-					}else{
+                }
+                else
+                {
 						state = RS485_STATE_RX_ERROR;
 						//handle error
 					}
-				}else{
-
+            }
+            else
+            {
 					// data valid error
 					state = RS485_STATE_RX_ERROR;
 					// handle error
 				}
-
 				break;
 
-			case cControl :> c:
+            case c_control :> c:
 				switch(c)
 				{
 					case RS485_CMD_SET_BAUD :
 							if(state != RS485_STATE_RX && state != RS485_STATE_TX)
 							{
-								cControl :> baud_rate;
-								clocks = XS1_TIMER_HZ / baud_rate;
+                    c_control :> rs485_config.baud_rate;
+                    clocks = XS1_TIMER_HZ / rs485_config.baud_rate;
 								dt2 = (clocks * 3)>>1;
 								dt = clocks;
-								cControl <: baud_rate;
-							}else{
-								cControl :> u;
-								cControl <: 0;
+                    c_control <: rs485_config.baud_rate;
+                }
+                else
+                {
+                    c_control :> u;
+                    c_control <: 0;
 							}
 						break;
 
 					case RS485_CMD_SET_BITS :
 						if(state != RS485_STATE_RX && state != RS485_STATE_TX)
 						{
-							cControl :> data_bits;
-							cControl <: data_bits;
-						}else{
-							cControl :> u;
-							cControl <: 0;
+                    c_control :> rs485_config.data_bits;
+                    c_control <: rs485_config.data_bits;
+                }
+                else
+                {
+                    c_control :> u;
+                    c_control <: 0;
 						}
 						break;
 
 					case RS485_CMD_SET_PARITY :
 						if(state != RS485_STATE_RX && state != RS485_STATE_TX)
 						{
-							cControl :> parity;
-							cControl <: parity;
-						}else{
-							cControl :> u ;
-							cControl <: 0;
+                    c_control :> rs485_config.parity;
+                    c_control <: rs485_config.parity;
+                }
+                else
+                {
+                    c_control :> u;
+                    c_control <: 0;
 						}
 						break;
 
 					case RS485_CMD_SET_STOP_BITS :
 						if(state != RS485_STATE_RX && state != RS485_STATE_TX)
 						{
-							cControl :> stop_bits;
-							cControl <: stop_bits;
-						}else{
-							cControl :> u;
-							cControl <: 0;
+                    c_control :> rs485_config.stop_bits;
+                    c_control <: rs485_config.stop_bits;
+                }
+                else
+                {
+                    c_control :> u;
+                    c_control <: 0;
 						}
 						break;
 
@@ -175,41 +189,42 @@ void rs485_run(port pData, out port pDir, unsigned dir_bit, chanend cControl, ch
 						if(state != RS485_STATE_RX && state != RS485_STATE_TX)
 						{
 							unsigned char b, original_byte;
-							cControl :> b;
+                    c_control :> b;
 							original_byte = b;
 							// send a byte
 							state = RS485_STATE_TX;
 							// set the tranciever to TX direction
-							pDir <: 1 << dir_bit;
-							pData <: 1 @ t;
+                    rs485_if.p_dir <: 1 << rs485_config.dir_bit;
+                    rs485_if.p_data <: 1 @ t;
 							t += dt;
-							pData @ t <: 0 ;
+                    rs485_if.p_data @ t <: 0;
 							t += dt;
-							for(int i = 0; i < data_bits; i++) {
-								pData @ t <: >> b;
+                    for(int i = 0; i < rs485_config.data_bits; i++)
+                    {
+                        rs485_if.p_data @ t <: >> b;
 								t += dt;
 							}
-
 							//parity
-							if(parity != RS485_PARITY_NONE)
+                    if(rs485_config.parity != RS485_PARITY_NONE)
 							{
-								pData @ t <: parity32(original_byte, parity);
+                        rs485_if.p_data @ t <: parity32(original_byte, rs485_config.parity);
 								t += dt;
 							}
 							//stop bits
-							for(int i=0; i < stop_bits; i++)
+                    for(int i=0; i < rs485_config.stop_bits; i++)
 							{
-								pData @ t <: 1;
+                        rs485_if.p_data @ t <: 1;
 								t += dt;
 							}
-							pDir @ t <: 0;
-							cControl <: 1;
-							pData :> void;
+                    rs485_if.p_dir @ t <: 0;
+                    c_control <: 1;
+                    rs485_if.p_data :> void;
 							state = RS485_STATE_RX_IDLE;
-
-						}else{
-							cControl :> u;
-							cControl <: 0;
+                }
+                else
+                {
+                    c_control :> u;
+                    c_control <: 0;
 						}
 						break;
 
@@ -217,46 +232,47 @@ void rs485_run(port pData, out port pDir, unsigned dir_bit, chanend cControl, ch
 						if(state != RS485_STATE_RX && state != RS485_STATE_TX)
 						{
 							unsigned len, b, original_byte;
-							cControl :> len;
+                    c_control :> len;
 							state = RS485_STATE_TX;
 							// set the tranciever to TX direction
-							pDir <: 1 << dir_bit;
+                    rs485_if.p_dir <: 1 << rs485_config.dir_bit;
 							// TX ready
-							pData <: 1 @ t;
+                    rs485_if.p_data <: 1 @ t;
 							t += dt;
 							for(int i=0; i<len; i++)
 							{
-								cControl :> b;
+                        c_control :> b;
 								original_byte = b;
-								pData @ t <: 0 ;
+                        rs485_if.p_data @ t <: 0;
 								t += dt;
-								for(int j = 0; j < data_bits; j++) {
-									pData @ t <: >> b;
+                        for(int j = 0; j < rs485_config.data_bits; j++)
+                        {
+                            rs485_if.p_data @ t <: >> b;
 									t += dt;
 								}
 
 								//parity
-								if(parity != RS485_PARITY_NONE)
+                        if(rs485_config.parity != RS485_PARITY_NONE)
 								{
-									pData @ t <: parity32(original_byte, parity);
+                            rs485_if.p_data @ t <: parity32(original_byte, rs485_config.parity);
 									t += dt;
 								}
 								//stop bits
-								for(int i=0; i < stop_bits; i++)
+                        for(int i=0; i < rs485_config.stop_bits; i++)
 								{
-									pData @ t <: 1;
+                            rs485_if.p_data @ t <: 1;
 									t += dt;
 								}
 							}
-							pDir @ t <: 0;
-							cControl <: len;
-							pData :> void;
+                    rs485_if.p_dir @ t <: 0;
+                    c_control <: len;
+                    rs485_if.p_data :> void;
 							state = RS485_STATE_RX_IDLE;
 						}
 						break;
 
 					case RS485_CMD_GET_STATUS :
-						cControl <: state;
+                c_control <: state;
 						break;
 				}
 				break;
@@ -265,10 +281,10 @@ void rs485_run(port pData, out port pDir, unsigned dir_bit, chanend cControl, ch
 				timer_enabled = 0;
 				state = RS485_STATE_RX_DONE;
 				// send buffer
-				cData <: buffer_index;
+            c_data <: buffer_index;
 				for(int i=0; i<buffer_index; i++)
 				{
-					cData <:(unsigned char) buffer[i];
+                c_data <:(unsigned char) buffer[i];
 				}
 				buffer_index = 0;
 				state = RS485_STATE_RX_IDLE;
@@ -277,92 +293,3 @@ void rs485_run(port pData, out port pDir, unsigned dir_bit, chanend cControl, ch
 	}
 }
 
-int rs485_set_baud(chanend c, int baud)
-{
-	int ret;
-	c <: RS485_CMD_SET_BAUD;
-	c <: baud;
-	c :> ret;
-	if(ret == baud)
-	{
-		return 1;
-	}else{
-		return 0;
-	}
-}
-
-int rs485_set_data_bits(chanend c, int data_bits)
-{
-	int ret;
-	c <: RS485_CMD_SET_BITS;
-	c <: data_bits;
-	c :> ret;
-	if(ret == data_bits)
-	{
-		return 1;
-	}else{
-		return 0;
-	}
-}
-
-int rs485_set_stop_bits(chanend c, int stop_bits)
-{
-	int ret;
-	c <: RS485_CMD_SET_STOP_BITS;
-	c <: stop_bits;
-	c :> ret;
-	if(ret == stop_bits)
-	{
-		return 1;
-	}else{
-		return 0;
-	}
-}
-
-int rs485_set_parity(chanend c, enum rs485_parity parity)
-{
-	enum rs485_parity ret;
-	c <: RS485_CMD_SET_PARITY;
-	c <: parity;
-	c :> ret;
-	if(ret == parity)
-	{
-		return 1;
-	}else{
-		return 0;
-	}
-}
-
-int rs485_get_status(chanend c)
-{
-	int ret;
-	c <: RS485_CMD_GET_STATUS;
-	c :> ret;
-	return ret;
-}
-
-int rs485_send_byte(chanend c, unsigned char data)
-{
-	int ret;
-	c <: RS485_CMD_SEND_BYTE;
-	c <: data;
-	c :> ret;
-	return ret;
-}
-
-int rs485_send_packet(chanend c, unsigned char data[], unsigned len)
-{
-	int ret;
-	c <: RS485_CMD_SEND_PACKET;
-	c <: len;
-	for(int i = 0; i < len; i++) {
-		c <: (unsigned)data[i];
-	}
-	c :> ret;
-	if(ret == len)
-	{
-		return 1;
-	}else{
-		return 0;
-	}
-}

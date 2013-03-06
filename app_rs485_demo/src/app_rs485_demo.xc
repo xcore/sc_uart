@@ -28,8 +28,22 @@
  ports
  ---------------------------------------------------------------------------*/
 
-on tile[0]: port pData = XS1_PORT_1J;
-on tile[0]: out port pDir = XS1_PORT_4E;
+
+on tile[0]: rs485_interface_t rs485_if =
+{
+  XS1_PORT_1J,
+  XS1_PORT_4E
+};
+
+rs485_config_t rs485_config =
+{
+ DIR_BIT,
+ BAUD,
+ DATA,
+ STOP,
+ PARITY,
+ TIMEOUT,
+};
 
 /** =========================================================================
  * application
@@ -220,7 +234,7 @@ int main(void)
 	par
 	{
 		on tile[0]:{application(c_receive, c_send);}
-		on tile[0]:{rs485_run(pData, pDir, DIR_BIT, c_send, c_receive, BAUD, DATA, STOP, PARITY, TIMEOUT);}
+		   on tile[0]: rs485_run(c_send, c_receive, rs485_if, rs485_config);
 	}
 	return 0;
 }

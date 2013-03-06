@@ -16,13 +16,21 @@
 #endif
 
 
-enum rs485_parity{
+typedef struct rs485_interface_t_
+{
+    port p_data;
+    out port p_dir;
+}rs485_interface_t;
+
+
+typedef enum rs485_parity_t_
+{
 	RS485_PARITY_EVEN = 0,
 	RS485_PARITY_ODD,
 	RS485_PARITY_NONE
-};
+} rs485_parity_t;
 
-enum rs485_state
+typedef enum rs485_state_t_
 {
 	RS485_STATE_SETUP,
 	RS485_STATE_RX_IDLE,
@@ -31,9 +39,9 @@ enum rs485_state
 	RS485_STATE_RX_ERROR,
 	RS485_STATE_TX,
 	RS485_STATE_TX_DONE
-};
+} rs485_state_t;
 
-enum
+typedef enum rs485_cmd_t_
 {
 	RS485_CMD_SET_BAUD,
 	RS485_CMD_SET_BITS,
@@ -42,14 +50,24 @@ enum
 	RS485_CMD_SEND_BYTE,
 	RS485_CMD_GET_STATUS,
 	RS485_CMD_SEND_PACKET
-};
+} rs485_cmd_t;
 
-enum
+typedef enum rs485_buffer_state_t_
 {
 	RS485_BUFFER_STATE_EMPTY,
 	RS485_BUFFER_STATE_OVERRUN,
 	RS485_BUFFER_STATE_OK
-};
+} rs485_buffer_state_t;
+
+typedef struct rs485_config_t_
+{
+    unsigned dir_bit;
+    unsigned baud_rate;
+    int data_bits;
+    int stop_bits;
+    rs485_parity_t parity;
+    int data_timeout;
+}rs485_config_t;
 
 /** Implemetation of a half-duplex RS485 interface. This function requires an unbuffered 1-bit port for the
  * bi-directional RS485 data channel, and one bit of a 4-bit port to set the data direction. Setting the
@@ -79,11 +97,10 @@ enum
  * \param data_timeout The number of character times after the last received character to indiacte packet finish
  *
  */
-void rs485_run(port pData, out port pDir, unsigned dir_bit,
-				chanend cControl, chanend cData,
-				unsigned baud_rate, int data_bits, int stop_bits, enum rs485_parity parity, int data_timeout);
-
-int parity32(unsigned x, enum rs485_parity parity);
+void rs485_run(chanend c_control,
+               chanend c_data,
+               rs485_interface_t &rs485_if,
+               rs485_config_t &rs485_config);
 
 /** Set the baud rate.
  *
@@ -105,7 +122,11 @@ int rs485_set_baud(chanend c, int baud);
  * \param data_bits The number of data bits
  *
  */
+#ifdef __XC__
 int rs485_set_data_bits(chanend c, int data_bits);
+#else
+int rs485_set_data_bits(unsigned c, int data_bits);
+#endif
 
 /** Set the number of stop bits.
  *
@@ -116,7 +137,11 @@ int rs485_set_data_bits(chanend c, int data_bits);
  * \param stop_bits The number of stop bits
  *
  */
+#ifdef __XC__
 int rs485_set_stop_bits(chanend c, int stop_bits);
+#else
+int rs485_set_stop_bits(unsigned c, int stop_bits);
+#endif
 
 /** Set the parity.
  *
@@ -126,7 +151,11 @@ int rs485_set_stop_bits(chanend c, int stop_bits);
  * \param parity The parity option, type rs485_parity
  *
  */
-int rs485_set_parity(chanend c, enum rs485_parity parity);
+#ifdef __XC__
+int rs485_set_parity(chanend c, rs485_parity_t parity);
+#else
+int rs485_set_parity(unsigned c, rs485_parity_t parity);
+#endif
 
 /** Get the current status.
  *
@@ -136,8 +165,11 @@ int rs485_set_parity(chanend c, enum rs485_parity parity);
  * \param c The command interface channel
  *
  */
-int rs485_get_status(chanend c);
-
+#ifdef __XC__
+rs485_state_t rs485_get_status(chanend c);
+#else
+rs485_state_t rs485_get_status(unsigned c);
+#endif
 /** Transmit one byte.
  *
  * Transmit a single byte MSB first
@@ -147,7 +179,11 @@ int rs485_get_status(chanend c);
  * \param data The byte to transmit
  *
  */
+#ifdef __XC__
 int rs485_send_byte(chanend c, unsigned char data);
+#else
+int rs485_send_byte(unsigned c, unsigned char data);
+#endif
 
 /** Transmit specified number of bytes.
  *
@@ -161,6 +197,10 @@ int rs485_send_byte(chanend c, unsigned char data);
  *             this must not be greater than the size of buffer
  *
  */
+#ifdef __XC__
 int rs485_send_packet(chanend c, unsigned char data[], unsigned len);
+#else
+int rs485_send_packet(unsigned c, unsigned char data[], unsigned len);
+#endif
 
-#endif /* RS485_H_ */
+#endif

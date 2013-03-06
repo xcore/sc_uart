@@ -21,7 +21,6 @@
 #include <print.h>
 #include <xscope.h>
 #include <platform.h>
-
 #include "rs485.h"
 
 /*---------------------------------------------------------------------------
@@ -39,8 +38,14 @@ constants
  Port Declaration
  ---------------------------------------------------------------------------*/
 
-on tile[0]: port p_Data = XS1_PORT_1J;
-on tile[0]: out port p_Dir = XS1_PORT_4E;
+on tile[0]: rs485_interface_t rs485_if =
+{
+ XS1_PORT_1J,
+ XS1_PORT_4E
+};
+
+rs485_config_t rs485_config =
+{ DIR_BIT, BAUD, DATA, STOP, PARITY, TIMEOUT, };
 
 /** =========================================================================
  * Consume
@@ -58,10 +63,9 @@ void consume(chanend c_receive, chanend c_send)
     unsigned char receive_buffer[RS485_BUF_SIZE];
     unsigned length_of_data;
     unsigned result;
-
     while(1)
     {
-		c_receive :> length_of_data; //receives length of dayta from the rs485_run thread
+        c_receive :> length_of_data; //receives length of data from the rs485_run thread
 		for(int i = 0; i < length_of_data; i++)
 		{
 		  c_receive :> receive_buffer[i];
@@ -75,7 +79,6 @@ void consume(chanend c_receive, chanend c_send)
     }
 }
 
-
 /**
  * Top level main for multi-UART demonstration
  */
@@ -85,10 +88,9 @@ int main(void)
 	chan c_send,c_receive;
 	par
 	{
-		on tile[0]:{consume(c_receive, c_send);}
-		on tile[0]:{rs485_run(p_Data, p_Dir, DIR_BIT, c_send, c_receive, BAUD, DATA, STOP, PARITY, TIMEOUT);}
+        on tile[0]: consume(c_receive, c_send);
+        on tile[0]: rs485_run(c_send, c_receive, rs485_if, rs485_config);
 	}
 	return 0;
 }
-
 
