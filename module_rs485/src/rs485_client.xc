@@ -8,7 +8,7 @@
 #include <xs1.h>
 #include <platform.h>
 
-void rs485_rx_buffer(chanend c_receive, unsigned char receive_buffer[])
+int rs485_rx_buffer(chanend c_receive, unsigned char receive_buffer[])
 {
   unsigned length_of_data;
   c_receive :> length_of_data; //receives length of data from the rs485_run thread
@@ -16,6 +16,7 @@ void rs485_rx_buffer(chanend c_receive, unsigned char receive_buffer[])
   {
     c_receive :> receive_buffer[i];
   }
+  return length_of_data;
 }
 
 int rs485_set_baud(chanend c, int baud)

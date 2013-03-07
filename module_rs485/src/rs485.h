@@ -8,20 +8,20 @@
 #ifndef RS485_H_
 #define RS485_H_
 #include <xccompat.h>
-#ifdef __xtcp_client_conf_h_exists__
+#ifdef __rs485_conf_h_exists__
 #include "rs485_conf.h"
 #endif
 #ifndef RS485_BUF_SIZE
 #define RS485_BUF_SIZE (40)
 #endif
 
-#ifdef __XC__
+
 typedef struct rs485_interface_t_
 {
   port p_data;
   out port p_dir;
 }rs485_interface_t;
-#endif
+
 
 typedef enum rs485_parity_t_
 {
@@ -97,12 +97,12 @@ typedef struct rs485_config_t_
  * \param data_timeout The number of character times after the last received character to indiacte packet finish
  *
  */
-#if __XC__
+
 void rs485_run(chanend c_control,
                chanend c_data,
                rs485_interface_t &rs485_if,
                rs485_config_t &rs485_config);
-#endif
+
 
 /** receieve data and store in buffer.
  *
@@ -113,7 +113,7 @@ void rs485_run(chanend c_control,
  * \param buffer[] The receive buffer
  *
  */
-void rs485_rx_buffer(chanend c_receive, unsigned char receive_buffer[]);
+int rs485_rx_buffer(chanend c_receive, unsigned char receive_buffer[]);
 
 /** Set the baud rate.
  *

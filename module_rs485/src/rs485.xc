@@ -212,7 +212,7 @@ void rs485_run(chanend c_control, chanend c_data, rs485_interface_t &rs485_if, r
                 rs485_if.p_dir @ t <: 0;
                 c_control <: 1;
                 rs485_if.p_data :> void;
-		tate = RS485_STATE_RX_IDLE;
+		state = RS485_STATE_RX_IDLE;
               }
               else
               {

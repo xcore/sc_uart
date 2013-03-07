@@ -18,6 +18,7 @@
  ---------------------------------------------------------------------------*/
 #include <xs1.h>
 #include <platform.h>
+#include <print.h>
 #include <string.h>
 #include "rs485.h"
 #include "common.h"
@@ -74,12 +75,18 @@ void application(chanend c_receive, chanend c_send)
       while(select_valid_option == 0)
       {
         select_valid_option=1;
-	result = rs485_send_packet(c_send, console_messages[2], strlen(console_messages[2])); //Displays message on the terminal
+	if(!rs485_send_packet(c_send, console_messages[2], strlen(console_messages[2])) ) //Displays message on the terminal
+	{
+	  printstr("TX error\n");
+	}
 	c_receive :> len;
 	c_receive :> data;
 	data=data-'0';
 	if(data > 0 && data <8)
-  	  result = rs485_send_packet(c_send, console_messages[4], strlen(console_messages[4]));
+  	  if(!rs485_send_packet(c_send, console_messages[4], strlen(console_messages[4])) )
+  	  {
+  	    printstr("TX error\n");
+  	  }
 	switch(data)
 	{
 	  case APP_RS485_BAUD_115200: //Set Baud as 115200
@@ -111,7 +118,10 @@ void application(chanend c_receive, chanend c_send)
 	    break;
 
 	  default:
-            rs485_send_packet(c_send, console_messages[6], strlen(console_messages[6])); //Displays messgae as Invalid user selection
+            if(!rs485_send_packet(c_send, console_messages[6], strlen(console_messages[6])) ) //Displays messgae as Invalid user selection
+            {
+              printstr("TX error\n");
+            }
 	    select_valid_option=0;
 	    break;
 	}
@@ -123,13 +133,22 @@ void application(chanend c_receive, chanend c_send)
       while(select_valid_option == 0)
       {
         select_valid_option=1;
-	result = rs485_send_packet(c_send, console_messages[3], strlen(console_messages[3]));
-	result = rs485_send_packet(c_send, console_messages[1], strlen(console_messages[1]));
+	if(!rs485_send_packet(c_send, console_messages[3], strlen(console_messages[3])) )
+	{
+	  printstr("TX error\n");
+	}
+	if(!rs485_send_packet(c_send, console_messages[1], strlen(console_messages[1])))
+	{
+	  printstr("TX error\n");
+	}
 	c_receive :> len;
 	c_receive :> data;
 	data=data-'0';
 	if(data > 0 && data <4)
-	  result = rs485_send_packet(c_send, console_messages[4], strlen(console_messages[4]));
+	  if(!rs485_send_packet(c_send, console_messages[4], strlen(console_messages[4])) )
+	  {
+	    printstr("TX error\n");
+	  }
 	  switch(data)
 	  {
 	    case APP_RS485_PARITY_EVEN: // Set EVEN Parity
@@ -145,7 +164,10 @@ void application(chanend c_receive, chanend c_send)
 	      break;
 
 	    default: //Displays Invalid user selection
-	      result = rs485_send_packet(c_send, console_messages[6], strlen(console_messages[6]));
+	      if(!rs485_send_packet(c_send, console_messages[6], strlen(console_messages[6])) )
+	      {
+	        printstr("TX error\n");
+	      }
 	      select_valid_option=0;
 	      break;
 	  }
@@ -157,13 +179,22 @@ void application(chanend c_receive, chanend c_send)
 	while(select_valid_option == 0)
 	{
 	  select_valid_option=1;
-	  result = rs485_send_packet(c_send, console_messages[2], strlen(console_messages[2]));
-	  result = rs485_send_packet(c_send, console_messages[1], strlen(console_messages[1]));
+	  if(!rs485_send_packet(c_send, console_messages[2], strlen(console_messages[2])) )
+	  {
+	    printstr("TX error\n");
+	  }
+	  if( !rs485_send_packet(c_send, console_messages[1], strlen(console_messages[1])) )
+	  {
+	    printstr("TX error\n");
+	  }
 	  c_receive :> len;
 	  c_receive :> data;
 	  data=data-'0';
 	  if(data > 0 && data <4)
-	    result = rs485_send_packet(c_send, console_messages[4], strlen(console_messages[4]));
+	    if( !rs485_send_packet(c_send, console_messages[4], strlen(console_messages[4])) )
+	    {
+	      printstr("TX error\n");
+	    }
 	  switch(data)
 	  {
 	    case APP_RS485_DATA_7: //Sets Data bits length as 7
@@ -179,7 +210,10 @@ void application(chanend c_receive, chanend c_send)
 	      break;
 
 	    default: //Displays Invalid selection on the terminal
-	      result = rs485_send_packet(c_send, console_messages[6], strlen(console_messages[6]));
+	      if( !rs485_send_packet(c_send, console_messages[6], strlen(console_messages[6])) )
+	      {
+	        printstr("TX error\n");
+	      }
 	      select_valid_option=0;
 	      break;
 	  }
@@ -187,13 +221,22 @@ void application(chanend c_receive, chanend c_send)
 	break;
 
       case APP_RS485_HELP: //Displays help information on the screen
-        result = rs485_send_packet(c_send, console_messages[7], strlen(console_messages[7]));
-        result = rs485_send_packet(c_send, console_messages[8], strlen(console_messages[8]));
+        if( !rs485_send_packet(c_send, console_messages[7], strlen(console_messages[7])) )
+        {
+          printstr("TX error\n");
+        }
+        if( !rs485_send_packet(c_send, console_messages[8], strlen(console_messages[8])) )
+        {
+          printstr("TX error\n");
+        }
 	break;
 
       case APP_RS485_SEND_DATA: //Receives the input data still user presses CTRL + D and displays the received send data back to the terminal
         end_of_data=0;
-        result = rs485_send_packet(c_send, console_messages[9], strlen(console_messages[9]));
+        if( !rs485_send_packet(c_send, console_messages[9], strlen(console_messages[9])) )
+        {
+          printstr("TX error\n");
+        }
         while(end_of_data != 1)
 	{
           c_receive :> len;
@@ -208,12 +251,18 @@ void application(chanend c_receive, chanend c_send)
               buf_rx[index_len++]=data; //update all the received data into buffrer
           }
         }
-        result = rs485_send_packet(c_send, buf_rx, index_len);
+        if( !rs485_send_packet(c_send, buf_rx, index_len) )
+        {
+          printstr("TX error\n");
+        }
 	index_len=0;
 	break;
 
       default: //Displays invalid option in the Terminal
-        result = rs485_send_packet(c_send, console_messages[6], strlen(console_messages[6]));
+        if( !rs485_send_packet(c_send, console_messages[6], strlen(console_messages[6])) )
+        {
+          printstr("TX error\n");
+        }
         break;
     }
   }

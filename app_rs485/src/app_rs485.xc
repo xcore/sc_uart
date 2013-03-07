@@ -72,12 +72,12 @@ void application(chanend c_receive, chanend c_send)
   unsigned length_of_data;
   while(1)
   {
-    if(!rs485_rx_buffer(c_receive,receive_buffer))
+    length_of_data=rs485_rx_buffer(c_receive,receive_buffer);
+    if(!rs485_send_packet(c_send, receive_buffer, length_of_data))
     {
       printstr("TX error\n");
     }
-	rs485_send_packet(c_send, receive_buffer, length_of_data);
-    }
+  }
 }
 
 /**
