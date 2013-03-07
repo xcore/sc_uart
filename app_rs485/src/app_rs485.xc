@@ -19,7 +19,6 @@
 
 #include <xs1.h>
 #include <print.h>
-#include <xscope.h>
 #include <platform.h>
 #include "rs485.h"
 
@@ -45,29 +44,16 @@ on tile[0]: rs485_interface_t rs485_if =
 };
 
 rs485_config_t rs485_config =
-{ DIR_BIT, BAUD, DATA, STOP, PARITY, TIMEOUT, };
-
-
-/** =========================================================================
- * rs485_rx_buffer
- *
- * rs485 receive buffer function which stores received data into an array
- *
- * \param channel to rs485_run thread, buffer to store received data
- *
- * \return None
- *
- **/
-void rs485_rx_buffer(chanend c_receive, unsigned char receive_buffer[])
 {
-    unsigned length_of_data;
-        c_receive :> length_of_data; //receives length of data from the rs485_run thread
-		for(int i = 0; i < length_of_data; i++)
-		{
-		  c_receive :> receive_buffer[i];
-		  receive_buffer[i] += 1; //manuplates the received data and stores in the buffer
-		}
-		}
+  DIR_BIT,
+  BAUD,
+  DATA,
+  STOP,
+  PARITY,
+  TIMEOUT
+};
+
+
 
 /** =========================================================================
  * Consume
@@ -86,7 +72,10 @@ void application(chanend c_receive, chanend c_send)
   unsigned length_of_data;
   while(1)
   {
-    rs485_rx_buffer(c_receive,receive_buffer);
+    if(!rs485_rx_buffer(c_receive,receive_buffer))
+    {
+      printstr("TX error\n");
+    }
 	rs485_send_packet(c_send, receive_buffer, length_of_data);
     }
 }
@@ -97,13 +86,13 @@ void application(chanend c_receive, chanend c_send)
 
 int main(void)
 {
-	chan c_send,c_receive;
-	par
-	{
+  chan c_send,c_receive;
+  par
+  {
     on tile[0]: application(c_receive, c_send);
-        on tile[0]: rs485_run(c_send, c_receive, rs485_if, rs485_config);
-	}
-	return 0;
+    on tile[0]: rs485_run(c_send, c_receive, rs485_if, rs485_config);
+  }
+  return 0;
 }
 
 

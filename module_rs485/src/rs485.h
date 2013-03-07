@@ -15,58 +15,58 @@
 #define RS485_BUF_SIZE (40)
 #endif
 
-
+#ifdef __XC__
 typedef struct rs485_interface_t_
 {
-    port p_data;
-    out port p_dir;
+  port p_data;
+  out port p_dir;
 }rs485_interface_t;
-
+#endif
 
 typedef enum rs485_parity_t_
 {
-	RS485_PARITY_EVEN = 0,
-	RS485_PARITY_ODD,
-	RS485_PARITY_NONE
+  RS485_PARITY_EVEN = 0,
+  RS485_PARITY_ODD,
+  RS485_PARITY_NONE
 } rs485_parity_t;
 
 typedef enum rs485_state_t_
 {
-	RS485_STATE_SETUP,
-	RS485_STATE_RX_IDLE,
-	RS485_STATE_RX,
-	RS485_STATE_RX_DONE,
-	RS485_STATE_RX_ERROR,
-	RS485_STATE_TX,
-	RS485_STATE_TX_DONE
+  RS485_STATE_SETUP,
+  RS485_STATE_RX_IDLE,
+  RS485_STATE_RX,
+  RS485_STATE_RX_DONE,
+  RS485_STATE_RX_ERROR,
+  RS485_STATE_TX,
+  RS485_STATE_TX_DONE
 } rs485_state_t;
 
 typedef enum rs485_cmd_t_
 {
-	RS485_CMD_SET_BAUD,
-	RS485_CMD_SET_BITS,
-	RS485_CMD_SET_PARITY,
-	RS485_CMD_SET_STOP_BITS,
-	RS485_CMD_SEND_BYTE,
-	RS485_CMD_GET_STATUS,
-	RS485_CMD_SEND_PACKET
+  RS485_CMD_SET_BAUD,
+  RS485_CMD_SET_BITS,
+  RS485_CMD_SET_PARITY,
+  RS485_CMD_SET_STOP_BITS,
+  RS485_CMD_SEND_BYTE,
+  RS485_CMD_GET_STATUS,
+  RS485_CMD_SEND_PACKET
 } rs485_cmd_t;
 
 typedef enum rs485_buffer_state_t_
 {
-	RS485_BUFFER_STATE_EMPTY,
-	RS485_BUFFER_STATE_OVERRUN,
-	RS485_BUFFER_STATE_OK
+  RS485_BUFFER_STATE_EMPTY,
+  RS485_BUFFER_STATE_OVERRUN,
+  RS485_BUFFER_STATE_OK
 } rs485_buffer_state_t;
 
 typedef struct rs485_config_t_
 {
-    unsigned dir_bit;
-    unsigned baud_rate;
-    int data_bits;
-    int stop_bits;
-    rs485_parity_t parity;
-    int data_timeout;
+  unsigned dir_bit;
+  unsigned baud_rate;
+  int data_bits;
+  int stop_bits;
+  rs485_parity_t parity;
+  int data_timeout;
 }rs485_config_t;
 
 /** Implemetation of a half-duplex RS485 interface. This function requires an unbuffered 1-bit port for the
@@ -97,10 +97,23 @@ typedef struct rs485_config_t_
  * \param data_timeout The number of character times after the last received character to indiacte packet finish
  *
  */
+#if __XC__
 void rs485_run(chanend c_control,
                chanend c_data,
                rs485_interface_t &rs485_if,
                rs485_config_t &rs485_config);
+#endif
+
+/** receieve data and store in buffer.
+ *
+ * Receives data and stores in the buffer.
+ * Only whole integer numbers are supported.
+ *
+ * \param c    The command interface channel
+ * \param buffer[] The receive buffer
+ *
+ */
+void rs485_rx_buffer(chanend c_receive, unsigned char receive_buffer[]);
 
 /** Set the baud rate.
  *
