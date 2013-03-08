@@ -162,14 +162,12 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 
                                 </option>
                                 <inputType id = "com.xmos.cdt.xc.compiler.input.45143781" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
                                 <option id = "gnu.c.compiler.option.include.paths.20753753" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 
                                 </option>
@@ -177,13 +175,11 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                             <tool id = "com.xmos.cdt.xc.compiler.base.35350738" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.79813320" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.47165612" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 
                                 </option>
@@ -191,13 +187,11 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                             <tool id = "com.xmos.cdt.c.compiler.base.29598643" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.46337351" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.65243251" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 
                                 </option>
@@ -205,13 +199,11 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                             <tool id = "com.xmos.cdt.cpp.compiler.base.40523470" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.15539313" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.93742192" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 
                                 </option>
@@ -219,13 +211,11 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                             <tool id = "com.xmos.cdt.core.assembler.base.3462048" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.69143042" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.31776622" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 
                                 </option>

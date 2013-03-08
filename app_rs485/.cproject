@@ -161,212 +161,102 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                                 <inputType id = "com.xmos.cdt.xc.compiler.input.47434610" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
                                 <option id = "gnu.c.compiler.option.include.paths.52615294" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.xc.compiler.base.84218148" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.13277635" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.42923606" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.c.compiler.base.48899786" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.11964821" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.66835836" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.cpp.compiler.base.28978554" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.49968685" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.57193791" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.core.assembler.base.33219250" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.21260853" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.95193843" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                             </tool>
@@ -625,212 +515,102 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                                 <inputType id = "com.xmos.cdt.xc.compiler.input.65428554" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
                                 <option id = "gnu.c.compiler.option.include.paths.12915887" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.xc.compiler.base.95231068" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.38461173" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.17995604" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.c.compiler.base.81012456" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.99724305" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.17597119" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.cpp.compiler.base.9895409" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.62418625" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.22102481" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.core.assembler.base.10547392" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.12222824" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.47311927" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/.settings}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin/Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_fast_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/bin}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_uart_fast_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/m_rs485}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.build_Debug/fake_inc}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_rs485/.settings}&quot;' />
 
                                 </option>
                             </tool>
