@@ -10,7 +10,7 @@
             <board>XA-SK-GPIO</board>
             <keyword>UART</keyword>
         </component>
-        <component description = "Demo app for the RS485 component" type = "demoCode" scope = "Example" path = "app_rs485_demo" local = "false" id = "app_rs485_demo" name = "RS485 Terminal Console Demonstration">
+        <component description = "Terminal console communication with RS485 component via USB to RS485 module" type = "demoCode" scope = "Example" path = "app_rs485_demo" local = "false" id = "app_rs485_demo" name = "RS485 Terminal Console Demonstration">
             <board>XK-SKC-L2</board>
             <board>XA-SK-ISBUS</board>
             <componentDependency>module_uart_fast_tx</componentDependency>
@@ -18,7 +18,7 @@
             <keyword>rs485</keyword>
             <keyword>UART</keyword>
         </component>
-        <component description = "Demo app for the RS485 component" type = "demoCode" scope = "Example" path = "app_rs485" local = "false" id = "app_rs485" name = "RS485 Demonstration">
+        <component description = "Basic loopback demonstration for the RS485 component" type = "demoCode" scope = "Example" path = "app_rs485" local = "false" id = "app_rs485" name = "RS485 Demonstration">
             <board>XK-SKC-L2</board>
             <board>XA-SK-ISBUS</board>
             <componentDependency>module_uart_fast_tx</componentDependency>
