@@ -6,4 +6,4 @@ RS485 Demonstration
 :keywords: rs485, UART
 :boards: XK-SKC-L2
 
-Fun
+This application demonstrates the usage of module_rs485.
