@@ -17,14 +17,15 @@ This module may be evaluated using the Slicekit Modular Development Platform. Re
 Demonstration Applications
 --------------------------
 
-app_rs485
-+++++++++
+Simple Loopback (app_rs485)
++++++++++++++++++++++++++++
 
-The demostration application requires the three RS485 connections (A,B and GND_ISO) to be connected to 
+This is a very simple loopback demonstration that does not require external hardware.
+
+Terminal Console Demo (app_rs485_demo)
+++++++++++++++++++++++++++++++++++++++
+
+This demostration application requires the three RS485 connections (A,B and GND_ISO) to be connected to 
 an appropriate USB to RS485 converter (eg. Amplicon USB-485Ui) configured in half-duplex mode with no 
 local echo. A serial terminal program on a PC can then be used to send and recieve the echoed data.
 
-Example usage of this module can be found within the XSoftIP suite as follows:
-
-   * Package: 
-   * Application: 
