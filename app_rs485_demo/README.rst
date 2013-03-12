@@ -2,7 +2,7 @@ RS485 Terminal Console Demonstration
 ====================================
 
 :scope: Example
-:description: Demo app for the RS485 component
+:description: Terminal console communication with RS485 component via USB to RS485 module
 :keywords: rs485, UART
 :boards: XK-SKC-L2, XA-SK-ISBUS
 
