@@ -59,6 +59,9 @@
     </dependency>
     <description>Inline libraries for various simple uart implementations</description>
     <docdir>doc</docdir>
+    <docdir>module_rs485/doc</docdir>
+    <docdir>app_rs485/doc_quickstart</docdir>
+    <docdir>app_rs485_demo/doc_quickstart</docdir>
     <exclude_dir>app_uart_test</exclude_dir>
     <location>git@github.com:xcore/sc_uart.git</location>
     <name>sc_uart</name>

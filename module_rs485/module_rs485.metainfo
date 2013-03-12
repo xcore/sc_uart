@@ -11,22 +11,9 @@ componentVersion = "1v0"
 -------------------------------------------------------------------------------
 -- Parameter descriptions.
 -------------------------------------------------------------------------------
-
 configPoints =
 {
-  rxBufferSize =
-  {
-    short   = "RX Buffer Size",
-    long    = "Array for buffering bytes before they are transmitted",
-    help    = "",
-    units   = "",
-    type    = "int",
-    resourceUsageFlags = {"linear","orthogonal"},
-    min     = 8,
-    max     = 64,
-    default = 8
-  },
-  rxInitialBaudRate =
+  rs485InitialBaudRate =
   {
     short   = "Initial Baud Rate",
     long    = "Initial baud Setting on start-up. Can be changed dynamically later.",
@@ -35,22 +22,22 @@ configPoints =
     type    = "int",
     resourceUsageFlags = {"noeffect"},
     min     = 1,
-    max     = 115200,
-    default = 115200
+    max     = 1000000,
+    default = 9600
   },
-  rxInitialBPC =
+  rs485DataBits =
   {
-    short   = "Inital Bits Per Character",
+    short   = "Initial Bits Per Character",
     long    = "Initial BPC Setting on start-up. Can be changed dynamically later.",
     help    = "",
     type    = "int",
     units   = "bits",
     resourceUsageFlags = {"noeffect"},
-    max     = 8,
-    min     = 5,
+    max     = 9,
+    min     = 7,
     default = 8
   },
-  rxInitialStopBits =
+  rs485InitialStopBits =
   {
     short   = "Inital Stop Bits",
     long    = "Initial stop bits Setting on start-up. Can be changed dynamically later",
@@ -59,10 +46,10 @@ configPoints =
     units   = "bits",
     resourceUsageFlags = {"noeffect"},
     max     = 2,
-    min     = 0,
+    min     = 1,
     default = 1
   },
-  rxInitialParity =
+  rs485InitialParity =
   {
     short   = "Inital Parity Setting",
     long    = "Initial Parity Setting on start-up. Can be changed dynamically later",
@@ -70,28 +57,64 @@ configPoints =
     type    = "string",
     units   = "",
     resourceUsageFlags = {"noeffect"},
-    options = {"UART_RX_PARITY_NONE", "UART_RX_PARITY_EVEN", "UART_RX_PARITY_ODD"},
-    default = "UART_RX_PARITY_EVEN"
+    options = {"RS485_PARITY_NONE", "RS485_PARITY_EVEN", "RS485_PARITY_ODD"},
+    default = "RS485_PARITY_EVEN"
+  },
+  rs485DirBit =
+  {
+    short   = "Dir polarity",
+    long    = "Polarity of Direction Control",
+    help    = "",
+    type    = "string",
+    units   = "",
+    resourceUsageFlags = {"noeffect"},
+    max     = 1,
+    min     = 0,
+    default = 0
+  },
+  rs485DataTimeout =
+  {
+    short   = "Timeout",
+    long    = "Time data line must be idle before transmitter witll attempt to send",
+    help    = "",
+    type    = "string",
+    units   = "",
+    resourceUsageFlags = {"noeffect"},
+    max     = 1,
+    min     = 0,
+    default = 0
   },
 }
 
 derivedValues = {}
 
 ports = {
-  p_uart_rx = {
-    short   = "UART RX",
-    long    = "UART RX Pin",
+  p_rs485_data = {
+    short   = "Data",
+    long    = "RS 485 Data Pin",
+    help    = "",
+    width   = 1
+  },
+  p_rs485_dir = {
+    short   = "Direction",
+    long    = "RS 485 Direction Pin",
     help    = "",
     width   = 1
   }
 }
 
 channels = {
-  c_rx_uart = {
+  c_rx = {
     short = "RX channel",
-    long  = "Channel for the client to send RX data to the Uart transitter",
+    long  = "Channel for the client to receive RX data from the RS485 transceiver",
     help  = "",
   },
+  c_tx = {
+    short = "TX channel",
+    long  = "Channel for the to send TX data to the RS485 transceiver",
+    help  = "",
+  },
+
 }        
 
 function getConfigStatus()
@@ -106,14 +129,21 @@ end
 
 generatedCode = {
   includes = { 
-    "uart_rx.h"
+    "rs485.h"
   },
   globals = [[
-    in buffered port:1 p_uart${swblock.id}_rx = XS1_PORT_1A;
+    rs485_interface_t rs485${swblock.id}_if = { ${swblock.ports.p_rs485_data}, ${swblock.ports.p_rs485_dir}};
+    rs485_config_t rs485${swblock.id}_config = {
+      ${swblock.params.rs485DirBit},
+      ${swblock.params.rs485InitialBaudRate},
+      ${swblock.params.rs485DataBits},
+      ${swblock.params.rs485InitialStopBits},
+      ${swblock.params.rs485InitialParity},
+      ${swblock.params.rs485DataTimeout}
+    };
   ]],
   body = [[
-    unsigned char rx_buffer[64];
-    uart_rx(p_uart_rx, rx_buffer, ${swblock.params.rxBufferSize}, ${swblock.params.rxInitialBaudRate},  ${swblock.params.rxInitialBPC},  ${swblock.params.rxInitialParity},  ${swblock.params.rxInitialStopBits}, ${swblock.chanends.c_rx_uart});
+    rs485_run(c_tx, c_rx, rs485${swblock.id}_if, rs485${swblock.id}_config);
   ]]
 }
 
