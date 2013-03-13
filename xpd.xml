@@ -10,14 +10,6 @@
             <board>XA-SK-GPIO</board>
             <keyword>UART</keyword>
         </component>
-        <component description = "Terminal console communication with RS485 component via USB to RS485 module" type = "demoCode" scope = "Example" path = "app_rs485_demo" local = "false" id = "app_rs485_demo" name = "RS485 Terminal Console Demonstration">
-            <board>XK-SKC-L2</board>
-            <board>XA-SK-ISBUS</board>
-            <componentDependency>module_uart_fast_tx</componentDependency>
-            <componentDependency>module_rs485</componentDependency>
-            <keyword>rs485</keyword>
-            <keyword>UART</keyword>
-        </component>
         <component description = "Basic loopback demonstration for the RS485 component" type = "demoCode" scope = "Example" path = "app_rs485" local = "false" id = "app_rs485" name = "RS485 Demonstration">
             <board>XK-SKC-L2</board>
             <board>XA-SK-ISBUS</board>
@@ -85,7 +77,8 @@
     <release parenthash = "5b5b57bcc2501ba3ed945bd6d53c26d8c43466f6" version = "2.2.0alpha4" githash = "903fdda06dcdd289801c08e4d965e0133082db33"></release>
     <release parenthash = "2765945955f9c3a981b025e429355d99aedc4a88" version = "2.2.0rc0" githash = "4b5a6e17070a4ac435160a034220769adda9c31d"></release>
     <release parenthash = "4e82817ab9ceec16ba75e3869eb7d0ea7adad67b" version = "2.2.0rc1" githash = "d89b2a56d6487af908772ff8af894d3b68e13b41"></release>
-    <release parenthash = "42429d9c428ae6a4582cddade8bf478970ac70b5" version = "2.3.0beta0"></release>
+    <release parenthash = "42429d9c428ae6a4582cddade8bf478970ac70b5" version = "2.3.0beta0" githash = "36ce072424bf17d60213f0380a75f517e07ead1d"></release>
+    <release parenthash = "2088b2b3e4bc836f77c5768d920c34b55fee52eb" version = "2.3.0beta1"></release>
     <subpartnumber>XM-001906-SM</subpartnumber>
     <vendor>XMOS</vendor>
     <xcore_repo>sc_uart.git</xcore_repo>
