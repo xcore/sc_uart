@@ -56,7 +56,6 @@
     <docdir>doc</docdir>
     <docdir>module_rs485/doc</docdir>
     <docdir>app_rs485/doc_quickstart</docdir>
-    <docdir>app_rs485_demo/doc_quickstart</docdir>
     <exclude_dir>app_uart_test</exclude_dir>
     <exclude_dir>app_rs485_demo</exclude_dir>
     <location>git@github.com:xcore/sc_uart.git</location>
