@@ -60,12 +60,12 @@ PuTTY
    #. Click 'Open'
    #. Type 012345678 in to the terminal window, you should see the output as below
    
-   .. figure:: images/PuTTY_Config.png
+.. figure:: images/PuTTY_Config.PNG
    :align: center
 
    PuTTY Configuration Dialog
    
-   .. figure:: images/PuTTY_Result.png
+.. figure:: images/PuTTY_Result.PNG
    :align: center
    
    PuTTY Terminal Output
@@ -85,12 +85,12 @@ RealTerm
    #. Select the 'Display' tab
    #. Click in the terminal window and type 012345678, you shoule see the output as below
    
-   .. figure:: images/RealTerm_Config.png
+.. figure:: images/RealTerm_Config.PNG
    :align: center
 
    RealTerm Configuration Dialog
    
-   .. figure:: images/RealTerm_Result.png
+.. figure:: images/RealTerm_Result.PNG
    :align: center
    
    RealTerm Terminal Output
