@@ -2,10 +2,10 @@
 -- Descriptive metadata
 -------------------------------------------------------------------------------
 
-componentName = "xSOFTip UART RX"
+componentName = "xSOFTip RS485"
 componentFullName = ""
 alternativeNames = { }
-componentDescription = "Single Fully featured Uart Receiver" 
+componentDescription = "Single Fully featured RS485 Transceiver" 
 componentVersion = "1v0"
 
 -------------------------------------------------------------------------------

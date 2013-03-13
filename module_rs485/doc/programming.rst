@@ -120,6 +120,6 @@ To make use of the RS485 function library the app_rs485_demo.xc must contain the
   #include "rs485.h"
 
 The RS485 interface is initialsied to operate at 9600 baud, 8 data bits, 2 stop bits and a 
-10 character timeout. THis information can be changed in common.h header file.
+10 character timeout. This information can be changed in common.h header file.
 
 
