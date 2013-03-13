@@ -8,8 +8,8 @@ RS485 app : Quick Start Guide
 
 This simple demonstration of xTimeComposer Studio functionality uses the XA-SK-ISBUS Slice Card together with the xSOFTip rs485 component to:
 
-   * Receive RS485 data packets
-   * Transmit the received packet back to the RS485 bus
+   * Receive RS485 data packets sent from a terminal console via a USB-to-RS485 converter
+   * Add +1 to the received characters and transmit the received packet back to the RS485 bus and back to the terminal console
 
 Hardware Setup
 ++++++++++++++
@@ -24,7 +24,7 @@ To setup up the system:
    #. Connect the XTAG-2 to host PC. Note that a USB cable is not provided with the Slicekit starter kit.
    #. Switch on the power supply to the Slicekit Core board.
 
-.. figure:: images/hardware_setup.png
+.. figure:: images/hardware_setup.JPG
    :align: center
 
    Hardware Setup for RS485 Demo
@@ -50,7 +50,7 @@ PuTTY
    #. Open the PuTTY program, the PuTTY Configuration Dialog should be showing
    #. Select the 'Serial' category, under 'Connection'
    #. Set the 'Serial line to connect to' to match the COM port associated with the USB to RS485 device (this can be found in the device manager if not known)
-   #. Set the 'Speed (baud)' option to 9600 (or to whatever baud has been selected in the software)
+   #. Set the 'Speed (baud)' option to 9600.
    #. Set the 'Data bits' option to 8
    #. Set the 'Stop bits' option to 2
    #. Select 'None' from the 'Parity' drop-down
@@ -83,7 +83,7 @@ RealTerm
    #. Select the 'None' radio button in the 'Hardware Flow Control' group
    #. Click the 'Change' button
    #. Select the 'Display' tab
-   #. Click in the terminal window and type 012345678, you shoule see the output as below
+   #. Click in the terminal window and type 012345678, you should see the output as below
    
 .. figure:: images/RealTerm_Config.PNG
    :align: center
