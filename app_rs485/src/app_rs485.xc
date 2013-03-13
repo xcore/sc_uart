@@ -70,9 +70,13 @@ void application(chanend c_receive, chanend c_send)
 {
   unsigned char receive_buffer[RS485_BUF_SIZE];
   unsigned length_of_data;
+  int i;
   while(1)
   {
     length_of_data=rs485_rx_buffer(c_receive,receive_buffer);
+    for(i=0; i< length_of_data; i++) {
+      receive_buffer[i]++;
+    }
     if(!rs485_send_packet(c_send, receive_buffer, length_of_data))
     {
       printstr("TX error\n");
