@@ -81,6 +81,7 @@
     <release parenthash = "86c6e1a8aa844a1db70af3f4e8a5bba4175f891c" version = "2.3.0beta2" githash = "d4ce73855b8b7423cbf39d44aa50f15ca06a70f1"></release>
     <release parenthash = "0e0857bfbc256bf7eddb4167f5ee4ffafc2e5825" version = "2.3.0beta3" githash = "ea6888247637c3b17bafbee312aa017b90878761"></release>
     <release parenthash = "d3cc5fd8fbe81b5df2c5e030b9942d80d7c873cb" version = "2.3.0beta4" githash = "fe8f1046d466c250148b2ed03e75daa5188ba7f0"></release>
+    <release parenthash = "031329495a78b4218a691a6536171d0c54ef73f5" version = "2.3.0beta5"></release>
     <subpartnumber>XM-001906-SM</subpartnumber>
     <vendor>XMOS</vendor>
     <xcore_repo>sc_uart.git</xcore_repo>
