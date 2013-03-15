@@ -1,5 +1,5 @@
-XMOS xSOFTip RS485 Component
-============================
+RS485 Transceiver Component
+===========================
 
 .. toctree::
 

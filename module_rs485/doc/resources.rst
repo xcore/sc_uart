@@ -3,25 +3,5 @@ Resource Requirements
 
 Resources
 ---------
-
-.. list-table::
-    :header-rows: 1
-
-    * - Operation
-      - Resource Type
-      - Number required
-      - Notes
-    * - RS485 TX/RX
-      - 1 bit port (bi-dir)
-      - 1
-      - TX/RX
-    * - RS485 Output
-      - 4 bit port
-      - 1 
-      - Direction Control
-    * - RS485 IO timing
-      - clock block
-      - 1
-      - 
-
-   The RS485 component uses one 62.5MIPS thread
+The RS485 component uses one 62.5MIPS logical core, a single 1-bit port for data and one bit of a 4-bit port for direction control and a single clock block.
+   

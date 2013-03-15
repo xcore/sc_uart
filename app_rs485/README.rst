@@ -1,5 +1,5 @@
-RS485 Demonstration
-===================
+RS485 Terminal Console Demo 
+===========================
 
 :scope: Example
 :description: Basic loopback demonstration for the RS485 component
