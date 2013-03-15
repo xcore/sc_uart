@@ -36,7 +36,7 @@ Import and Build the Application
 
 For help in using xTimeComposer, try the xTimeComposer tutorials, which you can find by selecting Help->Tutorials from the xTimeComposer menu.
 
-Note that the Developer Column in the xTimeComposer on the right hand side of your screen provides information on the xSOFTip components you are using. Selecting either the ``RS485 transceiver component`` or ``RS485 Terminal Console Demo`` component in the xSOFTip Browser will cause a page with links to both the component and application quickstart documentation. Once you have briefly explored the component documentaion, you can return to this quickstart guide by re-selecting the ``RS485 Terminal Console Demo Quickstart Guide`` link.
+Note that the Developer Column in the xTimeComposer on the right hand side of your screen provides information on the xSOFTip components you are using. Selecting either the ``RS485 transceiver component`` or ``RS485 Terminal Console Demo`` component in the xSOFTip Browser will cause a page with links to both the component and application quickstart documentation to be displayed in the Developer Column Window. Once you have briefly explored the component documentaion, you can return to this quickstart guide by re-selecting the ``RS485 Terminal Console Demo Quickstart Guide`` link.
     
 Serial Terminal Setup Examples
 ++++++++++++++++++++++++++++++
@@ -102,7 +102,7 @@ Now that the application has been compiled, the next step is to run it on the Sl
 
    #. Click on the ``Run`` icon (the white arrow in the green circle). A dialog will appear asking which device to cvonnect to. Select ``XMOS XTAG2``. 
    #. Using a serial terminal application, connect to the RS485 to USB converter, set to 9600 baud, 8 data bits, 2 stop bits, no parity.
-   #. Once you are ready to run the demo click in the terminal window and type 012345678. The XMOS application receives each byte and increments it by one, so you will see 123456789 echoed back on the terminal window"
+   #. Once you are ready to run the demo click in the terminal window and type 012345678. The XMOS application receives each byte and increments it by one, so you will see 123456789 echoed back on the terminal window.
 
 
 Next Steps
