@@ -1,7 +1,24 @@
 Resource Requirements
 =====================
 
-Resources
----------
-The RS485 component uses one 62.5MIPS logical core, a single 1-bit port for data and one bit of a 4-bit port for direction control and a single clock block.
++---------------+-------+
+| Resource      | Usage |
++===============+=======+
+| Memory        |  1.5K |
++---------------+-------+
+| Channelends   |   2   |
++---------------+-------+
+| Timers        |   1   |
++---------------+-------+
+| Clockblocks   |   0   |
++---------------+-------+
+| Logical Cores |   1   |
++---------------+-------+
+| 1-Bit Ports   |   1   |
++---------------+-------+
+| 4-Bit Ports   |   1*  |
++---------------+-------+
+
+
+* 1 bit of a 4-bit port is used for direction control. This can easily be moved to a 1-bit port should a 4-bit port not be available.
    
