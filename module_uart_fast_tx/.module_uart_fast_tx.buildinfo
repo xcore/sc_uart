@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<allbuildresults>
+<buildresults component="module_uart_fast_tx" packagename="xm-local-sc_uart(2.3.0rc0)" packageversion="2.3.0rc0" toolsversion="latest">
+<buildresult>
+<configuration/>
+<resourceusage>
+<resourceusageitem id="cores" value="1"/>
+<resourceusageitem id="memory" value="0"/>
+<resourceusageitem id="codememory" value="382"/>
+<resourceusageitem id="datamemory" value="38"/>
+<resourceusageitem id="ports1bit" value="1"/>
+<resourceusageitem id="ports4bit" value="0"/>
+<resourceusageitem id="ports8bit" value="0"/>
+<resourceusageitem id="ports16bit" value="0"/>
+<resourceusageitem id="ports32bit" value="0"/>
+<resourceusageitem id="clocks" value="0"/>
+<resourceusageitem id="chanends" value="1"/>
+<resourceusageitem id="timers" value="0"/>
+</resourceusage>
+</buildresult>
+</buildresults>
+</allbuildresults>
