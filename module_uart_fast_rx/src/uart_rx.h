@@ -22,4 +22,13 @@
  *               that you have attached to port p; assuming it is the standard 100 Mhz
  *               reference clock then clocks should be at least 10.
  */
-extern void uart_rx_fast(in port p, streaming chanend c, int clocks);
+void uart_rx_fast(in port p, streaming chanend c, int clocks);
+
+/** This function initialises the fast uart I/O. Uses built-in function to
+ * setup port mode.
+ *
+ * \param p      input port, 1 bit port on which data comes in
+ *
+ * \param clkblk the clock source for the clocked port
+ */
+void uart_rx_fast_init(in port p, const clock clkblk);
