@@ -29,6 +29,7 @@ void uart_rx_fast(in port pIn, streaming chanend cOut, int clocks) {
         }
         data >>= 24;			//shift into MSB
         cOut <: (unsigned char) data; //send to client
+        pIn @ t :> int _;
         data = 0;
     }
 }

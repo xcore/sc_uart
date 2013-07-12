@@ -4,9 +4,10 @@
 #include "uart_tx.h"
 
 #define TEST_LENGTH 32  //number of characters to send/receive in test. Max 256.
-#define BIT_PERIOD 10   //bit period in  clock ticks. CLKBLK_REF is 100MHz here
+#define BIT_PERIOD 868   //bit period in  clock ticks. CLKBLK_REF is 100MHz here
 					    //so 10 x 10ns = 100ns per bit period -> 10MHz baudrate
-#define DEMO_TILE 0		//xCore tile to run the demo on
+						//The maximum number here is 2^16 or 65535 due to 16b port timers
+#define DEMO_TILE 1		//xCore tile to run the demo on
 
 //:: Port and clock  declarations
 on tile[DEMO_TILE]: in port p_rx = XS1_PORT_1E;			//XD12

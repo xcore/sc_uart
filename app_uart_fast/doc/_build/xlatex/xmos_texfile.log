@@ -1,0 +1,2141 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.8.21)  12 JUL 2013 14:16
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**xmos_texfile.tex
+
+(/Users/Ed/apps/scratch/sc_uart/app_uart_fast/doc/_build/xlatex/xmos_texfile.te
+x
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
+aded.
+(/Users/Ed/apps/scratch/sc_uart/app_uart_fast/doc/_build/xlatex/quickstart.tex
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/xmosmode
+rn.cls
+Document Class: xmosmodern 2010/12/10 v3.0b XMOS Modern Style Class
+
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/memoir.c
+ls
+Document Class: memoir 2010/02/20 v1.618033988c configurable book, report, arti
+cle document class
+\onelineskip=\skip41
+\lxvchars=\skip42
+\xlvchars=\skip43
+\@memcnta=\count79
+\c@@memmarkcntra=\count80
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/generic/oberdiek/if
+pdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Class memoir Info: An `ifetex' package is being emulated on input line 251.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/generic/ifxetex/ifx
+etex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/generic/oberdiek/if
+luatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+\stockheight=\skip44
+\stockwidth=\skip45
+\trimtop=\skip46
+\trimedge=\skip47
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/etex-pkg/etex
+.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count81
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/mem9.clo
+File: mem9.clo 2008/01/30 v0.4 memoir class 9pt size option
+)
+\binding=\skip48
+\spinemargin=\skip49
+\foremargin=\skip50
+\uppermargin=\skip51
+\lowermargin=\skip52
+\headdrop=\skip53
+\normalrulethickness=\skip54
+\headwidth=\skip55
+\c@storedpagenumber=\count82
+\memPD=\dimen102
+\m@mabparskip=\skip56
+\thanksmarkwidth=\skip57
+\thanksmarksep=\skip58
+\droptitle=\skip59
+\c@book=\count83
+\c@part=\count84
+\c@chapter=\count85
+\c@section=\count86
+\c@subsection=\count87
+\c@subsubsection=\count88
+\c@paragraph=\count89
+\c@subparagraph=\count90
+\beforechapskip=\skip60
+\midchapskip=\skip61
+\afterchapskip=\skip62
+\chapindent=\skip63
+\bottomsectionskip=\skip64
+\secindent=\skip65
+\beforesecskip=\skip66
+\aftersecskip=\skip67
+\subsecindent=\skip68
+\beforesubsecskip=\skip69
+\aftersubsecskip=\skip70
+\subsubsecindent=\skip71
+\beforesubsubsecskip=\skip72
+\aftersubsubsecskip=\skip73
+\paraindent=\skip74
+\beforeparaskip=\skip75
+\afterparaskip=\skip76
+\subparaindent=\skip77
+\beforesubparaskip=\skip78
+\aftersubparaskip=\skip79
+\pfbreakskip=\skip80
+\c@@ppsavesec=\count91
+\c@@ppsaveapp=\count92
+\ragrparindent=\dimen103
+\everylistparindent=\dimen104
+\parsepi=\skip81
+\topsepi=\skip82
+\itemsepi=\skip83
+\parsepii=\skip84
+\topsepii=\skip85
+\topsepiii=\skip86
+\itemsepii=\skip87
+\itemsepiii=\skip88
+\partopsepii=\skip89
+\partopsepiii=\skip90
+\m@msavetopsep=\skip91
+\m@msavepartopsep=\skip92
+\@enLab=\toks14
+\abstitleskip=\skip93
+\absleftindent=\skip94
+\abs@leftindent=\dimen105
+\absrightindent=\skip95
+\absparindent=\skip96
+\absparsep=\skip97
+\c@vslineno=\count93
+\c@poemline=\count94
+\c@modulo@vs=\count95
+\c@memfvsline=\count96
+\vleftskip=\skip98
+\vrightskip=\skip99
+\stanzaskip=\skip100
+\versewidth=\skip101
+\vgap=\skip102
+\vindent=\skip103
+\vleftmargin=\dimen106
+\c@verse=\count97
+\c@chrsinstr=\count98
+\beforepoemtitleskip=\skip104
+\afterpoemtitleskip=\skip105
+\c@poem=\count99
+\beforePoemTitleskip=\skip106
+\midPoemTitleskip=\skip107
+\afterPoemTitleskip=\skip108
+\col@sep=\dimen107
+\extrarowheight=\dimen108
+\NC@list=\toks15
+\extratabsurround=\skip109
+\backup@length=\skip110
+\TX@col@width=\dimen109
+\TX@old@table=\dimen110
+\TX@old@col=\dimen111
+\TX@target=\dimen112
+\TX@delta=\dimen113
+\TX@cols=\count100
+\TX@ftn=\toks16
+\heavyrulewidth=\dimen114
+\lightrulewidth=\dimen115
+\cmidrulewidth=\dimen116
+\belowrulesep=\dimen117
+\belowbottomsep=\dimen118
+\aboverulesep=\dimen119
+\abovetopsep=\dimen120
+\cmidrulesep=\dimen121
+\cmidrulekern=\dimen122
+\defaultaddspace=\dimen123
+\@cmidla=\count101
+\@cmidlb=\count102
+\@aboverulesep=\dimen124
+\@belowrulesep=\dimen125
+\@thisruleclass=\count103
+\@lastruleclass=\count104
+\@thisrulewidth=\dimen126
+\ctableftskip=\skip111
+\ctabrightskip=\skip112
+\abovecolumnspenalty=\count105
+\@linestogo=\count106
+\@cellstogo=\count107
+\@cellsincolumn=\count108
+\crtok=\toks17
+\@mincolumnwidth=\dimen127
+\c@newflo@tctr=\count109
+\@contcwidth=\skip113
+\@contindw=\skip114
+\abovecaptionskip=\skip115
+\belowcaptionskip=\skip116
+\subfloattopskip=\skip117
+\subfloatcapskip=\skip118
+\subfloatcaptopadj=\skip119
+\subfloatbottomskip=\skip120
+\subfloatlabelskip=\skip121
+\subfloatcapmargin=\dimen128
+\c@@contsubnum=\count110
+\m@mscap@capbox=\box26
+\m@mscap@fbox=\box27
+\sidecapsep=\dimen129
+\sidecapwidth=\dimen130
+\m@m@tempdima=\dimen131
+\m@mscapraise=\dimen132
+\sidecapraise=\dimen133
+\m@mscapmainwidth=\dimen134
+\m@mscaplkern=\dimen135
+\beforeepigraphskip=\skip122
+\afterepigraphskip=\skip123
+\epigraphwidth=\skip124
+\epigraphrule=\skip125
+LaTeX Info: Redefining \em on input line 7046.
+LaTeX Info: Redefining \emph on input line 7054.
+\tocentryskip=\skip126
+\tocbaseline=\skip127
+\cftparskip=\skip128
+\cftbeforebookskip=\skip129
+\cftbookindent=\dimen136
+\cftbooknumwidth=\dimen137
+\cftbeforepartskip=\skip130
+\cftpartindent=\skip131
+\cftpartnumwidth=\skip132
+\cftbeforechapterskip=\skip133
+\cftchapterindent=\skip134
+\cftchapternumwidth=\skip135
+\cftbeforesectionskip=\skip136
+\cftsectionindent=\skip137
+\cftsectionnumwidth=\skip138
+\cftbeforesubsectionskip=\skip139
+\cftsubsectionindent=\skip140
+\cftsubsectionnumwidth=\skip141
+\cftbeforesubsubsectionskip=\skip142
+\cftsubsubsectionindent=\skip143
+\cftsubsubsectionnumwidth=\skip144
+\cftbeforeparagraphskip=\skip145
+\cftparagraphindent=\skip146
+\cftparagraphnumwidth=\skip147
+\cftbeforesubparagraphskip=\skip148
+\cftsubparagraphindent=\skip149
+\cftsubparagraphnumwidth=\skip150
+\prechapterprecisshift=\dimen138
+\c@maxsecnumdepth=\count111
+\bibindent=\dimen139
+\bibitemsep=\skip151
+\indexcolsep=\skip152
+\indexrule=\skip153
+\indexmarkstyle=\toks18
+\@indexbox=\insert233
+\glossarycolsep=\dimen140
+\glossaryrule=\dimen141
+\sideparvshift=\skip154
+\sideins=\insert232
+\sidebartopsep=\skip155
+\sidebarhsep=\skip156
+\sidebarvsep=\skip157
+\sidebarwidth=\skip158
+\footmarkwidth=\skip159
+\footmarksep=\skip160
+\footparindent=\skip161
+\footinsdim=\skip162
+\footinsv@r=\insert231
+\@mpfootinsv@r=\insert230
+\m@m@k=\count112
+\m@m@h=\dimen142
+\m@mipn@skip=\skip163
+\sidefootins=\insert229
+\sidefootadjust=\skip164
+\sidefootheight=\skip165
+\sidefoothsep=\skip166
+\sidefootvsep=\skip167
+\sidefootwidth=\skip168
+\m@mdownsf=\skip169
+\c@sidefootnote=\count113
+\sidefootmarkwidth=\skip170
+\sidefootmarksep=\skip171
+\sidefootparindent=\skip172
+\c@pagenote=\count114
+\every@verbatim=\toks19
+\afterevery@verbatim=\toks20
+\verbatim@line=\toks21
+\tab@position=\count115
+\verbatim@in@stream=\read1
+\verbatimindent=\skip173
+\verbatim@out=\write3
+\bvboxsep=\skip174
+\c@memfbvline=\count116
+\c@bvlinectr=\count117
+\bvnumlength=\skip175
+\fb@frw=\dimen143
+\fb@frh=\dimen144
+\FrameRule=\dimen145
+\FrameSep=\dimen146
+\c@cp@cntr=\count118
+LaTeX Info: Redefining \: on input line 11378.
+LaTeX Info: Redefining \! on input line 11380.
+\c@ism@mctr=\count119
+\c@xsm@mctr=\count120
+\c@csm@mctr=\count121
+\c@ksm@mctr=\count122
+\c@xksm@mctr=\count123
+\c@cksm@mctr=\count124
+\c@msm@mctr=\count125
+\c@xmsm@mctr=\count126
+\c@cmsm@mctr=\count127
+\c@bsm@mctr=\count128
+\c@workm@mctr=\count129
+\c@sheetsequence=\count130
+\c@lastsheet=\count131
+\c@lastpage=\count132
+\c@figure=\count133
+\c@lofdepth=\count134
+\cftbeforefigureskip=\skip176
+\cftfigureindent=\skip177
+\cftfigurenumwidth=\skip178
+\c@table=\count135
+\c@lotdepth=\count136
+\cftbeforetableskip=\skip179
+\cfttableindent=\skip180
+\cfttablenumwidth=\skip181
+Package abstract [2008/07/23] emulated by memoir.
+Package appendix [2008/07/23] emulated by memoir.
+Package array [2008/07/23] emulated by memoir.
+Package booktabs [2008/07/23] emulated by memoir.
+Package ccaption [2008/07/23] emulated by memoir.
+Package changepage [2008/07/23] emulated by memoir.
+Package chngcntr [2008/07/23] emulated by memoir.
+Package chngpage [2008/07/23] emulated by memoir.
+Package crop emulated by memoir.
+Package dcolumn [2008/07/23] emulated by memoir.
+Package delarray [2008/07/23] emulated by memoir.
+Package enumerate [2008/07/23] emulated by memoir.
+Package epigraph [2008/07/23] emulated by memoir.
+Package ifmtarg [2008/07/23] emulated by memoir.
+Package ifetex [2008/07/23] emulated by memoir.
+Package index [2008/07/23] emulated by memoir.
+Package makeidx [2008/07/23] emulated by memoir.
+Package moreverb [2008/07/23] emulated by memoir.
+Package mparhack [2008/07/23] emulated by memoir.
+Package needspace [2008/07/23] emulated by memoir.
+Package newfile [2008/07/23] emulated by memoir.
+Package nextpage [2008/07/23] emulated by memoir.
+Package pagenote [2008/07/23] emulated by memoir.
+Package parskip [2008/07/23] emulated by memoir.
+Package patchcmd [2008/07/23] emulated by memoir.
+Package setspace [2008/07/23] emulated by memoir.
+Package shortvrb [2008/07/23] emulated by memoir.
+Package showidx [2008/07/23] emulated by memoir.
+Package tabularx [2008/07/23] emulated by memoir.
+Package titleref [2008/07/23] emulated by memoir.
+Package titling [2008/07/23] emulated by memoir.
+Package tocbibind [2008/07/23] emulated by memoir.
+Package tocloft [2008/07/23] emulated by memoir.
+Package tocvsec2 [2008/07/23] emulated by memoir.
+Package verbatim [2008/07/23] emulated by memoir.
+Package verse [2008/07/23] emulated by memoir.
+
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/mempatch
+.sty
+Package: mempatch 2009/07/24 v6.0f Patches for memoir class v1.6180339
+))
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/tools/calc.st
+y
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count137
+\calc@Bcount=\count138
+\calc@Adimen=\dimen147
+\calc@Bdimen=\dimen148
+\calc@Askip=\skip182
+\calc@Bskip=\skip183
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count139
+\calc@Cskip=\skip184
+)
+\titlewidth=\skip185
+\typeblockwidth=\skip186
+\blockindentlen=\skip187
+\textfullwidth=\skip188
+\absspace=\skip189
+\savedcodeindent=\skip190
+\manualadjust=\skip191
+
+
+******************************************************
+Stock height and width: 668.63976pt by 506.45905pt
+Top and edge trims: 0.0pt and 0.0pt
+Page height and width: 668.63976pt by 506.45905pt
+Text height and width: 519.0pt by 341.0pt
+Spine and edge margins: 113.81102pt and 51.21497pt
+Upper and lower margins: 71.13188pt and 78.50787pt
+Headheight and headsep: 10.0pt and 20.0pt
+Footskip: 20.0pt
+Columnsep and columnseprule: 10.0pt and 0.0pt
+Marginparsep and marginparwidth: 11.38109pt and 51.21495pt
+Sidecapsep and sidecapwidth: 7.0pt and 85.0pt
+Sidebarhsep and sidebarwidth: 7.0pt and 85.0pt
+Sidebarvsep and sidebartopsep: 10.0pt and 0.0pt
+Sidebarheight: 546.99997pt
+Sidefoothsep and sidefootwidth: 7.0pt and 85.0pt
+Sidefootvsep and sidefootheight: 10.0pt and 546.99997pt
+******************************************************
+
+\adjustforbug=\skip192
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/graphics/grap
+hicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/graphics/keyv
+al.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks22
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/graphics/grap
+hics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/graphics/trig
+.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/latexconfig/g
+raphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/pdftex-def/pd
+ftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/generic/oberdiek/in
+fwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/generic/oberdiek/lt
+xcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count140
+))
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
+)
+\numberheight=\skip193
+\barlength=\skip194
+\boxwidth=\skip195
+\footinsP=\insert228
+\c@footnoteP=\count141
+\@mpfootinsP=\insert227
+\c@mpfootnoteP=\count142
+\xmos_texfile@idxfile=\write4
+\openout4 = `xmos_texfile.idx'.
+
+
+Writing index file xmos_texfile.idx 
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/amsmath/amsma
+th.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip196
+
+For additional information on amsmath, use the `?' option.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/amsmath/amste
+xt.sty
+Package: amstext 2000/06/29 v2.01
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/amsmath/amsge
+n.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks23
+\ex@=\dimen151
+))
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/amsmath/amsbs
+y.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen152
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/amsmath/amsop
+n.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count143
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count144
+\leftroot@=\count145
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count146
+\DOTSCASE@=\count147
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen153
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count148
+\c@MaxMatrixCols=\count149
+\dotsspace@=\muskip10
+\c@parentequation=\count150
+\dspbrk@lvl=\count151
+\tag@help=\toks24
+\row@=\count152
+\column@=\count153
+\maxfields@=\count154
+\andhelp@=\toks25
+\eqnshift@=\dimen154
+\alignsep@=\dimen155
+\tagshift@=\dimen156
+\tagwidth@=\dimen157
+\totwidth@=\dimen158
+\lineht@=\dimen159
+\@envbody=\toks26
+\multlinegap=\skip197
+\multlinetaggap=\skip198
+\mathdisplay@stack=\toks27
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/pstool/pstool
+.sty
+Package: pstool 2009/07/17 v1.3 Wrapper for processing PostScript/psfrag figure
+s
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/generic/oberdiek/ca
+tchfile.sty
+Package: catchfile 2011/03/01 v1.6 Catch the contents of a file (HO)
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/generic/oberdiek/et
+excmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+))
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/graphics/colo
+r.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/latexconfig/c
+olor.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/ifplatfo
+rm.sty
+Package: ifplatform 2009/09/10 v0.3a Testing for the operating system
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/generic/oberdiek/pd
+ftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+runsystem(uname -s > "xmos_texfile.w18")...executed.
+
+
+(/Users/Ed/apps/scratch/sc_uart/app_uart_fast/doc/_build/xlatex/xmos_texfile.w1
+8)
+runsystem(rm -- "xmos_texfile.w18")...executed.
+
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/psfrag.s
+ty
+Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
+\pfg@pcount=\count155
+\pfg@scount=\count156
+\pfg@temp=\write5
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/suffix.s
+ty
+Package: suffix 2006/07/15 1.5 Variant command support
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/xkeyval.
+sty
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/generic/xkeyval/xke
+yval.tex
+\XKV@toks=\toks28
+\XKV@tempa@toks=\toks29
+\XKV@depth=\count157
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+))
+\pstool@out=\write6
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/microtyp
+e.sty
+Package: microtype 2009/03/27 v2.3d Micro-typography with pdfTeX (RS)
+\MT@toks=\toks30
+\MT@count=\count158
+LaTeX Info: Redefining \lsstyle on input line 1608.
+LaTeX Info: Redefining \lslig on input line 1608.
+\MT@outer@space=\skip199
+LaTeX Info: Redefining \textls on input line 1616.
+\MT@outer@kern=\dimen160
+LaTeX Info: Redefining \textmicrotypecontext on input line 2167.
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/microtype/mic
+rotype.cfg
+File: microtype.cfg 2010/01/10 v2.4 microtype main configuration file (RS)
+))
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/stmaryrd
+.sty
+Package: stmaryrd 1994/03/03 St Mary's Road symbol package
+\symstmry=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
+(Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/alltt.st
+y
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/amsfonts/amsf
+onts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/tools/multico
+l.sty
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count159
+\mult@box=\box30
+\multicol@leftmargin=\dimen161
+\c@unbalance=\count160
+\c@collectmore=\count161
+\doublecol@number=\count162
+\multicoltolerance=\count163
+\multicolpretolerance=\count164
+\full@width=\dimen162
+\page@free=\dimen163
+\premulticols=\dimen164
+\postmulticols=\dimen165
+\multicolsep=\skip200
+\multicolbaselineskip=\skip201
+\partial@page=\box31
+\last@line=\box32
+\mult@rightbox=\box33
+\mult@grightbox=\box34
+\mult@gfirstbox=\box35
+\mult@firstbox=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\c@columnbadness=\count165
+\c@finalcolumnbadness=\count166
+\last@try=\dimen166
+\multicolovershoot=\dimen167
+\multicolundershoot=\dimen168
+\mult@nat@firstbox=\box54
+\colbreak@box=\box55
+\multicol@sort@counter=\count167
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/ifthen.s
+ty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/tools/longtab
+le.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip202
+\LTright=\skip203
+\LTpre=\skip204
+\LTpost=\skip205
+\LTchunksize=\count168
+\LTcapwidth=\dimen169
+\LT@head=\box56
+\LT@firsthead=\box57
+\LT@foot=\box58
+\LT@lastfoot=\box59
+\LT@cols=\count169
+\LT@rows=\count170
+\c@LT@tables=\count171
+\c@LT@chunks=\count172
+\LT@p@ftn=\toks31
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/textcomp
+.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/ts1enc.d
+ef
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/listings
+.sty
+\lst@mode=\count173
+\lst@gtempboxa=\box60
+\lst@token=\toks32
+\lst@length=\count174
+\lst@currlwidth=\dimen170
+\lst@column=\count175
+\lst@pos=\count176
+\lst@lostspace=\dimen171
+\lst@width=\dimen172
+\lst@newlines=\count177
+\lst@lineno=\count178
+\lst@maxwidth=\dimen173
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/listings/lstm
+isc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count179
+\lst@skipnumbers=\count180
+\lst@framebox=\box61
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/listings/list
+ings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/gensymb.
+sty
+Package: gensymb 2003/07/02 v1.0 (WaS)
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/manfnt/manfnt
+.sty
+Package: manfnt 1999/07/010.2LaTeX2e manfnt package
+\dbend@height=\skip206
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/psnfss/pifont
+.sty
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/psnfss/upzd.f
+d
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 64.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/psnfss/upsy.f
+d
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/tools/xspace.
+sty
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/multirow
+.sty
+\bigstrutjot=\dimen174
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/colortbl/colo
+rtbl.sty
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+\everycr=\toks33
+\minrowclearance=\skip207
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/tools/variore
+f.sty
+Package: varioref 2011/10/02 v1.4z package for extended references (FMi)
+\c@vrcnt=\count181
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/fixltx2e
+.sty
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+LaTeX Info: Redefining \em on input line 420.
+LaTeX Info: Redefining \textsubscript on input line 424.
+LaTeX Info: The control sequence `\[' is already robust on input line 471.
+LaTeX Info: The control sequence `\]' is already robust on input line 472.
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/enumitem
+.sty
+Package: enumitem 2009/05/18 v2.2 Customized lists
+\enit@toks=\toks34
+\labelindent=\skip208
+\enit@outerparindent=\dimen175
+\enitdp@desc=\count182
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/placeins
+.sty
+Package: placeins 2005/04/18  v 2.2
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/flafter.
+sty
+Package: flafter 2000/07/23 v1.2i Standard LaTeX floats after reference (FMi)
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/float.st
+y
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count183
+\float@exts=\toks35
+\float@box=\box62
+\@float@everytoks=\toks36
+\@floatcapt=\box63
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/marginno
+te.sty
+Package: marginnote 2009/05/06 v1.1d non floating margin notes for LaTeX
+\c@mn@abspage=\count184
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/layouts/layou
+ts.sty
+Package: layouts 2009/09/02 v2.6d graphical depiction of document elements
+\l@ylen=\skip209
+\layoutsbox=\box64
+\l@youtunitlength=\skip210
+\l@youtlinethick=\skip211
+\l@youtlinethickii=\skip212
+\l@ysetupparskip=\skip213
+\l@ysetupbaselineskip=\skip214
+\l@yonem=\skip215
+\l@yonex=\skip216
+\l@ylmarg=\skip217
+\l@yrmarg=\skip218
+\l@yitmindent=\skip219
+\l@ylblwidth=\skip220
+\l@ylblsep=\skip221
+\l@ylparindent=\skip222
+\l@ytsep=\skip223
+\l@ypskip=\skip224
+\l@yptsep=\skip225
+\l@ypsep=\skip226
+Normal \skip register pool exhausted, switching to extended pool.
+\l@yitmsep=\skip256
+\l@ytok=\toks37
+\l@youtpw=\count185
+\l@youtph=\count186
+\l@youthpi=\count187
+\l@youthpii=\count188
+\l@youthpiii=\count189
+\l@youthpiv=\count190
+\l@youthpv=\count191
+\l@youthpvi=\count192
+\l@youthpvii=\count193
+\l@youtparskip=\count194
+\l@youtvpi=\count195
+\l@youtvpii=\count196
+\l@youtvpiii=\count197
+\l@youtvpiv=\count198
+\l@youtvpv=\count199
+\l@youtvpvi=\count200
+\l@youtvpvii=\count201
+\l@youthdo=\count202
+\l@youthdi=\count203
+\l@youthdii=\count204
+\l@youthdiii=\count205
+\l@youthdiv=\count206
+\l@youthdv=\count207
+\l@youthdvi=\count208
+\l@youthdvii=\count209
+\l@youtvdo=\count210
+\l@youtvdi=\count211
+\l@youtvdii=\count212
+\l@youtvdiii=\count213
+\l@youtvdiv=\count214
+\l@youtvdv=\count215
+\l@youtvdvi=\count216
+\l@youtvdvii=\count217
+\l@youtvdviii=\count218
+\l@youtxci=\count219
+\l@youtxcii=\count220
+\l@youtxciii=\count221
+\l@youtxciv=\count222
+\l@youtxcv=\count223
+\l@youtxcvi=\count224
+\l@youtyci=\count225
+\l@youtycii=\count226
+Normal \count register pool exhausted, switching to extended pool.
+\l@youtyciii=\count277
+\l@youtyciv=\count278
+\l@youtycv=\count279
+\l@youtycvi=\count280
+\l@youtycvii=\count281
+\l@youtycviii=\count282
+\l@youtxco=\count283
+\l@youtyco=\count284
+\l@ytempdima=\skip257
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/units/units.s
+ty
+Package: units 1998/08/04 v0.9b Typesetting units
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/units/nicefra
+c.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip258
+\L@UnitsRaiseTextstyle=\skip259
+\L@UnitsRaiseScriptstyle=\skip260
+))
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/savesym/saves
+ym.sty
+
+LaTeX Warning: You have requested package `savesym',
+               but the package provides `savesymbol'.
+
+Package: savesymbol 2003/06/01 v1.1 Saves and restores symbols
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/marvosym
+.sty
+Package: marvosym 2006/05/11 v2.1 Martin Vogel's Symbols font definitions
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/bbding/bbding
+.sty
+Package: bbding 1999/04/15 v1.01 Dingbats symbols
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/dingbat/dingb
+at.sty
+Package: dingbat 2001/04/27 v1.00 Hands and other dingbats
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/hyperref/hype
+rref.sty
+Package: hyperref 2012/08/18 v6.83b Hypertext links for LaTeX
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/generic/oberdiek/ho
+bsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/generic/oberdiek/ho
+bsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/oberdiek/auxh
+ook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/oberdiek/kvop
+tions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen176
+\Hy@linkcounter=\count285
+\Hy@pagecounter=\count286
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/hyperref/pd1e
+nc.def
+File: pd1enc.def 2012/08/18 v6.83b Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count287
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/latexconfig/h
+yperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `hyperindex' set `true' on input line 4138.
+Package hyperref Info: Option `hyperfootnotes' set `false' on input line 4138.
+Package hyperref Info: Hyper figures OFF on input line 4262.
+Package hyperref Info: Link nesting OFF on input line 4267.
+Package hyperref Info: Hyper index ON on input line 4270.
+Package hyperref Info: Plain pages OFF on input line 4277.
+Package hyperref Info: Backreferencing OFF on input line 4282.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4500.
+\c@Hy@tempcnt=\count288
+LaTeX Info: Redefining \url on input line 4853.
+\XeTeXLinkMargin=\dimen177
+\Fld@menulength=\count289
+\Field@Width=\dimen178
+\Fld@charsize=\dimen179
+Package hyperref Info: Hyper figures OFF on input line 6093.
+Package hyperref Info: Link nesting OFF on input line 6098.
+Package hyperref Info: Hyper index ON on input line 6101.
+Package hyperref Info: backreferencing OFF on input line 6108.
+Package hyperref Info: Link coloring OFF on input line 6113.
+Package hyperref Info: Link coloring with OCG OFF on input line 6118.
+Package hyperref Info: PDF/A mode OFF on input line 6123.
+LaTeX Info: Redefining \ref on input line 6163.
+LaTeX Info: Redefining \pageref on input line 6167.
+\Hy@abspage=\count290
+\c@Item=\count291
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/memhfixc
+.sty
+Package: memhfixc 2009/02/06 v1.12 nameref/hyperref package fixes for memoir cl
+ass
+\c@memhycontfloat=\count292
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/hyperref/hpdf
+tex.def
+File: hpdftex.def 2012/08/18 v6.83b Hyperref driver for pdfTeX
+\Fld@listcount=\count293
+\c@bookmark@seq@number=\count294
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/oberdiek/reru
+nfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip261
+)
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 469
+.
+Package hyperref Info: Option `breaklinks' set `true' on input line 469.
+Package hyperref Info: Option `colorlinks' set `true' on input line 474.
+
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/lastpage
+.sty
+Package: lastpage 1994/06/25 v0.1b LaTeX2e package for refs to last page number
+ (JPG)
+)
+\c@sheetsavedcounter=\count295
+\ppagespace=\skip262
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/tools/afterpa
+ge.sty
+Package: afterpage 1995/10/27 v1.08 After-Page Package (DPC)
+\AP@output=\toks38
+\AP@partial=\box65
+\AP@footins=\box66
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/fontenc.
+sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/t1enc.de
+f
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-local/tex/latex/lucidabr/luc
+idabr.sty
+Package: lucidabr 2005/11/29 v4.3 Lucida Bright + Lucida New Math + Lucida Expe
+rt (SPQR/DPC/TUG)
+LaTeX Font Info:    Try loading font information for T1+hls on input line 129.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-local/tex/latex/lucida/t1hls
+.fd
+File: t1hls.fd 2005/09/15 font definitions for T1/hls (WaS/PCTeX/TUG)
+)
+LaTeX Font Info:    Font shape `T1/hls/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 129.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 131.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/hlcm/m/it on input line 131.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/hlcm/m/it on input line 131.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 135.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/hlcy/m/n on input line 135.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/hlcy/m/n on input line 135.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 136.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/hlcv/m/n on input line 136.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/hlcv/m/n on input line 136.
+\symarrows=\mathgroup7
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 146.
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `normal' on input line 146.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> T1/hlh/m/n on input line 146.
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `bold' on input line 146.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T1/hlh/m/n on input line 146.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  T1/hlh/m/n --> T1/hlh/b/n on input line 147.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  T1/hlh/m/n --> T1/hlh/m/n on input line 148.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> T1/hlh/b/n on input line 149.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T1/hlh/b/n on input line 149.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 150.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 151.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> T1/hls/m/n on input line 151.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> T1/hls/m/n on input line 151.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 152.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> T1/hlh/m/it on input line 152.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> T1/hlh/m/it on input line 152.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 153.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> T1/hlst/m/n on input line 153.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> T1/hlst/m/n on input line 153.
+LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 154.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `normal'
+(Font)                  U/euf/m/n --> T1/hlcf/m/n on input line 154.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/b/n --> T1/hlcf/m/n on input line 154.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  T1/hlh/b/n --> T1/hlh/b/n on input line 155.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  T1/hls/m/n --> T1/hls/b/n on input line 156.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  T1/hlh/m/n --> T1/hlh/b/n on input line 157.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  T1/hlh/m/it --> T1/hlh/b/it on input line 158.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  T1/hlst/m/n --> T1/hlst/b/n on input line 159.
+LaTeX Font Info:    Redeclaring math accent \vec on input line 165.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 177.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 178.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 179.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 180.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 181.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 182.
+LaTeX Font Info:    Redeclaring math accent \check on input line 183.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 184.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 185.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 376.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 377.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 378.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 379.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 380.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 381.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 382.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 383.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 384.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 385.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 386.
+LaTeX Font Info:    Redeclaring math symbol \alpha on input line 388.
+LaTeX Font Info:    Redeclaring math symbol \beta on input line 389.
+LaTeX Font Info:    Redeclaring math symbol \gamma on input line 390.
+LaTeX Font Info:    Redeclaring math symbol \delta on input line 391.
+LaTeX Font Info:    Redeclaring math symbol \epsilon on input line 392.
+LaTeX Font Info:    Redeclaring math symbol \zeta on input line 393.
+LaTeX Font Info:    Redeclaring math symbol \eta on input line 394.
+LaTeX Font Info:    Redeclaring math symbol \theta on input line 395.
+LaTeX Font Info:    Redeclaring math symbol \iota on input line 396.
+LaTeX Font Info:    Redeclaring math symbol \kappa on input line 397.
+LaTeX Font Info:    Redeclaring math symbol \lambda on input line 398.
+LaTeX Font Info:    Redeclaring math symbol \mu on input line 399.
+LaTeX Font Info:    Redeclaring math symbol \nu on input line 400.
+LaTeX Font Info:    Redeclaring math symbol \xi on input line 401.
+LaTeX Font Info:    Redeclaring math symbol \pi on input line 402.
+LaTeX Font Info:    Redeclaring math symbol \rho on input line 403.
+LaTeX Font Info:    Redeclaring math symbol \sigma on input line 404.
+LaTeX Font Info:    Redeclaring math symbol \tau on input line 405.
+LaTeX Font Info:    Redeclaring math symbol \upsilon on input line 406.
+LaTeX Font Info:    Redeclaring math symbol \phi on input line 407.
+LaTeX Font Info:    Redeclaring math symbol \chi on input line 408.
+LaTeX Font Info:    Redeclaring math symbol \psi on input line 409.
+LaTeX Font Info:    Redeclaring math symbol \omega on input line 410.
+LaTeX Font Info:    Redeclaring math symbol \varepsilon on input line 411.
+LaTeX Font Info:    Redeclaring math symbol \vartheta on input line 412.
+LaTeX Font Info:    Redeclaring math symbol \varpi on input line 413.
+LaTeX Font Info:    Redeclaring math symbol \varrho on input line 414.
+LaTeX Font Info:    Redeclaring math symbol \varsigma on input line 415.
+LaTeX Font Info:    Redeclaring math symbol \varphi on input line 416.
+LaTeX Font Info:    Redeclaring math symbol \boxdot on input line 457.
+LaTeX Font Info:    Redeclaring math symbol \square on input line 460.
+LaTeX Font Info:    Redeclaring math symbol \lozenge on input line 463.
+LaTeX Font Info:    Redeclaring math symbol \rightleftharpoons on input line 46
+7.
+LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 46
+8.
+LaTeX Font Info:    Redeclaring math symbol \rightsquigarrow on input line 489.
+
+LaTeX Font Info:    Redeclaring math symbol \vartriangleright on input line 528
+.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleleft on input line 529.
+
+LaTeX Font Info:    Redeclaring math symbol \trianglerighteq on input line 530.
+
+LaTeX Font Info:    Redeclaring math symbol \trianglelefteq on input line 531.
+LaTeX Font Info:    Redeclaring math symbol \angle on input line 551.
+LaTeX Font Info:    Redeclaring math symbol \simeq on input line 650.
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 673.
+LaTeX Font Info:    Redeclaring math symbol \dashrightarrow on input line 675.
+LaTeX Font Info:    Redeclaring math symbol \dashleftarrow on input line 676.
+LaTeX Font Info:    Redeclaring math delimiter \ulcorner on input line 679.
+LaTeX Font Info:    Redeclaring math delimiter \urcorner on input line 680.
+LaTeX Font Info:    Redeclaring math delimiter \llcorner on input line 681.
+LaTeX Font Info:    Redeclaring math delimiter \lrcorner on input line 682.
+)
+\cloverleafheight=\skip263
+
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/upquote.
+sty
+Package: upquote 2003/08/11 v1.1 Covington's upright-quote modification to verb
+atim and verb
+)
+\xmoslogolength=\skip264
+\footernologolength=\skip265
+\footerpartlinelength=\skip266
+\forceindentlen=\skip267
+\savedwidth=\skip268
+\c@stepsi=\count296
+\enitdp@steps=\count297
+\c@compactstepsi=\count298
+\enitdp@compactsteps=\count299
+\enitdp@points=\count300
+\enitdp@compactpoints=\count301
+\enitdp@nopoints=\count302
+\enitdp@compactnopoints=\count303
+\enitdp@actions=\count304
+\enitdp@functions=\count305
+\enitdp@fullwidthfunctions=\count306
+\enitdp@features=\count307
+\c@revisionsi=\count308
+\c@revisionsii=\count309
+\enitdp@revisions=\count310
+\enitdp@option=\count311
+\enitdp@description=\count312
+\enitdp@itemize=\count313
+\c@enumeratei=\count314
+\c@enumerateii=\count315
+\c@enumerateiii=\count316
+\c@enumerateiv=\count317
+\c@enumeratev=\count318
+\c@enumeratevi=\count319
+\c@enumeratevii=\count320
+\c@enumerateviii=\count321
+\c@enumerateix=\count322
+\c@enumeratex=\count323
+\c@enumeratexi=\count324
+\c@enumeratexii=\count325
+\c@enumeratexiii=\count326
+\c@enumeratexiv=\count327
+\c@enumeratexv=\count328
+\c@enumeratexvi=\count329
+\c@enumeratexvii=\count330
+\c@enumeratexviii=\count331
+\c@enumeratexix=\count332
+\c@enumeratexx=\count333
+\c@enumeratexxi=\count334
+\c@enumeratexxii=\count335
+\c@enumeratexxiii=\count336
+\c@enumeratexxiv=\count337
+\c@enumeratexxv=\count338
+\c@enumeratexxvi=\count339
+\c@enumeratexxvii=\count340
+\c@enumeratexxviii=\count341
+\c@enumeratexxix=\count342
+\c@enumeratexxx=\count343
+\c@enumeratexxxi=\count344
+\c@enumeratexxxii=\count345
+\c@enumeratexxxiii=\count346
+\c@enumeratexxxiv=\count347
+\c@enumeratexxxv=\count348
+\c@enumeratexxxvi=\count349
+\c@enumeratexxxvii=\count350
+\c@enumeratexxxviii=\count351
+\c@enumeratexxxix=\count352
+\c@enumeratexl=\count353
+\c@enumeratexli=\count354
+\c@enumeratexlii=\count355
+\c@enumeratexliii=\count356
+\c@enumeratexliv=\count357
+\c@enumeratexlv=\count358
+\c@enumeratexlvi=\count359
+\c@enumeratexlvii=\count360
+\c@enumeratexlviii=\count361
+\c@enumeratexlix=\count362
+\c@enumeratel=\count363
+\c@enumerateli=\count364
+\c@enumeratelii=\count365
+\c@enumerateliii=\count366
+\c@enumerateliv=\count367
+\c@enumeratelv=\count368
+\c@enumeratelvi=\count369
+\c@enumeratelvii=\count370
+\c@enumeratelviii=\count371
+\c@enumeratelix=\count372
+\c@enumeratelx=\count373
+\c@enumeratelxi=\count374
+\c@enumeratelxii=\count375
+\c@enumeratelxiii=\count376
+\c@enumeratelxiv=\count377
+\c@enumeratelxv=\count378
+\c@enumeratelxvi=\count379
+\c@enumeratelxvii=\count380
+\c@enumeratelxviii=\count381
+\c@enumeratelxix=\count382
+\c@enumeratelxx=\count383
+\c@enumeratelxxi=\count384
+\c@enumeratelxxii=\count385
+\c@enumeratelxxiii=\count386
+\c@enumeratelxxiv=\count387
+\c@enumeratelxxv=\count388
+\c@enumeratelxxvi=\count389
+\c@enumeratelxxvii=\count390
+\c@enumeratelxxviii=\count391
+\c@enumeratelxxix=\count392
+\c@enumeratelxxx=\count393
+\c@enumeratelxxxi=\count394
+\c@enumeratelxxxii=\count395
+\c@enumeratelxxxiii=\count396
+\c@enumeratelxxxiv=\count397
+\c@enumeratelxxxv=\count398
+\c@enumeratelxxxvi=\count399
+\c@enumeratelxxxvii=\count400
+\c@enumeratelxxxviii=\count401
+\c@enumeratelxxxix=\count402
+\c@enumeratexc=\count403
+\c@enumeratexci=\count404
+\c@enumeratexcii=\count405
+\c@enumeratexciii=\count406
+\c@enumeratexciv=\count407
+\c@enumeratexcv=\count408
+\c@enumeratexcvi=\count409
+\c@enumeratexcvii=\count410
+\c@enumeratexcviii=\count411
+\c@enumeratexcix=\count412
+\enitdp@enumerate=\count413
+\enitdp@arrow=\count414
+\inthisdocumentbot=\skip269
+\inthisdocumentskip=\skip270
+\alen=\skip271
+\codeindent=\skip272
+\enitdp@commands=\count415
+Package color Info: Redefining color black on input line 1216.
+Package color Info: Redefining color white on input line 1217.
+Package color Info: Redefining color darkblue on input line 1231.
+\iconht=\skip273
+\iconadj=\skip274
+\iconadjraise=\skip275
+\icongap=\skip276
+\iconcenter=\skip277
+\widelength=\skip278
+\syntaxlen=\skip279
+\grammarindentlen=\skip280
+
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/terminol
+ogy.tex)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/bib.tex)
+\revisiontoks=\toks39
+\c@revcounter=\count416
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/inputenc
+.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks40
+\inpenc@posthook=\toks41
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/t1enc.df
+u
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/ot1enc.d
+fu
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/omsenc.d
+fu
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/ts1enc.d
+fu
+File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+Now handling font encoding LMR ...
+... no UTF-8 mapping file for font encoding LMR
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+   defining Unicode char U+00A0 (decimal 160)
+
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/xsphinx.
+sty
+Package: xsphinx 2010/01/15 LaTeX package (Sphinx markup)
+
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/framed.s
+ty
+Package: framed 2007/10/04 v 0.95: framed or shaded text with page breaks
+\fb@frw=\dimen180
+\fb@frh=\dimen181
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/fancyvrb
+.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count417
+\FV@InFile=\read2
+\FV@TabBox=\box67
+\c@FancyVerbLine=\count418
+\FV@StepNumber=\count419
+\FV@OutFile=\write7
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/threepar
+ttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box68
+)
+\py@argswidth=\skip281
+)
+(/var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinputs/indent.s
+ty)
+\xmos_texfile@idxfile=\write8
+\openout8 = `xmos_texfile.idx'.
+
+
+Writing index file xmos_texfile.idx 
+
+(/Users/Ed/apps/scratch/sc_uart/app_uart_fast/doc/_build/xlatex/xmos_texfile.au
+x)
+\openout1 = `xmos_texfile.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 30.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/ts1cmr.f
+d
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for LMR/hlcm/m/n on input line 30.
+LaTeX Font Info:    Try loading font information for LMR+hlcm on input line 30.
+
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-local/tex/latex/lucidabr/lmr
+hlcm.fd
+File: lmrhlcm.fd 2005/11/28 v4.3 Lucida New Math Arrows (SPQR/DPC/TUG)
+)
+LaTeX Font Info:    ... okay on input line 30.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/context/base/supp-p
+df.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count420
+\scratchdimen=\dimen182
+\scratchbox=\box69
+\nofMPsegments=\count421
+\nofMParguments=\count422
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count423
+\MPscratchDim=\dimen183
+\MPnumerator=\count424
+\makeMPintoPDFobject=\count425
+\everyMPtoPDFconversion=\toks43
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/oberdiek/epst
+opdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/oberdiek/grfe
+xt.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/latexconfig/e
+pstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Info: Redefining \microtypecontext on input line 30.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+\c@lstlisting=\count426
+\symgns@font=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
+(Font)                  TS1/hls/m/n --> TS1/hls/b/n on input line 30.
+Package gensymb Info: Math companion symbols declared on input line 30.
+LaTeX Info: Redefining \degree on input line 30.
+LaTeX Info: Redefining \celsius on input line 30.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
+erthousand on input line 30.
+LaTeX Info: Redefining \ohm on input line 30.
+Package gensymb Info: Using \textohm for \ohm on input line 30.
+Package gensymb Info: Using \textmu for \micro on input line 30.
+Package marginnote Info: \pdfoutput not 0 and \pdflastxpos available.
+(marginnote)             Extended position detection mode activated.
+
+
+Package layouts Warning: Layout scale set to 0.5 on input line 30.
+
+\AtBeginShipoutBox=\box70
+Package hyperref Info: Link coloring ON on input line 30.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/hyperref/name
+ref.sty
+Package: nameref 2012/07/31 v2.42 Cross-referencing by name of section
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/generic/oberdiek/ge
+ttitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count427
+LaTeX Info: Redefining \Ref on input line 503.
+)
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
+
+(/Users/Ed/apps/scratch/sc_uart/app_uart_fast/doc/_build/xlatex/xmos_texfile.ou
+t)
+(/Users/Ed/apps/scratch/sc_uart/app_uart_fast/doc/_build/xlatex/xmos_texfile.ou
+t)
+\@outlinefile=\write9
+\openout9 = `xmos_texfile.out'.
+
+LaTeX Info: Redefining \Ref on input line 30.
+LaTeX Font Info:    Font shape `T1/hls/m/n' will be
+(Font)              scaled to size 13.24796pt on input line 32.
+LaTeX Font Info:    Font shape `T1/hls/m/n' will be
+(Font)              scaled to size 7.76001pt on input line 37.
+LaTeX Font Info:    Try loading font information for U+mvs on input line 38.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/marvosym/umvs
+.fd)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/microtype/mt-
+mvs.cfg
+File: mt-mvs.cfg 2006/07/05 v1.1 microtype config. file: Marvosym Euro (RS)
+)
+Underfull \hbox (badness 10000) in paragraph at lines 42--42
+
+ []
+
+LaTeX Font Info:    Font shape `T1/hls/m/n' will be
+(Font)              scaled to size 11.15991pt on input line 62.
+LaTeX Font Info:    Font shape `T1/hls/b/n' will be
+(Font)              scaled to size 11.15991pt on input line 62.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 65.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/t1cmtt.f
+d
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) <hardware_setup.pdf, id=24, 1003.62453pt x 1606.80293pt>
+File: hardware_setup.pdf Graphic file (type pdf)
+
+<use hardware_setup.pdf>
+Package pdftex.def Info: hardware_setup.pdf used on input line 79.
+(pdftex.def)             Requested size: 213.39566pt x 341.63112pt.
+LaTeX Font Info:    Try loading font information for T1+hlh on input line 80.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-local/tex/latex/lucida/t1hlh
+.fd
+File: t1hlh.fd 2005/09/15 font definitions for T1/hlh (WaS/PCTeX/TUG)
+)
+LaTeX Font Info:    Font shape `T1/hlh/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 80.
+LaTeX Font Info:    Font shape `T1/hlh/m/n' will be
+(Font)              scaled to size 6.12003pt on input line 80.
+LaTeX Font Info:    Font shape `T1/hlh/m/n' will be
+(Font)              scaled to size 5.19997pt on input line 80.
+LaTeX Font Info:    Try loading font information for OML+hlcm on input line 80.
+
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-local/tex/latex/lucidabr/oml
+hlcm.fd
+File: omlhlcm.fd 2005/11/28 v4.3 Lucida New Math Italic (SPQR/DPC/TUG)
+)
+LaTeX Font Info:    Font shape `OML/hlcm/m/it' will be
+(Font)              scaled to size 8.64006pt on input line 80.
+LaTeX Font Info:    Font shape `OML/hlcm/m/it' will be
+(Font)              scaled to size 6.12003pt on input line 80.
+LaTeX Font Info:    Font shape `OML/hlcm/m/it' will be
+(Font)              scaled to size 5.19997pt on input line 80.
+LaTeX Font Info:    Try loading font information for OMS+hlcy on input line 80.
+
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-local/tex/latex/lucidabr/oms
+hlcy.fd
+File: omshlcy.fd 2005/11/28 v4.3 Lucida New Math Symbols (SPQR/DPC/TUG)
+)
+LaTeX Font Info:    Font shape `OMS/hlcy/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 80.
+LaTeX Font Info:    Font shape `OMS/hlcy/m/n' will be
+(Font)              scaled to size 6.12003pt on input line 80.
+LaTeX Font Info:    Font shape `OMS/hlcy/m/n' will be
+(Font)              scaled to size 5.19997pt on input line 80.
+LaTeX Font Info:    Try loading font information for OMX+hlcv on input line 80.
+
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-local/tex/latex/lucidabr/omx
+hlcv.fd
+File: omxhlcv.fd 2005/11/28 v4.3 Lucida New Math Extension (SPQR/DPC/TUG)
+)
+LaTeX Font Info:    Font shape `OMX/hlcv/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 80.
+LaTeX Font Info:    Font shape `OMX/hlcv/m/n' will be
+(Font)              scaled to size 6.12003pt on input line 80.
+LaTeX Font Info:    Font shape `OMX/hlcv/m/n' will be
+(Font)              scaled to size 5.19997pt on input line 80.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 80.
+LaTeX Font Info:    No file Ustmry.fd. on input line 80.
+LaTeX Font Warning: Font shape `U/stmry/m/n' undefined
+(Font)              using `U/cmr/m/n' instead on input line 80.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/microtype/mt-
+cmr.cfg
+File: mt-cmr.cfg 2009/11/09 v2.0 microtype config. file: Computer Modern Roman 
+(RS)
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 80.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/amsfonts/umsa
+.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/microtype/mt-
+msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 80.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/amsfonts/umsb
+.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/microtype/mt-
+msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Font shape `LMR/hlcm/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 80.
+LaTeX Font Info:    Font shape `LMR/hlcm/m/n' will be
+(Font)              scaled to size 6.12003pt on input line 80.
+LaTeX Font Info:    Font shape `LMR/hlcm/m/n' will be
+(Font)              scaled to size 5.19997pt on input line 80.
+LaTeX Font Info:    Try loading font information for TS1+hls on input line 80.
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-local/tex/latex/lucida/ts1hl
+s.fd
+File: ts1hls.fd 2005/09/15 font definitions for TS1/hls (WaS/PCTeX/TUG)
+)
+LaTeX Font Info:    Font shape `TS1/hls/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 80.
+LaTeX Font Info:    Font shape `TS1/hls/m/n' will be
+(Font)              scaled to size 6.12003pt on input line 80.
+LaTeX Font Info:    Font shape `TS1/hls/m/n' will be
+(Font)              scaled to size 5.19997pt on input line 80.
+LaTeX Font Info:    Font shape `T1/hls/b/n' will be
+(Font)              scaled to size 8.64006pt on input line 80.
+LaTeX Font Info:    Font shape `T1/hls/b/n' will be
+(Font)              scaled to size 7.76001pt on input line 80.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 89.
+
+
+(/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/tex/latex/base/ts1cmtt.
+fd
+File: ts1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `TS1/hls/m/n' will be
+(Font)              scaled to size 7.76001pt on input line 90.
+ <xmoslogo18pt.pdf, id=25, 54.06036pt x 15.07974pt>
+File: xmoslogo18pt.pdf Graphic file (type pdf)
+ <use xmoslogo18pt.pdf>
+Package pdftex.def Info: xmoslogo18pt.pdf used on input line 90.
+(pdftex.def)             Requested size: 54.06023pt x 15.0797pt.
+
+[1
+Non-PDF special ignored!
+
+{/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-var/fonts/map/pdftex/updmap/
+pdftex.map} </var/folders/v_/97dl93d115g98dgbn1l2zt3c0000gp/T/_MEI4RfzVz/texinp
+uts/xmoslogo18pt.pdf>]
+LaTeX Font Info:    Font shape `T1/hls/m/it' will be
+(Font)              scaled to size 8.64006pt on input line 100.
+File: xmoslogo18pt.pdf Graphic file (type pdf)
+ <use xmoslogo18pt.pdf>
+Package pdftex.def Info: xmoslogo18pt.pdf used on input line 101.
+(pdftex.def)             Requested size: 54.06023pt x 15.0797pt.
+LaTeX Font Info:    Font shape `T1/hls/m/n' will be
+(Font)              scaled to size 6.12003pt on input line 101.
+ [2 </Users/Ed/apps/scratch/sc_uart/app_uart_fast/doc/_build/xlatex/hardware_se
+tup.pdf>]
+Underfull \hbox (badness 1389) in paragraph at lines 116--117
+[]\T1/hls/m/n/9 (+20) Proper op-er-a-tion of the ap-pli-ca-tion can be ver-i-fi
+ed by ob-serv-ing the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+\T1/hls/m/n/9 (+20) and the con-sumer has ver-i-fied the re-ceived ar-ray by pr
+int-ing
+ []
+
+LaTeX Font Info:    Font shape `T1/hls/m/n' will be
+(Font)              scaled to size 6.93004pt on input line 144.
+File: xmoslogo18pt.pdf Graphic file (type pdf)
+<use xmoslogo18pt.pdf>
+Package pdftex.def Info: xmoslogo18pt.pdf used on input line 144.
+(pdftex.def)             Requested size: 54.06023pt x 15.0797pt.
+ [3]
+File: xmoslogo18pt.pdf Graphic file (type pdf)
+ <use xmoslogo18pt.pdf>
+Package pdftex.def Info: xmoslogo18pt.pdf used on input line 144.
+(pdftex.def)             Requested size: 54.06023pt x 15.0797pt.
+
+AED: lastpage setting LastPage [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 144.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 144.
+
+(/Users/Ed/apps/scratch/sc_uart/app_uart_fast/doc/_build/xlatex/xmos_texfile.au
+x)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 144.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 144.
+Package rerunfilecheck Info: File `xmos_texfile.out' has not changed.
+(rerunfilecheck)             Checksum: 743521E9E76F22A3BE998E75ABD42C6F;223.
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 144.
+ ) ) 
+Here is how much of TeX's memory you used:
+ 17495 strings out of 495063
+ 267081 string characters out of 3181198
+ 452640 words of memory out of 3000000
+ 20211 multiletter control sequences out of 15000+200000
+ 28593 words of font info for 123 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 46i,15n,68p,598b,659s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/fonts/enc/dvips/bas
+e/8r.enc}{/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/fonts/enc/dvip
+s/cm-super/cm-super-ts1.enc}{/Applications/XMOS/xSoftIPTools/bb189/latex/texmf-
+dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</Applications/XMOS/xSoftIPTools/
+bb189/latex/texmf-local/fonts/type1/bh/lucida/lsd.pfb></Applications/XMOS/xSoft
+IPTools/bb189/latex/texmf-local/fonts/type1/bh/lucida/lsi.pfb></Applications/XM
+OS/xSoftIPTools/bb189/latex/texmf-local/fonts/type1/bh/lucida/lsr.pfb></Applica
+tions/XMOS/xSoftIPTools/bb189/latex/texmf-dist/fonts/type1/public/marvosym/marv
+osym.pfb></Applications/XMOS/xSoftIPTools/bb189/latex/texmf-dist/fonts/type1/pu
+blic/cm-super/sftt0900.pfb>
+Output written on xmos_texfile.pdf (4 pages, 2021557 bytes).
+PDF statistics:
+ 119 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
+ 23 named destinations out of 1000 (max. 500000)
+ 25643 words of extra memory for PDF output out of 29859 (max. 10000000)
+
