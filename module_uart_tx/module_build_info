@@ -9,4 +9,5 @@
 #
 # You can also set MODULE_XCC_C_FLAGS, MODULE_XCC_XC_FLAGS etc..
 
+DEPENDENT_MODULES = module_xassert
 

@@ -12,9 +12,25 @@ enum uart_rx_parity {
   UART_RX_PARITY_NONE
 };
 
+interface uart_rx_if {
+  [[clears_notification]] unsigned char input_byte(void);
+  [[notification]] slave void data_ready(void);
+
+  void set_baud_rate(unsigned baud_rate);
+  void set_parity(enum uart_rx_parity parity);
+  void set_stop_bits(unsigned stop_bits);
+  void set_bits_per_byte(unsigned bpb);
+};
+
+
 typedef struct {
   unsigned received_bytes;
 } uart_rx_client_state;
+
+
+void uart_rx(server interface uart_rx_if,
+             unsigned char buffer[n], unsigned n,
+             in buffered port:1 p_rxd);
 
 
 /**
@@ -34,7 +50,7 @@ typedef struct {
  *
  * The client uses uart_rx_get_byte() to get bytes from the receive buffer.
  */
-void uart_rx(in buffered port:1 rxd, unsigned char buffer[],
+void uart_rx0(in buffered port:1 rxd, unsigned char buffer[],
              unsigned buffer_size, unsigned baud_rate, unsigned bits,
              enum uart_rx_parity parity, unsigned stop_bits,
              chanend c);

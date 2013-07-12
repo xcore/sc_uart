@@ -4,130 +4,188 @@
 // LICENSE.txt and at <http://github.xcore.com/>
 
 #include "uart_rx.h"
-#include "uart_rx_impl.h"
+#include "xassert.h"
 #include <xs1.h>
 #include <stdio.h>
+#include <print.h>
 
-static inline void trap()
+enum uart_rx_state {
+  WAITING_FOR_INPUT,
+  TESTING_START_BIT,
+  INPUTTING_DATA_BIT,
+  INPUTTING_PARITY_BIT,
+  INPUTTING_STOP_BIT,
+  WAITING_FOR_HIGH,
+};
+
+#define DEFAULT_PARITY UART_RX_PARITY_NONE
+#define DEFAULT_BITS_PER_BYTE 8
+#define DEFAULT_BAUD 115200
+#define DEFAULT_BIT_TIME (XS1_TIMER_HZ / DEFAULT_BAUD)
+#define DEFAULT_STOP_BITS 1
+
+static inline int parity32(unsigned x, enum uart_rx_parity parity)
 {
-  asm("ecallf %0" : : "r"(0));
+  // To compute even / odd parity the checksum should be initialised
+  // to 0 / 1 respectively. The values of the uart_rx_parity have been
+  // chosen so the parity can be used to initialise the checksum
+  // directly.
+  assert(UART_RX_PARITY_EVEN == 0);
+  assert(UART_RX_PARITY_ODD == 1);
+  crc32(x, parity, 1);
+  return (x & 1);
 }
 
-struct uart_rx_options {
-  unsigned baud_rate;
-  enum uart_rx_parity parity;
-  unsigned stop_bits;
-  unsigned bits_per_byte;
-};
-
-enum {
-  UART_RX_SET_BAUD_RATE_PKT,
-  UART_RX_SET_PARITY_PKT,
-  UART_RX_SET_STOP_BITS_PKT,
-  UART_RX_SET_BITS_PER_BYTE_PKT,
-};
-
-#pragma select handler
-static transaction
-handle_config_chanend(chanend c,
-                      struct uart_rx_options &options)
+static int add_to_buffer(unsigned char buffer[n], unsigned n,
+                         int &rdptr, int &wrptr,
+                         unsigned char data)
 {
-  unsigned char cmd;
-  //  unsigned tmp;
-  c :> cmd;
-  switch (cmd) {
-#pragma fallthrough
-  default:
-    // Should't get here.
-    trap();
-  case UART_RX_SET_BAUD_RATE_PKT:
-    c:> options.baud_rate;
-    break;
-  case UART_RX_SET_PARITY_PKT:
-    c:> options.parity;
-    break;
-  case UART_RX_SET_STOP_BITS_PKT:
-    c:> options.stop_bits;
-    break;
-  case UART_RX_SET_BITS_PER_BYTE_PKT:
-    c:> options.bits_per_byte;
-    break;
+  int new_wrptr = wrptr + 1;
+
+  if (new_wrptr == n)
+    new_wrptr = 0;
+
+  if (new_wrptr == rdptr) {
+    // buffer full
+    return 0;
   }
+
+  buffer[wrptr] = data;
+  wrptr = new_wrptr;
+  return 1;
 }
 
-void uart_rx(in buffered port:1 rxd, unsigned char buffer[],
-                unsigned buffer_size, unsigned baud_rate, unsigned bits,
-                enum uart_rx_parity parity, unsigned stop_bits,
-                chanend c)
+void uart_rx(server interface uart_rx_if c,
+             unsigned char buffer[n], unsigned n,
+             in buffered port:1 p_rxd)
 {
-  struct uart_rx_options options;
-
-  options.baud_rate = baud_rate;
-  options.bits_per_byte = bits;
-  options.parity = parity;
-  options.stop_bits = stop_bits;
-
-  //printf("parity = %d\n",options.parity);
-
+  int data_bit_count;
+  timer start_bit_tmr, data_bit_tmr, parity_bit_tmr, stop_bit_tmr;
+  int data_trigger = 1;
+  enum uart_rx_state state = WAITING_FOR_HIGH;
+  int t;
+  int bit_time = DEFAULT_BIT_TIME;
+  int bits_per_byte = DEFAULT_BITS_PER_BYTE;
+  int parity = DEFAULT_PARITY;
+  int stop_bits = DEFAULT_STOP_BITS;
+  int stop_bit_count;
+  unsigned data;
+  int rdptr = 0, wrptr = 0;
   while (1) {
-    uart_rx_impl(rxd, buffer, buffer_size, options.baud_rate,
-                 options.bits_per_byte, options.parity, options.stop_bits,
-                 c);
-    slave handle_config_chanend(c, options);
+    #pragma ordered
+    select {
+
+    // The following cases implement the uart state machine
+    case (state == WAITING_FOR_INPUT || state == WAITING_FOR_HIGH) =>
+         p_rxd when pinseq(data_trigger) :> void:
+      start_bit_tmr :> t;
+      t += bit_time/2;
+      if (state == WAITING_FOR_HIGH) {
+        data_trigger = 0;
+        state = WAITING_FOR_INPUT;
+      } else {
+        state = TESTING_START_BIT;
+      }
+      break;
+    case (state == TESTING_START_BIT) => start_bit_tmr when timerafter(t) :> void:
+      // We should now be half way through the start bit
+      // Test it is not a glitch
+      int level_test;
+      p_rxd :> level_test;
+      if (level_test == 0) {
+        data_bit_count = 0;
+        t += bit_time;
+        data = 0;
+        state = INPUTTING_DATA_BIT;
+      }
+      else {
+        state = WAITING_FOR_INPUT;
+      }
+      break;
+    case (state == INPUTTING_DATA_BIT) => data_bit_tmr when timerafter(t) :> void:
+      p_rxd :> >> data;
+      data_bit_count++;
+      t += bit_time;
+      if (data_bit_count == bits_per_byte) {
+        data >>= CHAR_BIT * sizeof(data) - bits_per_byte;
+        if (parity != UART_RX_PARITY_NONE) {
+          state = INPUTTING_PARITY_BIT;
+        } else if (stop_bits != 0) {
+          stop_bit_count = 0;
+          state = INPUTTING_STOP_BIT;
+        }
+        else {
+          state = WAITING_FOR_INPUT;
+          data_trigger = 0;
+        }
+      }
+      break;
+    case (state == INPUTTING_PARITY_BIT) => parity_bit_tmr when timerafter(t) :> void:
+      int bit;
+      p_rxd :> bit;
+      if (bit == parity32(data, parity)) {
+        if (stop_bits != 0) {
+          stop_bit_count = 0;
+          state = INPUTTING_STOP_BIT;
+        }
+        else {
+          if (add_to_buffer(buffer, n, rdptr, wrptr, data))
+            c.data_ready();
+          data_trigger = 0;
+          state = WAITING_FOR_INPUT;
+        }
+      }
+      else {
+        state = WAITING_FOR_INPUT;
+      }
+      t += bit_time;
+      break;
+    case (state == INPUTTING_STOP_BIT) => stop_bit_tmr when timerafter(t) :> void:
+      int level_test;
+      p_rxd :> level_test;
+      if (level_test != 1) {
+        state = WAITING_FOR_INPUT;
+      }
+      stop_bit_count++;
+      t += bit_time;
+      if (stop_bit_count == stop_bits) {
+        if (add_to_buffer(buffer, n, rdptr, wrptr, data)) {
+          c.data_ready();
+        }
+        data_trigger = 0;
+        state = WAITING_FOR_INPUT;
+      }
+      break;
+
+    // Handle client interaction with the component
+    case c.set_baud_rate(unsigned baud_rate):
+      bit_time = XS1_TIMER_HZ / baud_rate;
+      data_trigger = 1;
+      state = WAITING_FOR_HIGH;
+      break;
+    case c.set_parity(enum uart_rx_parity new_parity):
+      parity = new_parity;
+      data_trigger = 1;
+      state = WAITING_FOR_HIGH;
+      break;
+    case c.set_stop_bits(unsigned new_stop_bits):
+      stop_bits = new_stop_bits;
+      data_trigger = 1;
+      state = WAITING_FOR_HIGH;
+      break;
+    case c.set_bits_per_byte(unsigned bpb):
+      bits_per_byte = bpb;
+      data_trigger = 1;
+      state = WAITING_FOR_HIGH;
+      break;
+    case (rdptr != wrptr) => c.input_byte() -> unsigned char data:
+      data = buffer[rdptr];
+      rdptr++;
+      if (rdptr == n)
+        rdptr = 0;
+      if (rdptr != wrptr)
+        c.data_ready();
+      break;
+    }
   }
-}
-
-unsigned char uart_rx_get_byte(chanend c, uart_rx_client_state &state)
-{
-  return uart_rx_impl_get_byte(c, state);
-}
-
-void uart_rx_get_byte_byref(chanend c, uart_rx_client_state &state,
-                                   unsigned char &byte)
-{
-  byte = uart_rx_impl_get_byte(c, state);
-}
-
-void uart_rx_init(chanend c, uart_rx_client_state &state) {
-  uart_rx_impl_start(c, state);
-}
-
-void uart_rx_set_baud_rate(chanend c, uart_rx_client_state &state, unsigned baud_rate)
-{
-  uart_rx_impl_stop(c, state);
-  master {
-    c <: (unsigned char)UART_RX_SET_BAUD_RATE_PKT;
-    c <: baud_rate;
-  };
-  uart_rx_impl_start(c, state);
-}
-
-void uart_rx_set_parity(chanend c, uart_rx_client_state &state, enum uart_rx_parity parity)
-{
-  uart_rx_impl_stop(c, state);
-  master {
-    c <: (unsigned char)UART_RX_SET_PARITY_PKT;
-    c <: parity;
-  };
-  uart_rx_impl_start(c, state);
-}
-
-void uart_rx_set_stop_bits(chanend c, uart_rx_client_state &state, unsigned stop_bits)
-{
-  uart_rx_impl_stop(c, state);
-  master {
-    c <: (unsigned char)UART_RX_SET_STOP_BITS_PKT;
-    c <: stop_bits;
-  };
-  uart_rx_impl_start(c, state);
-}
-
-void uart_rx_set_bits_per_byte(chanend c, uart_rx_client_state &state, unsigned bits)
-{
-  uart_rx_impl_stop(c, state);
-  master {
-    c <: (unsigned char)UART_RX_SET_BITS_PER_BYTE_PKT;
-    c <: bits;
-  };
-  uart_rx_impl_start(c, state);
 }

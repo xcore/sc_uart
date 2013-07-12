@@ -20,6 +20,22 @@ enum uart_tx_parity {
   UART_TX_PARITY_NONE
 };
 
+interface uart_tx_if {
+  void output_byte(unsigned char data);
+
+  void set_baud_rate(unsigned baud_rate);
+  void set_parity(enum uart_tx_parity parity);
+  void set_stop_bits(unsigned stop_bits);
+  void set_bits_per_byte(unsigned bpb);
+};
+
+[[distributable]]
+void uart_tx(server interface uart_tx_if c[n], unsigned n,
+             out port p_txd);
+
+void uart_tx_buffered(server interface uart_tx_if c[n], unsigned n,
+                      unsigned char buffer[m], unsigned m,
+                      out port p_txd);
 
 /**
  * UART TX server function. 
@@ -42,7 +58,7 @@ enum uart_tx_parity {
  * \param stop_bits    Initial number of stop bits to transmit.
  * \param c            Chanend to receive requests on, where a request is either a byte to transmit or a configuration change.
  */
-void uart_tx(out port txd, unsigned char buffer[], unsigned buffer_size,
+void uart_tx0(out port txd, unsigned char buffer[], unsigned buffer_size,
              unsigned baud_rate, unsigned bits, enum uart_tx_parity parity,
              unsigned stop_bits, chanend c);
 

@@ -3,139 +3,81 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-#include "uart_tx_impl.h"
 #include "uart_tx.h"
 #include <xs1.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "xassert.h"
 
-struct uart_tx_options {
-  unsigned baud_rate;
-  unsigned bits_per_byte;
-  enum uart_tx_parity parity;
-  unsigned stop_bits;
-};
-extern void Dump_error();
-enum {
-  UART_TX_SET_BAUD_RATE_PKT,
-  UART_TX_SET_PARITY_PKT,
-  UART_TX_SET_STOP_BITS_PKT,
-  UART_TX_SET_BITS_PER_BYTE_PKT,
-};
+#define DEFAULT_PARITY UART_TX_PARITY_NONE
+#define DEFAULT_BITS_PER_BYTE 8
+#define DEFAULT_BAUD 115200
+#define DEFAULT_BIT_TIME (XS1_TIMER_HZ / DEFAULT_BAUD)
+#define DEFAULT_STOP_BITS 1
 
-static inline void trap()
+static inline int parity32(unsigned x, enum uart_tx_parity parity)
 {
-  asm("ecallf %0" : : "r"(0));
+  // To compute even / odd parity the checksum should be initialised
+  // to 0 / 1 respectively. The values of the art_tx_parity have been
+  // chosen so the parity can be used to initialise the checksum
+  // directly.
+  assert(UART_TX_PARITY_EVEN == 0);
+  assert(UART_TX_PARITY_ODD == 1);
+  crc32(x, parity, 1);
+  return (x & 1);
 }
 
-static transaction
-handle_config_packet(chanend c, struct uart_tx_options &options)
+[[distributable]]
+void uart_tx(server interface uart_tx_if c[n], unsigned n,
+             out port p_txd)
 {
-  unsigned char cmd;
-  //  unsigned tmp;
-  c :> cmd;
-  switch (cmd) {
-  #pragma fallthrough
-  default:
-    // Should't get here.
-    trap();
-  case UART_TX_SET_BAUD_RATE_PKT:
-    c :> options.baud_rate;
-    break;
-  case UART_TX_SET_PARITY_PKT:
-    c :> options.parity;
-    break;
-  case UART_TX_SET_STOP_BITS_PKT:
-    c :> options.stop_bits;
-    break;
-  case UART_TX_SET_BITS_PER_BYTE_PKT:
-    c :> options.bits_per_byte;
-    break;
-  }
-}
+  int bits_per_byte = DEFAULT_BITS_PER_BYTE;
+  int bit_time = DEFAULT_BIT_TIME;
+  enum uart_tx_parity parity = DEFAULT_PARITY;
+  int stop_bits = DEFAULT_STOP_BITS;
+  timer tmr;
 
-void uart_tx(out port txd, unsigned char buffer[], unsigned buffer_size,
-                     unsigned baud_rate, unsigned bits, enum uart_tx_parity parity,
-                     unsigned stop_bits, chanend c)
-{
-  struct uart_tx_options options;
-
-  options.baud_rate = baud_rate;
-  options.bits_per_byte = bits;
-  options.parity = parity;
-  options.stop_bits = stop_bits;
-
-
-
+  p_txd <: 1;
   while (1) {
-	  if(stop_bits > 2)
-	  {
-		   printf("Incorrect stop bits.Fail\n");
-		  _Exit(1);
-	  }
-	  if(parity>3)
-	  {
-		   printf("Incorrect parity.Fail\n");
-		  _Exit(1);
-	  }
-	  if((bits<5) || (bits>8))
-	  {
-		   printf("Incorrect bitsperbyte .Fail\n");
-		  _Exit(1);
-	  }
-      if((baud_rate!=115200) && (baud_rate!= 96000) && (baud_rate!=24000) && (baud_rate!= 57600))
-      {
-		   printf("Incorrect baud_rate .Fail\n");
-		  _Exit(1);
+    select {
+    case c[int i].output_byte(unsigned char data):
+      int t;
+      // Output start bit
+      p_txd <: 0;
+      tmr :> t;
+      t += bit_time;
+      unsigned byte = data;
+      // Output data bits
+      for (int i = 0; i < bits_per_byte; i++) {
+        tmr when timerafter(t) :> void;
+        p_txd <: >> byte;
+        t += bit_time;
       }
+      // Output parity
+      if (parity != UART_TX_PARITY_NONE) {
+        tmr when timerafter(t) :> void;
+        p_txd <: parity32(data, parity);
+        t += bit_time;
+      }
+      // Output stop bits
+      tmr when timerafter(t) :> void;
+      p_txd <: 1;
+      t += bit_time * stop_bits;
+      tmr when timerafter(t) :> void;
+      break;
 
-    uart_tx_impl(txd, buffer, buffer_size, options.baud_rate, options.bits_per_byte, options.parity, options.stop_bits, c);
-    //printf("buffer = %x\n",buffer[0]);
-    //printf("buffer_size = %d\n",buffer_size);
-    slave handle_config_packet(c, options);
+    case c[int i].set_baud_rate(unsigned baud_rate):
+      bit_time = XS1_TIMER_HZ / baud_rate;
+      break;
+    case c[int i].set_parity(enum uart_tx_parity new_parity):
+      parity = new_parity;
+      break;
+    case c[int i].set_stop_bits(unsigned new_stop_bits):
+      stop_bits = new_stop_bits + 1;
+      break;
+    case c[int i].set_bits_per_byte(unsigned bpb):
+      bits_per_byte = bpb;
+      break;
+    }
   }
 }
-
-void uart_tx_send_byte(chanend c, unsigned char byte)
-{
-  uart_tx_impl_send_byte(c, byte);
-}
-
-void uart_tx_set_baud_rate(chanend c, unsigned baud_rate)
-{
-  uart_tx_impl_stop(c);
-  master {
-    c <: (unsigned char)UART_TX_SET_BAUD_RATE_PKT;
-    c <: baud_rate;
-  };
-}
-
-void uart_tx_set_parity(chanend c, enum uart_tx_parity parity)
-{
-  uart_tx_impl_stop(c);
-  master {
-    c <: (unsigned char)UART_TX_SET_PARITY_PKT;
-    c <: parity;
-  };
-}
-
-void uart_tx_set_stop_bits(chanend c, unsigned stop_bits)
-{
-  uart_tx_impl_stop(c);
-  master {
-    c <: (unsigned char)UART_TX_SET_STOP_BITS_PKT;
-    c <: stop_bits;
-  };
-}
-
-void uart_tx_set_bits_per_byte(chanend c, unsigned bits)
-{
-  uart_tx_impl_stop(c);
-  master {
-    c <: (unsigned char)UART_TX_SET_BITS_PER_BYTE_PKT;
-    c <: bits;
-  };
-}
-
-// Force external definition of inline function in this file.
-extern inline void uart_tx_send_byte(chanend c, unsigned char byte);
