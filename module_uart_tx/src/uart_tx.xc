@@ -83,7 +83,7 @@ void uart_tx(out port txd, unsigned char buffer[], unsigned buffer_size,
 		   printf("Incorrect bitsperbyte .Fail\n");
 		  _Exit(1);
 	  }
-      if((baud_rate!=115200) && (baud_rate!= 96000) && (baud_rate!=24000) && (baud_rate!= 57600))
+      if((baud_rate!=115200) && (baud_rate!= 9600) && (baud_rate!=24000) && (baud_rate!= 57600) && (baud_rate!=19200) && (baud_rate != 38400))
       {
 		   printf("Incorrect baud_rate .Fail\n");
 		  _Exit(1);
