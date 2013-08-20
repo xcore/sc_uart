@@ -1,7 +1,7 @@
 #include <print.h>
 #include <platform.h>
-#include "uart_rx.h"
-#include "uart_tx.h"
+#include "uart_fast_rx.h"
+#include "uart_fast_tx.h"
 
 #define TEST_LENGTH 32  //number of characters to send/receive in test. Max 256.
 #define BIT_PERIOD 10   //bit period in  clock ticks. CLKBLK_REF is 100MHz here
@@ -65,7 +65,7 @@ int main(void) {
 
   //Configure ports to be clocked from specified clock source and initialise
   par {
-    on tile[DEMO_TILE]:
+	  on tile[DEMO_TILE]:{
       uart_tx_fast_init(p_tx, refClk);
       uart_tx_fast(p_tx, c_producer_to_tx, BIT_PERIOD);
     }
