@@ -157,7 +157,7 @@ app_uart_back2back
       module_uart_rx
 
 app_uart_fast
-   Name: Simple Uart Loopback Example
+   Name: Simple/Fast UART loopback Demo Application
    Type: demoCode
    Dependencies:
       module_uart_fast_rx
@@ -169,37 +169,15 @@ module_rs485
    Dependencies:
 
 module_uart_fast_rx
-   Name: <Add title here>
+   Name: Simple/Fast UART RX component
    Type: component
    Dependencies:
 
-ERROR: Software block module_uart_fast_rx title not specified, update README.rst
-ERROR: Software block module_uart_fast_rx description not specified, update README.rst
-ERROR: Software block module_uart_fast_rx invalid scope
-Update README to set scope to one of:
-         Roadmap
-         Example
-         Early Development
-         General Use
-
-ERROR: module_uart_fast_rx keywords field as template, update README.rst to specify keywords or delete the line
-ERROR: module_uart_fast_rx boards field as template, update README.rst to specify keywords or delete the line
 module_uart_fast_tx
-   Name: <Add title here>
+   Name: Simple/Fast UART TX component
    Type: component
    Dependencies:
 
-ERROR: Software block module_uart_fast_tx title not specified, update README.rst
-ERROR: Software block module_uart_fast_tx description not specified, update README.rst
-ERROR: Software block module_uart_fast_tx invalid scope
-Update README to set scope to one of:
-         Roadmap
-         Example
-         Early Development
-         General Use
-
-ERROR: module_uart_fast_tx keywords field as template, update README.rst to specify keywords or delete the line
-ERROR: module_uart_fast_tx boards field as template, update README.rst to specify keywords or delete the line
 module_uart_rx
    Name: Generic UART Receiver
    Type: component
@@ -210,17 +188,26 @@ module_uart_tx
    Type: component
    Dependencies:
 
+SWBLOCK INFORMATION OK
 app_uart_fast: checking .project file
+WARNING: app_uart_fast: .project file is invalid (no module path builder)
+WARNING: app_uart_fast: .project file is invalid (no module path builder)
 Run 'git status --porcelain .project'
+      M app_uart_fast/.project
+New .project created in app_uart_fast
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_fast/.project'
 module_uart_fast_rx: checking .project file
 Run 'git status --porcelain .project'
+      M module_uart_fast_rx/.project
+New .project created in module_uart_fast_rx
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_rx/.project'
 app_rs485: checking .project file
 Run 'git status --porcelain .project'
 Run 'git add /Users/Ed/apps/sc_uart/app_rs485/.project'
 module_uart_fast_tx: checking .project file
 Run 'git status --porcelain .project'
+      M module_uart_fast_tx/.project
+New .project created in module_uart_fast_tx
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_tx/.project'
 module_rs485: checking .project file
 Run 'git status --porcelain .project'
@@ -243,17 +230,27 @@ Run 'git add /Users/Ed/apps/sc_uart/app_rs485_demo/.project'
 app_uart_fast: checking .cproject file
 app_uart_fast: using configs: Debug, Release
 app_uart_fast: checking .cproject file
+WARNING: app_uart_fast: .cproject does not cover all include paths
 Run 'git rev-parse HEAD~1'
-     22402620740f9f5dbe10cf82f2961684289ac546
+     6a7542709ce369ff6c5621c8d38359298653a7d8
 Run 'git status --porcelain .cproject'
+      M app_uart_fast/.cproject
+New .cproject created in app_uart_fast
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_fast/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_fast/.xproject'
+     The following paths are ignored by one of your .gitignore files:
+     app_uart_fast/.xproject
+     Use -f if you really want to add them.
+     fatal: no files added
 module_uart_fast_rx: checking .cproject file
 module_uart_fast_rx: using configs: Default
 module_uart_fast_rx: checking .cproject file
+WARNING: module_uart_fast_rx: .cproject does not cover all include paths
 Run 'git rev-parse HEAD~1'
-     22402620740f9f5dbe10cf82f2961684289ac546
+     6a7542709ce369ff6c5621c8d38359298653a7d8
 Run 'git status --porcelain .cproject'
+      M module_uart_fast_rx/.cproject
+New .cproject created in module_uart_fast_rx
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_rx/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_rx/.xproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_rx/.makefile'
@@ -261,16 +258,19 @@ app_rs485: checking .cproject file
 app_rs485: using configs: Debug, Release
 app_rs485: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     22402620740f9f5dbe10cf82f2961684289ac546
+     6a7542709ce369ff6c5621c8d38359298653a7d8
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_rs485/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_rs485/.xproject'
 module_uart_fast_tx: checking .cproject file
 module_uart_fast_tx: using configs: Default
 module_uart_fast_tx: checking .cproject file
+WARNING: module_uart_fast_tx: .cproject does not cover all include paths
 Run 'git rev-parse HEAD~1'
-     22402620740f9f5dbe10cf82f2961684289ac546
+     6a7542709ce369ff6c5621c8d38359298653a7d8
 Run 'git status --porcelain .cproject'
+      M module_uart_fast_tx/.cproject
+New .cproject created in module_uart_fast_tx
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_tx/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_tx/.xproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_tx/.makefile'
@@ -278,7 +278,7 @@ module_rs485: checking .cproject file
 module_rs485: using configs: Default
 module_rs485: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     22402620740f9f5dbe10cf82f2961684289ac546
+     6a7542709ce369ff6c5621c8d38359298653a7d8
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_rs485/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_rs485/.xproject'
@@ -287,7 +287,7 @@ module_uart_tx: checking .cproject file
 module_uart_tx: using configs: Default
 module_uart_tx: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     22402620740f9f5dbe10cf82f2961684289ac546
+     6a7542709ce369ff6c5621c8d38359298653a7d8
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_tx/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_tx/.xproject'
@@ -296,7 +296,7 @@ module_uart_rx: checking .cproject file
 module_uart_rx: using configs: Default
 module_uart_rx: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     22402620740f9f5dbe10cf82f2961684289ac546
+     6a7542709ce369ff6c5621c8d38359298653a7d8
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_rx/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_rx/.xproject'
@@ -305,7 +305,7 @@ app_uart_test: checking .cproject file
 app_uart_test: using configs: Default
 app_uart_test: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     22402620740f9f5dbe10cf82f2961684289ac546
+     6a7542709ce369ff6c5621c8d38359298653a7d8
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_test/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_test/.xproject'
@@ -313,7 +313,7 @@ app_uart_back2back: checking .cproject file
 app_uart_back2back: using configs: Default
 app_uart_back2back: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     22402620740f9f5dbe10cf82f2961684289ac546
+     6a7542709ce369ff6c5621c8d38359298653a7d8
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_back2back/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_back2back/.xproject'
@@ -321,7 +321,7 @@ app_rs485_demo: checking .cproject file
 app_rs485_demo: using configs: Debug, Release
 app_rs485_demo: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     22402620740f9f5dbe10cf82f2961684289ac546
+     6a7542709ce369ff6c5621c8d38359298653a7d8
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_rs485_demo/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_rs485_demo/.xproject'
@@ -331,7 +331,6 @@ Checking app_rs485/Makefile
 Checking app_uart_test/Makefile
 Checking app_uart_back2back/Makefile
 Checking app_rs485_demo/Makefile
-MAKEFILE/ECLIPSE PROJECT INFORMATION OK
 
 =================================================================
 REPOSITORY UPDATED
