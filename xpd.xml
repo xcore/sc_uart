@@ -17,10 +17,6 @@
             <keyword>Serial simple fast UART</keyword>
         </component>
     </components>
-    <dependency repo = "xcommon">
-        <githash>aca1d1c71887bd39d8336499d30b8233701cd2c7</githash>
-        <uri>git@github.com:xcore/xcommon.git</uri>
-    </dependency>
     <dependency repo = "fast_uart">
         <githash>ccc08d8f670452a91fb8b2651b383c0e7b4517e4</githash>
         <uri>origin</uri>

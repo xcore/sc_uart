@@ -28,33 +28,12 @@ Run 'git show master:xpd.xml'
      <?xml version="1.0" ?>
      <xpd>
          <components>
-             <component description = "Basic loopback demonstration for the RS485 component" type = "demoCode" scope = "Example" path = "app_rs485" local = "false" id = "app_rs485" name = "RS485 Terminal Console Demo">
-                 <board>XK-SKC-L2</board>
-                 <board>XA-SK-ISBUS</board>
-                 <componentDependency>module_uart_fast_tx</componentDependency>
-                 <componentDependency>module_rs485</componentDependency>
-                 <keyword>rs485</keyword>
-                 <keyword>UART</keyword>
-             </component>
-             <component description = "Application to demonstrate module_uart_rx and module_uart_tx running looped back on a single Slicekti core board." type = "demoCode" scope = "Example" path = "app_uart_back2back" local = "false" id = "app_uart_back2back" name = "Generic Uart Loopback Example">
-                 <board>XA-SKC-L2</board>
-                 <componentDependency>module_uart_tx</componentDependency>
-                 <componentDependency>module_uart_rx</componentDependency>
-                 <keyword>UART</keyword>
-                 <keyword>demo</keyword>
-             </component>
              <component description = "Application to demonstrate module_uart_fast_rx and module_uart_fast_tx running looped back on a single Slicekit core board" type = "demoCode" scope = "Example" path = "app_uart_fast" local = "false" id = "app_uart_fast" name = "Simple Uart Loopback Example">
                  <board>XA-SKC-L2</board>
                  <componentDependency>module_uart_fast_rx</componentDependency>
                  <componentDependency>module_uart_fast_tx</componentDependency>
                  <keyword>UART</keyword>
                  <keyword>demo</keyword>
-             </component>
-             <component name = "RS485 Transceiver Component" type = "component" buildresults_path = "module_rs485/.module_rs485.buildinfo" scope = "General Use" path = "module_rs485" metainfo_path = "module_rs485/module_rs485.metainfo" local = "false" id = "module_rs485" description = "Half-duplex RS485 transceiver component for operation up to 1 Mbps baud">
-                 <board>XK-SKC-L2</board>
-                 <board>XA-SK-ISBUS</board>
-                 <keyword>RS485</keyword>
-                 <keyword>UART</keyword>
              </component>
              <component name = "Simple/Fast UART RX component" type = "component" buildresults_path = "module_uart_fast_rx/.module_uart_fast_rx.buildinfo" scope = "Early Development" path = "module_uart_fast_rx" metainfo_path = "module_uart_fast_rx/module_uart_fast_rx.metainfo" local = "false" id = "module_uart_fast_rx" description = "Basic and fast UART without FIFO">
                  <board>XP-SKC-L16</board>
@@ -63,16 +42,6 @@ Run 'git show master:xpd.xml'
              <component name = "Simple/Fast UART TX component" type = "component" buildresults_path = "module_uart_fast_tx/.module_uart_fast_tx.buildinfo" scope = "Early Development" path = "module_uart_fast_tx" metainfo_path = "module_uart_fast_tx/module_uart_fast_tx.metainfo" local = "false" id = "module_uart_fast_tx" description = "Basic and fast UART without FIFO">
                  <board>XP-SKC-L16</board>
                  <keyword>Serial simple fast UART</keyword>
-             </component>
-             <component name = "Generic UART Receiver" type = "component" buildresults_path = "module_uart_rx/.module_uart_rx.buildinfo" scope = "General Use" path = "module_uart_rx" metainfo_path = "module_uart_rx/module_uart_rx.metainfo" local = "false" id = "module_uart_rx" description = "Uart Receiver with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support">
-                 <board>XK-SKC-L2</board>
-                 <board>XA-SK-GPIO</board>
-                 <keyword>UART</keyword>
-             </component>
-             <component name = "Generic UART Transmitter" type = "component" buildresults_path = "module_uart_tx/.module_uart_tx.buildinfo" scope = "General Use" path = "module_uart_tx" metainfo_path = "module_uart_tx/module_uart_tx.metainfo" local = "false" id = "module_uart_tx" description = "Uart with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support">
-                 <board>XK-SKC-L2</board>
-                 <board>XA-SK-GPIO</board>
-                 <keyword>UART</keyword>
              </component>
          </components>
          <dependency repo = "xcommon">
@@ -147,159 +116,5 @@ Run 'git remote show -n origin'
        Local ref configured for 'git push' (status not queried):
          (matching) pushes to (matching)
 WARNING: Cannot find dependency: xcommon
-Running checks
-Run 'git rev-parse HEAD~1'
-     6eddbf80f486758380fca07e42a368efefdc66a5
-Run 'git rev-parse HEAD'
-     ccc08d8f670452a91fb8b2651b383c0e7b4517e4
-Dependencies OK
-DEPENDENCIES OK
-Main part number = XM-001905-DH
-Zipfile part number = XM-001906-SM
-METAINFORMATION OK
-app_uart_fast
-   Name: Simple Uart Loopback Example
-   Type: demoCode
-   Dependencies:
-      module_uart_fast_rx
-      module_uart_fast_tx
-
-module_uart_fast_rx
-   Name: Simple/Fast UART RX component
-   Type: component
-   Dependencies:
-
-module_uart_fast_tx
-   Name: Simple/Fast UART TX component
-   Type: component
-   Dependencies:
-
-SWBLOCK INFORMATION OK
-app_uart_fast: checking .project file
-Run 'git status --porcelain .project'
-Run 'git add /Users/Ed/apps/sc_uart/app_uart_fast/.project'
-module_uart_fast_rx: checking .project file
-Run 'git status --porcelain .project'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_rx/.project'
-app_rs485: checking .project file
-Run 'git status --porcelain .project'
-Run 'git add /Users/Ed/apps/sc_uart/app_rs485/.project'
-module_uart_fast_tx: checking .project file
-Run 'git status --porcelain .project'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_tx/.project'
-module_rs485: checking .project file
-Run 'git status --porcelain .project'
-Run 'git add /Users/Ed/apps/sc_uart/module_rs485/.project'
-module_uart_tx: checking .project file
-Run 'git status --porcelain .project'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_tx/.project'
-module_uart_rx: checking .project file
-Run 'git status --porcelain .project'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_rx/.project'
-app_uart_test: checking .project file
-Run 'git status --porcelain .project'
-Run 'git add /Users/Ed/apps/sc_uart/app_uart_test/.project'
-app_uart_back2back: checking .project file
-Run 'git status --porcelain .project'
-Run 'git add /Users/Ed/apps/sc_uart/app_uart_back2back/.project'
-app_rs485_demo: checking .project file
-Run 'git status --porcelain .project'
-Run 'git add /Users/Ed/apps/sc_uart/app_rs485_demo/.project'
-app_uart_fast: checking .cproject file
-app_uart_fast: using configs: Debug, Release
-app_uart_fast: checking .cproject file
-Run 'git rev-parse HEAD~1'
-     d822b839f9e68671eea5c498e94cfcd14bd67437
-Run 'git status --porcelain .cproject'
-Run 'git add /Users/Ed/apps/sc_uart/app_uart_fast/.cproject'
-Run 'git add /Users/Ed/apps/sc_uart/app_uart_fast/.xproject'
-     The following paths are ignored by one of your .gitignore files:
-     app_uart_fast/.xproject
-     Use -f if you really want to add them.
-     fatal: no files added
-module_uart_fast_rx: checking .cproject file
-module_uart_fast_rx: using configs: Default
-module_uart_fast_rx: checking .cproject file
-Run 'git rev-parse HEAD~1'
-     d822b839f9e68671eea5c498e94cfcd14bd67437
-Run 'git status --porcelain .cproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_rx/.cproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_rx/.xproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_rx/.makefile'
-app_rs485: checking .cproject file
-app_rs485: using configs: Debug, Release
-app_rs485: checking .cproject file
-Run 'git rev-parse HEAD~1'
-     d822b839f9e68671eea5c498e94cfcd14bd67437
-Run 'git status --porcelain .cproject'
-Run 'git add /Users/Ed/apps/sc_uart/app_rs485/.cproject'
-Run 'git add /Users/Ed/apps/sc_uart/app_rs485/.xproject'
-module_uart_fast_tx: checking .cproject file
-module_uart_fast_tx: using configs: Default
-module_uart_fast_tx: checking .cproject file
-Run 'git rev-parse HEAD~1'
-     d822b839f9e68671eea5c498e94cfcd14bd67437
-Run 'git status --porcelain .cproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_tx/.cproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_tx/.xproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_tx/.makefile'
-module_rs485: checking .cproject file
-module_rs485: using configs: Default
-module_rs485: checking .cproject file
-Run 'git rev-parse HEAD~1'
-     d822b839f9e68671eea5c498e94cfcd14bd67437
-Run 'git status --porcelain .cproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_rs485/.cproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_rs485/.xproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_rs485/.makefile'
-module_uart_tx: checking .cproject file
-module_uart_tx: using configs: Default
-module_uart_tx: checking .cproject file
-Run 'git rev-parse HEAD~1'
-     d822b839f9e68671eea5c498e94cfcd14bd67437
-Run 'git status --porcelain .cproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_tx/.cproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_tx/.xproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_tx/.makefile'
-module_uart_rx: checking .cproject file
-module_uart_rx: using configs: Default
-module_uart_rx: checking .cproject file
-Run 'git rev-parse HEAD~1'
-     d822b839f9e68671eea5c498e94cfcd14bd67437
-Run 'git status --porcelain .cproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_rx/.cproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_rx/.xproject'
-Run 'git add /Users/Ed/apps/sc_uart/module_uart_rx/.makefile'
-app_uart_test: checking .cproject file
-app_uart_test: using configs: Default
-app_uart_test: checking .cproject file
-Run 'git rev-parse HEAD~1'
-     d822b839f9e68671eea5c498e94cfcd14bd67437
-Run 'git status --porcelain .cproject'
-Run 'git add /Users/Ed/apps/sc_uart/app_uart_test/.cproject'
-Run 'git add /Users/Ed/apps/sc_uart/app_uart_test/.xproject'
-app_uart_back2back: checking .cproject file
-app_uart_back2back: using configs: Default
-app_uart_back2back: checking .cproject file
-Run 'git rev-parse HEAD~1'
-     d822b839f9e68671eea5c498e94cfcd14bd67437
-Run 'git status --porcelain .cproject'
-Run 'git add /Users/Ed/apps/sc_uart/app_uart_back2back/.cproject'
-Run 'git add /Users/Ed/apps/sc_uart/app_uart_back2back/.xproject'
-app_rs485_demo: checking .cproject file
-app_rs485_demo: using configs: Debug, Release
-app_rs485_demo: checking .cproject file
-Run 'git rev-parse HEAD~1'
-     d822b839f9e68671eea5c498e94cfcd14bd67437
-Run 'git status --porcelain .cproject'
-Run 'git add /Users/Ed/apps/sc_uart/app_rs485_demo/.cproject'
-Run 'git add /Users/Ed/apps/sc_uart/app_rs485_demo/.xproject'
-Checking toplevel Makefile
-Checking app_uart_fast/Makefile
-Checking app_rs485/Makefile
-Checking app_uart_test/Makefile
-Checking app_uart_back2back/Makefile
-Checking app_rs485_demo/Makefile
-MAKEFILE/ECLIPSE PROJECT INFORMATION OK
-Run 'git symbolic-ref HEAD'
-     refs/heads/master
+Removed
+Saving xpd.xml

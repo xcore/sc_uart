@@ -23,4 +23,4 @@ XCC_FLAGS_Release = -O2 -g
 VERBOSE = 0
 
 XMOS_MAKE_PATH ?= ../..
-# -include $(XMOS_MAKE_PATH)/xcommon/module_xcommon/build/Makefile.common
+-include $(XMOS_MAKE_PATH)/xcommon/module_xcommon/build/Makefile.common
