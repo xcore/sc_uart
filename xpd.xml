@@ -16,25 +16,18 @@
             <keyword>UART</keyword>
             <keyword>demo</keyword>
         </component>
-        <component description = "Usage Example for xSOFTip Fast/simple-UART Module" type = "demoCode" scope = "Example" path = "app_uart_fast" local = "false" id = "app_uart_fast" name = "Simple/Fast UART loopback Demo Application">
-            <board>XP-SKC-L16</board>
+        <component description = "Application to demonstrate module_uart_fast_rx and module_uart_fast_tx running looped back on a single Slicekit core board" type = "demoCode" scope = "Example" path = "app_uart_fast" local = "false" id = "app_uart_fast" name = "Simple Uart Loopback Example">
+            <board>XA-SKC-L2</board>
             <componentDependency>module_uart_fast_rx</componentDependency>
             <componentDependency>module_uart_fast_tx</componentDependency>
-            <keyword>Serial simple fast UART demo</keyword>
+            <keyword>UART</keyword>
+            <keyword>demo</keyword>
         </component>
         <component name = "RS485 Transceiver Component" type = "component" buildresults_path = "module_rs485/.module_rs485.buildinfo" scope = "General Use" path = "module_rs485" metainfo_path = "module_rs485/module_rs485.metainfo" local = "false" id = "module_rs485" description = "Half-duplex RS485 transceiver component for operation up to 1 Mbps baud">
             <board>XK-SKC-L2</board>
             <board>XA-SK-ISBUS</board>
             <keyword>RS485</keyword>
             <keyword>UART</keyword>
-        </component>
-        <component name = "Simple/Fast UART RX component" type = "component" buildresults_path = "module_uart_fast_rx/.module_uart_fast_rx.buildinfo" scope = "Early Development" path = "module_uart_fast_rx" metainfo_path = "module_uart_fast_rx/module_uart_fast_rx.metainfo" local = "false" id = "module_uart_fast_rx" description = "Basic and fast UART without FIFO">
-            <board>XP-SKC-L16</board>
-            <keyword>Serial simple fast UART</keyword>
-        </component>
-        <component name = "Simple/Fast UART TX component" type = "component" buildresults_path = "module_uart_fast_tx/.module_uart_fast_tx.buildinfo" scope = "Early Development" path = "module_uart_fast_tx" metainfo_path = "module_uart_fast_tx/module_uart_fast_tx.metainfo" local = "false" id = "module_uart_fast_tx" description = "Basic and fast UART without FIFO">
-            <board>XP-SKC-L16</board>
-            <keyword>Serial simple fast UART</keyword>
         </component>
         <component name = "Generic UART Receiver" type = "component" buildresults_path = "module_uart_rx/.module_uart_rx.buildinfo" scope = "General Use" path = "module_uart_rx" metainfo_path = "module_uart_rx/module_uart_rx.metainfo" local = "false" id = "module_uart_rx" description = "Uart Receiver with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support">
             <board>XK-SKC-L2</board>

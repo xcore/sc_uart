@@ -164,7 +164,7 @@ app_uart_back2back
       module_uart_rx
 
 app_uart_fast
-   Name: Simple/Fast UART loopback Demo Application
+   Name: Simple Uart Loopback Example
    Type: demoCode
    Dependencies:
       module_uart_fast_rx
@@ -176,15 +176,37 @@ module_rs485
    Dependencies:
 
 module_uart_fast_rx
-   Name: Simple/Fast UART RX component
+   Name: <Add title here>
    Type: component
    Dependencies:
 
+ERROR: Software block module_uart_fast_rx title not specified, update README.rst
+ERROR: Software block module_uart_fast_rx description not specified, update README.rst
+ERROR: Software block module_uart_fast_rx invalid scope
+Update README to set scope to one of:
+         Roadmap
+         Example
+         Early Development
+         General Use
+
+ERROR: module_uart_fast_rx keywords field as template, update README.rst to specify keywords or delete the line
+ERROR: module_uart_fast_rx boards field as template, update README.rst to specify keywords or delete the line
 module_uart_fast_tx
-   Name: Simple/Fast UART TX component
+   Name: <Add title here>
    Type: component
    Dependencies:
 
+ERROR: Software block module_uart_fast_tx title not specified, update README.rst
+ERROR: Software block module_uart_fast_tx description not specified, update README.rst
+ERROR: Software block module_uart_fast_tx invalid scope
+Update README to set scope to one of:
+         Roadmap
+         Example
+         Early Development
+         General Use
+
+ERROR: module_uart_fast_tx keywords field as template, update README.rst to specify keywords or delete the line
+ERROR: module_uart_fast_tx boards field as template, update README.rst to specify keywords or delete the line
 module_uart_rx
    Name: Generic UART Receiver
    Type: component
@@ -195,7 +217,6 @@ module_uart_tx
    Type: component
    Dependencies:
 
-SWBLOCK INFORMATION OK
 app_uart_fast: checking .project file
 Run 'git status --porcelain .project'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_fast/.project'
@@ -230,7 +251,7 @@ app_uart_fast: checking .cproject file
 app_uart_fast: using configs: Debug, Release
 app_uart_fast: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     c42d369c31836862f6e52bc9720d6ea2992d8805
+     8a3d892475b8b3007c0d01b31a6036028a3ea1cc
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_fast/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_fast/.xproject'
@@ -242,7 +263,7 @@ module_uart_fast_rx: checking .cproject file
 module_uart_fast_rx: using configs: Default
 module_uart_fast_rx: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     c42d369c31836862f6e52bc9720d6ea2992d8805
+     8a3d892475b8b3007c0d01b31a6036028a3ea1cc
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_rx/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_rx/.xproject'
@@ -251,7 +272,7 @@ app_rs485: checking .cproject file
 app_rs485: using configs: Debug, Release
 app_rs485: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     c42d369c31836862f6e52bc9720d6ea2992d8805
+     8a3d892475b8b3007c0d01b31a6036028a3ea1cc
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_rs485/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_rs485/.xproject'
@@ -259,7 +280,7 @@ module_uart_fast_tx: checking .cproject file
 module_uart_fast_tx: using configs: Default
 module_uart_fast_tx: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     c42d369c31836862f6e52bc9720d6ea2992d8805
+     8a3d892475b8b3007c0d01b31a6036028a3ea1cc
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_tx/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_tx/.xproject'
@@ -268,7 +289,7 @@ module_rs485: checking .cproject file
 module_rs485: using configs: Default
 module_rs485: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     c42d369c31836862f6e52bc9720d6ea2992d8805
+     8a3d892475b8b3007c0d01b31a6036028a3ea1cc
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_rs485/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_rs485/.xproject'
@@ -277,7 +298,7 @@ module_uart_tx: checking .cproject file
 module_uart_tx: using configs: Default
 module_uart_tx: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     c42d369c31836862f6e52bc9720d6ea2992d8805
+     8a3d892475b8b3007c0d01b31a6036028a3ea1cc
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_tx/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_tx/.xproject'
@@ -286,7 +307,7 @@ module_uart_rx: checking .cproject file
 module_uart_rx: using configs: Default
 module_uart_rx: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     c42d369c31836862f6e52bc9720d6ea2992d8805
+     8a3d892475b8b3007c0d01b31a6036028a3ea1cc
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_rx/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_rx/.xproject'
@@ -295,7 +316,7 @@ app_uart_test: checking .cproject file
 app_uart_test: using configs: Default
 app_uart_test: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     c42d369c31836862f6e52bc9720d6ea2992d8805
+     8a3d892475b8b3007c0d01b31a6036028a3ea1cc
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_test/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_test/.xproject'
@@ -303,7 +324,7 @@ app_uart_back2back: checking .cproject file
 app_uart_back2back: using configs: Default
 app_uart_back2back: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     c42d369c31836862f6e52bc9720d6ea2992d8805
+     8a3d892475b8b3007c0d01b31a6036028a3ea1cc
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_back2back/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_back2back/.xproject'
@@ -311,7 +332,7 @@ app_rs485_demo: checking .cproject file
 app_rs485_demo: using configs: Debug, Release
 app_rs485_demo: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     c42d369c31836862f6e52bc9720d6ea2992d8805
+     8a3d892475b8b3007c0d01b31a6036028a3ea1cc
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_rs485_demo/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_rs485_demo/.xproject'
@@ -322,4 +343,12 @@ Checking app_uart_test/Makefile
 Checking app_uart_back2back/Makefile
 Checking app_rs485_demo/Makefile
 MAKEFILE/ECLIPSE PROJECT INFORMATION OK
+
+=================================================================
+REPOSITORY UPDATED
+=================================================================
+Either there are errors in your repository structure or the
+repository structure/meta-information has been updated (see previous output for details)
+Try 'git status' and 'git diff' to see changes that have been made to repository
+=================================================================
 Saving xpd.xml
