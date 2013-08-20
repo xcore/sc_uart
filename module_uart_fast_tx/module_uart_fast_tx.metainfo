@@ -5,8 +5,8 @@
 componentName = "Simple UART TX"
 componentFullName = ""
 alternativeNames = { }
-componentDescription = "Stripped down very simple, fast UART TX with limited features."
-componentVersion = "1v1"
+componentDescription = "Stripped down very simple, fast Uart TX with limited features."
+componentVersion = "1v0"
 
 -------------------------------------------------------------------------------
 -- Parameter descriptions.
@@ -49,10 +49,10 @@ generatedCode = {
     "uart_tx.h"
   },
   globals = [[
-    out port p_uart${swblock.id}_tx = XS1_PORT_1F;
+    out port p_uart${swblock.id}_tx = XS1_PORT_1A;
   ]],
   body = [[
-    uart_tx_fast(p_uart_tx, c_tx_uart, 10); //10x10ns = 100ns bit period
+    uart_tx_fast(p_uart_tx, c_tx_uart, 100);
   ]]
 }
 

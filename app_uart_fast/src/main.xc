@@ -4,13 +4,14 @@
 #include "uart_tx.h"
 
 #define TEST_LENGTH 32  //number of characters to send/receive in test. Max 256.
-#define BIT_PERIOD 10   //bit period in  clock ticks. CLKBLK_REF is 100MHz here
-                        //so 10 x 10ns = 100ns per bit period -> 10MHz baudrate
-#define DEMO_TILE 0     //xCore tile to run the demo on
+#define BIT_PERIOD 868   //bit period in  clock ticks. CLKBLK_REF is 100MHz here
+					    //so 10 x 10ns = 100ns per bit period -> 10MHz baudrate
+						//The maximum number here is 2^16 or 65535 due to 16b port timers
+#define DEMO_TILE 1		//xCore tile to run the demo on
 
 //:: Port and clock  declarations
-on tile[DEMO_TILE]: in port p_rx = XS1_PORT_1E;          //XD12
-on tile[DEMO_TILE]: out port p_tx = XS1_PORT_1F;         //XD13
+on tile[DEMO_TILE]: in port p_rx = XS1_PORT_1E;			//XD12
+on tile[DEMO_TILE]: out port p_tx = XS1_PORT_1F;		//XD13
 on tile[DEMO_TILE]: const clock refClk = XS1_CLKBLK_REF; //Use 100MHz reference clock
 //::
 
@@ -64,14 +65,14 @@ int main(void) {
 
     //Configure ports to be clocked from specified clock source and initialis
     par {
-        on tile[DEMO_TILE]: {
-            uart_tx_fast_init(p_tx, refClk);
-            uart_tx_fast(p_tx, c_producer_to_tx, BIT_PERIOD);
-        }
-        on tile[DEMO_TILE]: {
-            uart_rx_fast_init(p_rx, refClk);
-            uart_rx_fast(p_rx, c_rx_to_consumer, BIT_PERIOD);
-        }
+    	on tile[DEMO_TILE]: {
+    						uart_tx_fast_init(p_tx, refClk);
+    						uart_tx_fast(p_tx, c_producer_to_tx, BIT_PERIOD);
+    						}
+    	on tile[DEMO_TILE]: {
+    						uart_rx_fast_init(p_rx, refClk);
+    						uart_rx_fast(p_rx, c_rx_to_consumer, BIT_PERIOD);
+    						}
     	on tile[DEMO_TILE]: produce(c_producer_to_tx);
     	on tile[DEMO_TILE]: consume(c_rx_to_consumer);
     }
