@@ -244,7 +244,7 @@ app_uart_fast: checking .cproject file
 app_uart_fast: using configs: Debug, Release
 app_uart_fast: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     a9107ee3e328e719b96975e6b13012e3e4bb9ba6
+     22402620740f9f5dbe10cf82f2961684289ac546
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_fast/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_fast/.xproject'
@@ -252,7 +252,7 @@ module_uart_fast_rx: checking .cproject file
 module_uart_fast_rx: using configs: Default
 module_uart_fast_rx: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     a9107ee3e328e719b96975e6b13012e3e4bb9ba6
+     22402620740f9f5dbe10cf82f2961684289ac546
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_rx/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_rx/.xproject'
@@ -261,7 +261,7 @@ app_rs485: checking .cproject file
 app_rs485: using configs: Debug, Release
 app_rs485: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     a9107ee3e328e719b96975e6b13012e3e4bb9ba6
+     22402620740f9f5dbe10cf82f2961684289ac546
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_rs485/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_rs485/.xproject'
@@ -269,7 +269,7 @@ module_uart_fast_tx: checking .cproject file
 module_uart_fast_tx: using configs: Default
 module_uart_fast_tx: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     a9107ee3e328e719b96975e6b13012e3e4bb9ba6
+     22402620740f9f5dbe10cf82f2961684289ac546
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_tx/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_fast_tx/.xproject'
@@ -278,7 +278,7 @@ module_rs485: checking .cproject file
 module_rs485: using configs: Default
 module_rs485: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     a9107ee3e328e719b96975e6b13012e3e4bb9ba6
+     22402620740f9f5dbe10cf82f2961684289ac546
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_rs485/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_rs485/.xproject'
@@ -287,7 +287,7 @@ module_uart_tx: checking .cproject file
 module_uart_tx: using configs: Default
 module_uart_tx: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     a9107ee3e328e719b96975e6b13012e3e4bb9ba6
+     22402620740f9f5dbe10cf82f2961684289ac546
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_tx/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_tx/.xproject'
@@ -296,7 +296,7 @@ module_uart_rx: checking .cproject file
 module_uart_rx: using configs: Default
 module_uart_rx: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     a9107ee3e328e719b96975e6b13012e3e4bb9ba6
+     22402620740f9f5dbe10cf82f2961684289ac546
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_rx/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/module_uart_rx/.xproject'
@@ -305,7 +305,7 @@ app_uart_test: checking .cproject file
 app_uart_test: using configs: Default
 app_uart_test: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     a9107ee3e328e719b96975e6b13012e3e4bb9ba6
+     22402620740f9f5dbe10cf82f2961684289ac546
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_test/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_test/.xproject'
@@ -313,7 +313,7 @@ app_uart_back2back: checking .cproject file
 app_uart_back2back: using configs: Default
 app_uart_back2back: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     a9107ee3e328e719b96975e6b13012e3e4bb9ba6
+     22402620740f9f5dbe10cf82f2961684289ac546
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_back2back/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_uart_back2back/.xproject'
@@ -321,7 +321,7 @@ app_rs485_demo: checking .cproject file
 app_rs485_demo: using configs: Debug, Release
 app_rs485_demo: checking .cproject file
 Run 'git rev-parse HEAD~1'
-     a9107ee3e328e719b96975e6b13012e3e4bb9ba6
+     22402620740f9f5dbe10cf82f2961684289ac546
 Run 'git status --porcelain .cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_rs485_demo/.cproject'
 Run 'git add /Users/Ed/apps/sc_uart/app_rs485_demo/.xproject'
