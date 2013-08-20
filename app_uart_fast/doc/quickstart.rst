@@ -32,7 +32,7 @@ Import and Build the Application
 ++++++++++++++++++++++++++++++++
 
    #. Open xTIMEcomposer and check that it is operating in online mode. Open the edit perspective (Window->Open Perspective->XMOS Edit).
-   #. Locate the ``'Simple/Fast Uart Loopback Example'`` item in the xSOFTip pane on the bottom left of the window and drag it into the Project Explorer window in the xTIMEcomposer. This will also cause the modules on which this application depends (in this case, module_uart_rx & module_uart_tx) to be imported as well. 
+   #. Locate the ``'Simple/Fast Uart Loopback Example'`` item in the xSOFTip pane on the bottom left of the window and drag it into the Project Explorer window in the xTIMEcomposer. This will also cause the modules on which this application depends (in this case, module_uart_fast_rx & module_uart_fast_tx) to be imported as well. 
 
    #. Click on the app_uart_fast item in the Project Explorer pane then click on the build icon (hammer) in xTIMEcomposer. Check the console window to verify that the application has built successfully.
 
