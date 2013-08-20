@@ -23,3 +23,13 @@
  */
 void uart_tx_fast(out port p, streaming chanend c, int clocks);
 
+/** This function initialises the fast uart I/O. Uses built-in function to
+ * setup port mode.
+ *
+ * \param p      output port, 1 bit port on which data is transmitted
+ *
+ * \param clkblk the clock source for the clocked port
+ */
+void uart_tx_fast_init(out port p, const clock clkblk);
+
+
