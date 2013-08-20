@@ -29,6 +29,14 @@
             <keyword>RS485</keyword>
             <keyword>UART</keyword>
         </component>
+        <component name = "Simple/Fast UART RX component" type = "component" buildresults_path = "module_uart_fast_rx/.module_uart_fast_rx.buildinfo" scope = "Early Development" path = "module_uart_fast_rx" metainfo_path = "module_uart_fast_rx/module_uart_fast_rx.metainfo" local = "false" id = "module_uart_fast_rx" description = "Basic and fast UART without FIFO">
+            <board>XP-SKC-L16</board>
+            <keyword>Serial simple fast UART</keyword>
+        </component>
+        <component name = "Simple/Fast UART TX component" type = "component" buildresults_path = "module_uart_fast_tx/.module_uart_fast_tx.buildinfo" scope = "Early Development" path = "module_uart_fast_tx" metainfo_path = "module_uart_fast_tx/module_uart_fast_tx.metainfo" local = "false" id = "module_uart_fast_tx" description = "Basic and fast UART without FIFO">
+            <board>XP-SKC-L16</board>
+            <keyword>Serial simple fast UART</keyword>
+        </component>
         <component name = "Generic UART Receiver" type = "component" buildresults_path = "module_uart_rx/.module_uart_rx.buildinfo" scope = "General Use" path = "module_uart_rx" metainfo_path = "module_uart_rx/module_uart_rx.metainfo" local = "false" id = "module_uart_rx" description = "Uart Receiver with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support">
             <board>XK-SKC-L2</board>
             <board>XA-SK-GPIO</board>
@@ -53,7 +61,13 @@
     <docdir>module_rs485/doc</docdir>
     <docdir>app_rs485/doc_quickstart</docdir>
     <exclude_dir>app_uart_test</exclude_dir>
+    <exclude_dir>app_rs485</exclude_dir>
     <exclude_dir>app_rs485_demo</exclude_dir>
+    <exclude_dir>app_uart_back2back</exclude_dir>
+    <exclude_dir>app_uart_test</exclude_dir>
+    <exclude_dir>module_rs485</exclude_dir>
+    <exclude_dir>module_uart_rx</exclude_dir>
+    <exclude_dir>module_uart_tx</exclude_dir>
     <location>git@github.com:xcore/sc_uart.git</location>
     <name>sc_uart</name>
     <maintainer>djpwilk</maintainer>
