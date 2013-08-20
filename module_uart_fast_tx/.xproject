@@ -1,4 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><xproject>
-<docPartNumber>XM-001907-PC</docPartNumber>
-<docVersion>2.3.0rc0.a</docVersion>
-<repository>sc_uart</repository><partnum>XM-001906-SM</partnum><version>2.3.0rc0</version></xproject>
+<?xml version="1.0" encoding="UTF-8"?><xproject><repository>sc_uart</repository><partnum>XM-001906-SM</partnum></xproject>

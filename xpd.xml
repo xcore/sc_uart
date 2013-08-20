@@ -1,27 +1,12 @@
 <?xml version="1.0" ?>
 <xpd>
     <components>
-        <component name = "Simple/Fast UART Transmitter" type = "component" buildresults_path = "module_uart_fast_tx/.module_uart_fast_tx.buildinfo" scope = "Early Development" path = "module_uart_fast_tx" metainfo_path = "module_uart_fast_tx/module_uart_fast_tx.metainfo" local = "false" id = "module_uart_fast_tx" description = "Basic Uart Transmitter where the functionality of the full generic uart transmitter module is not required">
-            <board>XK-SKC-L2</board>
-            <keyword>UART</keyword>
-        </component>
-        <component name = "Generic UART Receiver" type = "component" buildresults_path = "module_uart_rx/.module_uart_rx.buildinfo" scope = "General Use" path = "module_uart_rx" metainfo_path = "module_uart_rx/module_uart_rx.metainfo" local = "false" id = "module_uart_rx" description = "Uart Receiver with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support">
-            <board>XK-SKC-L2</board>
-            <board>XA-SK-GPIO</board>
-            <keyword>UART</keyword>
-        </component>
         <component description = "Basic loopback demonstration for the RS485 component" type = "demoCode" scope = "Example" path = "app_rs485" local = "false" id = "app_rs485" name = "RS485 Terminal Console Demo">
             <board>XK-SKC-L2</board>
             <board>XA-SK-ISBUS</board>
             <componentDependency>module_uart_fast_tx</componentDependency>
             <componentDependency>module_rs485</componentDependency>
             <keyword>rs485</keyword>
-            <keyword>UART</keyword>
-        </component>
-        <component name = "RS485 Transceiver Component" type = "component" buildresults_path = "module_rs485/.module_rs485.buildinfo" scope = "General Use" path = "module_rs485" metainfo_path = "module_rs485/module_rs485.metainfo" local = "false" id = "module_rs485" description = "Half-duplex RS485 transceiver component for operation up to 1 Mbps baud">
-            <board>XK-SKC-L2</board>
-            <board>XA-SK-ISBUS</board>
-            <keyword>RS485</keyword>
             <keyword>UART</keyword>
         </component>
         <component description = "Application to demonstrate module_uart_rx and module_uart_tx running looped back on a single Slicekti core board." type = "demoCode" scope = "Example" path = "app_uart_back2back" local = "false" id = "app_uart_back2back" name = "Generic Uart Loopback Example">
@@ -38,8 +23,15 @@
             <keyword>UART</keyword>
             <keyword>demo</keyword>
         </component>
-        <component name = "Simple/Fast UART Receiver" type = "component" buildresults_path = "module_uart_fast_rx/.module_uart_fast_rx.buildinfo" scope = "Early Development" path = "module_uart_fast_rx" metainfo_path = "module_uart_fast_rx/module_uart_fast_rx.metainfo" local = "false" id = "module_uart_fast_rx" description = "Basic Uart Receiver where the functionality of the full generic uart receiver module is not required">
+        <component name = "RS485 Transceiver Component" type = "component" buildresults_path = "module_rs485/.module_rs485.buildinfo" scope = "General Use" path = "module_rs485" metainfo_path = "module_rs485/module_rs485.metainfo" local = "false" id = "module_rs485" description = "Half-duplex RS485 transceiver component for operation up to 1 Mbps baud">
             <board>XK-SKC-L2</board>
+            <board>XA-SK-ISBUS</board>
+            <keyword>RS485</keyword>
+            <keyword>UART</keyword>
+        </component>
+        <component name = "Generic UART Receiver" type = "component" buildresults_path = "module_uart_rx/.module_uart_rx.buildinfo" scope = "General Use" path = "module_uart_rx" metainfo_path = "module_uart_rx/module_uart_rx.metainfo" local = "false" id = "module_uart_rx" description = "Uart Receiver with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support">
+            <board>XK-SKC-L2</board>
+            <board>XA-SK-GPIO</board>
             <keyword>UART</keyword>
         </component>
         <component name = "Generic UART Transmitter" type = "component" buildresults_path = "module_uart_tx/.module_uart_tx.buildinfo" scope = "General Use" path = "module_uart_tx" metainfo_path = "module_uart_tx/module_uart_tx.metainfo" local = "false" id = "module_uart_tx" description = "Uart with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support">
@@ -51,6 +43,10 @@
     <dependency repo = "xcommon">
         <githash>aca1d1c71887bd39d8336499d30b8233701cd2c7</githash>
         <uri>git@github.com:xcore/xcommon.git</uri>
+    </dependency>
+    <dependency repo = "fast_uart">
+        <githash>ccc08d8f670452a91fb8b2651b383c0e7b4517e4</githash>
+        <uri>origin</uri>
     </dependency>
     <description>Inline libraries for various simple uart implementations</description>
     <docdir>doc</docdir>
@@ -82,10 +78,10 @@
     <release parenthash = "0e0857bfbc256bf7eddb4167f5ee4ffafc2e5825" version = "2.3.0beta3" githash = "ea6888247637c3b17bafbee312aa017b90878761"></release>
     <release parenthash = "d3cc5fd8fbe81b5df2c5e030b9942d80d7c873cb" version = "2.3.0beta4" githash = "fe8f1046d466c250148b2ed03e75daa5188ba7f0"></release>
     <release parenthash = "031329495a78b4218a691a6536171d0c54ef73f5" version = "2.3.0beta5" githash = "ec3d90e2d759351fe39ac17862651dffdb6ec7ab"></release>
-    <release parenthash = "ceadaf6f92e7122b81355400785d4c19f26cb706" version = "2.3.0rc0"></release>
+    <release parenthash = "ceadaf6f92e7122b81355400785d4c19f26cb706" version = "2.3.0rc0" githash = "85328820c8e18d6df345575ed4d888d295ee4ac3"></release>
     <subpartnumber>XM-001906-SM</subpartnumber>
     <vendor>XMOS</vendor>
+    <version_defines></version_defines>
     <xcore_repo>sc_uart.git</xcore_repo>
     <xpd_version>1.0</xpd_version>
-    <scope>product</scope>
 </xpd>
