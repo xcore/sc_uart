@@ -7,7 +7,7 @@
 
 void uart_tx_fast_init(out port p, const clock clkblk){
     //set to clocked port, with initial value 1 (idle for UART)
-	configure_out_port_no_ready(p, clkblk, 1);
+    configure_out_port_no_ready(p, clkblk, 1);
 }
 
 
