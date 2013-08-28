@@ -6,6 +6,6 @@ Simple Uart Loopback Example
 :keywords: UART, demo
 :boards: XA-SKC-L2
 
-This application instantiates both the module_uart_fast_rx and module_uart_fast_tx components looped back to one another to demonstrate basic usage. It will be necessary to setup two connections on the 0.1" testpoints on the Slicekti core board prior to running the demo.
+This application instantiates both the module_uart_fast_rx and module_uart_fast_tx components looped back to one another to demonstrate basic usage. It will be necessary to setup two connections on the 0.1" testpoints on the Slicekit core board prior to running the demo. See quick start for details
 
 

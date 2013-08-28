@@ -1,5 +1,8 @@
 Uart Components Change Log
 ==========================
+2.3.1
+-----
+  * Tidied up uart_fast and targetted demo at L16 sliceKIT
 
 2.3.0
 -----

@@ -1,14 +1,23 @@
-Simple/Fast UART Receiver
-=========================
+Simple/Fast UART RX component
+=============================
 
 :scope: Early Development
-:description: Basic Uart Receiver where the functionality of the full generic uart receiver module is not required 
-:keywords: UART
-:boards: XK-SKC-L2
+:description: Basic and fast UART without FIFO
+:keywords: Serial simple fast UART
+:boards: XP-SKC-L16
 
-This basic uart receiver is very simple, and implements baud rates which can be derived directly from the 100 MHz reference clock. Baud rates like 115.2KBaud are not supported. This simplicity enables this module to achieve very high baud rates well in excess of 1 MBaud.
+This is a single logical core, fast UART RX component suitable for high speed applications. It uses a core per rx or tx channel but is able to stream continuously at up to 10Mbps, using a 62.5MIPS core
 
+Features
+--------
 
+  * Single core implementation
+  * Fixed 1, 8, n, 1 configuration
+  * No FIFO
+  * High speed
+  * Baud rate specified as a bit period in multiples of 10ns
 
+Known Issues
+------------
 
-
+  * None

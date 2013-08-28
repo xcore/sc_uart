@@ -5,14 +5,13 @@ The intention of this module is to implement high speed uart, at the expense of 
 that are thread-efficient, or that may use fewer 1-bit ports. This module will support a 10 Mbaud rate with 100 MIPS threads, and correspondingly less
 with lower MIPS per thread.
 
-Note: the compiler inserts a spurious ZEXT and SETC in two places which makes 10 Mbit fail with 83 MIPS threads.
 
 Hardware Platforms
 ++++++++++++++++++
 
-This UART is supported by all the hardware platforms from XMOS having suitable IO such as XC-1,XC-1A,XC-2,XK-1,etc and can be run on any XS1-L or XS1-G series devices.
+This UART is supported by all the hardware platforms from XMOS having suitable IO such as XC-1,XC-1A,XC-2,XK-1,etc and can be run on any XS1 series devices.
 
-The example is prepared to run on teh XK-1 but can be easily modified for other boards. However note that a 500 MHz core clock is expected so when running on G4 devices
+The example is prepared to run on the L16 sliceKIT but can be easily modified for other boards. However note that a 500 MHz core clock is expected so when running on G4 devices
 the baud rate should be reduced until it works, which can be done by altering the last "clocks" argument to the call to uart_tx_fast and uart_rx_fast in app_uart_fast/src/main.xc.
 
 Programming Guide
@@ -39,7 +38,7 @@ A function that produces data (just bytes 0..255 in this example)
    :start-after: //:: Producer function
    :end-before: //::
 
-A function that consumes data (and in this example throws it away)
+A function that consumes data 
 
 .. literalinclude:: app_uart_fast/src/main.xc
    :start-after: //:: Consumer function
