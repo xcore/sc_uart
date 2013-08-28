@@ -1,5 +1,9 @@
-Uart Components Change Log
+UART Components Change Log
 ==========================
+2.3.2
+-----
+  * Increment version for XPD release, no functionality change
+
 2.3.1
 -----
   * Tidied up uart_fast and targetted demo at L16 sliceKIT
