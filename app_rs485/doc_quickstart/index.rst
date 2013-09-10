@@ -11,7 +11,7 @@ This simple demonstration of the RS485 transceiver component uses the XA-SK-ISBU
 Hardware Setup
 ++++++++++++++
 
-The XP-SKC-L2 Slicekit Core board has four slots with edge conectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``. 
+The XP-SKC-L2 Slicekit Core board has four slots with edge connectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``. 
 
 To setup up the system:
 
@@ -100,7 +100,7 @@ Run the Application
 
 Now that the application has been compiled, the next step is to run it on the Slicekit Core Board using the tools to load the application over JTAG (via the XTAG2 and Xtag Adaptor card) into the xCORE multicore microcontroller.
 
-   #. Click on the ``Run`` icon (the white arrow in the green circle). A dialog will appear asking which device to cvonnect to. Select ``XMOS XTAG2``. 
+   #. Click on the ``Run`` icon (the white arrow in the green circle). A dialog will appear asking which device to connect to. Select ``XMOS XTAG2``. 
    #. Using a serial terminal application, connect to the RS485 to USB converter, set to 9600 baud, 8 data bits, 2 stop bits, no parity.
    #. Once you are ready to run the demo click in the terminal window and type 012345678. The XMOS application receives each byte and increments it by one, so you will see 123456789 echoed back on the terminal window.
 

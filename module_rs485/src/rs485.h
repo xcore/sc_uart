@@ -15,22 +15,29 @@
 #define RS485_BUF_SIZE (40)
 #endif
 
-
-typedef struct rs485_interface_t_
+/**
+ * Type definition for rs485 interface ports. Enumerated type.
+ */
+typedef struct rs485_interface
 {
   port p_data;
   out port p_dir;
-}rs485_interface_t;
+} rs485_interface_t;
 
-
-typedef enum rs485_parity_t_
+/**
+ * Type definition for rs485 parity. Enumerated type.
+ */
+typedef enum rs485_parity
 {
   RS485_PARITY_EVEN = 0,
   RS485_PARITY_ODD,
   RS485_PARITY_NONE
 } rs485_parity_t;
 
-typedef enum rs485_state_t_
+/**
+ * Type definition for rs485 state. Enumerated type.
+ */
+typedef enum rs485_state
 {
   RS485_STATE_SETUP,
   RS485_STATE_RX_IDLE,
@@ -41,7 +48,10 @@ typedef enum rs485_state_t_
   RS485_STATE_TX_DONE
 } rs485_state_t;
 
-typedef enum rs485_cmd_t_
+/**
+ * Type definition for rs485 commands. Enumerated type.
+ */
+typedef enum rs485_cmd
 {
   RS485_CMD_SET_BAUD,
   RS485_CMD_SET_BITS,
@@ -52,22 +62,28 @@ typedef enum rs485_cmd_t_
   RS485_CMD_SEND_PACKET
 } rs485_cmd_t;
 
-typedef enum rs485_buffer_state_t_
+/**
+ * Type definition for rs485 buffer state. Enumerated type.
+ */
+typedef enum rs485_buffer_state
 {
   RS485_BUFFER_STATE_EMPTY,
   RS485_BUFFER_STATE_OVERRUN,
   RS485_BUFFER_STATE_OK
 } rs485_buffer_state_t;
 
-typedef struct rs485_config_t_
+/**
+ * Type definition for rs485 configuration. Describes the interface parameters
+ */
+typedef struct rs485_config
 {
-  unsigned dir_bit;
-  unsigned baud_rate;
-  int data_bits;
-  int stop_bits;
-  rs485_parity_t parity;
-  int data_timeout;
-}rs485_config_t;
+  unsigned dir_bit;     /**< Direction */
+  unsigned baud_rate;   /**< Bits per second */
+  int data_bits;        /**< Number of data bits */
+  int stop_bits;        /**< Number of stop bits */
+  rs485_parity_t parity;/**< Parity type */
+  int data_timeout;     /**< Timeout waiting for data */
+} rs485_config_t;
 
 /** Implemetation of a half-duplex RS485 interface. This function requires an unbuffered 1-bit port for the
  * bi-directional RS485 data channel, and one bit of a 4-bit port to set the data direction. Setting the
@@ -99,7 +115,6 @@ typedef struct rs485_config_t_
  * \param rs485_if      The IO pins for data and direction
  * \param rs485_config  The initial configuration of the component
  */
-
 void rs485_run(chanend c_control,
                chanend c_data,
                rs485_interface_t &rs485_if,
@@ -149,7 +164,6 @@ int rs485_set_data_bits(chanend c, int data_bits);
  * \param stop_bits The number of stop bits
  *
  */
-
 int rs485_set_stop_bits(chanend c, int stop_bits);
 
 /** Set the parity.
@@ -160,7 +174,6 @@ int rs485_set_stop_bits(chanend c, int stop_bits);
  * \param parity The parity option, type rs485_parity
  *
  */
-
 int rs485_set_parity(chanend c, rs485_parity_t parity);
 
 /** Get the current status.
@@ -171,8 +184,8 @@ int rs485_set_parity(chanend c, rs485_parity_t parity);
  * \param c The command interface channel
  *
  */
-
 rs485_state_t rs485_get_status(chanend c);
+
 /** Transmit one byte.
  *
  * Transmit a single byte MSB first
@@ -182,7 +195,6 @@ rs485_state_t rs485_get_status(chanend c);
  * \param data The byte to transmit
  *
  */
-
 int rs485_send_byte(chanend c, unsigned char data);
 
 /** Transmit specified number of bytes.
@@ -197,7 +209,6 @@ int rs485_send_byte(chanend c, unsigned char data);
  *             this must not be greater than the size of buffer
  *
  */
-
 int rs485_send_packet(chanend c, unsigned char data[], unsigned len);
 
 #endif

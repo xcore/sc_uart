@@ -22,6 +22,16 @@ RS485 API
 
 .. _sec_conf_functions:
 
+RS485 Types
++++++++++++
+
+.. doxygentypedef:: rs485_interface_t
+.. doxygentypedef:: rs485_parity_t
+.. doxygentypedef:: rs485_state_t
+.. doxygentypedef:: rs485_cmd_t
+.. doxygentypedef:: rs485_buffer_state_t
+.. doxygentypedef:: rs485_config_t
+
 RS485 Function
 ++++++++++++++
 .. doxygenfunction:: rs485_run
