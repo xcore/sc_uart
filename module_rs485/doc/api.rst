@@ -8,8 +8,8 @@ RS485 API
 Configuration Defines
 ---------------------
 
-The file rs485_conf.h can be provided in the application source code, without it 
-the default values specified in rs485.h will be used.
+The file ``rs485_conf.h`` can be provided in the application source code, without it 
+the default values specified in ``rs485.h`` will be used.
 This file can set the following define:
 
 **RS485_BUF_SIZE**
