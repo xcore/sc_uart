@@ -2,7 +2,7 @@ UART Components Change Log
 ==========================
 2.3.2
 -----
-  * Increment version for XPD release, no functionality change
+  * Increment version for XPD release. Several minor docs bugs fixed.
 
 2.3.1
 -----
