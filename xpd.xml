@@ -71,7 +71,6 @@
         <version>1.0.3rc0</version>
     </dependency>
     <description>Inline libraries for various simple uart implementations</description>
-    <docdir>doc</docdir>
     <docdir>module_rs485/doc</docdir>
     <docdir>app_rs485/doc_quickstart</docdir>
     <exclude_dir>app_uart_test</exclude_dir>
