@@ -9,6 +9,10 @@
 #include <stdio.h>
 #include <print.h>
 
+#ifdef __uart_rx_conf_h_exists__
+#include "uart_rx_conf.h"
+#endif
+
 enum uart_rx_state {
   WAITING_FOR_INPUT,
   TESTING_START_BIT,
@@ -18,11 +22,23 @@ enum uart_rx_state {
   WAITING_FOR_HIGH,
 };
 
-#define DEFAULT_PARITY UART_RX_PARITY_NONE
-#define DEFAULT_BITS_PER_BYTE 8
-#define DEFAULT_BAUD 115200
-#define DEFAULT_BIT_TIME (XS1_TIMER_HZ / DEFAULT_BAUD)
-#define DEFAULT_STOP_BITS 1
+#ifndef UART_RX_DEFAULT_PARITY
+#define UART_RX_DEFAULT_PARITY UART_RX_PARITY_NONE
+#endif
+
+#ifndef UART_RX_DEFAULT_BITS_PER_BYTE
+#define UART_RX_DEFAULT_BITS_PER_BYTE 8
+#endif
+
+#ifndef UART_RX_DEFAULT_BAUD
+#define UART_RX_DEFAULT_BAUD 115200
+#endif
+
+#define UART_RX_DEFAULT_BIT_TIME (XS1_TIMER_HZ / UART_RX_DEFAULT_BAUD)
+
+#ifndef UART_RX_DEFAULT_STOP_BITS
+#define UART_RX_DEFAULT_STOP_BITS 1
+#endif
 
 static inline int parity32(unsigned x, enum uart_rx_parity parity)
 {
@@ -64,10 +80,10 @@ void uart_rx(server interface uart_rx_if c,
   int data_trigger = 1;
   enum uart_rx_state state = WAITING_FOR_HIGH;
   int t;
-  int bit_time = DEFAULT_BIT_TIME;
-  int bits_per_byte = DEFAULT_BITS_PER_BYTE;
-  int parity = DEFAULT_PARITY;
-  int stop_bits = DEFAULT_STOP_BITS;
+  int bit_time = UART_RX_DEFAULT_BIT_TIME;
+  int bits_per_byte = UART_RX_DEFAULT_BITS_PER_BYTE;
+  int parity = UART_RX_DEFAULT_PARITY;
+  int stop_bits = UART_RX_DEFAULT_STOP_BITS;
   int stop_bit_count;
   unsigned data;
   int rdptr = 0, wrptr = 0;
@@ -178,6 +194,7 @@ void uart_rx(server interface uart_rx_if c,
       data_trigger = 1;
       state = WAITING_FOR_HIGH;
       break;
+    [[independent_guard]]
     case (rdptr != wrptr) => c.input_byte() -> unsigned char data:
       data = buffer[rdptr];
       rdptr++;

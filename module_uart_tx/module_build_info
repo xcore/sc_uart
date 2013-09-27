@@ -11,3 +11,4 @@
 
 DEPENDENT_MODULES = module_xassert
 
+OPTIONAL_HEADERS += uart_tx_conf.h

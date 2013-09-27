@@ -9,62 +9,48 @@
 #include "uart_tx.h"
 #include <print.h>
 
-void forward(chanend uartTX, chanend uartRX)
+void test(client interface uart_tx_if c_tx,
+          client interface uart_rx_if c_rx)
 {
-  uart_rx_client_state rxState;
-  unsigned char rcvbuffer[10];
   unsigned char byte;
-  int i;
-  unsigned int gotest;
-  gotest=1;
-  byte=0;
-  printstr("uartRX Init...\n");  
-  uart_rx_init(uartRX, rxState);
-  while(gotest) {
-    printstr("Echo 10 bytes...");
-    for(i=0;i<10;i++) {
-      uart_tx_send_byte(uartTX, byte);
-      byte =  byte + 1;
-      if(byte==0xFF) {
-        gotest=0;
-      }
+  printstrln("Test started");
+  byte = 0;
+  while (byte < 0xff) {
+    printstr("Echo 10 bytes... ");
+    for(int i = 0; i < 10; i++) {
+      c_tx.output_byte(byte);
+      byte = byte + 1;
     }
-    for(i=0;i<10;i++) {
-      rcvbuffer[i] = uart_rx_get_byte(uartRX, rxState);
+    for(int i = 0; i < 10; i++) {
+      printhex(c_rx.input_byte());
     }
-    for(i=0;i<10;i++) {
-      printhex(rcvbuffer[i]);
-      printstr(" ");
-    } 
-    printstr("done\n");
+    printstrln(". Done.");
   }
-  printstr("Test Completed\n");
+  printstrln("Test Completed.");
 }
 
-buffered in port:1 rx = on stdcore[0] : XS1_PORT_1A;
-out port tx = on stdcore[0] : XS1_PORT_1B;
+buffered in port:1 p_rx = on stdcore[0] : XS1_PORT_1A;
+out port p_tx = on stdcore[0] : XS1_PORT_1B;
 
 #define BAUD_RATE 115200
 
 #define ARRAY_SIZE(x) (sizeof(x)/sizeof(x[0]))
 
-#pragma unsafe arrays
 int main() {
-  chan chanTX, chanRX;
+  interface uart_rx_if c_rx;
+  interface uart_tx_if c_tx[1];
   par {
     on stdcore[0] : {
       unsigned char tx_buffer[64];
-      unsigned char rx_buffer[64];
-      tx <: 1;
-      printstr("Test Start...\n");
-      par {
-        uart_rx(rx, rx_buffer, ARRAY_SIZE(rx_buffer), BAUD_RATE, 8, UART_TX_PARITY_NONE, 1, chanRX);
-        uart_tx(tx, tx_buffer, ARRAY_SIZE(tx_buffer), BAUD_RATE, 8, UART_TX_PARITY_NONE, 1, chanTX);
-      }
+      uart_tx_buffered(c_tx, 1, tx_buffer, ARRAY_SIZE(tx_buffer), p_tx);
     }
+
     on stdcore[0] : {
-      forward(chanTX, chanRX);
+      unsigned char rx_buffer[64];
+      uart_rx(c_rx, rx_buffer, ARRAY_SIZE(rx_buffer), p_rx);
     }
+
+    on stdcore[0] :  test(c_tx[0], c_rx);
   }
   return 0;
 }

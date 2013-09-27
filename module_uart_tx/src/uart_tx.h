@@ -3,15 +3,8 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-#ifndef UART_VIRTUAL_TX
-#define UART_VIRTUAL_TX
-
-/** 
- * \file uart_tx.h
- * \brief UART TX component.
- *
- * This file contains functions to make use of the UART TX component.
- */
+#ifndef __UART_TX__
+#define __UART_TX__
 
 /** Enum for the type of parity to use when transmitting data. */
 enum uart_tx_parity {
@@ -113,4 +106,4 @@ void uart_tx_set_stop_bits(chanend c, unsigned stop_bits);
 void uart_tx_set_bits_per_byte(chanend c, unsigned bits);
 
 
-#endif
+#endif // __UART_TX__

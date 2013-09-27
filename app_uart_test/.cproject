@@ -157,12 +157,12 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_uart_test/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_rx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_uart_test}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_xassert/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_rx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_rx}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_tx/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_tx}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_xassert/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_xassert}&quot;' />
 
 								</option>
@@ -276,12 +276,12 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_uart_test/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_rx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_uart_test}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_xassert/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_rx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_rx}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_tx/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_tx}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_xassert/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_xassert}&quot;' />
 
 								</option>
@@ -401,12 +401,12 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/c++/4.2.1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/c++/4.2.1/xcore-xmos-elf&quot;"/>
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_uart_test/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_tx}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_tx/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_rx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_uart_test}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_xassert/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_rx/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_rx}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_tx/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_uart_tx}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_xassert/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_xassert}&quot;' />
 
 								</option>

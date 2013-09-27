@@ -1,13 +1,4 @@
--------------------------------------------------------------------------------
--- Descriptive metadata
--------------------------------------------------------------------------------
-
-componentName = "xSOFTip UART RX"
-componentFullName = ""
-alternativeNames = { }
-componentDescription = "Single Fully featured Uart Receiver" 
-componentVersion = "1v0"
-
+-- -*- mode: lua -*-
 -------------------------------------------------------------------------------
 -- Parameter descriptions.
 -------------------------------------------------------------------------------
@@ -16,8 +7,8 @@ configPoints =
 {
   rxBufferSize =
   {
-    short   = "RX Buffer Size",
-    long    = "Array for buffering bytes before they are transmitted",
+    short   = "RX buffer size",
+    long    = "Array for buffering bytes before they are received",
     help    = "",
     units   = "",
     type    = "int",
@@ -28,50 +19,53 @@ configPoints =
   },
   rxInitialBaudRate =
   {
-    short   = "Initial Baud Rate",
-    long    = "Initial baud Setting on start-up. Can be changed dynamically later.",
-    help    = "Bit time will be derived as XS1_TIMER_HZ / baud_rate;",
+    short   = "Initial baud rate",
+    long    = "Initial baud setting on start-up",
+    help    = "Initial baud setting on start-up. Can be changed dynamically later.",
     units   = "Bits Per Second",
     type    = "int",
     resourceUsageFlags = {"noeffect"},
     min     = 1,
     max     = 115200,
-    default = 115200
+    default = 115200,
+    define = "UART_RX_DEFAULT_BAUD"
   },
   rxInitialBPC =
   {
-    short   = "Inital Bits Per Character",
-    long    = "Initial BPC Setting on start-up. Can be changed dynamically later.",
-    help    = "",
+    short   = "Initial bits per character",
+    long    = "Initial bits per character setting on start-up",
+    help    = "Initial bits per character setting on start-up. Can be changed dynamically later.",
     type    = "int",
     units   = "bits",
     resourceUsageFlags = {"noeffect"},
     max     = 8,
     min     = 5,
-    default = 8
+    default = 8,
+    define  = "UART_RX_DEFAULT_BITS_PER_BYTE"
   },
   rxInitialStopBits =
   {
-    short   = "Inital Stop Bits",
-    long    = "Initial stop bits Setting on start-up. Can be changed dynamically later",
-    help    = "",
+    short   = "Initial stop bits",
+    long    = "Initial stop bits setting on start-up",
+    help    = "Initial stop bits setting on start-up. Can be changed dynamically later.",
     type    = "int",
     units   = "bits",
     resourceUsageFlags = {"noeffect"},
     max     = 2,
     min     = 0,
-    default = 1
+    default = 1,
+    define  = "UART_RX_DEFAULT_STOP_BITS"
   },
   rxInitialParity =
   {
-    short   = "Inital Parity Setting",
-    long    = "Initial Parity Setting on start-up. Can be changed dynamically later",
+    short   = "Initial parity setting",
+    long    = "Initial parity setting on start-up. Can be changed dynamically later.",
     help    = "",
     type    = "string",
     units   = "",
     resourceUsageFlags = {"noeffect"},
     options = {"UART_RX_PARITY_NONE", "UART_RX_PARITY_EVEN", "UART_RX_PARITY_ODD"},
-    default = "UART_RX_PARITY_EVEN"
+    default = "UART_RX_PARITY_NONE"
   },
 }
 
@@ -91,6 +85,7 @@ channels = {
     short = "RX channel",
     long  = "Channel for the client to send RX data to the Uart transitter",
     help  = "",
+    type = "interface uart_rx_if",
   },
 }        
 
@@ -109,11 +104,12 @@ generatedCode = {
     "uart_rx.h"
   },
   globals = [[
-    in buffered port:1 p_uart${swblock.id}_rx = XS1_PORT_1A;
+    in buffered port:1 p_uart_rx${swblock.id} = XS1_PORT_1A;
   ]],
   body = [[
-    unsigned char rx_buffer[64];
-    uart_rx(p_uart_rx, rx_buffer, ${swblock.params.rxBufferSize}, ${swblock.params.rxInitialBaudRate},  ${swblock.params.rxInitialBPC},  ${swblock.params.rxInitialParity},  ${swblock.params.rxInitialStopBits}, ${swblock.chanends.c_rx_uart});
+    unsigned char rx_buffer[${swblock.params.rxBufferSize}];
+    uart_rx(${swblock.chanends.c_rx_uart}, rx_buffer, ${swblock.params.rxBufferSize}, p_uart_rx${swblock.id});
   ]]
 }
 
+files = {["module_uart_rx/uart_rx_conf_example.h"] = "src/uart_rx_conf.h"}

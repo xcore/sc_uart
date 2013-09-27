@@ -128,6 +128,7 @@ void uart_tx_buffered(server interface uart_tx_if c[n], unsigned n,
       break;
 
     // Handle client interaction with the component
+    [[independent_guard]]
     case !buffer_full(rdptr, wrptr, buf_length) => c[int i].output_byte(unsigned char data):
       buffer[wrptr] = data;
       wrptr++;
