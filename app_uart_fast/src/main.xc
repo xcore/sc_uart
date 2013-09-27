@@ -28,7 +28,7 @@ void consume(streaming chanend c) {
     }
     for(int i = 0; i < 256; i++) {
       printhexln(buf[i]);
-    
+
     }
 }
 //::

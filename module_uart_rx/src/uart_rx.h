@@ -61,7 +61,7 @@ interface uart_rx_if {
 };
 
 /** UART RX server function.
- * 
+ *
  *    This function runs a uart receive server.
  *    Bytes received by the server are buffered in the provided buffer array.
  *    When the buffer is full further incoming bytes of data will be dropped.

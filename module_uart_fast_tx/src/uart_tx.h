@@ -9,11 +9,11 @@
  * sends a start bit, 8 bits, and a stop bit. On a 62.5 MIPS thread this
  * function should be able to keep up with a 10 MBit UART sustained
  * (provided that the streaming channel can keep up with it too).
- * 
+ *
  * This function does not return.
  *
  * \param p      output port, 1 bit port on which data should be transmitted
- * 
+ *
  * \param c      input streaming channel - output bytes of this channel (or
  *               words if you want to output 4 bytes at a time)
  *

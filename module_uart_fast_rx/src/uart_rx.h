@@ -10,11 +10,11 @@
  * On a 62.5 MIPS thread this function should be able to keep up with a 10
  * MBit UART sustained (provided that the streaming channel can keep up
  * with it too).
- * 
+ *
  * This function does not return.
  *
  * \param p      input port, 1 bit port on which data comes in
- * 
+ *
  * \param c      output streaming channel - read bytes of this channel (or
  *               words if you want to read 4 bytes at a time)
  *

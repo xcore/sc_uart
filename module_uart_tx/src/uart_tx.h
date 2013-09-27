@@ -31,15 +31,15 @@ void uart_tx_buffered(server interface uart_tx_if c[n], unsigned n,
                       out port p_txd);
 
 /**
- * UART TX server function. 
+ * UART TX server function.
  * This function never returns and the arguments specify the initial configuration of parity, bits per byte etc.
- * These are checked and then the inner UART TX loop (uart_tx_impl() is started and runs in a while(1) loop until 
- * it receives and instruction to shut down via the channel from the client. Additionally a set of client functions 
+ * These are checked and then the inner UART TX loop (uart_tx_impl() is started and runs in a while(1) loop until
+ * it receives and instruction to shut down via the channel from the client. Additionally a set of client functions
  * are provided to transmit a byte and to alter the baud rate, parity, bits per byte and stop bit settings. Note that
  * the buffer size can only be changed when this function is first called, it cannot be changed thereafter.
  *
  * The client provides data to the server using the send byte function below.
- * 
+ *
  * Arguments are as follows:
  *
  * \param txd          Transmitted data signal. Must be a 1-bit port.
@@ -66,17 +66,17 @@ void uart_tx0(out port txd, unsigned char buffer[], unsigned buffer_size,
 void uart_tx_send_byte(chanend c, unsigned char byte);
 
 /**
- * Set the baud rate of the of the UART TX server. 
+ * Set the baud rate of the of the UART TX server.
  * The change of configuration takes effect after all remaining data in transmit buffer is sent, and the function
  * blocks until the change of configuration takes effect.
  *
  * \param c             Other end of the channel passed to the uart_tx() function.
- * \param baud_rate     The baud rate setting. 
+ * \param baud_rate     The baud rate setting.
  */
 void uart_tx_set_baud_rate(chanend c, unsigned baud_rate);
 
 /**
- * Set the parity of the of the UART TX stop bit. 
+ * Set the parity of the of the UART TX stop bit.
  * The change of configuration takes effect after all remaining data in transmit buffer is sent, and the function
  * blocks until the change of configuration takes effect.
  *
@@ -86,7 +86,7 @@ void uart_tx_set_baud_rate(chanend c, unsigned baud_rate);
 void uart_tx_set_parity(chanend c, enum uart_tx_parity parity);
 
 /**
- * Set the number of stop bits used by the UART TX server. 
+ * Set the number of stop bits used by the UART TX server.
  * The change of configuration takes effect after all remaining data in transmit buffer is sent, and the function
  * blocks until the change of configuration takes effect.
  *
@@ -96,7 +96,7 @@ void uart_tx_set_parity(chanend c, enum uart_tx_parity parity);
 void uart_tx_set_stop_bits(chanend c, unsigned stop_bits);
 
 /**
- * Set the bits per byte rate of the of the UART TX server. 
+ * Set the bits per byte rate of the of the UART TX server.
  * The change of configuration takes effect after all remaining data in transmit buffer is sent, and the function
  * blocks until the change of configuration takes effect.
  *
