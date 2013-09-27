@@ -1,9 +1,12 @@
-<Add title here>
-================
+UART rx/tx regression test
+==========================
 
-:scope: <Put one of Roadmap, Experimental, Early Development or General Use>
-:description: <Add one line here>
-:keywords: <Add comma separated list of keywords>
-:boards: <Add comma separated list of supported boards>
+:scope: Example
+:description: Regression test for uart rx/tx components
+:keywords: uart, testing
 
-<Add description of software block>
+This application provides a simple regression test harness for the
+uart rx/tx components. It tests the components in various
+configurations based on a simulator looping back the pins between the
+two components.
+

@@ -4,6 +4,9 @@
 // LICENSE.txt and at <http://github.xcore.com/>
 
 #include "uart_tx.h"
+#ifdef __uart_tx_conf_h_exists__
+#include "uart_tx_conf.h"
+#endif
 #include <xs1.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,11 +20,25 @@ enum uart_tx_state {
   OUTPUTTING_STOP_BIT
 };
 
-#define DEFAULT_PARITY UART_TX_PARITY_NONE
-#define DEFAULT_BITS_PER_BYTE 8
-#define DEFAULT_BAUD 115200
-#define DEFAULT_BIT_TIME (XS1_TIMER_HZ / DEFAULT_BAUD)
-#define DEFAULT_STOP_BITS 1
+#ifndef UART_TX_DEFAULT_PARITY
+#define UART_TX_DEFAULT_PARITY UART_TX_PARITY_NONE
+#endif
+
+#ifndef UART_TX_DEFAULT_BITS_PER_BYTE
+#define UART_TX_DEFAULT_BITS_PER_BYTE 8
+#endif
+
+#ifndef UART_TX_DEFAULT_BAUD
+#define UART_TX_DEFAULT_BAUD 115200
+#endif
+
+#ifndef UART_TX_DEFAULT_BIT_TIME
+#define UART_TX_DEFAULT_BIT_TIME (XS1_TIMER_HZ / UART_TX_DEFAULT_BAUD)
+#endif
+
+#ifndef UART_TX_DEFAULT_STOP_BITS
+#define UART_TX_DEFAULT_STOP_BITS 1
+#endif
 
 static inline int parity32(unsigned x, enum uart_tx_parity parity)
 {
@@ -69,11 +86,10 @@ void uart_tx_buffered(server interface uart_tx_if c[n], unsigned n,
                       unsigned char buffer[buf_length], unsigned buf_length,
                       out port p_txd)
 {
-  int bits_per_byte = DEFAULT_BITS_PER_BYTE;
-  int bit_time = DEFAULT_BIT_TIME;
-  enum uart_tx_parity parity = DEFAULT_PARITY;
-  int stop_bits = DEFAULT_STOP_BITS;
-
+  int bits_per_byte = UART_TX_DEFAULT_BITS_PER_BYTE;
+  int bit_time = UART_TX_DEFAULT_BIT_TIME;
+  enum uart_tx_parity parity = UART_TX_DEFAULT_PARITY;
+  int stop_bits = UART_TX_DEFAULT_STOP_BITS + 1;
   enum uart_tx_state state = WAITING_FOR_DATA;
   unsigned byte;
   int bit_count, stop_bit_count;

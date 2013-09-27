@@ -5,230 +5,208 @@
 
 #include <xs1.h>
 #include <platform.h>
-#include <print.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include "uart_rx.h"
-
-#include "uart_rx_impl.h"
 #include "uart_tx.h"
-//#include "header.h"
-#include <stdio.h>
-#include "UART_test.h"
-#if 0
-#define BIT_RATE_0 57600
+#include "debug_print.h"
+#include "xassert.h"
 
-#endif
 #define BIT_RATE_MAX 115200
 #define BITTIME(x) (100000000 / (x))
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 
-unsigned baud_rate = BIT_RATE;
-//struct STCTX readfile(void);
-void fwrite_XMOS();
-unsigned char data[] = { 0x11, 0x00, 0x2c, 0x09};
 
-#ifdef BUFFER_SIZE_64_OFF
-#define NUM 1
-#else
-#define NUM 64
-#endif
+#define CHECK_EVENTS 1
+#define CHECK_BUFFERING 1
+#define CHECK_RUNTIME_PARAMETER_CHANGE 1
+#define CHECK_PARITY_ERRORS 1
 
-#define TEST_ASSERT(x)\
-do {\
-  if (!(x)) {\
-    printstr("Fail on line ");\
-    printuintln(__LINE__);\
-    _Exit(1);\
-  }\
-} while(0)
-
-unsigned int bitsperbyte ;
-unsigned int set_parity = 0;
-#ifdef TEST_PARITY
-static int checkNoRxData(chanend uartRX, uart_rx_client_state &state, unsigned timeout)
+static void check_no_rx_data(client interface uart_rx_if c_uart_rx,
+                             unsigned timeout)
 {
   timer t;
   unsigned time;
-  unsigned char byte;
   t :> time;
   select {
   case t when timerafter(time + timeout) :> void:
-    return 1;
-  case uart_rx_get_byte_byref(uartRX, state, byte):
-    return 0;
+    return;
+  case c_uart_rx.data_ready():
+    fail("unexpected data");
+    break;
   }
-  // unreachable
-  return 0;
+  __builtin_unreachable();
 }
-#endif
 
-void testUART(chanend uartTX, chanend uartRX)
+void uart_test(client interface uart_tx_if c_uart_tx,
+               client interface uart_rx_if c_uart_rx,
+               unsigned baud_rate)
 {
+  unsigned char byte;
+  timer t;
+  unsigned time;
 
-  //	int reminder;
-  //	int result =0;
-  //    int quatient = 99;
-  unsigned ui32stopbit = 1;
-  unsigned ui32bitsperbyte = 8;
-//	struct STCTX stcontext;
-
-
- uart_rx_client_state rxState;
- //  unsigned x;
-  uart_rx_init(uartRX, rxState);
   // Configure RX, TX
-  uart_rx_set_baud_rate(uartRX, rxState, baud_rate);
-  uart_tx_set_baud_rate(uartTX, baud_rate);
+  c_uart_rx.set_baud_rate(baud_rate);
+  c_uart_rx.set_stop_bits(1);
+  c_uart_rx.set_bits_per_byte(8);
+  c_uart_rx.set_parity(UART_RX_PARITY_NONE);
+  c_uart_tx.set_baud_rate(baud_rate);
+  c_uart_tx.set_stop_bits(1);
+  c_uart_tx.set_bits_per_byte(8);
+  c_uart_tx.set_parity(UART_TX_PARITY_NONE);
 
- // printf("baud rate = %d\n",baud_rate);
-  uart_tx_send_byte(uartTX, 0x0A);
-  TEST_ASSERT(uart_rx_get_byte(uartRX, rxState) == 0x0A);
-  uart_tx_send_byte(uartTX, 0x04);
-  TEST_ASSERT(uart_rx_get_byte(uartRX, rxState) == 0x04);
+  debug_printf("baud rate = %d\n",baud_rate);
 
+  debug_printf("Performing basic loopback test.\n");
+  c_uart_tx.output_byte(0x0);
+  byte = c_uart_rx.input_byte();
+  xassert(byte == 0x0);
 
-  //stcontext  = readfile();
+  c_uart_tx.output_byte(0x2c);
+  byte = c_uart_rx.input_byte();
+  xassert(byte == 0x2c);
 
-  //ui32stopbit = stcontext.ui32stopbit;
-  //ui32bitsperbyte = stcontext.ui32bitsperbyte;
+  c_uart_tx.output_byte(0x0A);
+  byte = c_uart_rx.input_byte();
+  xassert(byte == 0x0A);
 
-#ifdef ENABLE_EVENT_UART_RX_GET_BYTE
-  // Check we can event on uart_rx_get_byte.
-  printf("Check we can event on uart_rx_get_byte\n");
-  {
-    timer t;
-    unsigned time;
-    unsigned char byte;
-    t :> time;
-    uart_tx_send_byte(uartTX, 173);
-    select {
+  c_uart_tx.output_byte(0x04);
+  byte = c_uart_rx.input_byte();
+  xassert(byte == 0x04);
+
+#if CHECK_EVENTS
+  debug_printf("Check we can event on incoming data.\n");
+  t :> time;
+  c_uart_tx.output_byte(173);
+  select {
     case t when timerafter(time + BITTIME(baud_rate) * 20) :> void:
       // Shouldn't get here.
-      TEST_ASSERT(0);
+      fail("timeout (data not ready)");
       break;
-    case uart_rx_get_byte_byref(uartRX, rxState, byte):
-      TEST_ASSERT(byte == 173);
+    case c_uart_rx.data_ready():
+      byte = c_uart_rx.input_byte();
+      xassert(byte == 173);
       break;
-    }
   }
-
 #endif
 
+#if CHECK_BUFFERING
+  unsigned char data[] = { 0x11, 0x00, 0x2c, 0x09};
+  debug_printf("Testing buffering of %d bytes.\n", ARRAY_SIZE(data));
+  for (unsigned i = 0; i < ARRAY_SIZE(data); i++) {
+    c_uart_tx.output_byte(data[i]);
+  }
+  t :> time;
+  t when timerafter(time + BITTIME(baud_rate) * 11 * 4) :> void;
+  for (unsigned i = 0; i < ARRAY_SIZE(data); i++) {
+    byte = c_uart_rx.input_byte();
+    xassert(byte == data[i]);
+  }
+#endif
 
-#ifdef RUNTIME_PARAMETER_CHANGE
+#if CHECK_RUNTIME_PARAMETER_CHANGE
   // Reconfigure
-  //printf("Reconfiguring UART...\n");
-  uart_rx_set_baud_rate(uartRX, rxState, BIT_RATE_MAX);
-  uart_rx_set_stop_bits(uartRX, rxState, 10);
-  uart_rx_set_bits_per_byte(uartRX, rxState, ui32bitsperbyte);//7
-  uart_tx_set_baud_rate(uartTX, BIT_RATE_MAX);
-  uart_tx_set_stop_bits(uartTX, 10);
-  uart_tx_set_bits_per_byte(uartTX, ui32bitsperbyte);//7
+  debug_printf("Reconfiguring UART.\n");
 
+  c_uart_rx.set_baud_rate(baud_rate/2);
+  c_uart_rx.set_stop_bits(10);
+  c_uart_rx.set_bits_per_byte(7);
+  c_uart_tx.set_baud_rate(baud_rate/2);
+  c_uart_tx.set_stop_bits(10);
+  c_uart_tx.set_bits_per_byte(7);
 
-  printf("\n %d", 115200);
-  printf("\t%d", ui32bitsperbyte);
+  c_uart_tx.output_byte(0x12);
+  c_uart_tx.output_byte(0x5a);
+  byte = c_uart_rx.input_byte();
+  xassert(byte == 0x12);
+  byte = c_uart_rx.input_byte();
+  xassert(byte == 0x5a);
 
-
-  uart_tx_send_byte(uartTX, 0x12);
-  uart_tx_send_byte(uartTX, 0x5a);
-  TEST_ASSERT(uart_rx_get_byte(uartRX, rxState) == 0x12);
-  TEST_ASSERT(uart_rx_get_byte(uartRX, rxState) == 0x5a);
-
-  //printf("checking for parity ..\n");
-  printf("\t\t%d",1);
+  debug_printf("Reconfiguring parity to odd.\n");
   // Check parity
-  uart_rx_set_parity(uartRX, rxState, UART_RX_PARITY_ODD);
-  uart_rx_set_stop_bits(uartRX, rxState, ui32stopbit);//1
-  uart_rx_set_bits_per_byte(uartRX, rxState, ui32bitsperbyte);
-  uart_tx_set_parity(uartTX, UART_TX_PARITY_ODD);
-  uart_tx_set_stop_bits(uartTX, ui32stopbit);// 1
-  uart_tx_set_bits_per_byte(uartTX, ui32bitsperbyte);
+  c_uart_rx.set_bits_per_byte(8);
+  c_uart_tx.set_bits_per_byte(8);
+  c_uart_rx.set_parity(UART_RX_PARITY_ODD);
+  c_uart_tx.set_parity(UART_TX_PARITY_ODD);
+  c_uart_tx.output_byte(0x12);
+  byte = c_uart_rx.input_byte();
+  xassert(byte == 0x12);
+  c_uart_tx.output_byte(0xa4);
+  byte = c_uart_rx.input_byte();
+  xassert(byte == 0xa4);
 
-  printf("\t\t %d",ui32stopbit);
+  debug_printf("Reconfiguring parity to even.\n");
+  // Check parity
+  c_uart_rx.set_parity(UART_RX_PARITY_EVEN);
+  c_uart_tx.set_parity(UART_TX_PARITY_EVEN);
+  c_uart_tx.output_byte(0x12);
+  byte = c_uart_rx.input_byte();
+  xassert(byte == 0x12);
+  c_uart_tx.output_byte(0xa4);
+  byte = c_uart_rx.input_byte();
+  xassert(byte == 0xa4);
 
-  uart_tx_send_byte(uartTX, 0x12);
-  TEST_ASSERT(uart_rx_get_byte(uartRX, rxState) == 0x12);
-  uart_tx_send_byte(uartTX, 0xa4);
-  TEST_ASSERT(uart_rx_get_byte(uartRX, rxState) == 0xa4);
+  debug_printf("Reconfiguring back ..\n");
+  c_uart_rx.set_baud_rate(baud_rate);
+  c_uart_rx.set_stop_bits(1);
+  c_uart_rx.set_bits_per_byte(8);
+  c_uart_rx.set_parity(UART_RX_PARITY_NONE);
+  c_uart_tx.set_baud_rate(baud_rate);
+  c_uart_tx.set_stop_bits(1);
+  c_uart_tx.set_bits_per_byte(8);
+  c_uart_tx.set_parity(UART_TX_PARITY_NONE);
+
 #endif
-/* **********************************************************************************
-   *     Check buffering
-   *
- ***********************************************************************************/
 
-#ifdef CHECK_BUFFERING
-  {
-    timer t;
-    unsigned time;
-  /*  unsigned char data[] = { 0xf9, 0x28, 0x2c, 0x09,0x55,0xAA,0xFF,0x00,
-    		0xf9, 0x28, 0x2c, 0x09,0x55,0xAA,0xFF,0x00,
-    		0xf9, 0x28, 0x2c, 0x09,0x55,0xAA,0xFF,0x00,
-    		0xf9, 0x28, 0x2c, 0x09,0x55,0xAA,0xFF,0x00,
-    		0xf9, 0x28, 0x2c, 0x09,0x55,0xAA,0xFF,0x00};*/
-
-
-    for (unsigned i = 0; i < ARRAY_SIZE(data); i++) {
-      uart_tx_send_byte(uartTX, data[i]);
-      //data[0]++ ;
-
-    }
-    t :> time;
-    t when timerafter(time + BITTIME(baud_rate) * 11 * 4) :> void;
-    for (unsigned i = 0; i < ARRAY_SIZE(data); i++) {
-      TEST_ASSERT(uart_rx_get_byte(uartRX, rxState) == data[i]);
-      //printf("%x\n",data[0]);
-    //  data[1]++ ;
-    }
+#if CHECK_PARITY_ERRORS
+  debug_printf("Checking that invalid parity information is discarded.\n");
+  // discard any notification hanging around from earlier data
+  select {
+    case c_uart_rx.data_ready():
+      break;
+    default:
+      break;
   }
-  printf("\nbuffer size\t\t\tbytes transmitted\n ");
-  //printf("%d\t\t%d",NUM,ARRAY_SIZE(data));
-  printf("%d\t\t%d",64,4);
+  c_uart_rx.set_parity(UART_RX_PARITY_ODD);
+  c_uart_tx.set_parity(UART_TX_PARITY_EVEN);
+  c_uart_tx.output_byte(0x55);
+  check_no_rx_data(c_uart_rx, BITTIME(baud_rate) * 200);
+
+  c_uart_rx.set_parity(UART_RX_PARITY_EVEN);
+  c_uart_tx.set_parity(UART_TX_PARITY_ODD);
+  c_uart_tx.output_byte(0x55);
+  check_no_rx_data(c_uart_rx, BITTIME(baud_rate) * 200);
 #endif
-/* **********************************************************************************
- *  Check data is discarded on incorrect parity
- *
- ***********************************************************************************/
-#ifdef TEST_PARITY
-  uart_rx_set_parity(uartRX, rxState, UART_RX_PARITY_ODD);
-  uart_tx_set_parity(uartTX, UART_TX_PARITY_EVEN);
-  uart_tx_send_byte(uartTX, 0x55);
-  TEST_ASSERT(checkNoRxData(uartRX, rxState, BITTIME(baud_rate) * 500));
-  uart_rx_set_parity(uartRX, rxState, UART_RX_PARITY_EVEN); //UART_RX_PARITY_EVEN
-  uart_tx_set_parity(uartTX, UART_TX_PARITY_ODD);
-  uart_tx_send_byte(uartTX, 0x55);
-  TEST_ASSERT(checkNoRxData(uartRX, rxState, BITTIME(baud_rate) * 500));
-#endif
-/**************************************************************************************
- *
- */
-  printstrln("Pass");
-  _Exit(0);
+
+  debug_printf("Pass\n");
 }
 
-buffered in port:1 rx = on stdcore[0] : XS1_PORT_1A;
-out port tx = on stdcore[0] : XS1_PORT_1B;
-
-#pragma unsafe arrays
-int main() { //int main(int argc, char *argv[])
-  chan chanTX, chanRX;
+buffered in port:1 p_rx = on tile[0] : XS1_PORT_1A;
+out port p_tx = on tile[0] : XS1_PORT_1B;
 
 
+#define N 64
+int main() {
+  interface uart_rx_if c_rx;
+  interface uart_tx_if c_tx[1];
 
   par {
-    on stdcore[0] : {
-      unsigned char tx_buffer[NUM];
-      unsigned char rx_buffer[NUM];
-      tx <: 1;
-      par {
-        uart_rx(rx, rx_buffer, ARRAY_SIZE(rx_buffer), baud_rate, BITS_PER_BYTE, SET_PARITY, STOP_BIT, chanRX);
-        uart_tx(tx, tx_buffer, ARRAY_SIZE(tx_buffer), baud_rate, BITS_PER_BYTE, SET_PARITY, STOP_BIT, chanTX);
-      }
+    on tile[0] : {
+      unsigned char tx_buffer[N];
+      uart_tx_buffered(c_tx, 1, tx_buffer, N, p_tx);
     }
-    on stdcore[0] : {
-      testUART(chanTX, chanRX);
+
+    on tile[0] : {
+      unsigned char rx_buffer[N];
+      uart_rx(c_rx, rx_buffer, N, p_rx);
+    }
+
+    on tile[0] : {
+      unsigned rates[] = {115200, 2400, 9600, 19200};
+      for (int i = 0; i < ARRAY_SIZE(rates); i++)
+        uart_test(c_tx[0], c_rx, rates[i]);
+      _Exit(0);
     }
   }
   return 0;

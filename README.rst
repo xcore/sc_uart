@@ -56,5 +56,5 @@ Issues may be submitted via the Issues tab in this github repo. Response to any 
 Required software (dependencies)
 ================================
 
-  * xcommon (if using development tools earlier than 11.11.0)
+  * sc_util (git@github.com:xcore/sc_util)
 
