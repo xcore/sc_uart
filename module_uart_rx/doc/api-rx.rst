@@ -1,23 +1,23 @@
 API
 ===
 
-All the components functionality can be accessed via the ``uart_tx.h``
+All the components functionality can be accessed via the ``uart_rx.h``
 header file.
 
 Supporting datatypes
 --------------------
 
-.. doxygenenum:: uart_tx_parity
+.. doxygenenum:: uart_rx_parity
 
 The client interface to the component
 -------------------------------------
 
-.. doxygeninterface:: uart_tx_if
+.. doxygeninterface:: uart_rx_if
 
 |newpage|
 
 The component task functions
 ----------------------------
 
-.. doxygenfunction:: uart_tx
-.. doxygenfunction:: uart_tx_buffered
+.. doxygenfunction:: uart_rx
+
