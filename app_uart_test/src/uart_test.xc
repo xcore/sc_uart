@@ -161,13 +161,6 @@ void uart_test(client interface uart_tx_if c_uart_tx,
 
 #if CHECK_PARITY_ERRORS
   debug_printf("Checking that invalid parity information is discarded.\n");
-  // discard any notification hanging around from earlier data
-  select {
-    case c_uart_rx.data_ready():
-      break;
-    default:
-      break;
-  }
   c_uart_rx.set_parity(UART_RX_PARITY_ODD);
   c_uart_tx.set_parity(UART_TX_PARITY_EVEN);
   c_uart_tx.output_byte(0x55);
