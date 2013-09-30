@@ -1,7 +1,6 @@
 REPO=../../../sc_uart
 VERSION=0v1
-DOXYGEN_DIRS=$(REPO)/module_uart_tx 
-SOURCE_INCLUDE_DIRS=$(REPO)
+DOXYGEN_DIRS=$(REPO)/module_uart_tx
 XDOC_DIR ?= ../../../xdoc
 include $(XDOC_DIR)/Makefile.inc
 

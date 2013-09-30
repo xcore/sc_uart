@@ -1,10 +1,9 @@
-I2C Software Component
-----------------------
+UART Transmitter Component
+--------------------------
 
 .. toctree::
 
    overview.rst
-   resource_requirements.rst
    hardware_requirements.rst
    api-tx.rst
    
