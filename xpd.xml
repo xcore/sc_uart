@@ -4,8 +4,8 @@
         <component description = "Basic loopback demonstration for the RS485 component" type = "demoCode" scope = "Example" path = "app_rs485" local = "false" id = "app_rs485" name = "RS485 Terminal Console Demo">
             <board>XK-SKC-L2</board>
             <board>XA-SK-ISBUS</board>
-            <componentDependency>module_uart_fast_tx</componentDependency>
-            <componentDependency>module_rs485</componentDependency>
+            <componentDependency version = "3.0.0">module_rs485</componentDependency>
+            <componentDependency version = "3.0.0">module_uart_fast_tx</componentDependency>
             <keyword>rs485</keyword>
             <keyword>UART</keyword>
         </component>
@@ -21,21 +21,21 @@
         </component>
         <component description = "Application to demonstrate module_uart_fast_rx and module_uart_fast_tx running looped back on a single Slicekit core board" type = "demoCode" scope = "Example" path = "app_uart_fast" local = "false" id = "app_uart_fast" name = "Simple Uart Loopback Example">
             <board>XA-SKC-L2</board>
-            <componentDependency>module_uart_fast_rx</componentDependency>
-            <componentDependency>module_uart_fast_tx</componentDependency>
+            <componentDependency version = "3.0.0">module_uart_fast_rx</componentDependency>
+            <componentDependency version = "3.0.0">module_uart_fast_tx</componentDependency>
             <keyword>UART</keyword>
             <keyword>demo</keyword>
         </component>
         <component name = "Generic UART Transmitter" type = "component" buildresults_path = "module_uart_tx/.module_uart_tx.buildinfo" scope = "General Use" path = "module_uart_tx" metainfo_path = "module_uart_tx/module_uart_tx.metainfo" local = "false" id = "module_uart_tx" description = "Uart with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support">
             <board>XK-SKC-L2</board>
             <board>XA-SK-GPIO</board>
-            <componentDependency>module_xassert</componentDependency>
+            <componentDependency version = "1.0.3">module_xassert</componentDependency>
             <keyword>UART</keyword>
         </component>
         <component name = "Generic UART Receiver" type = "component" buildresults_path = "module_uart_rx/.module_uart_rx.buildinfo" scope = "General Use" path = "module_uart_rx" metainfo_path = "module_uart_rx/module_uart_rx.metainfo" local = "false" id = "module_uart_rx" description = "Uart Receiver with the full range of baud rate (up to 115.2KBaud), parity, stop bits and bits per character support">
             <board>XK-SKC-L2</board>
             <board>XA-SK-GPIO</board>
-            <componentDependency>module_xassert</componentDependency>
+            <componentDependency version = "1.0.3">module_xassert</componentDependency>
             <keyword>UART</keyword>
         </component>
         <component name = "Simple/Fast UART Receiver" type = "component" buildresults_path = "module_uart_fast_rx/.module_uart_fast_rx.buildinfo" scope = "Early Development" path = "module_uart_fast_rx" metainfo_path = "module_uart_fast_rx/module_uart_fast_rx.metainfo" local = "false" id = "module_uart_fast_rx" description = "Basic Uart Receiver where the functionality of the full generic uart receiver module is not required">
@@ -44,24 +44,25 @@
         </component>
         <component description = "Application to demonstrate module_uart_rx and module_uart_tx running looped back on a single Slicekti core board." type = "demoCode" scope = "Example" path = "app_uart_back2back" local = "false" id = "app_uart_back2back" name = "Generic Uart Loopback Example">
             <board>XA-SKC-L2</board>
-            <componentDependency>module_uart_tx</componentDependency>
-            <componentDependency>module_uart_rx</componentDependency>
-            <componentDependency>module_xassert</componentDependency>
+            <componentDependency version = "1.0.3">module_xassert</componentDependency>
+            <componentDependency version = "3.0.0">module_uart_tx</componentDependency>
+            <componentDependency version = "3.0.0">module_uart_rx</componentDependency>
+            <componentDependency version = "1.0.3">module_xassert</componentDependency>
             <keyword>UART</keyword>
             <keyword>demo</keyword>
         </component>
         <component description = "An example of using the generic UART rx component" type = "demoCode" scope = "Example" path = "app_uart_rx_demo" local = "false" id = "app_uart_rx_demo" name = "Uart RX Demo">
             <board>XK-SKC-L2</board>
             <board>XA-SK-GPIO</board>
-            <componentDependency>module_uart_rx</componentDependency>
-            <componentDependency>module_xassert</componentDependency>
+            <componentDependency version = "3.0.0">module_uart_rx</componentDependency>
+            <componentDependency version = "1.0.3">module_xassert</componentDependency>
             <keyword>uart</keyword>
         </component>
         <component description = "An example of using the generic UART tx component" type = "demoCode" scope = "Example" path = "app_uart_tx_demo" local = "false" id = "app_uart_tx_demo" name = "Uart TX Demo">
             <board>XK-SKC-L2</board>
             <board>XA-SK-GPIO</board>
-            <componentDependency>module_uart_tx</componentDependency>
-            <componentDependency>module_xassert</componentDependency>
+            <componentDependency version = "1.0.3">module_xassert</componentDependency>
+            <componentDependency version = "3.0.0">module_uart_tx</componentDependency>
             <keyword>uart</keyword>
         </component>
     </components>
@@ -71,6 +72,8 @@
         <version>1.0.3rc0</version>
     </dependency>
     <description>Inline libraries for various simple uart implementations</description>
+    <docdir>module_uart_tx/doc</docdir>
+    <docdir>module_uart_rx/doc</docdir>
     <exclude_dir>app_uart_test</exclude_dir>
     <exclude_dir>app_rs485_demo</exclude_dir>
     <location>git@github.com:xcore/sc_uart.git</location>
@@ -100,11 +103,10 @@
     <release parenthash = "ceadaf6f92e7122b81355400785d4c19f26cb706" version = "2.3.0rc0" githash = "85328820c8e18d6df345575ed4d888d295ee4ac3"></release>
     <release parenthash = "154d55bd42276964e49a4129e68eeea11691f895" version = "3.0.0alpha0" githash = "a4ee22dc023789ab7089dd18f64a07cee9ddeb8d"></release>
     <release parenthash = "514b63c8709ec7eb92ff89f03afcd80424ff02e7" version = "3.0.0alpha1" githash = "b540cfe6dbd06ded9960f2d0a7711963036b7bca"></release>
-    <release parenthash = "176fc290fbedb3d026ebf535dff7fbf3c61ac98a" version = "3.0.0alpha2"></release>
+    <release parenthash = "176fc290fbedb3d026ebf535dff7fbf3c61ac98a" version = "3.0.0alpha2" githash = "62fbb9f4cec9556654f68bdc26e49d50403b91eb"></release>
+    <release parenthash = "09d9f637b1eea52db21e172cea9e33cdd797cdfc" version = "3.0.0alpha3"></release>
     <subpartnumber>XM-001906-SM</subpartnumber>
     <vendor>XMOS</vendor>
-    <docdir>module_uart_tx/doc</docdir>
-    <docdir>module_uart_rx/doc</docdir>
     <version_defines></version_defines>
     <xcore_repo>sc_uart.git</xcore_repo>
     <xpd_version>1.0</xpd_version>

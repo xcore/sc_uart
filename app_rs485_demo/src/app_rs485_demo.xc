@@ -29,18 +29,18 @@
 
 on tile[0]: rs485_interface_t rs485_if =
 {
-  XS1_PORT_1J, 
-  XS1_PORT_4E 
+  XS1_PORT_1J,
+  XS1_PORT_4E
 };
 
 rs485_config_t rs485_config =
-{ 
-  DIR_BIT, 
-  BAUD, 
-  DATA, 
-  STOP, 
-  PARITY, 
-  TIMEOUT 
+{
+  DIR_BIT,
+  BAUD,
+  DATA,
+  STOP,
+  PARITY,
+  TIMEOUT
 };
 
 
@@ -92,7 +92,7 @@ void application(chanend c_receive, chanend c_send)
 	  case APP_RS485_BAUD_115200: //Set Baud as 115200
 	    rs485_set_baud(c_send, 115200);
 	    break;
-  	  
+
   	  case APP_RS485_BAUD_57600: //Set Baud as 57600
 	    rs485_set_baud(c_send, 57600);
 	    break;
