@@ -103,6 +103,8 @@
     <release parenthash = "176fc290fbedb3d026ebf535dff7fbf3c61ac98a" version = "3.0.0alpha2"></release>
     <subpartnumber>XM-001906-SM</subpartnumber>
     <vendor>XMOS</vendor>
+    <docdir>module_uart_tx/doc</docdir>
+    <docdir>module_uart_rx/doc</docdir>
     <version_defines></version_defines>
     <xcore_repo>sc_uart.git</xcore_repo>
     <xpd_version>1.0</xpd_version>
