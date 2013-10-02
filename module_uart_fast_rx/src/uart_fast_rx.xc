@@ -19,6 +19,7 @@ void uart_rx_fast(in port pIn, streaming chanend cOut, int clocks) {
     int t;
     unsigned int data = 0;
     while (1) {
+        pIn when pinseq(1) :> int _;     //wait until rx line is idle first
         pIn when pinseq(0) :> int _ @ t; //wait until falling edge of start bit
         t += dt2;
 #pragma loop unroll(8)
