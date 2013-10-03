@@ -65,7 +65,7 @@ void uart_tx(server interface uart_tx_if c[n], unsigned n,
       t += bit_time;
       unsigned byte = data;
       // Output data bits
-      for (int i = 0; i < bits_per_byte; i++) {
+      for (int j = 0; j < bits_per_byte; j++) {
         tmr when timerafter(t) :> void;
         p_txd <: >> byte;
         t += bit_time;
