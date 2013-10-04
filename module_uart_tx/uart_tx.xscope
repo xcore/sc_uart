@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xSCOPEconfig>
+  <Module name="Uart TX" id="UART_TX">
+    <Probe name="value" type="DISCRETE" datatype="UINT" units=""/>
+  </Module>
+</xSCOPEconfig>

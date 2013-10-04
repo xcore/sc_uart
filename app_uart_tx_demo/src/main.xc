@@ -6,12 +6,7 @@
 
 on tile[1] : out port p_tx = XS1_PORT_1C;
 
-void xscope_user_init(void) {
-  xscope_register(0);
-  xscope_config_io(XSCOPE_IO_BASIC);
-}
-
-void demo(client interface uart_tx_if c_uart_tx)
+void demo(client uart_tx_if c_uart_tx)
 {
   c_uart_tx.set_baud_rate(115200);
   c_uart_tx.set_parity(UART_TX_PARITY_EVEN);
@@ -44,7 +39,7 @@ static unsigned char buffer[BUF_LEN];
 #endif
 
 int main(void) {
-  interface uart_tx_if c_uart_tx[1];
+  uart_tx_if c_uart_tx[1];
 
   par {
     #if UART_TX_BUFFERED

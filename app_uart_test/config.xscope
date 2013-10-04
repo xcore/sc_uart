@@ -1,0 +1,5 @@
+<xSCOPEconfig>
+  <Config enabled="true"/>
+  <Module name="Uart RX" enabled="true"/>
+  <Module name="Uart TX" enabled="true"/>
+</xSCOPEconfig>

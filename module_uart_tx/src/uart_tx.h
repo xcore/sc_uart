@@ -14,7 +14,7 @@ enum uart_tx_parity {
 };
 
 /** Interface for communicating with UART transmit components. */
-interface uart_tx_if {
+typedef interface uart_tx_if {
   /** Output a byte via UART.
    *
    *  This function outputs a byte over the serial port. It will block until
@@ -61,7 +61,7 @@ interface uart_tx_if {
    *   \param bpb     The bits per byte value
    */
   void set_bits_per_byte(unsigned bpb);
-};
+} uart_tx_if;
 
 /** An unbuffered UART transmit component.
  *

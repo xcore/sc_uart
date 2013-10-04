@@ -18,7 +18,7 @@ APP_NAME =
 # If the variable XCC_MAP_FLAGS is set it overrides the flags passed to
 # xcc for the final link (mapping) stage.
 
-XCC_FLAGS = -O2 -g $(EXTRA_FLAGS) -save-temps
+XCC_FLAGS = -O2 $(EXTRA_FLAGS)
 
 # The USED_MODULES variable lists other module used by the application.
 
@@ -26,7 +26,7 @@ USED_MODULES = module_uart_rx module_uart_tx module_xassert module_logging
 
 
 test: bin/app_uart_test.xe
-	xsim bin/app_uart_test.xe --plugin LoopbackPort.dll '-port tile[0] XS1_PORT_1A 1 0 -port tile[0] XS1_PORT_1B 1 0'
+	xsim bin/app_uart_test.xe --xscope "-offline uart_test.xmt" --plugin LoopbackPort.dll '-port tile[0] XS1_PORT_1A 1 0 -port tile[0] XS1_PORT_1B 1 0'
 
 #=============================================================================
 # The following part of the Makefile includes the common build infrastructure

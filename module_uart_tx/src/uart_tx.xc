@@ -10,6 +10,7 @@
 #include <xs1.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <xscope.h>
 #include "xassert.h"
 
 #ifndef UART_TX_DEFAULT_PARITY
@@ -58,6 +59,8 @@ void uart_tx(server interface uart_tx_if c[n], unsigned n,
   while (1) {
     select {
     case c[int i].output_byte(unsigned char data):
+      // Trace the outgoing data
+      xscope_char(UART_TX_VALUE, data);
       int t;
       // Output start bit
       p_txd <: 0;

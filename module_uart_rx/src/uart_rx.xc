@@ -8,6 +8,7 @@
 #include <xs1.h>
 #include <stdio.h>
 #include <print.h>
+#include <xscope.h>
 
 #ifdef __uart_rx_conf_h_exists__
 #include "uart_rx_conf.h"
@@ -53,18 +54,22 @@ static inline int parity32(unsigned x, enum uart_rx_parity parity)
 }
 
 static int add_to_buffer(unsigned char buffer[n], unsigned n,
-                         int &rdptr, int &wrptr,
+                         unsigned &rdptr, unsigned &wrptr,
                          unsigned char data)
 {
+  xassert(wrptr < n);
   int new_wrptr = wrptr + 1;
 
-  if (new_wrptr == n)
+  if (new_wrptr >= n)
     new_wrptr = 0;
 
   if (new_wrptr == rdptr) {
     // buffer full
     return 0;
   }
+
+  // Output tracing information of the values entering the buffer
+  xscope_char(UART_RX_VALUE, data);
 
   buffer[wrptr] = data;
   wrptr = new_wrptr;
@@ -86,7 +91,7 @@ void uart_rx(server interface uart_rx_if c,
   int stop_bits = UART_RX_DEFAULT_STOP_BITS;
   int stop_bit_count;
   unsigned data;
-  int rdptr = 0, wrptr = 0;
+  unsigned rdptr = 0, wrptr = 0;
   while (1) {
     #pragma ordered
     select {

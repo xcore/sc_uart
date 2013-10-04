@@ -20,7 +20,7 @@ enum uart_rx_parity {
  *   This interface provides clients access to buffer uart receive
  *   functionality.
  */
-interface uart_rx_if {
+typedef interface uart_rx_if {
   /** Get a byte from the receive buffer.
    *
    *   This function should be called after receiving a data_ready()
@@ -58,7 +58,7 @@ interface uart_rx_if {
    *   The change of configuration takes place immediately.
    */
   void set_bits_per_byte(unsigned bpb);
-};
+} uart_rx_if;
 
 /** UART RX server function.
  *

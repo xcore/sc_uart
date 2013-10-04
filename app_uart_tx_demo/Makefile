@@ -16,8 +16,8 @@ USED_MODULES = module_uart_tx
 # XCC_XC_FLAGS, XCC_C_FLAGS, XCC_ASM_FLAGS, XCC_CPP_FLAGS
 # If the variable XCC_MAP_FLAGS is set it overrides the flags passed to
 # xcc for the final link (mapping) stage.
-XCC_FLAGS_unbuffered = -g -fxscope -report -O3 -DUART_TX_BUFFERED=0
-XCC_FLAGS_buffered = -g -fxscope -report -O3 -DUART_TX_BUFFERED=1
+XCC_FLAGS_unbuffered = -g -report -O3 -DUART_TX_BUFFERED=0
+XCC_FLAGS_buffered = -g -report -O3 -DUART_TX_BUFFERED=1
 
 # The VERBOSE variable, if set to 1, enables verbose output from the make system.
 VERBOSE = 0

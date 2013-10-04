@@ -9,12 +9,7 @@ on tile[1] : buffered in port:1 p_rx = XS1_PORT_1G;
 #define RX_BUFFER_SIZE 64
 static unsigned char rx_buffer[RX_BUFFER_SIZE];
 
-void xscope_user_init(void) {
-  xscope_register(0);
-  xscope_config_io(XSCOPE_IO_BASIC);
-}
-
-void demo(client interface uart_rx_if c_uart_rx)
+void demo(client uart_rx_if c_uart_rx)
 {
   printstrln("Echoing incoming uart bytes");
   c_uart_rx.set_baud_rate(115200);
@@ -32,7 +27,7 @@ void demo(client interface uart_rx_if c_uart_rx)
 }
 
 int main(void) {
-  interface uart_rx_if c_uart_rx;
+  uart_rx_if c_uart_rx;
 
   par {
     on tile[1] : uart_rx(c_uart_rx, rx_buffer, RX_BUFFER_SIZE, p_rx);

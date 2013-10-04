@@ -16,7 +16,7 @@ USED_MODULES = module_uart_rx
 # XCC_XC_FLAGS, XCC_C_FLAGS, XCC_ASM_FLAGS, XCC_CPP_FLAGS
 # If the variable XCC_MAP_FLAGS is set it overrides the flags passed to
 # xcc for the final link (mapping) stage.
-XCC_FLAGS = -fxscope -report -O3
+XCC_FLAGS = -report -O3
 
 # The VERBOSE variable, if set to 1, enables verbose output from the make system.
 VERBOSE = 0

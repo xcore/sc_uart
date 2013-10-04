@@ -20,3 +20,4 @@ toplevel_doc/*
 *.orig
 *.buildinfo
 **/.settings
+run_*.log

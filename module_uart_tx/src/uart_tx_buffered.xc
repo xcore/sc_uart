@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <print.h>
+#include <xscope.h>
 #include "xassert.h"
 
 enum uart_tx_state {
@@ -71,6 +72,10 @@ static inline void init_transmit(unsigned char buffer[buf_length], unsigned buf_
   if (state != WAITING_FOR_DATA || rdptr == wrptr)
     return;
   byte = buffer[rdptr];
+
+  // Trace the outgoing data
+  xscope_char(UART_TX_VALUE, byte);
+
   rdptr++;
   if (rdptr == buf_length)
     rdptr = 0;

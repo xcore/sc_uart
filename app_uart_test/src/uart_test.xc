@@ -20,7 +20,7 @@
 #define CHECK_RUNTIME_PARAMETER_CHANGE 1
 #define CHECK_PARITY_ERRORS 1
 
-static void check_no_rx_data(client interface uart_rx_if c_uart_rx,
+static void check_no_rx_data(client uart_rx_if c_uart_rx,
                              unsigned timeout)
 {
   timer t;
@@ -36,8 +36,8 @@ static void check_no_rx_data(client interface uart_rx_if c_uart_rx,
   __builtin_unreachable();
 }
 
-static void uart_test(client interface uart_tx_if c_uart_tx,
-                      client interface uart_rx_if c_uart_rx,
+static void uart_test(client uart_tx_if c_uart_tx,
+                      client uart_rx_if c_uart_rx,
                       unsigned baud_rate)
 {
   unsigned char byte;
@@ -173,8 +173,8 @@ out port p_tx = on tile[0] : XS1_PORT_1B;
 
 #define BUFFER_SIZE 64
 int main() {
-  interface uart_rx_if c_rx;
-  interface uart_tx_if c_tx[1];
+  uart_rx_if c_rx;
+  uart_tx_if c_tx[1];
 
   par {
     on tile[0] : {
