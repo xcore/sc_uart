@@ -14,15 +14,15 @@ This simple demonstration of xTimeComposer Studio functionality uses the XA-SK-I
 Hardware Setup
 ++++++++++++++
 
-The XP-SKC-L2 Slicekit Core board has four slots with edge conectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``. 
+The XP-SKC-L2 sliceKIT Core board has four slots with edge connectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``. 
 
 To setup up the system:
 
-   #. Connect XA-SK-ISBUS Slice Card to the XP-SKC-L2 Slicekit Core board using the connector marked with the ``TRIANGLE``.
+   #. Connect XA-SK-ISBUS Slice Card to the XP-SKC-L2 sliceKIT Core board using the connector marked with the ``TRIANGLE``.
    #. Connect a USB to RS485 converter pins A, B and GND to the ISBUS slice P1 connector.
-   #. Connect the XTAG Adapter to Slicekit Core board, and connect XTAG-2 to the adapter. 
-   #. Connect the XTAG-2 to host PC. Note that a USB cable is not provided with the Slicekit starter kit.
-   #. Switch on the power supply to the Slicekit Core board.
+   #. Connect the XTAG Adapter to sliceKIT Core board, and connect XTAG-2 to the adapter. 
+   #. Connect the XTAG-2 to host PC. Note that a USB cable is not provided with the sliceKIT starter kit.
+   #. Switch on the power supply to the sliceKIT Core board.
 
 .. figure:: images/hardware_setup.png
    :align: center
@@ -47,7 +47,7 @@ Serial Terminal Setup Examples
 PuTTY
 .....
 
-   #. Open the PuTTY program, the PuTTY Configuration Dialog should be showing
+   #. Open the PuTTY program, the PuTTY Configuration Dialogue should be showing
    #. Select the 'Serial' category, under 'Connection'
    #. Set the 'Serial line to connect to' to match the COM port associated with the USB to RS485 device (this can be found in the device manager if not known)
    #. Set the 'Speed (baud)' option to 9600 (or to whatever baud has been selected in the software)
@@ -63,7 +63,7 @@ PuTTY
    .. figure:: images/PuTTY_Config.png
    :align: center
 
-   PuTTY Configuration Dialog
+   PuTTY Configuration Dialogue
    
    .. figure:: images/PuTTY_Result.png
    :align: center
@@ -83,12 +83,12 @@ RealTerm
    #. Select the 'None' radio button in the 'Hardware Flow Control' group
    #. Click the 'Change' button
    #. Select the 'Display' tab
-   #. Click in the terminal window and type 012345678, you shoule see the output as below
+   #. Click in the terminal window and type 012345678, you should see the output as below
    
    .. figure:: images/RealTerm_Config.png
    :align: center
 
-   RealTerm Configuration Dialog
+   RealTerm Configuration Dialogue
    
    .. figure:: images/RealTerm_Result.png
    :align: center
@@ -98,11 +98,11 @@ RealTerm
 Run the Application
 +++++++++++++++++++
 
-Now that the application has been compiled, the next step is to run it on the Slicekit Core Board using the tools to load the application over JTAG (via the XTAG2 and Xtag Adaptor card) into the xCORE multicore microcontroller.
+Now that the application has been compiled, the next step is to run it on the sliceKIT Core Board using the tools to load the application over JTAG (via the XTAG2 and XTAG Adaptor card) into the xCORE multi-core micro-controller.
  
    #. Using a serial terminal application, connect to the RS485 to USB converter, set to 9600 baud, 8 data bits, 2 stop bits, no parity.
-   #. Click on the ``Run`` icon (the white arrow in the green circle). A dialog will appear asking which device to cvonnect to. Select ``XMOS XTAG2``.
-   #. Welcome message with list of supported commands is displayed on the Terminal Window. The following screenshot shows the information displayed on the screen.
+   #. Click on the ``Run`` icon (the white arrow in the green circle). A dialogue will appear asking which device to connect to. Select ``XMOS XTAG2``.
+   #. Welcome message with list of supported commands is displayed on the Terminal Window. The following screen shot shows the information displayed on the screen.
    
    .. figure:: images/welcome_message.png
    :align: center
@@ -110,7 +110,7 @@ Now that the application has been compiled, the next step is to run it on the Sl
    Welcome Message on  Terminal Output
    
    #. Press character f in the Terminal. Input some data from terminal and press ``CTRL + D`` after finishing data input.
-   #. The input dtaa is echoed back to the terminal as shown in the following screenshot.
+   #. The input dtaa is echoed back to the terminal as shown in the following screen shot.
    
     .. figure:: images/data_display.png
    :align: center
@@ -136,7 +136,7 @@ Look at the Code
 
    #. Examine the application code. In xTIMEcomposer navigate to the ``src`` directory under app_rs485_demo and double click on the app_rs485_demo.xc file within it. The file will open in the central editor window.
    #. Find the main function and note that it runs the run_rs485() function on a single logical core, and a second application function on a second logical core.
-   #. The common.h file in the scr directory contains all the definitions such as baud rate, parity, stopbits, data length.
+   #. The common.h file in the scr directory contains all the definitions such as baud rate, parity, stop-bits, data length.
    #. At the top of the common.h file try changing the baud rate definition to a different value, change the baud rate in your chosen terminal application and reconnect.
    #. Find the consume function. Note that the function waits for the rs485_run function to send it some data, buffer that data and then transmit the packet back. Try manipulating the data before returning it, eg. repeat it.
 

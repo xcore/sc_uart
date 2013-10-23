@@ -27,7 +27,7 @@ Makefile
 The Makefile is found in the top level directory of the
 application. 
 
-The application is for the Slicekit Core Board so the TARGET variable needs to be set in the Makefile as::
+The application is for the sliceKIT Core Board so the TARGET variable needs to be set in the Makefile as::
 
   TARGET = XK-SKC-L2
 
@@ -58,10 +58,10 @@ To make use of the RS485 function library the app_rs485.xc must contain the foll
     
   #include "rs485.h"
 
-The RS485 interface is initialsied to operate at 9600 baud, 8 data bits, 2 stop bits and a 
-10 character timeout.
+The RS485 interface is initialised to operate at 9600 baud, 8 data bits, 2 stop bits and a 
+10 character time-out.
 
-When a packet of data is recieved it is passed to the application function via the data channel, and is
+When a packet of data is received it is passed to the application function via the data channel, and is
 then transmitted as a packet using the rs485_send_packet function.
 
 app_rs485_demo
@@ -75,7 +75,7 @@ Makefile
 The Makefile is found in the top level directory of the
 application. 
 
-The application is for the Slicekit Core Board so the TARGET variable needs to be set in the Makefile as::
+The application is for the sliceKIT Core Board so the TARGET variable needs to be set in the Makefile as::
 
   TARGET = XK-SKC-L2
 
@@ -112,14 +112,14 @@ Top level program structure
 +++++++++++++++++++++++++++
 
 This application is contained in app_rs485_demo.xc. Within this file is the ``main()`` function 
-which runs the example application function, that takes the received data and sets the paramater settings for the RS485
+which runs the example application function, that takes the received data and sets the parameter settings for the RS485
 server function.
 
 To make use of the RS485 function library the app_rs485_demo.xc must contain the following line::
     
   #include "rs485.h"
 
-The RS485 interface is initialsied to operate at 9600 baud, 8 data bits, 2 stop bits and a 
-10 character timeout. This information can be changed in common.h header file.
+The RS485 interface is initialised to operate at 9600 baud, 8 data bits, 2 stop bits and a 
+10 character time-out. This information can be changed in common.h header file.
 
 
