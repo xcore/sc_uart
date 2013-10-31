@@ -11,8 +11,8 @@ sliceKIT
 
 This module may be evaluated using the sliceKIT Modular Development Platform. Required board SKUs are:
 
-   * XP-SKC-L2 (sliceKIT L2 Core Board) plus XA-SK-XTAG2 (sliceKIT XTAG adaptor) 
-   * XA-SK-ISBUS (sliceKIT Industrial Serial Bus Slice)
+   * XP-SKC-L16 (sliceKIT L16 Core Board) plus XA-SK-XTAG2 (sliceKIT XTAG adaptor) 
+   * XA-SK-ISBUS (sliceKIT Industrial Serial Bus slice)
 
 Demonstration Applications
 --------------------------

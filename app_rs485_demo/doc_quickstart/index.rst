@@ -14,11 +14,11 @@ This simple demonstration of xTimeComposer Studio functionality uses the XA-SK-I
 Hardware Setup
 ++++++++++++++
 
-The XP-SKC-L2 sliceKIT Core board has four slots with edge connectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``. 
+The XP-SKC-L16 sliceKIT Core board has four slots with edge connectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``. 
 
 To setup up the system:
 
-   #. Connect XA-SK-ISBUS Slice Card to the XP-SKC-L2 sliceKIT Core board using the connector marked with the ``TRIANGLE``.
+   #. Connect XA-SK-ISBUS sliceCARD to the XP-SKC-L16 sliceKIT Core board using the connector marked with the ``TRIANGLE``.
    #. Connect a USB to RS485 converter pins A, B and GND to the ISBUS slice P1 connector.
    #. Connect the XTAG Adapter to sliceKIT Core board, and connect XTAG-2 to the adapter. 
    #. Connect the XTAG-2 to host PC. Note that a USB cable is not provided with the sliceKIT starter kit.

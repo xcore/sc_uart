@@ -3,7 +3,7 @@
 Fast UART Demo Quickstart Guide
 ===============================
 
-This simple FAST UART demonstration uses xTIMEcomposer Studio tools and targets the XP-SKC-L2 sliceKIT core board. It demonstrates back-to-back 10Mbps UART communication using the "Fast" UART component, which provides a simple. lightweight and fast UART peripheral.
+This simple FAST UART demonstration uses xTIMEcomposer Studio tools and targets the XP-SKC-L16 sliceKIT core board. It demonstrates back-to-back 10Mbps UART communication using the "Fast" UART component, which provides a simple. lightweight and fast UART peripheral.
 
 This application instantiates both the module_uart_fast_rx and module_uart_fast_tx components looped back to one another to demonstrate basic usage.
 
@@ -14,7 +14,7 @@ Target boards other than sliceKIT can be used as long as the XMOS processor runs
 Hardware Setup
 ++++++++++++++
 
-The XP-SKC-L2 sliceKIT Core board has four slots with edge connectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``. 
+The XP-SKC-L16 sliceKIT Core board has four slots with edge connectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``. 
 
 To setup up the system demonstrating the fast UART loopback running at 10Mbps on tile 0 (default for demo software):
 

@@ -6,8 +6,8 @@ Recommended Hardware
 
 This module may be evaluated using the Slicekit Modular Development Platform, available from digikey. Required board SKUs are:
 
-   * XP-SKC-L2 (Slicekit L2 Core Board) plus XA-SK-GPIO plus XA-SK-ATAG2 (Slicekit XTAG adaptor) plus XTAG2 (debug adaptor), OR
-   * XK-SK-L2-ST (Slicekit Starter Kit, containing all of the above).
+   * XP-SKC-L16 (sliceKIT L16 Core Board) plus XA-SK-GPIO plus XA-SK-XTAG2 (sliceKIT XTAG adaptor) plus XTAG2 (debug adaptor), OR
+   * XK-SK-L16-ST (sliceKIT Starter Kit, containing all of the above).
 
 Demonstration Application
 -------------------------

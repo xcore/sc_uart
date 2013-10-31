@@ -11,11 +11,11 @@ This simple demonstration of the RS485 transceiver component uses the XA-SK-ISBU
 Hardware Setup
 ++++++++++++++
 
-The XP-SKC-L2 sliceKIT Core board has four slots with edge connectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``. 
+The XP-SKC-L16 sliceKIT Core board has four slots with edge connectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``. 
 
 To setup up the system:
 
-   #. Connect XA-SK-ISBUS sliceCARD to the XP-SKC-L2 sliceKIT Core board using the connector marked with the ``TRIANGLE``.
+   #. Connect XA-SK-ISBUS sliceCARD to the XP-SKC-L16 sliceKIT Core board using the connector marked with the ``TRIANGLE``.
    #. Connect a USB to RS485/USB converter pins to header P1 on the ISBUS slice as follows: A (pin 1), B (pin 2) and GND (pin 3). 
    #. Connect the XTAG Adapter to sliceKIT Core board, and connect XTAG-2 to the adapter. 
    #. Connect the XTAG-2 to host PC. Note that a USB cable is not provided with the sliceKIT starter kit.
